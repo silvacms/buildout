@@ -67,3 +67,17 @@ and backing up the ZODB respectively.
 
 Another directory of interest is ``var/filestorage``, which holds the
 ZODB file(s).  ``var/log`` contains the Zope logfiles.
+
+
+Developing with this buildout
+=============================
+
+This buildout is aimed at both deploying Silva and developing with
+Silva.  You'll find checkouts of the individual Silva components in
+the ``parts`` subdirectory in the buildout.  This directory will be
+preserved in case you accidentally leave changes in there and run the
+buildout again, thanks to the ``infrae.subversion`` buildout recipe.
+
+If you're developing your own Products, place your Products into the
+``products-overrides`` directory.  This directory isn't ever touched
+by the buildout.
