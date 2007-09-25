@@ -1,0 +1,25 @@
+
+You can upgrade an Silva 1.6 buildout tree to a higher version :
+
+0. Stop all zope instance.
+
+1. Update the tree using SVN ::
+
+    svn switch https://svn.infrae.com/buildout/silva/tag/Silva-2.0
+
+
+   You can switch to the trunk version also.
+
+2. Rebuild buildout script using new version of python ::
+
+    python2.4 bootstrap/bootstrap.py
+  
+   Attention : all files in the part directory will be cleaned, before to be upgraded. Data.fs (in the var directory) will remain intact.
+
+3. Run buildout to upgrade the instance ::
+
+    ./bin/buildout
+
+4. Restart zope instance, update Silva contents via ZMI.
+
+
