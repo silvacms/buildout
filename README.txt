@@ -37,11 +37,11 @@ When you run the Buildout for the first time, you must run the
 ``bootstrap/bootstrap.py`` script.  Important: This script must be run
 with the Python interpreter that you intend to use for your Zope.
 
-Assuming that your Python is in ``/usr/bin/python2.4``, you would run
+Assuming that your Python is in ``/usr/bin/python2.3``, you would run
 this command to bootstrap your Buildout.  Remember that you only have
 to run this the first time that you're doing the build::
 
-  /usr/bin/python2.4 bootstrap/bootstrap.py
+  /usr/bin/python2.3 bootstrap/bootstrap.py
 
 This bootstrapping will create a ``bin/buildout`` script which you now
 use to start the actual build.  This can take a while::
