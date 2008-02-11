@@ -14,6 +14,19 @@ http://pypi.python.org/pypi/zc.buildout
 Use
 ===
 
+Check out the buildout of the Silva trunk
+-----------------------------------------
+
+    svn co https://svn.infrae.com/buildout/silva/trunk/ Silva-buildout-trunk
+
+Go into your "checkout"
+-----------------------
+
+    cd Silva-buildout-trunk
+
+Make a buildout profile
+-----------------------
+
 This Buildout supports a number of different configurations.  The
 configuration files are in the ``profiles/`` subdirectory.  Every
 configuration therein derives from the ``base.cfg`` configuration
@@ -33,6 +46,21 @@ The ``development.cfg`` configuration that we use in this example is
 intended for local development.  Most of the configuration is shared
 through ``base.cfg`` and only overridden where necessary.
 
+Create a buildout configuration file or use the initial one as a base
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    cp buildout.cfg.in buildout.cfg
+
+Then optionally edit buildout.cfg to suit your needs.
+
+De initial buildout configuration extends the development profile called development.cfg
+which you can find in the profiles folder. In most cases this is the profile you
+want to use while developing. But you can also use another profile located in the
+profiles folder if you want. 
+
+Bootstrap everything
+--------------------
+
 When you run the Buildout for the first time, you must run the
 ``bootstrap/bootstrap.py`` script.  Important: This script must be run
 with the Python interpreter that you intend to use for your Zope.
@@ -43,14 +71,28 @@ to run this the first time that you're doing the build::
 
   /usr/bin/python2.4 bootstrap/bootstrap.py
 
+We use python2.4 here as we are using zope 2.10.x which requires python 2.4
+
+Run the buildout script
+-----------------------
+
 This bootstrapping will create a ``bin/buildout`` script which you now
 use to start the actual build.  This can take a while::
+
+from your Silva-buildout-trunk directory, run:
 
   bin/buildout
 
 Whenever you update your configuration, you must rerun
 ``bin/buildout``, which will update all components and underlying
 configuration files for you.
+
+Run your zope
+-------------
+
+from your Silva-buildout-trunk directory, run:
+
+    bin/zopeinstance 
 
 
 Directory structure
