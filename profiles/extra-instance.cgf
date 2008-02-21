@@ -1,8 +1,0 @@
-[buildout]
-extends = base.cfg
-
-parts =
-    ${buildout:base-parts}
-    silva-extra-svn
-    silva-extra-dist
-    zopeinstance
