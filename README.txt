@@ -92,7 +92,13 @@ Run your zope
 
 from your Silva-buildout-trunk directory, run:
 
-    bin/zopeinstance 
+    bin/instance start
+
+or:
+
+   bin/instance fg
+
+to run in debug mode in the foreground.
 
 
 Directory structure
