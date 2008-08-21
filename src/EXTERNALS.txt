@@ -1,5 +1,6 @@
 # Generic Silva eggs
 silva.core.conf https://svn.infrae.com/silva.core.conf/trunk
+silva.core.layout https://svn.infrae.com/silva.core.layout/trunk
 silva.core.views https://svn.infrae.com/silva.core.views/trunk
 
 # Grok support
