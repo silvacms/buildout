@@ -24,3 +24,7 @@ Products.SilvaLayout https://svn.infrae.com/Products.SilvaLayout/trunk
 # Silva support
 Products.Formulator  https://svn.infrae.com/Products.Formulator/trunk
 Products.ProxyIndex https://svn.infrae.com/Products.ProxyIndex/trunk
+
+
+# Others
+five.intid https://svn.plone.org/svn/collective/five.intid/branch/sylvain-generic-ignore 
