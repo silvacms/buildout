@@ -8,9 +8,9 @@ five.grok svn://svn.zope.org/repos/main/five.grok/branches/sylvain-static-and-fo
 grokcore.component svn://svn.zope.org/repos/main/grokcore.component/trunk
 grokcore.view svn://svn.zope.org/repos/main/grokcore.view/branches/sylvain-five-grok-static
 grokcore.formlib svn://svn.zope.org/repos/main/grokcore.formlib/trunk
-grokcore.security svn://svn.zope.org/repos/main/grokcore.security/trunk
 martian svn://svn.zope.org/repos/main/martian/branches/infrae-multiple-nobase
-plone.z3cform svn://svn.zope.org/repos/main/plone.z3cform/branches/infrae-grok
+megrok.z3cform svn://svn.zope.org/repos/main/megrok.z3cform/trunk
+five.megrok.z3cform svn://svn.zope.org/repos/main/five.megrok.z3cform/trunk
 
 # Silva eggs
 Products.Silva https://svn.infrae.com/Products.Silva/trunk
@@ -24,7 +24,6 @@ Products.SilvaLayout https://svn.infrae.com/Products.SilvaLayout/trunk
 # Silva support
 Products.Formulator  https://svn.infrae.com/Products.Formulator/trunk
 Products.ProxyIndex https://svn.infrae.com/Products.ProxyIndex/trunk
-
 
 # Others
 five.intid https://svn.plone.org/svn/collective/five.intid/branch/sylvain-generic-ignore 
