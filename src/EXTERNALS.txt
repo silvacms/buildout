@@ -22,7 +22,6 @@ Products.SilvaMetadata https://svn.infrae.com/Products.SilvaMetadata/trunk
 Products.SilvaViews https://svn.infrae.com/Products.SilvaViews/trunk
 Products.SilvaLayout https://svn.infrae.com/Products.SilvaLayout/trunk
 Products.SilvaKupu https://svn.infrae.com/Products.SilvaKupu/trunk
-Sprout https://svn.infrae.com/Sprout/trunk
 
 # Silva support
 Products.Annotations https://svn.infrae.com/Products.Annotations/trunk
@@ -32,6 +31,14 @@ Products.FileSystemSite https://svn.infrae.com/Products.FileSystemSite/trunk
 Products.ParsedXML https://svn.infrae.com/Products.ParsedXML/tags/Products.ParsedXML-1.5
 Products.ProxyIndex https://svn.infrae.com/Products.ProxyIndex/trunk
 Products.XMLWidgets https://svn.infrae.com/Products.XMLWidgets/trunk
+Sprout https://svn.infrae.com/Sprout/trunk
+
+# Silva extension
+Products.SilvaForum https://svn.infrae.com/Products.SilvaForum/trunk
+Products.SilvaMailing https://svn.infrae.com/Products.SilvaMailing/trunk
+Products.SilvaPoll https://svn.infrae.com/Products.SilvaPoll/trunk
+Products.SilvaNews https://svn.infrae.com/Products.SilvaNews/trunk
+z3locales https://svn.infrae.com/z3locales/trunk
 
 # Others
 five.intid https://svn.plone.org/svn/collective/five.intid/branch/sylvain-generic-ignore 
