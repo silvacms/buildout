@@ -1,0 +1,35 @@
+<html>
+<head>
+  <title tal:content="structure view/title"/>
+  <link tal:replace="structure here/head_inject | nothing" />
+  <link rel="stylesheet" type="text/css" media="all"
+        tal:attributes="href here/frontend.css/absolute_url | nothing" />
+  <link rel="stylesheet" href="#"
+        tal:attributes="href string:${context/absolute_url}/++resource++css/ploneCustom.css" />
+
+  <style>
+  div.form-field {
+    font-size: 12px;
+  }
+  </style>
+</head>
+  <body>
+    <!-- start header slot -->
+    <div id="portal-top" style="background: #f2f2f2 url(http://infrae.com:8080/silva/images/header_top_bg.gif) top left repeat-x;">
+      <div id="portal-logo" style="background: url(http://infrae.com:8080/silva/images/header_logo.gif) no-repeat;
+                                  padding-bottom: 12px;">
+      </div>  
+    </div>
+    <div id="portal-bottom">
+    </div>
+    <!-- End header slot -->
+  <div class="public">
+    <div id="ArticleContent" width="100%">
+      <tal:insert tal:content="structure view/render">
+        <!-- this comment gets replaced by the Silva document content -->
+      </tal:insert>
+    </div>
+  </div>
+  </body>
+</html>
+
