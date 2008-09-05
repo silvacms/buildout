@@ -69,7 +69,7 @@ Assuming that your Python is in ``/usr/bin/python2.4``, you would run
 this command to bootstrap your Buildout.  Remember that you only have
 to run this the first time that you're doing the build::
 
-  /usr/bin/python2.4 bootstrap/bootstrap.py
+  /usr/bin/python2.4 bootstrap.py
 
 We use python2.4 here as we are using zope 2.10.x which requires python 2.4
 
