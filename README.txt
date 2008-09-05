@@ -94,6 +94,11 @@ from your Silva-buildout-trunk directory, run:
 
     bin/zopeinstance 
 
+you can log in to your zope with the default Zope user
+'admin'/'admin'. It's probably a good idea to change the password
+earlier, rather than later, and definitely before you allow access to
+your site from anywhere but your own machine.
+
 
 Directory structure
 ===================
@@ -123,3 +128,4 @@ buildout again, thanks to the ``infrae.subversion`` buildout recipe.
 If you're developing your own Products, place your Products into the
 ``products-overrides`` directory.  This directory isn't ever touched
 by the buildout.
+
