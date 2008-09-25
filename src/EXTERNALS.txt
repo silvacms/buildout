@@ -35,7 +35,6 @@ Products.SilvaForum https://svn.infrae.com/Products.SilvaForum/trunk
 Products.SilvaMailing https://svn.infrae.com/Products.SilvaMailing/trunk
 Products.SilvaPoll https://svn.infrae.com/Products.SilvaPoll/trunk
 Products.SilvaNews https://svn.infrae.com/Products.SilvaNews/trunk
-z3locales https://svn.infrae.com/z3locales/trunk
 
 # Others
 five.intid https://svn.plone.org/svn/collective/five.intid/branch/sylvain-generic-ignore 
