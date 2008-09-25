@@ -1,4 +1,4 @@
-# svn propset svn:externals -F EXTERNALS.txt . 
+# svn propset svn:externals -F EXTERNALS.txt .
 # Generic Silva eggs
 silva.core.conf https://svn.infrae.com/silva.core.conf/trunk
 silva.core.layout https://svn.infrae.com/silva.core.layout/trunk
@@ -28,7 +28,6 @@ Products.FileSystemSite https://svn.infrae.com/Products.FileSystemSite/trunk
 Products.ParsedXML https://svn.infrae.com/Products.ParsedXML/tags/Products.ParsedXML-1.5
 Products.ProxyIndex https://svn.infrae.com/Products.ProxyIndex/trunk
 Products.XMLWidgets https://svn.infrae.com/Products.XMLWidgets/trunk
-Sprout https://svn.infrae.com/Sprout/trunk
 
 # Silva extension
 Products.SilvaForum https://svn.infrae.com/Products.SilvaForum/trunk
