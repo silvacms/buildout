@@ -14,15 +14,11 @@ Products.Silva https://svn.infrae.com/Products.Silva/trunk
 Products.SilvaDocument https://svn.infrae.com/Products.SilvaDocument/trunk
 Products.SilvaExternalSources https://svn.infrae.com/Products.SilvaExternalSources/trunk
 Products.SilvaFind https://svn.infrae.com/Products.SilvaFind/trunk
-Products.SilvaMetadata https://svn.infrae.com/Products.SilvaMetadata/trunk
-Products.SilvaViews https://svn.infrae.com/Products.SilvaViews/trunk
 Products.SilvaLayout https://svn.infrae.com/Products.SilvaLayout/trunk
 Products.SilvaKupu https://svn.infrae.com/Products.SilvaKupu/trunk
 
 # Silva support
 Products.Groups https://svn.infrae.com/Products.Groups/trunk
-Products.Formulator https://svn.infrae.com/Products.Formulator/trunk
-Products.FileSystemSite https://svn.infrae.com/Products.FileSystemSite/trunk
 
 # Silva extension
 Products.SilvaForum https://svn.infrae.com/Products.SilvaForum/trunk
