@@ -24,4 +24,3 @@ Products.SilvaNews https://svn.infrae.com/Products.SilvaNews/trunk
 
 # Others
 five.resourceinclude svn://svn.zope.org/repos/main/five.resourceinclude/trunk
-z3c.resourceinclude svn://svn.zope.org/repos/main/z3c.resourceinclude/trunk
