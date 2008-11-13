@@ -4,9 +4,9 @@ silva.core.conf https://svn.infrae.com/silva.core.conf/trunk
 silva.core.layout https://svn.infrae.com/silva.core.layout/trunk
 silva.core.views https://svn.infrae.com/silva.core.views/trunk
 silva.core.smi https://svn.infrae.com/silva.core.smi/trunk
+silva.resourceinclude https://svn.infrae.com/silva.resourceinclude/trunk
 
 # Grok support
-five.grok svn://svn.zope.org/repos/main/five.grok/trunk
 megrok.z3cform svn://svn.zope.org/repos/main/megrok.z3cform/trunk
 five.megrok.z3cform svn://svn.zope.org/repos/main/five.megrok.z3cform/trunk
 
@@ -22,5 +22,3 @@ Products.SilvaMailing https://svn.infrae.com/Products.SilvaMailing/trunk
 Products.SilvaPoll https://svn.infrae.com/Products.SilvaPoll/trunk
 Products.SilvaNews https://svn.infrae.com/Products.SilvaNews/trunk
 
-# Others
-five.resourceinclude svn://svn.zope.org/repos/main/five.resourceinclude/trunk
