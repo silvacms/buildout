@@ -14,19 +14,19 @@ http://pypi.python.org/pypi/zc.buildout
 Use
 ===
 
-Check out the buildout of the Silva 2.1
----------------------------------------
+Check out the buildout of the Silva 2.1.1
+-----------------------------------------
 
-You can use svn to get Silva 2.1::
+You can use svn to get Silva 2.1.1::
 
-  $ svn co https://svn.infrae.com/buildout/silva/tag/Silva-2.1 Silva-2.1
+  $ svn co https://svn.infrae.com/buildout/silva/tag/Silva-2.1.1 Silva-2.1.1
 
 Go into your "checkout"
 -----------------------
 
 Like this::
 
-  $  cd Silva-2.1
+  $  cd Silva-2.1.1
 
 Make a buildout profile
 -----------------------
@@ -76,7 +76,7 @@ Assuming that your Python  is in ``/usr/bin/python2.4``, you would run
 this command to bootstrap your  buildout.  Remember that you only have
 to run this the first time that you're doing the build::
 
-  $ python2.4 bootstrap/bootstrap.py
+  $ python2.4 bootstrap.py
 
 We  use python2.4  here as  we are  using zope  2.11.x  which requires
 python 2.4.
@@ -107,7 +107,6 @@ or if you want to keep it in debug mode::
 
 to run in debug mode in the foreground.
 
-
 Directory structure
 ===================
 
@@ -122,7 +121,6 @@ and backing up the ZODB respectively.
 
 Another directory of interest is ``var/filestorage``, which holds the
 ZODB file(s).  ``var/log`` contains the Zope logfiles.
-
 
 Developing with this buildout
 =============================
