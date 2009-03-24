@@ -14,19 +14,19 @@ http://pypi.python.org/pypi/zc.buildout
 Use
 ===
 
-Check out the buildout of the Silva 2.0
+Check out the buildout of the Silva 2.0.13
 ---------------------------------------
 
-You can use svn to get Silva 2.0::
+You can use svn to get Silva 2.0.13::
 
-  $ svn co https://svn.infrae.com/buildout/silva/branch/Silva-2.0 Silva-2.0
+  $ svn co https://svn.infrae.com/buildout/silva/branch/Silva-2.0.13 Silva
 
 Go into your "checkout"
 -----------------------
 
 Like this::
 
-  $  cd Silva-2.0
+  $  cd Silva
 
 Make a buildout profile
 -----------------------
