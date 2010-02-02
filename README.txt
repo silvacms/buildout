@@ -9,7 +9,12 @@ The Silva Buildout allows you to conveniently set up Zope servers both
 for development and production environments.
 
 General documentation for Buildout can be found here:
-http://pypi.python.org/pypi/zc.buildout
+
+  http://pypi.python.org/pypi/zc.buildout
+
+You can have more information about installing Silva using buildout at:
+
+  http://docs.infrae.com/silva/buildout.html
 
 Use
 ===
@@ -53,16 +58,17 @@ Create a buildout configuration file or use the initial one as a base
 
 Then optionally edit buildout.cfg to suit your needs.
 
-De initial buildout configuration extends the development profile called development.cfg
-which you can find in the profiles folder. In most cases this is the profile you
-want to use while developing. But you can also use another profile located in the
-profiles folder if you want. 
+De initial buildout configuration extends the development profile
+called development.cfg which you can find in the profiles folder. In
+most cases this is the profile you want to use while developing. But
+you can also use another profile located in the profiles folder if you
+want.
 
 Bootstrap everything
 --------------------
 
 When you run the Buildout for the first time, you must run the
-``bootstrap/bootstrap.py`` script.  Important: This script must be run
+``bootstrap.py`` script.  Important: This script must be run
 with the Python interpreter that you intend to use for your Zope.
 
 Assuming that your Python is in ``/usr/bin/python2.4``, you would run
@@ -71,7 +77,8 @@ to run this the first time that you're doing the build::
 
   /usr/bin/python2.4 bootstrap.py
 
-We use python2.4 here as we are using zope 2.10.x which requires python 2.4
+We use python2.4 here as we are using zope 2.11.x which requires
+python 2.4.
 
 Run the buildout script
 -----------------------
@@ -92,7 +99,7 @@ Run your zope
 
 from your Silva-buildout-trunk directory, run:
 
-    bin/zopeinstance 
+    bin/instance
 
 you can log in to your zope with the default Zope user
 'admin'/'admin'. It's probably a good idea to change the password
