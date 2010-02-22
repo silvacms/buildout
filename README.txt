@@ -17,12 +17,12 @@ Use
 Check out the buildout of the Silva trunk
 -----------------------------------------
 
-    svn co https://svn.infrae.com/buildout/silva/trunk/ Silva-buildout-trunk
+  $ svn co https://svn.infrae.com/buildout/silva/trunk/ Silva
 
 Go into your "checkout"
 -----------------------
 
-    cd Silva-buildout-trunk
+  $ cd Silva
 
 Make a buildout profile
 -----------------------
@@ -49,9 +49,9 @@ through ``base.cfg`` and only overridden where necessary.
 Create a buildout configuration file or use the initial one as a base
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    cp buildout.cfg.in buildout.cfg
+  $ cp buildout.cfg.in buildout.cfg
 
-Then optionally edit buildout.cfg to suit your needs.
+Then optionally edit ``buildout.cfg`` to suit your needs.
 
 De initial buildout configuration extends the development profile
 called development.cfg which you can find in the profiles folder. In
@@ -70,9 +70,9 @@ Assuming that your Python is in ``/usr/bin/python2.6``, you would run
 this command to bootstrap your Buildout.  Remember that you only have
 to run this the first time that you're doing the build::
 
-  /usr/bin/python2.6 bootstrap.py
+  $ python2.6 bootstrap.py
 
-We use python2.6 here as we are using zope 2.12.x which requires
+We use python2.6 here as we are using Zope 2.12.x which requires
 Python 2.6.
 
 Run the buildout script
@@ -81,9 +81,9 @@ Run the buildout script
 This bootstrapping will create a ``bin/buildout`` script which you now
 use to start the actual build.  This can take a while::
 
-from your Silva-buildout-trunk directory, run:
+From your ``Silva`` directory, run:
 
-  bin/buildout
+  $ bin/buildout
 
 Whenever you update your configuration, you must rerun
 ``bin/buildout``, which will update all components and underlying
@@ -92,11 +92,11 @@ configuration files for you.
 Run your zope
 -------------
 
-from your Silva-buildout-trunk directory, run:
+From your ``Silva`` directory, run:
 
-    bin/zopeinstance
+  $ bin/paster serve deploy.ini
 
-you can log in to your zope with the default Zope user
+You can log in to your zope with the default Zope user
 'admin'/'admin'. It's probably a good idea to change the password
 earlier, rather than later, and definitely before you allow access to
 your site from anywhere but your own machine.
@@ -126,8 +126,4 @@ Silva.  You'll find checkouts of the individual Silva components in
 the ``parts`` subdirectory in the buildout.  This directory will be
 preserved in case you accidentally leave changes in there and run the
 buildout again, thanks to the ``infrae.subversion`` buildout recipe.
-
-If you're developing your own Products, place your Products into the
-``products-overrides`` directory.  This directory isn't ever touched
-by the buildout.
 
