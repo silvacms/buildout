@@ -96,6 +96,10 @@ From your ``Silva`` directory, run:
 
   $ bin/paster serve deploy.ini
 
+Or to run in debug mode, run:
+
+  $ bin/paster serve debug.ini
+
 You can log in to your zope with the default Zope user
 'admin'/'admin'. It's probably a good idea to change the password
 earlier, rather than later, and definitely before you allow access to
