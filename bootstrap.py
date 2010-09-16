@@ -3,9 +3,10 @@ $Id$
 """
 
 from optparse import OptionParser
-from subprocess import call
+import atexit
 import os
 import shutil
+import subprocess
 import sys
 import tempfile
 import urllib2
@@ -33,7 +34,63 @@ parser.add_option(
 
 options, args = parser.parse_args()
 
-buildout_requirement = 'zc.buildout == %s' % options.buildout_version
+bin_dir = 'bin'
+if sys.platform.startswith('win'):
+    bin_dir = 'Scripts'
+
+tmp_eggs = tempfile.mkdtemp()
+atexit.register(shutil.rmtree, tmp_eggs)
+to_reload = False
+try:
+    import pkg_resources
+    # Verify it is distribute
+    if not hasattr(pkg_resources, '_distribute'):
+        to_reload = True
+        raise ImportError
+except ImportError:
+    ez = {}
+    exec urllib2.urlopen('http://python-distribute.org/distribute_setup.py'
+                         ).read() in ez
+    ez['use_setuptools'](to_dir=tmp_eggs, download_delay=0, no_fake=True)
+
+    if to_reload:
+        reload(pkg_resources)
+    else:
+        import pkg_resources
+
+
+def install(requirement):
+    print "Installing %s ..." % requirement
+    cmd = 'from setuptools.command.easy_install import main; main()'
+    if sys.platform == 'win32':
+        cmd = '"%s"' % cmd # work around spawn lamosity on windows
+    distribute_path = pkg_resources.working_set.find(
+        pkg_resources.Requirement.parse('distribute')).location
+    if subprocess.call(
+        [sys.executable, '-c', cmd, '-mqNxd', tmp_eggs, requirement],
+        env={'PYTHONPATH': distribute_path}, stdout=subprocess.PIPE):
+        sys.stderr.write(
+            "\n\nFatal error while installing %s\n" % requirement)
+        sys.exit(1)
+
+    pkg_resources.working_set.add_entry(tmp_eggs)
+    pkg_resources.working_set.require(requirement)
+
+
+if options.virtualenv:
+    python_path = os.path.join(bin_dir, os.path.basename(sys.executable))
+    if not os.path.isfile(python_path):
+        install('virtualenv >= 1.5')
+        import virtualenv
+        print "Running virtualenv"
+        args = sys.argv[:]
+        sys.argv = ['bootstrap', os.getcwd(),
+                    '--clear', '--no-site-package', '--distribute']
+        virtualenv.main()
+        subprocess.call([python_path] + args)
+        sys.exit(0)
+
+
 if options.profile:
     if not os.path.isfile(options.profile):
         sys.stderr.write('No such profile file: %s\n' % options.profile)
@@ -46,66 +103,17 @@ extends = %s
 """ % options.profile)
     config.close()
 
-if sys.platform.startswith('win'):
-    bin_dir = 'Scripts'
-else:
-    bin_dir = 'bin'
 
-python_path = os.path.join(bin_dir, os.path.basename(sys.executable))
-tmpeggs = tempfile.mkdtemp()
-to_reload = False
-try:
-    import pkg_resources
-    # Verify it is distribute
-    if not hasattr(pkg_resources, '_distribute'):
-        to_reload = True
-        raise ImportError
-except ImportError:
-    ez = {}
-    exec urllib2.urlopen('http://python-distribute.org/distribute_setup.py'
-                         ).read() in ez
-    ez['use_setuptools'](to_dir=tmpeggs, download_delay=0, no_fake=True)
-
-    if to_reload:
-        reload(pkg_resources)
-    else:
-        import pkg_resources
-
-cmd = 'from setuptools.command.easy_install import main; main()'
-if sys.platform == 'win32':
-    cmd = '"%s"' % cmd # work around spawn lamosity on windows
-
-ws = pkg_resources.working_set
-assert os.spawnle(
-    os.P_WAIT, sys.executable, sys.executable,
-    '-c', cmd, '-mqNxd', tmpeggs, buildout_requirement, 'virtualenv >= 1.5',
-    dict(os.environ,
-         PYTHONPATH=
-         ws.find(pkg_resources.Requirement.parse('distribute')).location
-         ),
-    ) == 0
-
-ws.add_entry(tmpeggs)
-if options.virtualenv and not os.path.isfile(python_path):
-    ws.require('virtualenv')
-    import virtualenv
-    args = sys.argv[:]
-    sys.argv = ['bootstrap', os.getcwd(),
-                '--clear', '--no-site-package', '--distribute']
-    virtualenv.main()
-    call(python_path + ' ' + ' '.join(args), shell=True)
-    sys.exit(0)
-
-ws.require(buildout_requirement)
+install('zc.buildout == %s' % options.buildout_version)
 import zc.buildout.buildout
 zc.buildout.buildout.main(['-c', options.config, 'bootstrap'])
-shutil.rmtree(tmpeggs)
+
 
 if options.install:
     print "Start installation ..."
     # Run install
-    call(sys.executable + ' ' + ' '.join(
-            [os.path.join(bin_dir, 'buildout'),
-             '-c', options.config, 'install']),
-         shell=True)
+    subprocess.call(
+        [sys.executable, os.path.join(bin_dir, 'buildout'),
+         '-c', options.config, 'install'])
+
 sys.exit(0)
