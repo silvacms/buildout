@@ -1,64 +1,58 @@
-##############################################################################
-#
-# Copyright (c) 2006 Zope Corporation and Contributors.
-# All Rights Reserved.
-#
-# This software is subject to the provisions of the Zope Public License,
-# Version 2.1 (ZPL).  A copy of the ZPL should accompany this distribution.
-# THIS SOFTWARE IS PROVIDED "AS IS" AND ANY AND ALL EXPRESS OR IMPLIED
-# WARRANTIES ARE DISCLAIMED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-# WARRANTIES OF TITLE, MERCHANTABILITY, AGAINST INFRINGEMENT, AND FITNESS
-# FOR A PARTICULAR PURPOSE.
-#
-##############################################################################
-"""Bootstrap a buildout-based project
-
-Simply run this script in a directory containing a buildout.cfg.
-The script accepts buildout command-line options, so you can
-use the -c option to specify an alternate configuration file.
-
+"""Bootstrap a buildout-based project.
 $Id$
 """
 
+from optparse import OptionParser
+from subprocess import call
 import os
 import shutil
 import sys
 import tempfile
 import urllib2
 
-buildout_version = '1.4.4'
-tmpeggs = tempfile.mkdtemp()
+parser = OptionParser(usage="python bootstrap.py\n\n"
+                      "Bootstrap the installation process.",
+                      version="bootstrap.py $Revision$")
+parser.add_option(
+    "--buildout-config", dest="config", default="buildout.cfg",
+    help="specify buildout configuration file to use, default to buildout.cfg")
+parser.add_option(
+    "--buildout-profile", dest="profile",
+    help="specify a buildout profile to extends as configuration")
+parser.add_option(
+    "--buildout-version", dest="buildout_version", default="1.4.4",
+    help="specify Version of zc.buildout to use, default to 1.4.4")
+parser.add_option(
+    "--install", dest="install", action="store_true", default=False,
+    help="directly start the install process after bootstrap")
+parser.add_option(
+    "--virtualenv", dest="virtualenv", action="store_true", default=False,
+    help="create a virtualenv to install the software. " \
+        "This is recommended if you don't need to rely on globally installed " \
+        "libraries")
 
-enable_virtualenv = False
-if '--virtualenv' in sys.argv:
-    enable_virtualenv = True
-    sys.argv.remove('--virtualenv')
+options, args = parser.parse_args()
 
-if '--buildout-profile' in sys.argv:
-    index = sys.argv.index('--buildout-profile') + 1
-    if index > len(sys.argv):
-        raise ValueError, '--buildout-profile require a config file.'
-    buildout_config = sys.argv[index]
-    if not os.path.isfile(buildout_config):
-        raise ValueError, 'no such configuration file.'
+buildout_requirement = 'zc.buildout == %s' % options.buildout_version
+if options.profile:
+    if not os.path.isfile(options.profile):
+        sys.stderr.write('No such profile file: %s\n' % options.profile)
+        sys.exit(1)
 
-    print "Creating configuration '%s'" % os.path.abspath('buildout.cfg')
-    config = open('buildout.cfg', 'w')
+    print "Creating configuration '%s'" % os.path.abspath(options.config)
+    config = open(options.config, 'w')
     config.write("""[buildout]
 extends = %s
-""" % buildout_config)
-    del config
-
-    sys.argv.remove('--buildout-profile')
-    sys.argv.remove(buildout_config)
-
+""" % options.profile)
+    config.close()
 
 if sys.platform.startswith('win'):
     bin_dir = 'Scripts'
 else:
     bin_dir = 'bin'
-python_path = os.path.join(bin_dir, os.path.basename(sys.executable))
 
+python_path = os.path.join(bin_dir, os.path.basename(sys.executable))
+tmpeggs = tempfile.mkdtemp()
 to_reload = False
 try:
     import pkg_resources
@@ -84,7 +78,7 @@ if sys.platform == 'win32':
 ws = pkg_resources.working_set
 assert os.spawnle(
     os.P_WAIT, sys.executable, sys.executable,
-    '-c', cmd, '-mqNxd', tmpeggs, 'zc.buildout==%s' % buildout_version, 'virtualenv',
+    '-c', cmd, '-mqNxd', tmpeggs, buildout_requirement, 'virtualenv >= 1.5',
     dict(os.environ,
          PYTHONPATH=
          ws.find(pkg_resources.Requirement.parse('distribute')).location
@@ -92,18 +86,26 @@ assert os.spawnle(
     ) == 0
 
 ws.add_entry(tmpeggs)
-if enable_virtualenv and not os.path.isfile(python_path):
+if options.virtualenv and not os.path.isfile(python_path):
     ws.require('virtualenv')
     import virtualenv
-    from subprocess import call
     args = sys.argv[:]
-    sys.argv = [sys.argv[0], os.getcwd(), '--clear', '--no-site-package']
+    sys.argv = ['bootstrap', os.getcwd(),
+                '--clear', '--no-site-package', '--distribute']
     virtualenv.main()
     call(python_path + ' ' + ' '.join(args), shell=True)
     sys.exit(0)
-    print 'exit'
 
-ws.require('zc.buildout==%s' % buildout_version)
+ws.require(buildout_requirement)
 import zc.buildout.buildout
-zc.buildout.buildout.main(['bootstrap'])
+zc.buildout.buildout.main(['-c', options.config, 'bootstrap'])
 shutil.rmtree(tmpeggs)
+
+if options.install:
+    print "Start installation ..."
+    # Run install
+    call(sys.executable + ' ' + ' '.join(
+            [os.path.join(bin_dir, 'buildout'),
+             '-c', options.config, 'install']),
+         shell=True)
+sys.exit(0)
