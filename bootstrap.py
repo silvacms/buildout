@@ -21,7 +21,7 @@ parser.add_option(
     help="specify a buildout profile to extends as configuration")
 parser.add_option(
     "--buildout-version", dest="buildout_version", default="1.4.4",
-    help="specify Version of zc.buildout to use, default to 1.4.4")
+    help="specify version of zc.buildout to use, default to 1.4.4")
 parser.add_option(
     "--install", dest="install", action="store_true", default=False,
     help="directly start the install process after bootstrap")
