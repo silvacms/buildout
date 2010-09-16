@@ -20,8 +20,13 @@ use the -c option to specify an alternate configuration file.
 $Id$
 """
 
-import os, os.path, shutil, sys, tempfile, urllib2
+import os
+import shutil
+import sys
+import tempfile
+import urllib2
 
+buildout_version = '1.4.4'
 tmpeggs = tempfile.mkdtemp()
 
 enable_virtualenv = False
@@ -54,15 +59,23 @@ else:
     bin_dir = 'bin'
 python_path = os.path.join(bin_dir, os.path.basename(sys.executable))
 
+to_reload = False
 try:
     import pkg_resources
+    # Verify it is distribute
+    if not hasattr(pkg_resources, '_distribute'):
+        to_reload = True
+        raise ImportError
 except ImportError:
     ez = {}
-    exec urllib2.urlopen('http://peak.telecommunity.com/dist/ez_setup.py'
+    exec urllib2.urlopen('http://python-distribute.org/distribute_setup.py'
                          ).read() in ez
-    ez['use_setuptools'](to_dir=tmpeggs, download_delay=0)
+    ez['use_setuptools'](to_dir=tmpeggs, download_delay=0, no_fake=True)
 
-    import pkg_resources
+    if to_reload:
+        reload(pkg_resources)
+    else:
+        import pkg_resources
 
 cmd = 'from setuptools.command.easy_install import main; main()'
 if sys.platform == 'win32':
@@ -71,10 +84,10 @@ if sys.platform == 'win32':
 ws = pkg_resources.working_set
 assert os.spawnle(
     os.P_WAIT, sys.executable, sys.executable,
-    '-c', cmd, '-mqNxd', tmpeggs, 'zc.buildout', 'virtualenv',
+    '-c', cmd, '-mqNxd', tmpeggs, 'zc.buildout==%s' % buildout_version, 'virtualenv',
     dict(os.environ,
          PYTHONPATH=
-         ws.find(pkg_resources.Requirement.parse('setuptools')).location
+         ws.find(pkg_resources.Requirement.parse('distribute')).location
          ),
     ) == 0
 
@@ -90,7 +103,7 @@ if enable_virtualenv and not os.path.isfile(python_path):
     sys.exit(0)
     print 'exit'
 
-ws.require('zc.buildout')
+ws.require('zc.buildout==%s' % buildout_version)
 import zc.buildout.buildout
-zc.buildout.buildout.main(sys.argv[1:] + ['bootstrap'])
+zc.buildout.buildout.main(['bootstrap'])
 shutil.rmtree(tmpeggs)
