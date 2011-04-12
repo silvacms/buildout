@@ -49,8 +49,8 @@ try:
         raise ImportError
 except ImportError:
     ez = {}
-    exec urllib2.urlopen('http://python-distribute.org/distribute_setup.py'
-                         ).read() in ez
+    exec urllib2.urlopen(
+        'http://dist.infrae.com/thirdparty/distribute_setup.py').read() in ez
     ez['use_setuptools'](to_dir=tmp_eggs, download_delay=0, no_fake=True)
 
     if to_reload:
