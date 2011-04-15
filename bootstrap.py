@@ -15,6 +15,9 @@ parser = OptionParser(usage="python bootstrap.py\n\n"
                       "Bootstrap the installation process.",
                       version="bootstrap.py $Revision$")
 parser.add_option(
+    "--setuptools", dest="setuptools", action='store_true',
+    help="use setuptools instead of distribute")
+parser.add_option(
     "--buildout-config", dest="config", default="buildout.cfg",
     help="specify buildout configuration file to use, default to buildout.cfg")
 parser.add_option(
@@ -44,14 +47,21 @@ to_reload = False
 try:
     import pkg_resources
     # Verify it is distribute
-    if not hasattr(pkg_resources, '_distribute'):
+    if ((not options.setuptools) and
+        (not hasattr(pkg_resources, '_distribute'))):
         to_reload = True
         raise ImportError
 except ImportError:
+    # Install setup tools or distribute
+    setup_url = 'http://dist.infrae.com/thirdparty/distribute_setup.py'
+    if options.setuptools:
+        setup_url = 'http://peak.telecommunity.com/dist/ez_setup.py'
     ez = {}
-    exec urllib2.urlopen(
-        'http://dist.infrae.com/thirdparty/distribute_setup.py').read() in ez
-    ez['use_setuptools'](to_dir=tmp_eggs, download_delay=0, no_fake=True)
+    ez_options = {'to_dir': tmp_eggs, 'download_delay': 0}
+    if not options.setuptools:
+        ez_options['no_fake'] = True
+    exec urllib2.urlopen(setup_url).read() in ez
+    ez['use_setuptools'](**ez_options)
 
     if to_reload:
         reload(pkg_resources)
