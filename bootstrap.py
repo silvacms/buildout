@@ -69,16 +69,24 @@ except ImportError:
         import pkg_resources
 
 
+def execute(cmd, env=None, stdout=None):
+    return subprocess.call(cmd, env=env, stdout=stdout)
+
+
 def install(requirement):
     print "Installing %s ..." % requirement
+    if options.setuptools:
+        egg = 'setuptools'
+    else:
+        egg = 'distribute'
     cmd = 'from setuptools.command.easy_install import main; main()'
     if sys.platform == 'win32':
         cmd = '"%s"' % cmd # work around spawn lamosity on windows
-    distribute_path = pkg_resources.working_set.find(
-        pkg_resources.Requirement.parse('distribute')).location
-    if subprocess.call(
+    cmd_path = pkg_resources.working_set.find(
+        pkg_resources.Requirement.parse(egg)).location
+    if execute(
         [sys.executable, '-c', cmd, '-mqNxd', tmp_eggs, requirement],
-        env={'PYTHONPATH': distribute_path}, stdout=subprocess.PIPE):
+        env={'PYTHONPATH': cmd_path}, stdout=subprocess.PIPE):
         sys.stderr.write(
             "\n\nFatal error while installing %s\n" % requirement)
         sys.exit(1)
@@ -97,7 +105,7 @@ if options.virtualenv:
         sys.argv = ['bootstrap', os.getcwd(),
                     '--clear', '--no-site-package', '--distribute']
         virtualenv.main()
-        subprocess.call([python_path] + args)
+        execute([python_path] + args)
         sys.exit(0)
 
 
@@ -122,7 +130,7 @@ zc.buildout.buildout.main(['-c', options.config, 'bootstrap'])
 if options.install:
     print "Start installation ..."
     # Run install
-    subprocess.call(
+    execute(
         [sys.executable, os.path.join(bin_dir, 'buildout'),
          '-c', options.config, 'install'])
 
