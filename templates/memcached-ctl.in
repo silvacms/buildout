@@ -1,0 +1,69 @@
+#!/bin/bash
+#
+# memcached    This shell script takes care of starting and stopping
+#              standalone memcached.
+#
+# chkconfig: - 98 02
+# description: memcached is a high-performance, distributed memory
+#              object caching system, generic in nature, but
+#              intended for use in speeding up dynamic web
+#              applications by alleviating database load.
+# processname: memcached
+# config: /etc/memcached.conf
+
+# Source function library.
+. /etc/rc.d/init.d/functions
+
+DAEMON=${buildout:parts-directory}/memcached/bin/memcached
+NAME=memcached
+DESC=memcached
+
+[ -x $DAEMON ] || exit 0
+
+RETVAL=0
+
+start() {
+	echo -n $"Starting $DESC: "
+	cur_uid=`id | cut -d'=' -f2 | cut -d'(' -f 1`
+	if [ "$cur_uid" -eq 0 ]
+	then
+		daemon --user=zope $DAEMON -d -m 512 
+	else
+		daemon $DAEMON -d -m 512
+	fi
+	RETVAL=$?
+	echo
+	return $RETVAL
+}
+
+stop() {
+	echo -n $"Shutting down $DESC: "
+	killproc $NAME
+	RETVAL=$?
+	echo
+	return $RETVAL
+}
+
+# See how we were called.
+case "$1" in
+	start)
+		start
+		;;
+	stop)
+		stop
+		;;
+	restart|reload)
+		stop
+		start
+		RETVAL=$?
+		;;
+	status)
+		status $NAME
+		RETVAL=$?
+		;;
+	*)
+		echo $"Usage: $0 {start|stop|restart|status}"
+		exit 1
+esac
+
+exit $RETVAL
