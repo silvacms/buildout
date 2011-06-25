@@ -7,8 +7,6 @@ UI
 
 - Search fix while adding
 
-- Silva.fanstatic update
-
 Document
 ========
 
