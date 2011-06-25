@@ -5,6 +5,13 @@ UI
 
 - approve for future
 
+- break reference
+
+- login form in popup
+
+UI / JS
+=======
+
 - filter fix while adding
 
 - disable drag and drop on filter
