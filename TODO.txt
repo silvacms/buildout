@@ -9,6 +9,10 @@ UI
 
 - disable drag and drop on filter
 
+- drag and drop delegate level
+
+- merge all dropdown using delegates
+
 Document
 ========
 
