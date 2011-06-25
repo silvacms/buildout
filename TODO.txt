@@ -9,6 +9,11 @@ UI
 
 - Silva.fanstatic update
 
+Document
+========
+
+- service_editor missing JS and CSS
+
 CS
 ==
 
