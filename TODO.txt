@@ -23,6 +23,8 @@ UI / JS
 Document
 ========
 
+- selection / edit for images, sources and anchors
+
 - service_editor missing JS and CSS
 
 CS
