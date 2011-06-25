@@ -27,6 +27,8 @@ Document
 
 - service_editor missing JS and CSS
 
+- race condition on the save question popup
+
 CS
 ==
 
