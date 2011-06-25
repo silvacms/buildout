@@ -3,9 +3,11 @@
 UI
 ==
 
-- Approve for future
+- approve for future
 
-- Search fix while adding
+- filter fix while adding
+
+- disable drag and drop on filter
 
 Document
 ========
