@@ -43,14 +43,14 @@ DONE - disable drag and drop on filter
 
 DONE - drag and drop delegate level
 
-- merge all dropdown using delegates
+DONE - merge all dropdown using delegates
 
 - prevent repeat on keys (ctrl-c)
 
 - on Zope restart invalidation is out of sync
 
-- goto button in folder listing JS fixes (close other while opening
-  one, prevent to get two on each other and bug)
+DONE - goto button in folder listing JS fixes (close other while opening
+    one, prevent to get two on each other and bug)
 
 Document
 ========
