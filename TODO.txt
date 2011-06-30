@@ -31,6 +31,8 @@ UI
 UI / JS
 =======
 
+- upload file leaking dialog
+
 - filter fix while adding
 
 - disable drag and drop on filter
