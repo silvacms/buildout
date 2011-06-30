@@ -56,7 +56,7 @@ Document
 
 - service_editor missing JS and CSS
 
-- race condition on the save question popup
+DONE - race condition on the save question popup
 
 - long code sources dialogs:
 
