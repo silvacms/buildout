@@ -1,5 +1,4 @@
 
-
 UI
 ==
 
@@ -7,7 +6,27 @@ UI
 
 - break reference
 
-- login form in popup
+- login form in popup / expired session
+
+- CSS portlet references
+
+- CSS access tab (user clipboard buttons / user roles)
+
+- add a clear on non-required datetime, scale, file
+
+- rename title:
+
+  - no invalidation
+
+  - no check if possible
+
+- report more information on action failures in listing
+
+- empty message in listing not added if you delete everything / filter
+  out everything.
+
+- goto button CSS issue if sub-label is too long
+
 
 UI / JS
 =======
@@ -20,16 +39,51 @@ UI / JS
 
 - merge all dropdown using delegates
 
+- prevent repeat on keys (ctrl-c)
+
+- on Zope restart invalidation is out of sync
+
+- goto button in folder listing JS fixes (close other while opening
+  one, prevent to get two on each other and bug)
+
 Document
 ========
 
-- selection / edit for images, sources and anchors
+- selection / edit for images, code sources and anchors: doesn't work
+  except in Firefox.
 
 - service_editor missing JS and CSS
 
 - race condition on the save question popup
 
-CS
-==
+- long code sources dialogs:
+
+  - clean parameters CSS / align: make them by default in the editor
+
+- unreadable icons (editor theme issue)
+
+- Silva index broken ?
+
+Image
+=====
+
+- cannot change title if not uploading a new image
+
+- cannot change size if not scale
+
+
+Ghost
+=====
+
+- Ghost Folder look in content (and infinite recursion on import)
+
+
+Find
+====
+
+- CSS: Fix lookup widget for directory
+
+Code sources
+============
 
 - CSS / JS option to external source
