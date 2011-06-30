@@ -33,11 +33,15 @@ UI / JS
 
 - upload file leaking dialog
 
+- keyboard scroll listing
+
+- keyboard change publishable<->asset
+
 - filter fix while adding
 
-- disable drag and drop on filter
+DONE - disable drag and drop on filter
 
-- drag and drop delegate level
+DONE - drag and drop delegate level
 
 - merge all dropdown using delegates
 
