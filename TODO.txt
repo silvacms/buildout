@@ -33,6 +33,9 @@ UI
 
 - goto button CSS issue if sub-label is too long
 
+- uniform icons
+
+- reference widget add screen
 
 UI / JS
 =======
@@ -98,6 +101,9 @@ Ghost
 =====
 
 - Ghost Folder look in content (and infinite recursion on import)
+
+- On a ghost you can set a the same ghost as target (and make an
+  infinite recursion)
 
 
 Find
