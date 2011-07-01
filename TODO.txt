@@ -39,6 +39,8 @@ UI / JS
 
 - leaking dialog
 
+    - reference lookup
+
     - upload
 
     DONE - form
