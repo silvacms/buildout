@@ -12,7 +12,13 @@ UI
 
 - CSS access tab (user clipboard buttons / user roles)
 
-- add a clear on non-required datetime, scale, file
+- add a clear on non-required
+
+   - file upload
+
+   - datetime
+
+   DONE - cropping
 
 - rename title:
 
@@ -31,7 +37,15 @@ UI
 UI / JS
 =======
 
-- upload file leaking dialog
+- leaking dialog
+
+    - upload
+
+    DONE - form
+
+    DONE - confirmation
+
+    DONE - cropping
 
 - keyboard scroll listing
 
