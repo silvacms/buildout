@@ -37,20 +37,14 @@ UI
 
 - reference widget add screen
 
+- ValueError on forms: upload not an image
+
+- image (thumbnail) cache smi
+
+- homogeinise dialog buttons
+
 UI / JS
 =======
-
-- leaking dialog
-
-    - reference lookup
-
-    - upload
-
-    DONE - form
-
-    DONE - confirmation
-
-    DONE - cropping
 
 - keyboard scroll listing
 
@@ -58,15 +52,27 @@ UI / JS
 
 - filter fix while adding
 
+- prevent repeat on keys (ctrl-c)
+
+- on Zope restart invalidation is out of sync
+
+DONE - leaking dialog
+
+    DONE - reference lookup
+
+    DONE - upload
+
+    DONE - form
+
+    DONE - confirmation
+
+    DONE - cropping
+
 DONE - disable drag and drop on filter
 
 DONE - drag and drop delegate level
 
 DONE - merge all dropdown using delegates
-
-- prevent repeat on keys (ctrl-c)
-
-- on Zope restart invalidation is out of sync
 
 DONE - goto button in folder listing JS fixes (close other while opening
     one, prevent to get two on each other and bug)
