@@ -37,11 +37,7 @@ UI
 
 - reference widget add screen
 
-- ValueError on forms: upload not an image
-
-- image (thumbnail) cache smi
-
-- homogeinise dialog buttons
+- homogenize dialog buttons
 
 UI / JS
 =======
@@ -98,9 +94,13 @@ DONE - race condition on the save question popup
 Image
 =====
 
-- cannot change title if not uploading a new image
+DONE - cannot change title if not uploading a new image
 
-- cannot change size if not scale
+DONE - cannot change size if not scale
+
+DONE - ValueError on forms: upload not an image
+
+- image (thumbnail) cache smi
 
 
 Ghost
