@@ -33,11 +33,12 @@ UI
 
 - goto button CSS issue if sub-label is too long
 
-- uniform icons
-
 - reference widget add screen
 
 - homogenize dialog buttons
+
+DONE - homogenize icons
+
 
 UI / JS
 =======
