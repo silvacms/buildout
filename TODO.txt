@@ -35,7 +35,7 @@ UI
 
 - reference widget add screen
 
-- homogenize dialog buttons
+DONE - homogenize dialog buttons
 
 DONE - homogenize icons
 
