@@ -6,8 +6,6 @@ UI
 
 - break reference
 
-- login form in popup / expired session
-
 - CSS portlet references
 
 - CSS access tab (user clipboard buttons / user roles)
@@ -34,6 +32,8 @@ UI
 - goto button CSS issue if sub-label is too long
 
 - reference widget add screen
+
+DONE - login form in popup / expired session
 
 DONE - homogenize dialog buttons
 
@@ -116,7 +116,7 @@ Ghost
 Find
 ====
 
-- CSS: Fix lookup widget for directory
+DONE - CSS: Fix lookup widget for directory
 
 Code sources
 ============
