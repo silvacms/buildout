@@ -12,7 +12,7 @@ UI
 
    - file upload
 
-   - datetime
+   DONE - datetime
 
    DONE - cropping
 
