@@ -4,8 +4,6 @@ UI
 
 - approve for future
 
-- break reference
-
 - CSS portlet references
 
 - CSS access tab (user clipboard buttons / user roles)
@@ -33,6 +31,8 @@ UI
 
 - reference widget add screen
 
+DONE - break reference
+
 DONE - login form in popup / expired session
 
 DONE - homogenize dialog buttons
@@ -42,6 +42,8 @@ DONE - homogenize icons
 
 UI / JS
 =======
+
+- form enter default action
 
 - keyboard scroll listing
 
