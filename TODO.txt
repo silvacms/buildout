@@ -27,9 +27,9 @@ UI
 - empty message in listing not added if you delete everything / filter
   out everything.
 
-- goto button CSS issue if sub-label is too long
-
 - reference widget add screen
+
+DONE - goto button CSS issue if sub-label is too long
 
 DONE - break reference
 
