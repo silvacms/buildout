@@ -92,6 +92,8 @@ DONE - goto button in folder listing JS fixes (close other while opening
 Document
 ========
 
+- reference edit / multiple reference
+
 - selection / edit for images, code sources and anchors: doesn't work
   except in Firefox.
 
