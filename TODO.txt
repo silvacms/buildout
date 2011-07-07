@@ -4,6 +4,8 @@ UI
 
 - approve for future
 
+- theme jGrowl correctly
+
 - CSS portlet references
 
 - CSS access tab (user clipboard buttons / user roles)
@@ -27,6 +29,14 @@ UI
 - empty message in listing not added if you delete everything / filter
   out everything.
 
+- formulator datetime ?
+
+- publish drop-down menu fixing ?
+
+- form change notification
+
+- edit icons
+
 - reference widget add screen
 
 DONE - goto button CSS issue if sub-label is too long
@@ -43,8 +53,6 @@ DONE - homogenize icons
 UI / JS
 =======
 
-- form enter default action
-
 - keyboard scroll listing
 
 - keyboard change publishable<->asset
@@ -54,6 +62,8 @@ UI / JS
 - prevent repeat on keys (ctrl-c)
 
 - on Zope restart invalidation is out of sync
+
+DONE - form enter default action
 
 DONE - leaking dialog
 
