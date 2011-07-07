@@ -33,6 +33,9 @@ UI
 
 - publish drop-down menu fixing ?
 
+- tab not found shall redirect to content if it is not content that is
+  not found.
+
 - form change notification
 
 - edit icons
@@ -134,3 +137,19 @@ Code sources
 ============
 
 - CSS / JS option to external source
+
+
+News
+====
+
+(Both regular article and agenda item)
+
+- Filter / Viewer add form must have edit fields
+
+- Filter jsTree widget broken
+
+- Filter items batch normal (and by month year on Agenda Filter)
+
+- Filter add dummy view
+
+- Article edit properties on tab named X
