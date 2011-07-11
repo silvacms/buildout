@@ -6,8 +6,6 @@ UI
 
 - theme jGrowl correctly
 
-- CSS portlet references
-
 - CSS access tab (user clipboard buttons / user roles)
 
 - add a clear on non-required
@@ -38,9 +36,11 @@ UI
 
 - form change notification
 
-- edit icons
+DONE - edit icons
 
 - reference widget add screen
+
+DONE - CSS portlet references
 
 DONE - goto button CSS issue if sub-label is too long
 
@@ -92,6 +92,8 @@ DONE - goto button in folder listing JS fixes (close other while opening
 Document
 ========
 
+- code source error on preview
+
 - reference edit / multiple reference
 
 - selection / edit for images, code sources and anchors: doesn't work
@@ -101,9 +103,9 @@ Document
 
 DONE - race condition on the save question popup
 
-- long code sources dialogs:
+DONE - long code sources dialogs:
 
-  - clean parameters CSS / align: make them by default in the editor
+DONE   - clean parameters CSS / align: make them by default in the editor
 
 - unreadable icons (editor theme issue)
 
