@@ -148,9 +148,9 @@ News
 
 (Both regular article and agenda item)
 
-- Filter / Viewer add form must have edit fields
+DONE - Filter / Viewer add form must have edit fields
 
-- Filter jsTree widget broken
+DONE - Filter jsTree widget broken
 
 - Filter items batch normal (and by month year on Agenda Filter)
 
