@@ -31,14 +31,14 @@ UI
 
 - publish drop-down menu fixing ?
 
-- tab not found shall redirect to content if it is not content that is
-  not found.
-
 - form change notification
 
-DONE - edit icons
+DONE - reference widget add screen
 
-- reference widget add screen
+DONE - tab not found shall redirect to content if it is not content that is
+   not found.
+
+DONE - edit icons
 
 DONE - CSS portlet references
 
