@@ -16,6 +16,8 @@ UI
 
    DONE - cropping
 
+- reorder fail case
+
 - rename title:
 
   - no invalidation
