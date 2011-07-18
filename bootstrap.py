@@ -71,7 +71,7 @@ if sys.platform == 'win32':
 ws = pkg_resources.working_set
 assert os.spawnle(
     os.P_WAIT, sys.executable, sys.executable,
-    '-c', cmd, '-mqNxd', tmpeggs, 'zc.buildout', 'virtualenv',
+    '-c', cmd, '-mqNxd', tmpeggs, 'zc.buildout', 'virtualenv==1.5.1',
     dict(os.environ,
          PYTHONPATH=
          ws.find(pkg_resources.Requirement.parse('setuptools')).location
