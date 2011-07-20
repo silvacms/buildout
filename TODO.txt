@@ -58,8 +58,6 @@ DONE - homogenize icons
 UI / JS
 =======
 
-- keyboard scroll listing
-
 - keyboard change publishable<->asset
 
 - filter fix while adding
@@ -67,6 +65,8 @@ UI / JS
 - prevent repeat on keys (ctrl-c)
 
 - on Zope restart invalidation is out of sync
+
+DONE - keyboard scroll listing
 
 DONE - form enter default action
 
