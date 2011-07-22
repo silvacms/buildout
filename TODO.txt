@@ -96,12 +96,12 @@ Document
 
 - code source error on preview
 
-- reference edit / multiple reference
+OK - reference edit / multiple reference
 
 - selection / edit for images, code sources and anchors: doesn't work
   except in Firefox.
 
-- service_editor missing JS and CSS
+DONE - service_editor missing JS and CSS
 
 DONE - race condition on the save question popup
 
@@ -164,3 +164,5 @@ DONE - Filter add dummy view / non IVisibleContent
 DONE - Article edit properties on tab named X
 
 - XML import export
+
+- migration
