@@ -152,6 +152,8 @@ DONE - Filter / Viewer add form must have edit fields
 
 DONE - Filter jsTree widget broken
 
+- News items IntoHTML
+
 - Agenda recurrence widget fix
   (Some part still doesn't seems to work, select days and days in a month)
 
