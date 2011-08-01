@@ -157,6 +157,8 @@ DONE - Filter jsTree widget broken
 - Agenda recurrence widget fix
   (Some part still doesn't seems to work, select days and days in a month)
 
+- Custom widgets need a display version (recurrence, categories)
+
 - Filter category fix: remove them.
 
 - Filter items batch normal (and by month year on Agenda Filter)
