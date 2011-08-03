@@ -169,4 +169,4 @@ DONE - Article edit properties on tab named X
 
 - XML import export
 
-- migration
+DONE - migration
