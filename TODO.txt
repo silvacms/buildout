@@ -154,7 +154,7 @@ DONE - Filter jsTree widget broken
 
 DONE - News items IntoHTML
 
-- Code source
+DONE - Code source
 
 - Agenda recurrence widget fix
   (Some part still doesn't seems to work, select days and days in a month)
