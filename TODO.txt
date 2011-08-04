@@ -6,8 +6,6 @@ UI
 
 - theme jGrowl correctly
 
-- CSS access tab (user clipboard buttons / user roles)
-
 - add a clear on non-required
 
    - file upload
@@ -34,6 +32,8 @@ UI
 - publish drop-down menu fixing ?
 
 - form change notification
+
+DONE - CSS access tab (user clipboard buttons / user roles)
 
 DONE - reference widget add screen
 
