@@ -152,6 +152,8 @@ Code sources
 
 - XML import export
 
+- feedback on install / service
+
 News
 ====
 
@@ -171,6 +173,8 @@ DONE - Code source
 - Filter category fix: remove them, add a local service
 
 - Filter items batch normal (and by month year on Agenda Filter)
+
+- Filter update list to set
 
 DONE - Filter add dummy view / non IVisibleContent
 
@@ -193,3 +197,5 @@ TODO - Sylvain
 - ghost cataloging when haunted change / tests
 
 - code source XML import export / tests
+
+- news filter update list to set
