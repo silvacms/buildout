@@ -18,7 +18,7 @@ UI
 
 - rename title:
 
-  - no invalidation
+  DONE - no invalidation
 
   - no check if possible
 
@@ -65,6 +65,8 @@ UI / JS
 - prevent repeat on keys (ctrl-c)
 
 - on Zope restart invalidation is out of sync
+
+- invalidation merging actions (cannot update something deleted)
 
 DONE - keyboard scroll listing
 
@@ -130,8 +132,8 @@ Ghost
 
 - Ghost Folder look in content (and infinite recursion on import)
 
-- On a ghost you can set a the same ghost as target (and make an
-  infinite recursion)
+DONE - On a ghost you can set a the same ghost as target (and make an
+       infinite recursion)
 
 
 Find
@@ -144,6 +146,11 @@ Code sources
 
 - CSS / JS option to external source
 
+- version
+
+- mark outdated ones
+
+- XML import export
 
 News
 ====
@@ -161,7 +168,7 @@ DONE - Code source
 
 - Custom widgets need a display version (recurrence, categories)
 
-- Filter category fix: remove them.
+- Filter category fix: remove them, add a local service
 
 - Filter items batch normal (and by month year on Agenda Filter)
 
@@ -172,3 +179,17 @@ DONE - Article edit properties on tab named X
 - XML import export
 
 DONE - migration
+
+
+TODO - Sylvain
+==============
+
+- invalidation munge invalidation.py utils tests
+
+- rename title expression
+
+- migration publication datetime / tests
+
+- ghost cataloging when haunted change / tests
+
+- code source XML import export / tests
