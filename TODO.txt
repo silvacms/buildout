@@ -1,0 +1,16 @@
+===========================================
+List of known bugs - issues - missing parts
+===========================================
+
+This is a list of known bugs and problems.
+
+Silva
+=====
+
+- Kupu doesn't work in IE9
+
+
+Silva News
+==========
+
+- Category Filter are broken (they cannot be added and are not used).
