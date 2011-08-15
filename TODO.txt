@@ -1,3 +1,8 @@
+===========================================
+List of known bugs - issues - missing parts
+===========================================
+
+This is a list of points that need attention before final release.
 
 UI
 ==
@@ -10,15 +15,9 @@ UI
 
    - file upload
 
-   DONE - datetime
-
-   DONE - cropping
-
 - reorder fail case
 
 - rename title:
-
-  DONE - no invalidation
 
   - no check if possible
 
@@ -32,27 +31,6 @@ UI
 - publish drop-down menu fixing ?
 
 - form change notification
-
-DONE - CSS access tab (user clipboard buttons / user roles)
-
-DONE - reference widget add screen
-
-DONE - tab not found shall redirect to content if it is not content that is
-   not found.
-
-DONE - edit icons
-
-DONE - CSS portlet references
-
-DONE - goto button CSS issue if sub-label is too long
-
-DONE - break reference
-
-DONE - login form in popup / expired session
-
-DONE - homogenize dialog buttons
-
-DONE - homogenize icons
 
 
 UI / JS
@@ -68,31 +46,6 @@ UI / JS
 
 - invalidation merging actions (cannot update something deleted)
 
-DONE - keyboard scroll listing
-
-DONE - form enter default action
-
-DONE - leaking dialog
-
-    DONE - reference lookup
-
-    DONE - upload
-
-    DONE - form
-
-    DONE - confirmation
-
-    DONE - cropping
-
-DONE - disable drag and drop on filter
-
-DONE - drag and drop delegate level
-
-DONE - merge all dropdown using delegates
-
-DONE - goto button in folder listing JS fixes (close other while opening
-    one, prevent to get two on each other and bug)
-
 Document
 ========
 
@@ -103,14 +56,6 @@ OK - reference edit / multiple reference
 - selection / edit for images, code sources and anchors: doesn't work
   except in Firefox.
 
-DONE - service_editor missing JS and CSS
-
-DONE - race condition on the save question popup
-
-DONE - long code sources dialogs:
-
-DONE   - clean parameters CSS / align: make them by default in the editor
-
 - unreadable icons (editor theme issue)
 
 - Silva index broken ?
@@ -118,28 +63,14 @@ DONE   - clean parameters CSS / align: make them by default in the editor
 Image
 =====
 
-DONE - cannot change title if not uploading a new image
-
-DONE - cannot change size if not scale
-
-DONE - ValueError on forms: upload not an image
-
 - image (thumbnail) cache smi
 
 
 Ghost
 =====
 
-- Ghost Folder look in content (and infinite recursion on import)
+- Ghost Folder infinite recursion on import
 
-DONE - On a ghost you can set a the same ghost as target (and make an
-       infinite recursion)
-
-
-Find
-====
-
-DONE - CSS: Fix lookup widget for directory
 
 Code sources
 ============
@@ -157,14 +88,6 @@ Code sources
 News
 ====
 
-DONE - Filter / Viewer add form must have edit fields
-
-DONE - Filter jsTree widget broken
-
-DONE - News items IntoHTML
-
-DONE - Code source
-
 - Agenda recurrence widget fix
   (Some part still doesn't seems to work, select days and days in a month)
 
@@ -176,17 +99,11 @@ DONE - Code source
 
 - Filter update list to set
 
-DONE - Filter add dummy view / non IVisibleContent
-
-DONE - Article edit properties on tab named X
-
 - XML import export
 
-DONE - migration
 
-
-TODO - Sylvain
-==============
+Details
+=======
 
 - invalidation munge invalidation.py utils tests
 
