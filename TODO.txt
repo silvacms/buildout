@@ -15,8 +15,6 @@ UI
 
    - file upload
 
-- reorder fail case
-
 - rename title:
 
   - no check if possible
@@ -32,6 +30,11 @@ UI
 
 - form change notification
 
+- last author don't change on publication actions
+
+- reference portlet preview
+
+- settings addable on install
 
 UI / JS
 =======
@@ -97,8 +100,6 @@ News
 
 - Filter items batch normal (and by month year on Agenda Filter)
 
-- Filter update list to set
-
 - XML import export
 
 
@@ -115,4 +116,6 @@ Details
 
 - code source XML import export / tests
 
-- news filter update list to set
+DONE - news filter update list to set
+
+- new viewer sort_attr
