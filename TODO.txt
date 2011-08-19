@@ -98,7 +98,7 @@ DONE - Custom widgets need a display version (recurrence, categories)
 
 DONE - Filter category fix: remove them, add a local service
 
-- Filter items batch normal (and by month year on Agenda Filter)
+DONE - Filter items batch normal (and by month year on Agenda Filter)
 
 - XML import export
 
