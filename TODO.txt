@@ -94,9 +94,9 @@ News
 - Agenda recurrence widget fix
   (Some part still doesn't seems to work, select days and days in a month)
 
-- Custom widgets need a display version (recurrence, categories)
+DONE - Custom widgets need a display version (recurrence, categories)
 
-- Filter category fix: remove them, add a local service
+DONE - Filter category fix: remove them, add a local service
 
 - Filter items batch normal (and by month year on Agenda Filter)
 
@@ -110,7 +110,7 @@ Details
 
 - rename title expression
 
-- migration publication datetime / tests
+DONE - migration publication datetime / tests
 
 - ghost cataloging when haunted change / tests
 
@@ -118,4 +118,4 @@ Details
 
 DONE - news filter update list to set
 
-- new viewer sort_attr
+OK - new viewer sort_attr
