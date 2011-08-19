@@ -12,6 +12,8 @@ Silva
 - If a source is missing, display a better error instead of None as no
   attribute to_html.
 
+- silva.core.views.IVirtualSite get_silva_root and local site.
+
 Silva News
 ==========
 
