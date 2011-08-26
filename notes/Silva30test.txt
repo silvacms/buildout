@@ -36,7 +36,7 @@ Submit buttons and reporting
 
 - When a doc is approved for the future, you can't see that it is approved for the future. The only signal is the "Publish Now" button changes to "Revoke Approval". No information about the future date of publication is visible. You only see "Manage versions". It's especially confusing if a doc is already published, then you see "Manaal close" and a "x Close published version" button, but nothing about the approval (http://next30.infrae.com/edit#publish!products/lxml). We can display the future approval date in the "Information", but I'd rather see it in the form body itself because that's where users will be searching.
 
-- It used to be possible to change the future dates when a doc was approved for the future with an "Update timings" button. We can leave that out if it's complicated, but that made the approved for future state completely clear. Plus easy to edit.
+- It used to be possible to change to future dates when a doc was approved for the future with an "Update timings" button. We can leave that out if it's complicated, but that made the approved for future state completely clear. Plus easy to edit.
 
 - When the "Publish Now" button in the header changes to "Revoke Approval" it should say "Revoke approval".
 
@@ -56,7 +56,7 @@ Manage versions
 
 - Please make the version status text a link to view it. Now we're adding a click, by making users first select a checkbox, then click "View".
 
-- If you don't select anything and a click "Delete", the feedback says "Version(s) deleted."
+- If you don't select anything and click "Delete", the feedback says "Version(s) deleted."
 
 - If you don't select anything and a click "Copy for editing", the feedback says "Select only one version to view it." If we change this to "Please select one version to view it." this will cover both the nothing-selected and too-many selected use cases.
 
@@ -80,16 +80,14 @@ Date rendering and interpretation
 - If I fill in a publication time of 12:00 (thus midday), and only a date for the expiration date with no time, the result is the following:
 
 Pub: Aug 25, 2011 12:00:00 PM
-
 Exp: Aug 30, 2011 12:00:00 AM
 
 The pub date should be Aug 25, 2011 12:00:00
-
 The exp date should be Aug 30, 2011 00:00:00
 
 - We don't need the seconds on the date either. Saves three chars per date.
 
-- We're rendering the dates semi-American style, when we used to use European notation day / month / year (23:59). Compare the length.
+- We're rendering the dates semi-American style, when we used to use European notation: day / month / year (23:59). Compare the length.
 Aug 25, 2011 12:00:00 AM
 25 Aug 11 17:30
 
