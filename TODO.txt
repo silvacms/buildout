@@ -9,35 +9,37 @@ UI
 
 - approve for future
 
+- settings addable on install
+
 - theme jGrowl correctly
-
-- add a clear on non-required
-
-   - file upload
 
 - rename title:
 
   - no check if possible
+
+- form change notification
+
+- formulator datetime ?
 
 - report more information on action failures in listing
 
 - empty message in listing not added if you delete everything / filter
   out everything.
 
-- formulator datetime ?
-
 - publish drop-down menu fixing ?
-
-- form change notification
 
 - last author don't change on publication actions
 
 - reference portlet preview
 
-- settings addable on install
+- composed form message reporting, actionS must return form, action, status
 
 UI / JS
 =======
+
+- invalidation merging actions (cannot update something deleted)
+
+- on Zope restart invalidation is out of sync
 
 - keyboard change publishable<->asset
 
@@ -45,19 +47,15 @@ UI / JS
 
 - prevent repeat on keys (ctrl-c)
 
-- on Zope restart invalidation is out of sync
-
-- invalidation merging actions (cannot update something deleted)
-
 Document
 ========
 
-- code source error on preview
-
-OK - reference edit / multiple reference
-
 - selection / edit for images, code sources and anchors: doesn't work
   except in Firefox.
+
+- code source error on preview and public rendering
+
+OK - reference edit / multiple reference
 
 - unreadable icons (editor theme issue)
 
@@ -106,16 +104,25 @@ DONE - Filter items batch normal (and by month year on Agenda Filter)
 Details
 =======
 
+DONE - service_ui security issue
+
 - invalidation munge invalidation.py utils tests
 
 - rename title expression
-
-DONE - migration publication datetime / tests
 
 - ghost cataloging when haunted change / tests
 
 - code source XML import export / tests
 
-DONE - news filter update list to set
-
 OK - new viewer sort_attr
+
+
+---
+
+- Publicationtime metadata set
+
+- document import multiple version updateVersionCount / SilvaVersionHandler ?
+
+- image in file catalog
+
+- import indexer
