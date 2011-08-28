@@ -1,20 +1,21 @@
 ﻿Silva 3.0 test notes
 ====================
 
-General comments
-----------------
-- Test area: http://next30.infrae.com/edit#publish!products/lxml
-
-- Error feedback needs to be pink or a bright color. On a large screen, clicking buttons at the bottom of the window, I didn't even notice the feedback, and started to make a bug report that nothing happened.
-
-- "Publish Now" button in the header should read "Publish now"
-
-
 DONE signal
 
 - DONE "Informations" should be "Information".
 
 When something's done I'll test it and, assuming a positive result, delete it from this list.
+
+
+General comments
+----------------
+- Test area: http://next30.infrae.com/edit#publish!products/lxml
+
+- Error feedback needs to be a brighter yellow color. On a large screen, clicking buttons at the bottom of the window, I didn't even notice the feedback, and started to make a bug report that nothing happened. It should also stay visible for a few seconds longer, sometimes I can't read it because it faded.
+
+- "Publish Now" button in the header should read "Publish now"
+
 
 
 Publish screen of docs
@@ -34,9 +35,9 @@ Expiration time
 
 Submit buttons and reporting
 
-- When a doc is approved for the future, you can't see that it is approved for the future. The only signal is the "Publish Now" button changes to "Revoke Approval". No information about the future date of publication is visible. You only see "Manage versions". It's especially confusing if a doc is already published, then you see "Manaal close" and a "x Close published version" button, but nothing about the approval (http://next30.infrae.com/edit#publish!products/lxml). We can display the future approval date in the "Information", but I'd rather see it in the form body itself because that's where users will be searching.
+- When a doc is approved for the future, you can't see that it is approved for the future. The only indication is the "Publish Now" button changes to "Revoke Approval". No information about the future date of publication is visible. You only see "Manage versions". It's especially confusing if a doc is already published, then you see "Manaal close" and a "x Close published version" button, but nothing about the approval: (http://next30.infrae.com/edit#publish!products/lxml). We can display the future approval date in the "Information", but I'd rather see it in the form body itself because that's where users will be looking.
 
-- It used to be possible to change to future dates when a doc was approved for the future with an "Update timings" button. We can leave that out if it's complicated, but that made the approved for future state completely clear. Plus easy to edit.
+- It used to be possible to change the future dates when a doc was approved for the future with an "Update timings" button. We can leave that out if it's complicated, but that made the approved for future state completely clear. Plus easy to edit. As it is now you need to revoke and then approve again.
 
 - When the "Publish Now" button in the header changes to "Revoke Approval" it should say "Revoke approval".
 
@@ -52,21 +53,23 @@ Manage versions
 
 - If we wish we can remove the spacetime from the "Modification time  Publication time 	Expiration time" table headings. It's obvious the values are times. Ha ha ha, if we wish we can remove the ' time'.
 
-- Personally I miss the link colors for Unapproved, Published, and Last closed. They made it so clear and you could instantly see what was what. Now you have to read each one. We do have room to put colored balls next to the version number but they don't really fit.
+- Personally I miss the link colors for Unapproved, Published, and Last closed. They made it so clear and you could instantly see what was what. Now you have to read each one. We do have room to put colored balls next to the version number but they won't look good.
 
 - Please make the version status text a link to view it. Now we're adding a click, by making users first select a checkbox, then click "View".
 
 - If you don't select anything and click "Delete", the feedback says "Version(s) deleted."
 
-- If you don't select anything and a click "Copy for editing", the feedback says "Select only one version to view it." If we change this to "Please select one version to view it." this will cover both the nothing-selected and too-many selected use cases.
+- If you don't select anything and click "View" (or if you select more than one item), the feedback says "Select only one version to view it." If we change this to "Please select one version to view it." this will cover both the nothing-selected and too-many selected use cases.
+
+- If you don't select anything and click "Copy for editing" (or if you select more than one item), the feedback says "Select only one copy to copy it for editing." If we change this to "Please select one version to copy." this will cover both the nothing-selected and too-many selected use cases.
 
 - Delete: When selecting items for deletion, the form remains sticky with selections after deletion, e.g. if you delete versions 2 and 3, the form comes back with items 0 and 1 selected.
 
 - View: viewing an old version shows it as default html. It should be wrapped in layout like preview.
 
-- View: when viewing an old version there's no obvious way to get back the publish screen. We can let people learn to click on the already selected tab, but....
+- View: when viewing an old version there's no obvious way to get back the publish screen. We can let people learn to click on the already selected tab, but that's not obvious.
 
-- View: when viewing an old version the "Publish now" button in the header should not appear, as you're not publishing the version you're viewing. Maybe change it to a back button.
+- View: when viewing an old version the "Publish now" button in the header should not appear, as you're not publishing the version you're viewing. Change it to a "Return" button?
 
 - Compare: doesn't compare.
 
@@ -87,18 +90,113 @@ The exp date should be Aug 30, 2011 00:00:00
 
 - We don't need the seconds on the date either. Saves three chars per date.
 
-- We're rendering the dates semi-American style, when we used to use European notation: day / month / year (23:59). Compare the length.
+- We're rendering the dates semi-American style, while we use use European notation in the datetime fields: day / month / year (23:59). Compare the length.
 Aug 25, 2011 12:00:00 AM
 25 Aug 11 17:30
 
-By using the shorter rendering we can save lots of space and get more dates on one line. Now all dates are always breaking onto two lines (in this screen).
+By using the shorter rendering we can save lots of space, reduce clutter, and get more dates on one line. Now all dates are always breaking onto two lines (in this screen).
 
 
 Buttons
 
 - The "Approve for future", "Publish now", "Close published version", "Compare", and probably more buttons/links don't have a title attribute any more. Check an older Silva for the attribute content.
 
+- Since we're capitalizing now, all the title attributes should also have their first letter capitalized.
+
 - Some buttons have icons, others don't (x Delete, Copy, View, Compare). This is inconsistent. Maybe we should only use icons when all the buttons have icons, like in contents.
 
 
 
+Notes 27-28 aug
+===============
+
+- At http://next30.infrae.com/edit#content!products all of the optioned buttons in the listing only have Goto and one option, Preview.
+
+- The "Settings" tab at the top of the screen should be an optioned button like the "Content" tab. If you click Settings, you go to Settings. If you click the down arrow, you see the options: Access, Addables, Customization, etc.
+
+- Logout and in: after clicking the logout button the browser goes to:
+http://next30.infrae.com/service_members/logout
+If I want to login immediately (say as another user) it's not possible. This was really frustrating and needs to change.
+
+- When in a tab and you want to reload it (just to be sure it's up to date) you go to the selected tab, hover, your cursor turns to a pointer so it's obviously a link, you click, and nothing happens. However sometimes, when in a subscreen like "View previous version", the link does work and it's the only way to get back to the main screen. Best would be if the link always worked. Second best is that the tab ceases to be a link when selected, but then you have to go to another tab and back to get a reload.
+
+- The form headings (h4 with '.form-content h4') such as "Publish new version" and "Manual close" need more margin-left to match the labels and h3 "Publication" indent.
+
+- When a field is focused it gets a green background. You can also focus a field just by clicking near it in the background of the containing box. But onblur, if you click outside of the form, the background stays green as though its focused. Can you make the background return to gray onblur? However, when a field has an error, the pink background should not disappear.
+
+
+
+Logged in as Author
+===================
+
+- An Author/Editor gets a server error when going to the Properties screen of this doc:
+http://next30.infrae.com/edit#publish!products/zsparklines
+Seems this happens with any doc that gets edited, also:
+http://next30.infrae.com/edit#publish!products/moai
+
+
+Publish screen of docs
+----------------------
+- In the "Manage versions" table, all the headings will fit on one line if we change them to:
+# 	Modification 	Publication 	Expiration 	Author 	Status
+We can safely change 'Version' to '#', which prevents wasting space in those cells, because the table title is "Manage versions".
+
+- The "Request approval" button should read "Request approval".
+
+- If an Editor wrote a message with the rejection of approval it doesn't appear for the Author to read.
+
+Publication time
+
+- This field should not be required for Authors. The Author may suggest a pub date but doesn't have to. (It's not required with the "Request approval" button above.)
+
+- BTW, when the submit fails, the feedback says "Missing year value." but the cursor is in the day field. The UI doesn't indicate which field is which, but day/month/year is normal for all of our customers, even the Americans (who think it's chic).
+
+- If your window is not large the feedback obscures the minute field and the calendar, so you can't click the calendar to set the date. Can we locate the feedback higher, to the right of the field label?
+
+- Strangely, if I enter '11' into the year field as an Author, the value is accepted and becomes 2011. This fails when an Editor publishes.
+
+- It's confusing when an Author submits the request for approval. The screen comes back instantly with the cursor focused in the "add message on withdrawal" textarea. At first I thought it was required to add a message to my request. (I looked away and didn't catch the "Approval requested" feedback.) That field is not required, is it just focusing automatically because it's the first one?
+
+Message
+
+- The text area (this and all the others) has a fixed width and is often too long. Granted, in Safari and recent FF you can scale it yourself. A max-width that is 20px less than its parent should work.
+
+Withdraw request
+
+- This heading should read "Withdraw request".
+
+Add message on withdrawal
+
+- This label should read "Add message on withdrawal".
+
+- The "Request appoval", "Withdraw approval request", "Reject approval request", and probably more button/links don't have a title attribute. Check an older Silva for the attribute content.
+
+- When an author submits the feedback says "Approval requested for immediate publication". This is not necessarily true, and should read "Approval requested for publication".
+
+
+Logged in as ChiefEditor
+========================
+
+Publish screen of docs
+----------------------
+- When an Editor goes to the Publish screen of a doc that's been submitted for approval, it's not really obvious that the doc is waiting for approval. The only indication is there's both a "Publish Now" and "Reject Request" button (looking good together). Not sure if we should do something more.
+- If an Author wrote a message with the request for approval it doesn't appear for the Editor to read.
+
+Add message on rejection
+
+- This label should read "Add message on rejection".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+service_members logout
