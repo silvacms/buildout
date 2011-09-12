@@ -106,6 +106,10 @@ Details
 
 DONE - service_ui security issue
 
+- xml export download action link to other page
+
+- view link target other page
+
 - invalidation munge invalidation.py utils tests
 
 - rename title expression
@@ -119,7 +123,7 @@ OK - new viewer sort_attr
 
 ---
 
-- Publicationtime metadata set
+DONE - Publicationtime metadata set
 
 - document import multiple version updateVersionCount / SilvaVersionHandler ?
 
