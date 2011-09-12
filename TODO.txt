@@ -70,7 +70,7 @@ Image
 Ghost
 =====
 
-- Ghost Folder infinite recursion on import
+- Folder ghosted content delete
 
 
 Code sources
@@ -92,19 +92,11 @@ News
 - Agenda recurrence widget fix
   (Some part still doesn't seems to work, select days and days in a month)
 
-DONE - Custom widgets need a display version (recurrence, categories)
-
-DONE - Filter category fix: remove them, add a local service
-
-DONE - Filter items batch normal (and by month year on Agenda Filter)
-
 - XML import export
 
 
 Details
 =======
-
-DONE - service_ui security issue
 
 - xml export download action link to other page
 
@@ -123,10 +115,6 @@ OK - new viewer sort_attr
 
 ---
 
-DONE - Publicationtime metadata set
-
-- document import multiple version updateVersionCount / SilvaVersionHandler ?
+- publish notification invariants
 
 - image in file catalog
-
-DONE - import indexer test
