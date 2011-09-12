@@ -129,4 +129,4 @@ DONE - Publicationtime metadata set
 
 - image in file catalog
 
-- import indexer
+DONE - import indexer test
