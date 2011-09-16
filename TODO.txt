@@ -32,8 +32,6 @@ UI
 
 - reference portlet preview
 
-- composed form message reporting, actionS must return form, action, status
-
 UI / JS
 =======
 
