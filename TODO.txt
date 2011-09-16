@@ -108,6 +108,6 @@ Details
 
 OK - new viewer sort_attr
 
-- publish notification invariants
-
 - image in file catalog
+
+- composed sub form changes to review
