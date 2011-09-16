@@ -3,7 +3,7 @@
 
 DONE signal
 
-- DONE "Informations" should be "Information".
+CHANGED - "Informations" should be "Information".
 
 When something's done I'll test it and, assuming a positive result, delete it from this list.
 
@@ -14,7 +14,7 @@ General comments
 
 - Error feedback needs to be a brighter yellow color. On a large screen, clicking buttons at the bottom of the window, I didn't even notice the feedback, and started to make a bug report that nothing happened. It should also stay visible for a few seconds longer, sometimes I can't read it because it faded.
 
-- "Publish Now" button in the header should read "Publish now"
+CHANGED - "Publish Now" button in the header should read "Publish now"
 
 
 
@@ -39,7 +39,7 @@ Submit buttons and reporting
 
 - It used to be possible to change the future dates when a doc was approved for the future with an "Update timings" button. We can leave that out if it's complicated, but that made the approved for future state completely clear. Plus easy to edit. As it is now you need to revoke and then approve again.
 
-- When the "Publish Now" button in the header changes to "Revoke Approval" it should say "Revoke approval".
+CHANGED - When the "Publish Now" button in the header changes to "Revoke Approval" it should say "Revoke approval".
 
 
 Manual close
@@ -141,7 +141,7 @@ Publish screen of docs
 # 	Modification 	Publication 	Expiration 	Author 	Status
 We can safely change 'Version' to '#', which prevents wasting space in those cells, because the table title is "Manage versions".
 
-- The "Request approval" button should read "Request approval".
+???? - The "Request approval" button should read "Request approval".
 
 - If an Editor wrote a message with the rejection of approval it doesn't appear for the Author to read.
 
@@ -163,11 +163,11 @@ Message
 
 Withdraw request
 
-- This heading should read "Withdraw request".
+CHANGE - This heading should read "Withdraw request".
 
 Add message on withdrawal
 
-- This label should read "Add message on withdrawal".
+CHANGE - This label should read "Add message on withdrawal".
 
 - The "Request appoval", "Withdraw approval request", "Reject approval request", and probably more button/links don't have a title attribute. Check an older Silva for the attribute content.
 
@@ -184,7 +184,7 @@ Publish screen of docs
 
 Add message on rejection
 
-- This label should read "Add message on rejection".
+CHANGE - This label should read "Add message on rejection".
 
 
 
