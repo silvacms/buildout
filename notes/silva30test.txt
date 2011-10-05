@@ -42,11 +42,11 @@ Manage versions
 
 - Please make the version status text a link to view it. Now we're adding a click, by making users first select a checkbox, then click "View".
 
-- If you don't select anything and click "Delete", the feedback says "Version(s) deleted."
+CHANGE - If you don't select anything and click "Delete", the feedback says "Version(s) deleted."
 
-- If you don't select anything and click "View" (or if you select more than one item), the feedback says "Select only one version to view it." If we change this to "Please select one version to view it." this will cover both the nothing-selected and too-many selected use cases.
+CHANGE - If you don't select anything and click "View" (or if you select more than one item), the feedback says "Select only one version to view it." If we change this to "Please select one version to view it." this will cover both the nothing-selected and too-many selected use cases.
 
-- If you don't select anything and click "Copy for editing" (or if you select more than one item), the feedback says "Select only one copy to copy it for editing." If we change this to "Please select one version to copy." this will cover both the nothing-selected and too-many selected use cases.
+CHANGE - If you don't select anything and click "Copy for editing" (or if you select more than one item), the feedback says "Select only one copy to copy it for editing." If we change this to "Please select one version to copy." this will cover both the nothing-selected and too-many selected use cases.
 
 - Delete: When selecting items for deletion, the form remains sticky with selections after deletion, e.g. if you delete versions 2 and 3, the form comes back with items 0 and 1 selected.
 

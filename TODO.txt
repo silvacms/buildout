@@ -35,8 +35,6 @@ UI
 UI / JS
 =======
 
-- invalidation merging actions (cannot update something deleted)
-
 - on Zope restart invalidation is out of sync
 
 - keyboard change publishable<->asset
@@ -96,8 +94,6 @@ Details
 
 - smi layout for download error
 
-- invalidation munge invalidation.py utils tests
-
 - rename title expression
 
 - ghost cataloging when haunted change / tests
@@ -109,3 +105,14 @@ OK - new viewer sort_attr
 - image in file catalog
 
 - composed sub form changes to review
+
+- content position while moving invalidation ...
+
+================
+
+- You can published close, but not approve for future closed (there is
+  no version to set publication date). Shoud it be possible ?
+
+- IIntId get_content error, generator ? in like
+  silva.core.smi.content.container ?
+
