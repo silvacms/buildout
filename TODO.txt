@@ -12,9 +12,13 @@ Silva
 - If a source is missing, display a better error instead of None as no
   attribute to_html.
 
+- customization markers
+
 Silva News
 ==========
 
 - Category Filter are broken (they cannot be added and are not used).
 
 - XML import and export have various bugs (agenda viewer, rss agregator).
+
+- Filter sync
