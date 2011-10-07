@@ -70,11 +70,11 @@ Ghost
 Code sources
 ============
 
-- CSS / JS option to external source
+EXTRA - CSS / JS option to external source
 
-- version
+EXTRA - version
 
-- mark outdated ones
+EXTRA - mark outdated ones
 
 - XML import export
 
@@ -107,6 +107,8 @@ OK - new viewer sort_attr
 - composed sub form changes to review
 
 - content position while moving invalidation ...
+
+- content ordering in the UI with default document.
 
 ================
 
