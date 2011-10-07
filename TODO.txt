@@ -113,6 +113,4 @@ OK - new viewer sort_attr
 - You can published close, but not approve for future closed (there is
   no version to set publication date). Shoud it be possible ?
 
-- IIntId get_content error, generator ? in like
-  silva.core.smi.content.container ?
-
+- add a whitelist to upgrade
