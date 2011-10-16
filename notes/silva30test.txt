@@ -210,8 +210,18 @@ File
 
 
 Ghost, Ghost Folder, Link
+
 - Change "no reference selected" to "Click the Lookup button to select a reference. "
 
+Silva News Filter
+
+- Title field(s) are too short. Make them size="40".
+
+- The "montrer les éléments d'agenda" checkbox with no label looks lost. Can we always put a 'Yes" label next to these?
+
+Silva News Viewer
+
+- The "proxy mode" checkbox with no label looks lost. Can we always put a 'Yes" label next to these?
 
 Metadata system
 ===============
