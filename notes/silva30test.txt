@@ -45,7 +45,7 @@ Settings screen of folder
 
 - When changing a folder to a publication, after I click the convert button, I get feedback but nothing happens. The sidebar doesn't change and the icon in the header is still a folder icon. I have to reload to see the changes.
 
-- At the bottom of the form group there's a heading, "Generic Settings", with nothing underneath it. This should not appear if there are no generic settings to be set. I think we can just delete it completely, it's not needed in a pub either.
+DONE - At the bottom of the form group there's a heading, "Generic Settings", with nothing underneath it. This should not appear if there are no generic settings to be set. I think we can just delete it completely, it's not needed in a pub either.
 
 DONE - If the feeds are not activated, the "Atom feed URL" and "RSS feed URL" fields should not appear at all.
 
@@ -156,13 +156,13 @@ Image
 
 - "current file." is a confusing. Users won't realize that it's a form value. Let's use it as a hint. Change it to "Click the Upload button to replace the current image with a new image".
 
-  - "current file." The div class="upload-display" style should match the hint style, div.form-label p.
+DONE  - "current file." The div class="upload-display" style should match the hint style, div.form-label p.
 
-- The scaling field hint has lost text. It should read "Echelle Image web: utiliser largeur x hauteur en pixels, ou un axis longueur, ou un pourcentage (100x200, 100x*, *x200, 40%)."
+DONE - The scaling field hint has lost text. It should read "Echelle Image web: utiliser largeur x hauteur en pixels, ou un axis longueur, ou un pourcentage (100x200, 100x*, *x200, 40%)."
 
 Image sidebar
 -------------
-- (As these are not sentences) no period goes after:
+DONE - (As these are not sentences) no period goes after:
   png image
   125x465 pixels scaled to 37x139 pixels
   view unscaled image
@@ -171,7 +171,7 @@ Image sidebar
 
 - We need to display the image, in its "web configuration", in the edit screen.
 
-- "view unscaled image" needs a capital V.
+DONE - "view unscaled image" needs a capital V.
 
 - The "view unscaled image" link does not look like a link.
 
@@ -198,15 +198,15 @@ Add forms
 
 Image
 
-- Image field: "not set, please upload a file." Change to "Click the Upload button to select an image."
+DONE - Image field: "not set, please upload a file." Change to "Click the Upload button to select an image."
 
-- Needs the red circle with exclamation point like in ghosts.
+DONE - Needs the red circle with exclamation point like in ghosts.
 
 File
 
-- Image field: "not set, please upload a file." Change to "Click the Upload button to select a file."
+DONE - Image field: "not set, please upload a file." Change to "Click the Upload button to select a file."
 
-- Needs the red circle with exclamation point like in ghosts.
+DONE - Needs the red circle with exclamation point like in ghosts.
 
 
 Ghost, Ghost Folder, Link
@@ -221,7 +221,7 @@ Silva News Filter
 
 Silva News Viewer
 
-- The "proxy mode" checkbox with no label looks lost. Can we always put a 'Yes" label next to these?
+THIS OPTION IS DOESN'T EXIST ANYMORE - The "proxy mode" checkbox with no label looks lost. Can we always put a 'Yes" label next to these?
 
 Metadata system
 ===============

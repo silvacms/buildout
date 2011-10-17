@@ -117,6 +117,7 @@ OK - new viewer sort_attr
 
 - add a whitelist to upgrade
 
-- split Products.Silva.File
+- file content encoding / content_type not updated when upload a new
+  file (fileupload have no filename).
 
 - folder convertion modified + tests (smi update and everything)
