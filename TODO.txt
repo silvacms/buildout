@@ -118,3 +118,5 @@ OK - new viewer sort_attr
 - add a whitelist to upgrade
 
 - split Products.Silva.File
+
+- folder convertion modified + tests (smi update and everything)

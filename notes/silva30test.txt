@@ -26,9 +26,9 @@ DONE - The Set crop coordinates button has an indeterminate icon. Let's use that
 Import screen
 -------------
 
-- "not set, please upload a file." Change to "Click the Upload button to select a file."
+DONE - "not set, please upload a file." Change to "Click the Upload button to select a file."
 
-- Needs the red circle with exclamation point like in ghosts.
+DONE - Needs the red circle with exclamation point like in ghosts.
 
 Export screen
 -------------
@@ -47,9 +47,9 @@ Settings screen of folder
 
 - At the bottom of the form group there's a heading, "Generic Settings", with nothing underneath it. This should not appear if there are no generic settings to be set. I think we can just delete it completely, it's not needed in a pub either.
 
-- If the feeds are not activated, the "Atom feed URL" and "RSS feed URL" fields should not appear at all.
+DONE - If the feeds are not activated, the "Atom feed URL" and "RSS feed URL" fields should not appear at all.
 
-- If the feeds are active, the Atom and RSS feed URLs should be links, so you can test.
+DONE - If the feeds are active, the Atom and RSS feed URLs should be links, so you can test.
 
 
 Publish screen of docs, logged in as Author
