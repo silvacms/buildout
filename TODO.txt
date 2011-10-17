@@ -116,3 +116,5 @@ OK - new viewer sort_attr
   no version to set publication date). Shoud it be possible ?
 
 - add a whitelist to upgrade
+
+- split Products.Silva.File

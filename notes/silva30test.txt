@@ -10,11 +10,11 @@ When something's done I'll test it and, assuming a positive result, delete it fr
 
 General comments
 ----------------
-- New feedback colors are much more noticeable.
+Nothing to do ? - New feedback colors are much more noticeable.
 
-- Let's choose a Save icon to use on Save and Change buttons.
+DONE - Let's choose a Save icon to use on Save and Change buttons.
 
-- The Set crop coordinates button has an indeterminate icon. Let's use that icon on all other indeterminate buttons (excepting those that already have an icon).
+DONE - The Set crop coordinates button has an indeterminate icon. Let's use that icon on all other indeterminate buttons (excepting those that already have an icon).
 
 - Changing languages does not change the UI. The user must reload. Can we do that for the user?
 
@@ -84,7 +84,7 @@ Error alert
 
 Datetime fields
 
-The cursor focus goes wrong. When a user clicks on, say, the minutes subfield (the last subfield) the cursor gets focused in the first subfield (day). The user has to click again on minutes to get the cursor in the right location. This goes against usability principles, e.g. I clicked on minutes and started typing the minutes, but I was typing into day. Maybe just remove the focusing from datetime fields.
+DONE (that was a bug, not a feature) The cursor focus goes wrong. When a user clicks on, say, the minutes subfield (the last subfield) the cursor gets focused in the first subfield (day). The user has to click again on minutes to get the cursor in the right location. This goes against usability principles, e.g. I clicked on minutes and started typing the minutes, but I was typing into day. Maybe just remove the focusing from datetime fields.
 
 Publication time
 
@@ -269,7 +269,7 @@ By using the shorter rendering we can save lots of space, reduce clutter, and ge
 
 Buttons
 
-- Some buttons have icons, others don't (x Delete, Copy, View, Compare). This is inconsistent. Maybe we should only use icons when all the buttons have icons, like in contents.
+DONE - Some buttons have icons, others don't (x Delete, Copy, View, Compare). This is inconsistent. Maybe we should only use icons when all the buttons have icons, like in contents.
 
 
 
