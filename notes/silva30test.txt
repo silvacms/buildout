@@ -78,9 +78,9 @@ Error alert
 
 - Why does the "An internal error happened" alert need to be modal? It's already frustrating, and it forces the user to click "Continue". We can save her a click plus the annoyance by making it not modal. Just click where you want to go and the alert disappears.
 
-- "An error internal happened...." should be "An internal error happened...." (It would be ok in French :)
+DONE - "An error internal happened...." should be "An internal error happened...." (It would be ok in French :)
 
-- Can we say this? "An internal error happened on the server. Your system administrator has been informed of the problem." We should really do this. If internal errors happen we want to know about it.
+DONE - Can we say this? "An internal error happened on the server. Your system administrator has been informed of the problem." We should really do this. If internal errors happen we want to know about it.
 
 Datetime fields
 
@@ -154,7 +154,7 @@ Subscriptions screen
 Image
 =====
 
-- "current file." is a confusing. Users won't realize that it's a form value. Let's use it as a hint. Change it to "Click the Upload button to replace the current image with a new image".
+DONE - "current file." is a confusing. Users won't realize that it's a form value. Let's use it as a hint. Change it to "Click the Upload button to replace the current image with a new image".
 
 DONE  - "current file." The div class="upload-display" style should match the hint style, div.form-label p.
 
