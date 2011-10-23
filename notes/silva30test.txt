@@ -3,7 +3,7 @@
 
 DONE signal
 
-CHANGED - "Informations" should be "Information".
+DONE - "Informations" should be "Information".
 
 When something's done I'll test it and, assuming a positive result, delete it from this list.
 
@@ -11,10 +11,6 @@ When something's done I'll test it and, assuming a positive result, delete it fr
 General comments
 ----------------
 Nothing to do ? - New feedback colors are much more noticeable.
-
-DONE - Let's choose a Save icon to use on Save and Change buttons.
-
-DONE - The Set crop coordinates button has an indeterminate icon. Let's use that icon on all other indeterminate buttons (excepting those that already have an icon).
 
 - Changing languages does not change the UI. The user must reload. Can we do that for the user?
 
@@ -26,10 +22,6 @@ DONE - The Set crop coordinates button has an indeterminate icon. Let's use that
 Import screen
 -------------
 
-DONE - "not set, please upload a file." Change to "Click the Upload button to select a file."
-
-DONE - Needs the red circle with exclamation point like in ghosts.
-
 Export screen
 -------------
 
@@ -40,17 +32,17 @@ Contents screen, logged in as Author
 
 - The "Go to" button in the listing does not have "Publish".
 
+Access screen
+-------------
+
+- You can remove your own role, and then you're locked out. :-) This wasn't possible before.
+
+- If you get locked out, you get a model password prompt in the SMI. I could not login with this. I had to reload, which took me back to the home page with the nested login form, and then I could login. This is real glitch that could frustrate a user.
+
 Settings screen of folder
 -------------------------
 
 - When changing a folder to a publication, after I click the convert button, I get feedback but nothing happens. The sidebar doesn't change and the icon in the header is still a folder icon. I have to reload to see the changes.
-
-DONE - At the bottom of the form group there's a heading, "Generic Settings", with nothing underneath it. This should not appear if there are no generic settings to be set. I think we can just delete it completely, it's not needed in a pub either.
-
-DONE - If the feeds are not activated, the "Atom feed URL" and "RSS feed URL" fields should not appear at all.
-
-DONE - If the feeds are active, the Atom and RSS feed URLs should be links, so you can test.
-
 
 Publish screen of docs, logged in as Author
 -------------------------------------------
@@ -78,13 +70,11 @@ Error alert
 
 - Why does the "An internal error happened" alert need to be modal? It's already frustrating, and it forces the user to click "Continue". We can save her a click plus the annoyance by making it not modal. Just click where you want to go and the alert disappears.
 
-DONE - "An error internal happened...." should be "An internal error happened...." (It would be ok in French :)
+Ok. DONE - Can we say this? "An internal error happened on the server. Your system administrator has been informed of the problem." We should really do this. If internal errors happen we want to know about it.
 
-DONE - Can we say this? "An internal error happened on the server. Your system administrator has been informed of the problem." We should really do this. If internal errors happen we want to know about it.
++ Do we actually inform the sysadmin? Or is it just logged. ;-)
 
 Datetime fields
-
-DONE (that was a bug, not a feature) The cursor focus goes wrong. When a user clicks on, say, the minutes subfield (the last subfield) the cursor gets focused in the first subfield (day). The user has to click again on minutes to get the cursor in the right location. This goes against usability principles, e.g. I clicked on minutes and started typing the minutes, but I was typing into day. Maybe just remove the focusing from datetime fields.
 
 Publication time
 
@@ -93,6 +83,12 @@ Publication time
 - Manually filling in 28-8-11 causes an error (on the 11). The server should interpret the 11 as 2011. Only happens for Editors, for Authors the year is correctly interpreted. Should be easy to fix. Then we can probably ignore the following:
 
   - Wrong feedback after internal system error. To reproduce, go to a document and fill in a year of '11'. Click "Publish now". You'll get the "An internal error happened" alert. Click "Continue". Then click a folder in the sidebar. Feedback appears, saying "Version published".
+
+Notes since changing the fields
+
+- If I remove the year completely, the whole row goes pink and I get validation feedback "Missing year value.". However if I fill in '11', the only feedback is the pink glowing border, and I can still submit and the error described above.
+
+- Why can Authors successfully submit a year of '11' but not Editors? The '11' gets correctly interpreted when Authors submit, but Editors get a system error. Can you make it interpret correctly for Editors too? Saves 2 chars.
 
 Expiration time
 
@@ -154,28 +150,15 @@ Subscriptions screen
 Image
 =====
 
-DONE - "current file." is a confusing. Users won't realize that it's a form value. Let's use it as a hint. Change it to "Click the Upload button to replace the current image with a new image".
-
-DONE  - "current file." The div class="upload-display" style should match the hint style, div.form-label p.
-
-DONE - The scaling field hint has lost text. It should read "Echelle Image web: utiliser largeur x hauteur en pixels, ou un axis longueur, ou un pourcentage (100x200, 100x*, *x200, 40%)."
-
 Image sidebar
 -------------
-DONE - (As these are not sentences) no period goes after:
-  png image
-  125x465 pixels scaled to 37x139 pixels
-  view unscaled image
-
 - If an image is cropped, the thumbnail has incorrect proportions in the html. If the image is 804x465 pixels scaled to 142x120 pixels, the img tag has attributes width="120" height="101". These proportions match the crop, but the thumbnail displays the original image, and should have the same proportions.
 
 - We need to display the image, in its "web configuration", in the edit screen.
 
-DONE - "view unscaled image" needs a capital V.
-
 - The "view unscaled image" link does not look like a link.
 
-- The "view unscaled image" open the image in a new window. Let's load the image like we do in preview, so the user stays in the UI.
+- The "view unscaled image" opens the image in a new window. Can we load the image like we do in preview, so the user stays in the UI?
 
 - In the the edit tab the edit icon for docs in References is not found.
 
@@ -195,19 +178,6 @@ Add forms
 =========
 
 - The generic id and title field are too short. The id can't hold more than:'new_directions_in_econi'. This is way too short for our clients. Those firlds should have a size that matches the textareas. For now make them bigger, like size="40".
-
-Image
-
-DONE - Image field: "not set, please upload a file." Change to "Click the Upload button to select an image."
-
-DONE - Needs the red circle with exclamation point like in ghosts.
-
-File
-
-DONE - Image field: "not set, please upload a file." Change to "Click the Upload button to select a file."
-
-DONE - Needs the red circle with exclamation point like in ghosts.
-
 
 Ghost, Ghost Folder, Link
 
@@ -267,22 +237,14 @@ Aug 25, 2011 12:00:00 AM
 By using the shorter rendering we can save lots of space, reduce clutter, and get more dates on one line. Now all dates are always breaking onto two lines (in this screen).
 
 
-Buttons
-
-DONE - Some buttons have icons, others don't (x Delete, Copy, View, Compare). This is inconsistent. Maybe we should only use icons when all the buttons have icons, like in contents.
-
-
-
-Notes 27-28 aug
-===============
-
-- At http://next30.infrae.com/edit#content!products all of the optioned buttons in the listing only have Goto and one option, Preview.
+More Notes (27-28 aug and later)
+================================
 
 - The "Settings" tab at the top of the screen should be an optioned button like the "Content" tab. If you click Settings, you go to Settings. If you click the down arrow, you see the options: Access, Addables, Customization, etc.
 
 - Logout and in: after clicking the logout button the browser goes to:
 http://next30.infrae.com/service_members/logout
-If I want to login immediately (say as another user) it's not possible. This was really frustrating and needs to change.
+If I want to login immediately (noticed a typo or as another user) it's not possible to login and you can try as many times as you like. This was really confusing and needs to change.
 
 - When in a tab and you want to reload it (just to be sure it's up to date) you go to the selected tab, hover, your cursor turns to a pointer so it's obviously a link, you click, and nothing happens. However sometimes, when in a subscreen like "View previous version", the link does work and it's the only way to get back to the main screen. Best would be if the link always worked. Second best is that the tab ceases to be a link when selected, but then you have to go to another tab and back to get a reload.
 
@@ -294,6 +256,8 @@ If I want to login immediately (say as another user) it's not possible. This was
 
 Logged in as Author
 ===================
+
+- When logged in as Author at http://next30.infrae.com/edit#content!products all of the optioned buttons for documents in the listing only have Goto, Preview, and Properties. Publish is missing.
 
 Publish screen of docs
 ----------------------
@@ -319,17 +283,7 @@ Message
 
 - The text area (this and all the others) has a fixed width and is often too long. Granted, in Safari and recent FF you can scale it yourself. A max-width that is 20px less than its parent should work.
 
-Withdraw request
-
-CHANGE - This heading should read "Withdraw request".
-
-Add message on withdrawal
-
-CHANGE - This label should read "Add message on withdrawal".
-
 - The "Request appoval", "Withdraw approval request", "Reject approval request", and probably more button/links don't have a title attribute. Check an older Silva for the attribute content.
-
-- When an author submits the feedback says "Approval requested for immediate publication". This is not necessarily true, and should read "Approval requested for publication".
 
 
 Logged in as ChiefEditor
@@ -339,9 +293,5 @@ Publish screen of docs
 ----------------------
 - When an Editor goes to the Publish screen of a doc that's been submitted for approval, it's not really obvious that the doc is waiting for approval. The only indication is there's both a "Publish Now" and "Reject Request" button (looking good together). Not sure if we should do something more.
 - If an Author wrote a message with the request for approval it doesn't appear for the Editor to read.
-
-Add message on rejection
-
-CHANGE - This label should read "Add message on rejection".
 
 service_members logout
