@@ -156,9 +156,9 @@ Image sidebar
 
 - We need to display the image, in its "web configuration", in the edit screen.
 
-- The "view unscaled image" link does not look like a link.
+DONE - The "view unscaled image" link does not look like a link.
 
-- The "view unscaled image" opens the image in a new window. Can we load the image like we do in preview, so the user stays in the UI?
+DONE - The "view unscaled image" open the image in a new window. Let's load the image like we do in preview, so the user stays in the UI.
 
 - In the the edit tab the edit icon for docs in References is not found.
 
