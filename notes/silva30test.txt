@@ -16,10 +16,10 @@ NOTHING TO DO ? - New feedback colors are much more noticeable.
 - Changing languages does not change the UI. The user must reload. Can
   we do that for the user?
 
-- When requested to login again, we should prefill the identifier for
+NOT DOABLE - When requested to login again, we should prefill the identifier for
   the user.
 
-- When a user logs in, we provide a modal alert and the user has to
+NOT DOABLE - When a user logs in, we provide a modal alert and the user has to
   click "Continue". This is a useless click. Change it to (non-modal)
   feedback instead.
 
@@ -30,7 +30,7 @@ Import screen
 Export screen
 -------------
 
-- It's not possible to export one document anymore. This was a useful
+PASS - It's not possible to export one document anymore. This was a useful
   feature. Can we bring it back?
 
 Contents screen, logged in as Author
@@ -60,7 +60,7 @@ Settings screen of folder
 Publish screen of docs, logged in as Author
 -------------------------------------------
 
-- If an Editor wrote a message with the rejection of approval it
+DONE - If an Editor wrote a message with the rejection of approval it
   doesn't appear for the Author to read. Some parties depend on this
   internal messaging.
 
@@ -79,7 +79,7 @@ UPGRADED - I upgraded the site and there is no longer any error. But I
 Publish screen of docs, logged in as ChiefEditor
 ------------------------------------------------
 
-- If an Author wrote a message with the request for approval it
+DONE - If an Author wrote a message with the request for approval it
   doesn't appear for the Editor to read.
 
 + To test: Is the publishing workflow email working?
@@ -89,7 +89,7 @@ Functional fixes
 
 Error alert
 
-- Why does the "An internal error happened" alert need to be modal?
+NOT DOABLE - Why does the "An internal error happened" alert need to be modal?
   It's already frustrating, and it forces the user to click
   "Continue". We can save her a click plus the annoyance by making it
   not modal. Just click where you want to go and the alert disappears.
@@ -411,12 +411,12 @@ DONE - If we wish we can remove the spacetime from the "Modification
 
 ???? - The "Request approval" button should read "Request approval".
 
-- If an Editor wrote a message with the rejection of approval it
+DONE - If an Editor wrote a message with the rejection of approval it
   doesn't appear for the Author to read.
 
 Publication time
 
-- BTW, when the submit fails, the feedback says "Missing year value."
+DONE - BTW, when the submit fails, the feedback says "Missing year value."
   but the cursor is in the day field. The UI doesn't indicate which
   field is which, but day/month/year is normal for all of our
   customers, even the Americans (who think it's chic).
