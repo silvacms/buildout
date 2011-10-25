@@ -11,7 +11,7 @@ UI
 
 - settings addable on install
 
-- theme jGrowl correctly
+DONE - theme jGrowl correctly
 
 - rename title:
 
@@ -104,7 +104,7 @@ OK - new viewer sort_attr
 
 - image in file catalog
 
-- composed sub form changes to review
+DONE - composed sub form changes to review
 
 - content position while moving invalidation ...
 
@@ -121,3 +121,5 @@ OK - new viewer sort_attr
   file (fileupload have no filename).
 
 - folder convertion modified + tests (smi update and everything)
+
+- click on form errors make than disappear
