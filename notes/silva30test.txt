@@ -12,11 +12,15 @@ General comments
 ----------------
 Nothing to do ? - New feedback colors are much more noticeable.
 
-- Changing languages does not change the UI. The user must reload. Can we do that for the user?
+- Changing languages does not change the UI. The user must reload. Can
+  we do that for the user?
 
-- When requested to login again, we should prefill the identifier for the user.
+- When requested to login again, we should prefill the identifier for
+  the user.
 
-- When a user logs in, we provide a modal alert and the user has to click "Continue". This is a useless click. Change it to (non-modal) feedback instead.
+- When a user logs in, we provide a modal alert and the user has to
+  click "Continue". This is a useless click. Change it to (non-modal)
+  feedback instead.
 
 
 Import screen
@@ -25,41 +29,57 @@ Import screen
 Export screen
 -------------
 
-- It's not possible to export one document anymore. This was a useful feature. Can we bring it back?
+- It's not possible to export one document anymore. This was a useful
+  feature. Can we bring it back?
 
 Contents screen, logged in as Author
 ------------------------------------
 
-- The "Go to" button in the listing does not have "Publish".
+DONE - The "Go to" button in the listing does not have "Publish".
 
 Access screen
 -------------
 
-- You can remove your own role, and then you're locked out. :-) This wasn't possible before.
+- You can remove your own role, and then you're locked out. :-) This
+  wasn't possible before.
 
-- If you get locked out, you get a model password prompt in the SMI. I could not login with this. I had to reload, which took me back to the home page with the nested login form, and then I could login. This is real glitch that could frustrate a user.
+- If you get locked out, you get a model password prompt in the SMI. I
+  could not login with this. I had to reload, which took me back to
+  the home page with the nested login form, and then I could
+  login. This is real glitch that could frustrate a user.
 
 Settings screen of folder
 -------------------------
 
-- When changing a folder to a publication, after I click the convert button, I get feedback but nothing happens. The sidebar doesn't change and the icon in the header is still a folder icon. I have to reload to see the changes.
+- When changing a folder to a publication, after I click the convert
+  button, I get feedback but nothing happens. The sidebar doesn't
+  change and the icon in the header is still a folder icon. I have to
+  reload to see the changes.
 
 Publish screen of docs, logged in as Author
 -------------------------------------------
-- If an Editor wrote a message with the rejection of approval it doesn't appear for the Author to read. Some parties depend on this internal messaging.
+
+- If an Editor wrote a message with the rejection of approval it
+  doesn't appear for the Author to read. Some parties depend on this
+  internal messaging.
 
 Error
 
-- After an Author requests approval, the Properties screen errors ("An error internal happened").
+DONE - After an Author requests approval, the Properties screen errors
+  ("An error internal happened").
 
-- An internal error happens when clicking on the Properties tab of:
-  http://next30.infrae.com/edit#publish!service/index
-  And now I can't delete those old versions.
+UPGRADED - I upgraded the site and there is no longer any error. But I
+  don't know if the error was fixed, or just reverted by the
+  upgrade. - An internal error happens when clicking on the Properties
+  tab of: http://next30.infrae.com/edit#publish!service/index And now
+  I can't delete those old versions.
 
 
 Publish screen of docs, logged in as ChiefEditor
 ------------------------------------------------
-- If an Author wrote a message with the request for approval it doesn't appear for the Editor to read.
+
+- If an Author wrote a message with the request for approval it
+  doesn't appear for the Editor to read.
 
 + To test: Is the publishing workflow email working?
 
@@ -68,9 +88,15 @@ Functional fixes
 
 Error alert
 
-- Why does the "An internal error happened" alert need to be modal? It's already frustrating, and it forces the user to click "Continue". We can save her a click plus the annoyance by making it not modal. Just click where you want to go and the alert disappears.
+- Why does the "An internal error happened" alert need to be modal?
+  It's already frustrating, and it forces the user to click
+  "Continue". We can save her a click plus the annoyance by making it
+  not modal. Just click where you want to go and the alert disappears.
 
-Ok. DONE - Can we say this? "An internal error happened on the server. Your system administrator has been informed of the problem." We should really do this. If internal errors happen we want to know about it.
+Ok. DONE - Can we say this? "An internal error happened on the
+server. Your system administrator has been informed of the problem."
+We should really do this. If internal errors happen we want to know
+about it.
 
 + Do we actually inform the sysadmin? Or is it just logged. ;-)
 
@@ -78,35 +104,63 @@ Datetime fields
 
 Publication time
 
-- The "Publish now" action fails if there is a bad date in the "Publication time" field. This is wrong because the Publication time is now, not the field value. Several minutes could have passed, so the system datetime should be used. The field value is irrelevant.
+- The "Publish now" action fails if there is a bad date in the
+  "Publication time" field. This is wrong because the Publication time
+  is now, not the field value. Several minutes could have passed, so
+  the system datetime should be used. The field value is irrelevant.
 
-- Manually filling in 28-8-11 causes an error (on the 11). The server should interpret the 11 as 2011. Only happens for Editors, for Authors the year is correctly interpreted. Should be easy to fix. Then we can probably ignore the following:
+- Manually filling in 28-8-11 causes an error (on the 11). The server
+  should interpret the 11 as 2011. Only happens for Editors, for
+  Authors the year is correctly interpreted. Should be easy to
+  fix. Then we can probably ignore the following:
 
-  - Wrong feedback after internal system error. To reproduce, go to a document and fill in a year of '11'. Click "Publish now". You'll get the "An internal error happened" alert. Click "Continue". Then click a folder in the sidebar. Feedback appears, saying "Version published".
+- Wrong feedback after internal system error. To reproduce, go to a
+  document and fill in a year of '11'. Click "Publish now". You'll
+  get the "An internal error happened" alert. Click "Continue". Then
+  click a folder in the sidebar. Feedback appears, saying "Version
+  published".
 
 Notes since changing the fields
 
-- If I remove the year completely, the whole row goes pink and I get validation feedback "Missing year value.". However if I fill in '11', the only feedback is the pink glowing border, and I can still submit and the error described above.
+- If I remove the year completely, the whole row goes pink and I get
+  validation feedback "Missing year value.". However if I fill in
+  '11', the only feedback is the pink glowing border, and I can still
+  submit and the error described above.
 
-- Why can Authors successfully submit a year of '11' but not Editors? The '11' gets correctly interpreted when Authors submit, but Editors get a system error. Can you make it interpret correctly for Editors too? Saves 2 chars.
+- Why can Authors successfully submit a year of '11' but not Editors?
+  The '11' gets correctly interpreted en Authors submit, but Editors
+  get a system error. Can you make it interpret correctly for Editors
+  too? Saves 2 chars.
 
 Expiration time
 
-- When a doc has been published with an expiration date, that date must be prefilled when editing/publishing the doc again. Now the field is empty and the exp date gets removed on next publication.
+- When a doc has been published with an expiration date, that date
+  must be prefilled when editing/publishing the doc again. Now the
+  field is empty and the exp date gets removed on next publication.
 
-- It used to be possible to change the future dates when a doc was approved for the future with an "Update timings" button. We can leave that out if it's complicated, but that made the approved for future state completely clear. Plus easy to edit. As it is now you need to revoke and then approve again.
+- It used to be possible to change the future dates when a doc was
+  approved for the future with an "Update timings" button. We can
+  leave that out if it's complicated, but that made the approved for
+  future state completely clear. Plus easy to edit. As it is now you
+  need to revoke and then approve again.
 
 Manage versions
 
-- Please make the version status text a link to view it. Now we're adding a click, by making users first select a checkbox, then click "View".
+- Please make the version status text a link to view it. Now we're
+  adding a click, by making users first select a checkbox, then click
+  "View".
 
-- Delete: When selecting items for deletion, the form remains sticky with selections after deletion, e.g. if you delete versions 2 and 3, the form comes back with items 0 and 1 selected.
+- Delete: When selecting items for deletion, the form remains sticky
+  with selections after deletion, e.g. if you delete versions 2 and 3,
+  the form comes back with items 0 and 1 selected.
 
 - Delete: We don't ask, "Are you sure?" on the delete action. Should we?
 
 - View: viewing an old version shows it as default html. It should be wrapped in layout like preview.
 
-- View: when viewing an old version the "Publish now" button in the header should not appear, as you're not publishing the version you're viewing. Change it to a "Return" button?
+- View: when viewing an old version the "Publish now" button in the
+  header should not appear, as you're not publishing the version
+  you're viewing. Change it to a "Return" button?
 
 - Compare: doesn't compare.
 
@@ -120,26 +174,33 @@ Exp: Aug 30, 2011 12:00:00 AM
 The pub date should be Aug 25, 2011 12:00:00
 The exp date should be Aug 30, 2011 00:00:00
 
-- Let's figure something out for these overkill dates. Translated, schmanslated.  No seconds, no AM/PM, UK structure to match our datetime fields.
-
 Buttons
 
-- The "Approve for future", "Publish now", "Close published version", "Compare", and probably more buttons/links don't have a title attribute any more. Check an older Silva for the attribute content.
+DONE - Some of them didn't have any description, except accesskey: foo
+- The "Approve for future", "Publish now", "Close published version",
+"Compare", and probably more buttons/links don't have a title
+attribute any more. Check an older Silva for the attribute content.
 
-- Since we're capitalizing now, all the title attributes should have their first letter capitalized.
+DONE - Since we're capitalizing now, all the title attributes should
+have their first letter capitalized.
 
 Publication time
 
-- This field should not be required for Authors. The Author may suggest a pub date but doesn't have to. (It's not required with the "Request approval" button above.)
+DONE - This field should not be required for Authors. The Author may
+suggest a pub date but doesn't have to. (It's not required with the
+"Request approval" button above.)
 
 Properties screen
 -----------------
 
 hide from tables of content
 
-- The hide from tables of content field absolutely does not belong in Properties. It should be in Settings. We should change this now as part of the content upgrade.
+- The hide from tables of content field absolutely does not belong in
+  Properties. It should be in Settings. We should change this now as
+  part of the content upgrade.
 
-- This screen really needs interaction design. I'm going to see if Gert has an afternoon.
+- This screen really needs interaction design. I'm going to see if
+  Gert has an afternoon.
 
 Subscriptions screen
 --------------------
@@ -152,15 +213,23 @@ Image
 
 Image sidebar
 -------------
-- If an image is cropped, the thumbnail has incorrect proportions in the html. If the image is 804x465 pixels scaled to 142x120 pixels, the img tag has attributes width="120" height="101". These proportions match the crop, but the thumbnail displays the original image, and should have the same proportions.
 
-- We need to display the image, in its "web configuration", in the edit screen.
+- If an image is cropped, the thumbnail has incorrect proportions in
+  the html. If the image is 804x465 pixels scaled to 142x120 pixels,
+  the img tag has attributes width="120" height="101". These
+  proportions match the crop, but the thumbnail displays the original
+  image, and should have the same proportions.
+
+- We need to display the image, in its "web configuration", in the
+  edit screen.
 
 DONE - The "view unscaled image" link does not look like a link.
 
-DONE - The "view unscaled image" open the image in a new window. Let's load the image like we do in preview, so the user stays in the UI.
+DONE - The "view unscaled image" open the image in a new window. Let's
+  load the image like we do in preview, so the user stays in the UI.
 
-- In the the edit tab the edit icon for docs in References is not found.
+- In the the edit tab the edit icon for docs in References is not
+  found.
 
 
 Link
@@ -168,30 +237,42 @@ Link
 
 target of relative link
 
-- This is incorrect: "Make a reference to internal content by looking it up. Click the search icon to choose a target." Change to "Make a reference to internal content by looking it up." Then:
+DONE - This is incorrect: "Make a reference to internal content by
+  looking it up. Click the search icon to choose a target." Change to
+  "Make a reference to internal content by looking it up." Then:
 
-- Change "no reference selected" to "Click the Lookup button to select a reference."
+DONE - Change "no reference selected" to "Click the Lookup button to
+  select a reference."
 
-- When creating a link, saving fails with the feedback "Absolute link selected without URL." Change to "Absolute link selected without URL. If the link goes to content in Silva, put a checkmark in the relative link field."
+DONE - When creating a link, saving fails with the feedback "Absolute
+  link selected without URL." Change to "Absolute link selected without
+  URL. If the link goes to content in Silva, put a checkmark in the
+  relative link field."
 
 Add forms
 =========
 
-- The generic id and title field are too short. The id can't hold more than:'new_directions_in_econi'. This is way too short for our clients. Those firlds should have a size that matches the textareas. For now make them bigger, like size="40".
+- The generic id and title field are too short. The id can't hold more
+  than:'new_directions_in_econi'. This is way too short for our
+  clients. Those firlds should have a size that matches the
+  textareas. For now make them bigger, like size="40".
 
 Ghost, Ghost Folder, Link
 
-- Change "no reference selected" to "Click the Lookup button to select a reference. "
+- Change "no reference selected" to "Click the Lookup button to select
+  a reference. "
 
 Silva News Filter
 
 - Title field(s) are too short. Make them size="40".
 
-- The "montrer les éléments d'agenda" checkbox with no label looks lost. Can we always put a 'Yes" label next to these?
+- The "montrer les éléments d'agenda" checkbox with no label looks
+  lost. Can we always put a 'Yes" label next to these?
 
 Silva News Viewer
 
-THIS OPTION IS DOESN'T EXIST ANYMORE - The "proxy mode" checkbox with no label looks lost. Can we always put a 'Yes" label next to these?
+THIS OPTION IS DOESN'T EXIST ANYMORE - The "proxy mode" checkbox with
+  no label looks lost. Can we always put a 'Yes" label next to these?
 
 Metadata system
 ===============
@@ -206,84 +287,156 @@ UI/usability fixes
 
 Submit buttons and reporting
 
-- When a doc is approved for the future, you can't see that it is approved for the future. The only indication is the "Publish Now" button changes to "Revoke Approval". No information about the future date of publication is visible. You only see "Manage versions". It's especially confusing if a doc is already published, then you see "Manaal close" and a "x Close published version" button, but nothing about the approval: (http://next30.infrae.com/edit#publish!products/lxml). We can display the future approval date in the "Information", but I'd rather see it in the form body itself because that's where users will be looking.
-
+- When a doc is approved for the future, you can't see that it is
+  approved for the future. The only indication is the "Publish Now"
+  button changes to "Revoke Approval". No information about the future
+  date of publication is visible. You only see "Manage versions". It's
+  especially confusing if a doc is already published, then you see
+  "Manaal close" and a "x Close published version" button, but nothing
+  about the approval:
+  (http://next30.infrae.com/edit#publish!products/lxml). We can
+  display the future approval date in the "Information", but I'd
+  rather see it in the form body itself because that's where users
+  will be looking.
 
 Manual close
 
-- Under "Manual close", the hint should have the same font-style as the field hints. The selector is '.form-head p'. Currently hints are in italic (which should change because it doesn't make sense, but let's first be consistent).
+- Under "Manual close", the hint should have the same font-style as
+  the field hints. The selector is '.form-head p'. Currently hints are
+  in italic (which should change because it doesn't make sense, but
+  let's first be consistent).
 
-- Vertical space under "Manual close" between hint and button needs to collapse and match the spacing between hints and fields.
+- Vertical space under "Manual close" between hint and button needs to
+  collapse and match the spacing between hints and fields.
 
 
 Manage versions
 
-- If we wish we can remove the spacetime from the "Modification time  Publication time 	Expiration time" table headings. It's obvious the values are times. Ha ha ha, if we wish we can remove the ' time'.
+- Personally I miss the link colors for Unapproved, Published, and
+  Last closed. They made it so clear and you could instantly see what
+  was what. Now you have to read each one. We do have room to put
+  colored balls next to the version number but they won't look good.
 
-- Personally I miss the link colors for Unapproved, Published, and Last closed. They made it so clear and you could instantly see what was what. Now you have to read each one. We do have room to put colored balls next to the version number but they won't look good.
+- View: when viewing an old version there's no obvious way to get back
+  the publish screen. We can let people learn to click on the already
+  selected tab, but that's not obvious.
 
-- View: when viewing an old version there's no obvious way to get back the publish screen. We can let people learn to click on the already selected tab, but that's not obvious.
+(BROWSER->DUTCH) Date rendering and interpretation
 
-Date rendering and interpretation
+DONE - Rendered times, e.g. Aug 25, 2011 12:00:00 PM, have ' AM' or '
+  PM' appended which is never used with 24-hour time. These can be
+  removed which will make dates shorter too.
 
-- Rendered times, e.g. Aug 25, 2011 12:00:00 PM, have ' AM' or ' PM' appended which is never used with 24-hour time. These can be removed which will make dates shorter too.
+DONE - We don't need the seconds on the date either. Saves three chars
+  per date.
 
-- We don't need the seconds on the date either. Saves three chars per date.
-
-- We're rendering the dates semi-American style, while we use use European notation in the datetime fields: day / month / year (23:59). Compare the length.
+DONE - We're rendering the dates semi-American style, while we use use
+  European notation in the datetime fields: day / month / year
+  (23:59). Compare the length.
 Aug 25, 2011 12:00:00 AM
 25 Aug 11 17:30
 
-By using the shorter rendering we can save lots of space, reduce clutter, and get more dates on one line. Now all dates are always breaking onto two lines (in this screen).
+DONE - Let's figure something out for these overkill
+  dates. Translated, schmanslated.  No seconds, no AM/PM, UK structure
+  to match our datetime fields.
+
+By using the shorter rendering we can save lots of space, reduce
+clutter, and get more dates on one line. Now all dates are always
+breaking onto two lines (in this screen).
 
 
 More Notes (27-28 aug and later)
 ================================
 
-- The "Settings" tab at the top of the screen should be an optioned button like the "Content" tab. If you click Settings, you go to Settings. If you click the down arrow, you see the options: Access, Addables, Customization, etc.
+- The "Settings" tab at the top of the screen should be an optioned
+  button like the "Content" tab. If you click Settings, you go to
+  Settings. If you click the down arrow, you see the options: Access,
+  Addables, Customization, etc.
 
 - Logout and in: after clicking the logout button the browser goes to:
-http://next30.infrae.com/service_members/logout
-If I want to login immediately (noticed a typo or as another user) it's not possible to login and you can try as many times as you like. This was really confusing and needs to change.
+  http://next30.infrae.com/service_members/logout If I want to login
+  immediately (noticed a typo or as another user) it's not possible to
+  login and you can try as many times as you like. This was really
+  confusing and needs to change.
 
-- When in a tab and you want to reload it (just to be sure it's up to date) you go to the selected tab, hover, your cursor turns to a pointer so it's obviously a link, you click, and nothing happens. However sometimes, when in a subscreen like "View previous version", the link does work and it's the only way to get back to the main screen. Best would be if the link always worked. Second best is that the tab ceases to be a link when selected, but then you have to go to another tab and back to get a reload.
+- When in a tab and you want to reload it (just to be sure it's up to
+  date) you go to the selected tab, hover, your cursor turns to a
+  pointer so it's obviously a link, you click, and nothing
+  happens. However sometimes, when in a subscreen like "View previous
+  version", the link does work and it's the only way to get back to
+  the main screen. Best would be if the link always worked. Second
+  best is that the tab ceases to be a link when selected, but then you
+  have to go to another tab and back to get a reload.
 
-- The form headings (h4 with '.form-content h4') such as "Publish new version" and "Manual close" need more margin-left to match the labels and h3 "Publication" indent.
+DONE - The form headings (h4 with '.form-content h4') such as "Publish
+  new version" and "Manual close" need more margin-left to match the
+  labels and h3 "Publication" indent.
 
-- When a field is focused it gets a green background. You can also focus a field just by clicking near it in the background of the containing box. But onblur, if you click outside of the form, the background stays green as though its focused. Can you make the background return to gray onblur? However, when a field has an error, the pink background should not disappear.
+- When a field is focused it gets a green background. You can also
+  focus a field just by clicking near it in the background of the
+  containing box. But onblur, if you click outside of the form, the
+  background stays green as though its focused. Can you make the
+  background return to gray onblur? However, when a field has an
+  error, the pink background should not disappear.
 
 
 
 Logged in as Author
 ===================
 
-- When logged in as Author at http://next30.infrae.com/edit#content!products all of the optioned buttons for documents in the listing only have Goto, Preview, and Properties. Publish is missing.
+- When logged in as Author at
+  http://next30.infrae.com/edit#content!products all of the optioned
+  buttons for documents in the listing only have Goto, Preview, and
+  Properties. Publish is missing.
 
 Publish screen of docs
 ----------------------
-- In the "Manage versions" table, all the headings will fit on one line if we change them to:
+DONE - In the "Manage versions" table, all the headings will fit on one line if we change them to:
 # 	Modification 	Publication 	Expiration 	Author 	Status
 We can safely change 'Version' to '#', which prevents wasting space in those cells, because the table title is "Manage versions".
 
+DONE - If we wish we can remove the spacetime from the "Modification
+  time Publication time Expiration time" table headings. It's obvious
+  the values are times. Ha ha ha, if we wish we can remove the ' time'.
+
+
 ???? - The "Request approval" button should read "Request approval".
 
-- If an Editor wrote a message with the rejection of approval it doesn't appear for the Author to read.
+- If an Editor wrote a message with the rejection of approval it
+  doesn't appear for the Author to read.
 
 Publication time
 
-- BTW, when the submit fails, the feedback says "Missing year value." but the cursor is in the day field. The UI doesn't indicate which field is which, but day/month/year is normal for all of our customers, even the Americans (who think it's chic).
+- BTW, when the submit fails, the feedback says "Missing year value."
+  but the cursor is in the day field. The UI doesn't indicate which
+  field is which, but day/month/year is normal for all of our
+  customers, even the Americans (who think it's chic).
 
-- If your window is not large the feedback obscures the minute field and the calendar, so you can't click the calendar to set the date. Can we locate the feedback higher, to the right of the field label?
+- If your window is not large the feedback obscures the minute field
+  and the calendar, so you can't click the calendar to set the
+  date. Can we locate the feedback higher, to the right of the field
+  label?
 
-- Strangely, if I enter '11' into the year field as an Author, the value is accepted and becomes 2011. This fails when an Editor publishes.
+- Strangely, if I enter '11' into the year field as an Author, the
+  value is accepted and becomes 2011. This fails when an Editor
+  publishes.
 
-- It's confusing when an Author submits the request for approval. The screen comes back instantly with the cursor focused in the "add message on withdrawal" textarea. At first I thought it was required to add a message to my request. (I looked away and didn't catch the "Approval requested" feedback.) That field is not required, is it just focusing automatically because it's the first one?
+- It's confusing when an Author submits the request for approval. The
+  screen comes back instantly with the cursor focused in the "add
+  message on withdrawal" textarea. At first I thought it was required
+  to add a message to my request. (I looked away and didn't catch the
+  "Approval requested" feedback.) That field is not required, is it
+  just focusing automatically because it's the first one?
 
 Message
 
-- The text area (this and all the others) has a fixed width and is often too long. Granted, in Safari and recent FF you can scale it yourself. A max-width that is 20px less than its parent should work.
+- The text area (this and all the others) has a fixed width and is
+  often too long. Granted, in Safari and recent FF you can scale it
+  yourself. A max-width that is 20px less than its parent should work.
 
-- The "Request appoval", "Withdraw approval request", "Reject approval request", and probably more button/links don't have a title attribute. Check an older Silva for the attribute content.
+- The "Request appoval", "Withdraw approval request", "Reject approval
+  request", and probably more button/links don't have a title
+  attribute. Check an older Silva for the attribute content.
 
 
 Logged in as ChiefEditor
@@ -291,7 +444,14 @@ Logged in as ChiefEditor
 
 Publish screen of docs
 ----------------------
-- When an Editor goes to the Publish screen of a doc that's been submitted for approval, it's not really obvious that the doc is waiting for approval. The only indication is there's both a "Publish Now" and "Reject Request" button (looking good together). Not sure if we should do something more.
-- If an Author wrote a message with the request for approval it doesn't appear for the Editor to read.
+
+- When an Editor goes to the Publish screen of a doc that's been
+  submitted for approval, it's not really obvious that the doc is
+  waiting for approval. The only indication is there's both a "Publish
+  Now" and "Reject Request" button (looking good together). Not sure
+  if we should do something more.
+
+- If an Author wrote a message with the request for approval it
+  doesn't appear for the Editor to read.
 
 service_members logout
