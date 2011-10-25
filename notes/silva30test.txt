@@ -10,7 +10,8 @@ When something's done I'll test it and, assuming a positive result, delete it fr
 
 General comments
 ----------------
-Nothing to do ? - New feedback colors are much more noticeable.
+
+NOTHING TO DO ? - New feedback colors are much more noticeable.
 
 - Changing languages does not change the UI. The user must reload. Can
   we do that for the user?
@@ -156,7 +157,8 @@ Manage versions
 
 - Delete: We don't ask, "Are you sure?" on the delete action. Should we?
 
-- View: viewing an old version shows it as default html. It should be wrapped in layout like preview.
+- View: viewing an old version shows it as default html. It should be
+  wrapped in layout like preview.
 
 - View: when viewing an old version the "Publish now" button in the
   header should not appear, as you're not publishing the version
@@ -166,7 +168,9 @@ Manage versions
 
 - Compare: can you compare across batch screens?
 
-- If I fill in a publication time of 12:00 (thus midday), and only a date for the expiration date with no time, the result is the following:
+- If I fill in a publication time of 12:00 (thus midday), and only a
+  date for the expiration date with no time, the result is the
+  following:
 
 Pub: Aug 25, 2011 12:00:00 PM
 Exp: Aug 30, 2011 12:00:00 AM
@@ -177,18 +181,18 @@ The exp date should be Aug 30, 2011 00:00:00
 Buttons
 
 DONE - Some of them didn't have any description, except accesskey: foo
-- The "Approve for future", "Publish now", "Close published version",
-"Compare", and probably more buttons/links don't have a title
-attribute any more. Check an older Silva for the attribute content.
+  - The "Approve for future", "Publish now", "Close published version",
+  "Compare", and probably more buttons/links don't have a title
+  attribute any more. Check an older Silva for the attribute content.
 
 DONE - Since we're capitalizing now, all the title attributes should
-have their first letter capitalized.
+  have their first letter capitalized.
 
 Publication time
 
 DONE - This field should not be required for Authors. The Author may
-suggest a pub date but doesn't have to. (It's not required with the
-"Request approval" button above.)
+  suggest a pub date but doesn't have to. (It's not required with the
+  "Request approval" button above.)
 
 Properties screen
 -----------------
@@ -333,8 +337,8 @@ DONE - We don't need the seconds on the date either. Saves three chars
 DONE - We're rendering the dates semi-American style, while we use use
   European notation in the datetime fields: day / month / year
   (23:59). Compare the length.
-Aug 25, 2011 12:00:00 AM
-25 Aug 11 17:30
+  Aug 25, 2011 12:00:00 AM
+  25 Aug 11 17:30
 
 DONE - Let's figure something out for these overkill
   dates. Translated, schmanslated.  No seconds, no AM/PM, UK structure
@@ -391,9 +395,14 @@ Logged in as Author
 
 Publish screen of docs
 ----------------------
-DONE - In the "Manage versions" table, all the headings will fit on one line if we change them to:
-# 	Modification 	Publication 	Expiration 	Author 	Status
-We can safely change 'Version' to '#', which prevents wasting space in those cells, because the table title is "Manage versions".
+
+DONE - In the "Manage versions" table, all the headings will fit on
+  one line if we change them to:
+
+  # 	Modification 	Publication 	Expiration 	Author 	Status
+
+  We can safely change 'Version' to '#', which prevents wasting space in
+  those cells, because the table title is "Manage versions".
 
 DONE - If we wish we can remove the spacetime from the "Modification
   time Publication time Expiration time" table headings. It's obvious
