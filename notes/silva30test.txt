@@ -430,12 +430,13 @@ DONE - BTW, when the submit fails, the feedback says "Missing year value."
   value is accepted and becomes 2011. This fails when an Editor
   publishes.
 
-- It's confusing when an Author submits the request for approval. The
-  screen comes back instantly with the cursor focused in the "add
-  message on withdrawal" textarea. At first I thought it was required
-  to add a message to my request. (I looked away and didn't catch the
-  "Approval requested" feedback.) That field is not required, is it
-  just focusing automatically because it's the first one?
+IT IS FOCUSED AS IT IS THE FIRST FIELD OF THE FORM - It's confusing
+  when an Author submits the request for approval. The screen comes
+  back instantly with the cursor focused in the "add message on
+  withdrawal" textarea. At first I thought it was required to add a
+  message to my request. (I looked away and didn't catch the "Approval
+  requested" feedback.) That field is not required, is it just
+  focusing automatically because it's the first one?
 
 Message
 
@@ -460,7 +461,7 @@ Publish screen of docs
   Now" and "Reject Request" button (looking good together). Not sure
   if we should do something more.
 
-- If an Author wrote a message with the request for approval it
+DONE - If an Author wrote a message with the request for approval it
   doesn't appear for the Editor to read.
 
 service_members logout
