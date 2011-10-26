@@ -209,7 +209,7 @@ hide from tables of content
 Subscriptions screen
 --------------------
 
-+ Errors when enabling subscriptions
+DONE + Errors when enabling subscriptions
 
 
 Image
