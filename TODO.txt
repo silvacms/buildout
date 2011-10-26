@@ -7,7 +7,7 @@ This is a list of points that need attention before final release.
 UI
 ==
 
-- approve for future
+DONE - approve for future
 
 - settings addable on install
 
@@ -21,7 +21,7 @@ DONE - theme jGrowl correctly
 
 - formulator datetime ?
 
-- report more information on action failures in listing
+DONE - report more information on action failures in listing
 
 - empty message in listing not added if you delete everything / filter
   out everything.
@@ -122,4 +122,4 @@ DONE - composed sub form changes to review
 
 - folder convertion modified + tests (smi update and everything)
 
-- click on form errors make than disappear
+DONE - click on form errors make than disappear
