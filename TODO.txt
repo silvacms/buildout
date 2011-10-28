@@ -37,6 +37,18 @@ UI / JS
 
 - prevent repeat on keys (ctrl-c)
 
+Editor
+======
+
+- CS icon in toolbar as good as not visible. WB suggestion use the
+  background-position 0 -624px which looks like a CS added at the end
+  of some text.
+
+- Not able to add CS's with lots of fields. On a screen height of
+  800px you can't see, and use the form actions in the popup for
+  adding a CS. There is a scrollbar but it doesn't scroll to the end
+  of all fields.
+
 Document
 ========
 
