@@ -388,7 +388,7 @@ DONE - The form headings (h4 with '.form-content h4') such as "Publish
 Logged in as Author
 ===================
 
-- When logged in as Author at
+DONE - When logged in as Author at
   http://next30.infrae.com/edit#content!products all of the optioned
   buttons for documents in the listing only have Goto, Preview, and
   Properties. Publish is missing.
