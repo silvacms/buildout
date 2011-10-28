@@ -7,11 +7,7 @@ This is a list of points that need attention before final release.
 UI
 ==
 
-DONE - approve for future
-
 - settings addable on install
-
-DONE - theme jGrowl correctly
 
 - rename title:
 
@@ -20,8 +16,6 @@ DONE - theme jGrowl correctly
 - form change notification
 
 - formulator datetime ?
-
-DONE - report more information on action failures in listing
 
 - empty message in listing not added if you delete everything / filter
   out everything.
@@ -100,11 +94,7 @@ Details
 
 - code source XML import export / tests
 
-OK - new viewer sort_attr
-
 - image in file catalog
-
-DONE - composed sub form changes to review
 
 - content position while moving invalidation ...
 
@@ -122,4 +112,3 @@ DONE - composed sub form changes to review
 
 - folder convertion modified + tests (smi update and everything)
 
-DONE - click on form errors make than disappear
