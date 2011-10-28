@@ -40,9 +40,9 @@ UI / JS
 Editor
 ======
 
-- CS icon in toolbar as good as not visible. WB suggestion use the
-  background-position 0 -624px which looks like a CS added at the end
-  of some text.
+- CS icon in toolbar as good as not visible. We need to make a news
+  sprite with the icons we want to use as by default most actions have
+  a disbled (grey) sprite image.
 
 - Not able to add CS's with lots of fields. On a screen height of
   800px you can't see, and use the form actions in the popup for
