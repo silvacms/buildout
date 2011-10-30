@@ -16,27 +16,18 @@ NOTHING TO DO ? - New feedback colors are much more noticeable.
 - Changing languages does not change the UI. The user must reload. Can
   we do that for the user?
 
-NOT DOABLE - When requested to login again, we should prefill the identifier for
-  the user.
-
-NOT DOABLE - When a user logs in, we provide a modal alert and the user has to
-  click "Continue". This is a useless click. Change it to (non-modal)
-  feedback instead.
-
-
 Import screen
 -------------
 
 Export screen
 -------------
 
-PASS - It's not possible to export one document anymore. This was a useful
-  feature. Can we bring it back?
+Contents screen
+---------------
 
-Contents screen, logged in as Author
-------------------------------------
+- "Content moved in position 15" -> "Content moved to position 15."
 
-DONE - The "Go to" button in the listing does not have "Publish".
+- When I select a doc and perform an action such as Publish or New Version, it moves up. Bizarre. http://next30.infrae.com/edit#content!products doc: 'glade'
 
 Access screen
 -------------
@@ -60,46 +51,15 @@ Settings screen of folder
 Publish screen of docs, logged in as Author
 -------------------------------------------
 
-DONE - If an Editor wrote a message with the rejection of approval it
-  doesn't appear for the Author to read. Some parties depend on this
-  internal messaging.
-
-Error
-
-DONE - After an Author requests approval, the Properties screen errors
-  ("An error internal happened").
-
-UPGRADED - I upgraded the site and there is no longer any error. But I
-  don't know if the error was fixed, or just reverted by the
-  upgrade. - An internal error happens when clicking on the Properties
-  tab of: http://next30.infrae.com/edit#publish!service/index And now
-  I can't delete those old versions.
-
+- The text "A message nobody will read." should be like the dates and disappear when the field focuses.
 
 Publish screen of docs, logged in as ChiefEditor
 ------------------------------------------------
-
-DONE - If an Author wrote a message with the request for approval it
-  doesn't appear for the Editor to read.
 
 + To test: Is the publishing workflow email working?
 
 Functional fixes
 ~~~~~~~~~~~~~~~~
-
-Error alert
-
-NOT DOABLE - Why does the "An internal error happened" alert need to be modal?
-  It's already frustrating, and it forces the user to click
-  "Continue". We can save her a click plus the annoyance by making it
-  not modal. Just click where you want to go and the alert disappears.
-
-Ok. DONE - Can we say this? "An internal error happened on the
-server. Your system administrator has been informed of the problem."
-We should really do this. If internal errors happen we want to know
-about it.
-
-+ Do we actually inform the sysadmin? Or is it just logged. ;-)
 
 Datetime fields
 
@@ -178,22 +138,6 @@ Exp: Aug 30, 2011 12:00:00 AM
 The pub date should be Aug 25, 2011 12:00:00
 The exp date should be Aug 30, 2011 00:00:00
 
-Buttons
-
-DONE - Some of them didn't have any description, except accesskey: foo
-  - The "Approve for future", "Publish now", "Close published version",
-  "Compare", and probably more buttons/links don't have a title
-  attribute any more. Check an older Silva for the attribute content.
-
-DONE - Since we're capitalizing now, all the title attributes should
-  have their first letter capitalized.
-
-Publication time
-
-DONE - This field should not be required for Authors. The Author may
-  suggest a pub date but doesn't have to. (It's not required with the
-  "Request approval" button above.)
-
 Properties screen
 -----------------
 
@@ -218,40 +162,29 @@ Image
 Image sidebar
 -------------
 
+- In the the edit tab the "edit content" icon for docs in References
+  is not found.
+
 - If an image is cropped, the thumbnail has incorrect proportions in
   the html. If the image is 804x465 pixels scaled to 142x120 pixels,
   the img tag has attributes width="120" height="101". These
   proportions match the crop, but the thumbnail displays the original
   image, and should have the same proportions.
 
-- We need to display the image, in its "web configuration", in the
-  edit screen.
-
-DONE - The "view unscaled image" link does not look like a link.
-
-DONE - The "view unscaled image" open the image in a new window. Let's
-  load the image like we do in preview, so the user stays in the UI.
-
-- In the the edit tab the edit icon for docs in References is not
-  found.
-
+-
 
 Link
 ====
 
 target of relative link
 
-DONE - This is incorrect: "Make a reference to internal content by
-  looking it up. Click the search icon to choose a target." Change to
-  "Make a reference to internal content by looking it up." Then:
-
 DONE - Change "no reference selected" to "Click the Lookup button to
   select a reference."
 
-DONE - When creating a link, saving fails with the feedback "Absolute
-  link selected without URL." Change to "Absolute link selected without
-  URL. If the link goes to content in Silva, put a checkmark in the
-  relative link field."
+- Change to "Click the Lookup button to select an item to refer to."
+  (This is not good form "a content", the word content is treated as
+  a plural form. Not sure why....)
+
 
 Add forms
 =========
@@ -273,10 +206,6 @@ Silva News Filter
 - The "montrer les éléments d'agenda" checkbox with no label looks
   lost. Can we always put a 'Yes" label next to these?
 
-Silva News Viewer
-
-THIS OPTION IS DOESN'T EXIST ANYMORE - The "proxy mode" checkbox with
-  no label looks lost. Can we always put a 'Yes" label next to these?
 
 Metadata system
 ===============
@@ -327,26 +256,6 @@ Manage versions
 
 (BROWSER->DUTCH) Date rendering and interpretation
 
-DONE - Rendered times, e.g. Aug 25, 2011 12:00:00 PM, have ' AM' or '
-  PM' appended which is never used with 24-hour time. These can be
-  removed which will make dates shorter too.
-
-DONE - We don't need the seconds on the date either. Saves three chars
-  per date.
-
-DONE - We're rendering the dates semi-American style, while we use use
-  European notation in the datetime fields: day / month / year
-  (23:59). Compare the length.
-  Aug 25, 2011 12:00:00 AM
-  25 Aug 11 17:30
-
-DONE - Let's figure something out for these overkill
-  dates. Translated, schmanslated.  No seconds, no AM/PM, UK structure
-  to match our datetime fields.
-
-By using the shorter rendering we can save lots of space, reduce
-clutter, and get more dates on one line. Now all dates are always
-breaking onto two lines (in this screen).
 
 
 More Notes (27-28 aug and later)
@@ -396,30 +305,7 @@ DONE - When logged in as Author at
 Publish screen of docs
 ----------------------
 
-DONE - In the "Manage versions" table, all the headings will fit on
-  one line if we change them to:
-
-  # 	Modification 	Publication 	Expiration 	Author 	Status
-
-  We can safely change 'Version' to '#', which prevents wasting space in
-  those cells, because the table title is "Manage versions".
-
-DONE - If we wish we can remove the spacetime from the "Modification
-  time Publication time Expiration time" table headings. It's obvious
-  the values are times. Ha ha ha, if we wish we can remove the ' time'.
-
-
-???? - The "Request approval" button should read "Request approval".
-
-DONE - If an Editor wrote a message with the rejection of approval it
-  doesn't appear for the Author to read.
-
 Publication time
-
-DONE - BTW, when the submit fails, the feedback says "Missing year value."
-  but the cursor is in the day field. The UI doesn't indicate which
-  field is which, but day/month/year is normal for all of our
-  customers, even the Americans (who think it's chic).
 
 - If your window is not large the feedback obscures the minute field
   and the calendar, so you can't click the calendar to set the
@@ -429,14 +315,6 @@ DONE - BTW, when the submit fails, the feedback says "Missing year value."
 - Strangely, if I enter '11' into the year field as an Author, the
   value is accepted and becomes 2011. This fails when an Editor
   publishes.
-
-IT IS FOCUSED AS IT IS THE FIRST FIELD OF THE FORM - It's confusing
-  when an Author submits the request for approval. The screen comes
-  back instantly with the cursor focused in the "add message on
-  withdrawal" textarea. At first I thought it was required to add a
-  message to my request. (I looked away and didn't catch the "Approval
-  requested" feedback.) That field is not required, is it just
-  focusing automatically because it's the first one?
 
 Message
 
@@ -461,7 +339,25 @@ Publish screen of docs
   Now" and "Reject Request" button (looking good together). Not sure
   if we should do something more.
 
-DONE - If an Author wrote a message with the request for approval it
-  doesn't appear for the Editor to read.
+
+SNN
+===
+- When creating an Agenda Item it's not possible to add a location without filling out all the datetimes. Shouldn't that be a separate field?
+
+- The month field lets me fill in '19'. Can the inline validation do a range check like it does in publish?
+
+- After submitting the above entry, the entire multi-field goes pink, and I have no idea which of the seven fields contains the error. We need to figure out something here. Don't we know what the invalid entry is?
+
+- The Agenda Item I made wouldn't save. Got a message that the server is down. next30.infrae.com is crawling. Giving up for now. Uren works fine.
+  Things seem to speed up so I came back and tried saving again. No dice.
+
+
+
+
+
+Editor
+======
+- The source view has light gray text and is hard to read.
+
 
 service_members logout
