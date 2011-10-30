@@ -9,18 +9,12 @@ UI
 
 - settings addable on install
 
-- rename title:
-
-  - no check if possible
-
 - form change notification
 
 - formulator datetime ?
 
 - empty message in listing not added if you delete everything / filter
   out everything.
-
-- publish drop-down menu fixing ?
 
 - last author don't change on publication actions
 
@@ -100,8 +94,6 @@ Details
 
 - smi layout for download error
 
-- rename title expression
-
 - ghost cataloging when haunted change / tests
 
 - code source XML import export / tests
@@ -124,3 +116,19 @@ Details
 
 - folder convertion modified + tests (smi update and everything)
 
+
+=======
+
+renaming rules:
+
+- if you are not an author
+
+  you can always the ID of a document,
+
+  you can change the title if there is an editable version.
+
+- if you are an author,
+
+  you can change the ID of a document unless it is published or approved,
+
+  you can change the title if there is a draft version.
