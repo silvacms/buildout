@@ -126,17 +126,8 @@ Manage versions
 
 - Compare: doesn't compare.
 
-- Compare: can you compare across batch screens?
+- If there are batched versions and you go to the second screen, clicking the New version or Publish button in the header 404s.
 
-- If I fill in a publication time of 12:00 (thus midday), and only a
-  date for the expiration date with no time, the result is the
-  following:
-
-Pub: Aug 25, 2011 12:00:00 PM
-Exp: Aug 30, 2011 12:00:00 AM
-
-The pub date should be Aug 25, 2011 12:00:00
-The exp date should be Aug 30, 2011 00:00:00
 
 Properties screen
 -----------------
