@@ -104,7 +104,8 @@ Details
 
 - content ordering in the UI with default document.
 
-================
+Various
+=======
 
 - You can published close, but not approve for future closed (there is
   no version to set publication date). Shoud it be possible ?
@@ -116,8 +117,8 @@ Details
 
 - folder convertion modified + tests (smi update and everything)
 
-
-=======
+Roles related
+=============
 
 renaming rules:
 
