@@ -104,7 +104,7 @@ Details
 
 - content ordering in the UI with default document.
 
-Various
+
 =======
 
 - You can published close, but not approve for future closed (there is
@@ -117,8 +117,8 @@ Various
 
 - folder convertion modified + tests (smi update and everything)
 
-Roles related
-=============
+
+======================
 
 renaming rules:
 
