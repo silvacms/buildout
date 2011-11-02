@@ -25,9 +25,10 @@ Export screen
 Contents screen
 ---------------
 
-- "Content moved in position 15" -> "Content moved to position 15."
+DONE - "Content moved in position 15" -> "Content moved to position 15."
 
-- When I select a doc and perform an action such as Publish or New Version, it moves up. Bizarre. http://next30.infrae.com/edit#content!products doc: 'glade'
+DONE - When I select a doc and perform an action such as Publish or New
+  Version, it moves up. Bizarre.
 
 Access screen
 -------------
@@ -51,12 +52,14 @@ Settings screen of folder
 Publish screen of docs, logged in as Author
 -------------------------------------------
 
-- The text "A message nobody will read." should be like the dates and disappear when the field focuses.
+DON'T SEE IT - The text "A message nobody will read." should be like
+  the dates and disappear when the field focuses.
 
 Publish screen of docs, logged in as ChiefEditor
 ------------------------------------------------
 
-+ To test: Is the publishing workflow email working?
+THERE UNITTEST AT LEAST FOR THAT + To test: Is the publishing workflow
+  email working?
 
 Functional fixes
 ~~~~~~~~~~~~~~~~
@@ -65,10 +68,12 @@ Datetime fields
 
 Publication time
 
-- The "Publish now" action fails if there is a bad date in the
-  "Publication time" field. This is wrong because the Publication time
-  is now, not the field value. Several minutes could have passed, so
-  the system datetime should be used. The field value is irrelevant.
+THE FIELD IS ACTUALLY REVELENT LIKE WE DISSCUSSED, IF YOU WANT TO
+  PUBLISH IN THE PAST OR SET AN EXPIRATION DATE - The "Publish now"
+  action fails if there is a bad date in the "Publication time"
+  field. This is wrong because the Publication time is now, not the
+  field value. Several minutes could have passed, so the system
+  datetime should be used. The field value is irrelevant.
 
 - Manually filling in 28-8-11 causes an error (on the 11). The server
   should interpret the 11 as 2011. Only happens for Editors, for
@@ -117,16 +122,17 @@ Manage versions
 
 - Delete: We don't ask, "Are you sure?" on the delete action. Should we?
 
-- View: viewing an old version shows it as default html. It should be
+DONE - View: viewing an old version shows it as default html. It should be
   wrapped in layout like preview.
 
 - View: when viewing an old version the "Publish now" button in the
   header should not appear, as you're not publishing the version
   you're viewing. Change it to a "Return" button?
 
-- Compare: doesn't compare.
+DONE - Compare: doesn't compare.
 
-- If there are batched versions and you go to the second screen, clicking the New version or Publish button in the header 404s.
+DONE - If there are batched versions and you go to the second screen,
+  clicking the New version or Publish button in the header 404s.
 
 
 Properties screen
@@ -161,8 +167,6 @@ Image sidebar
   the img tag has attributes width="120" height="101". These
   proportions match the crop, but the thumbnail displays the original
   image, and should have the same proportions.
-
--
 
 Link
 ====
@@ -276,7 +280,7 @@ DONE - The form headings (h4 with '.form-content h4') such as "Publish
   new version" and "Manual close" need more margin-left to match the
   labels and h3 "Publication" indent.
 
-- When a field is focused it gets a green background. You can also
+NOPE - When a field is focused it gets a green background. You can also
   focus a field just by clicking near it in the background of the
   containing box. But onblur, if you click outside of the form, the
   background stays green as though its focused. Can you make the
@@ -298,14 +302,14 @@ Publish screen of docs
 
 Publication time
 
-- If your window is not large the feedback obscures the minute field
-  and the calendar, so you can't click the calendar to set the
-  date. Can we locate the feedback higher, to the right of the field
-  label?
+YOU CAN CLICK ON THE FEEDBACK TO MAKE IT DISAPPEAR - If your window is
+  not large the feedback obscures the minute field and the calendar,
+  so you can't click the calendar to set the date. Can we locate the
+  feedback higher, to the right of the field label?
 
-- Strangely, if I enter '11' into the year field as an Author, the
-  value is accepted and becomes 2011. This fails when an Editor
-  publishes.
+I HAVE TO EXPLAIN THAT ONE - Strangely, if I enter '11' into the year
+  field as an Author, the value is accepted and becomes 2011. This
+  fails when an Editor publishes.
 
 Message
 
@@ -313,7 +317,8 @@ Message
   often too long. Granted, in Safari and recent FF you can scale it
   yourself. A max-width that is 20px less than its parent should work.
 
-- The "Request appoval", "Withdraw approval request", "Reject approval
+THEY DIDN'T HAVE IN THE OLD ONE EITHER. PLEASE PROPOSE TITLES - The
+  "Request appoval", "Withdraw approval request", "Reject approval
   request", and probably more button/links don't have a title
   attribute. Check an older Silva for the attribute content.
 
@@ -333,17 +338,24 @@ Publish screen of docs
 
 SNN
 ===
-- When creating an Agenda Item it's not possible to add a location without filling out all the datetimes. Shouldn't that be a separate field?
 
-- The month field lets me fill in '19'. Can the inline validation do a range check like it does in publish?
+A LOCATION IS ALWAYS ASSOCIATED TO A DATE WHERE THE EVENT HAPPENS
+  (valentim specs). - When creating an Agenda Item it's not possible
+  to add a location without filling out all the datetimes. Shouldn't
+  that be a separate field?
 
-- After submitting the above entry, the entire multi-field goes pink, and I have no idea which of the seven fields contains the error. We need to figure out something here. Don't we know what the invalid entry is?
+- The month field lets me fill in '19'. Can the inline validation do a
+  range check like it does in publish?
 
-- The Agenda Item I made wouldn't save. Got a message that the server is down. next30.infrae.com is crawling. Giving up for now. Uren works fine.
-  Things seem to speed up so I came back and tried saving again. No dice.
+- After submitting the above entry, the entire multi-field goes pink,
+  and I have no idea which of the seven fields contains the error. We
+  need to figure out something here. Don't we know what the invalid
+  entry is?
 
-
-
+THAT SHOULD WORK NOW - The Agenda Item I made wouldn't save. Got a
+  message that the server is down. next30.infrae.com is
+  crawling. Giving up for now. Uren works fine.  Things seem to speed
+  up so I came back and tried saving again. No dice.
 
 
 Editor
