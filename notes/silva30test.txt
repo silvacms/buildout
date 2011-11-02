@@ -156,6 +156,12 @@ DONE + Errors when enabling subscriptions
 Image
 =====
 
+- When adding an image the UI has two controls for the capsule, a checkbox
+  for if you want it, and a text string field for the content. Let's reduce
+  this to only the string field. We won't automatically fill it (like we do
+  the alt parameter). If the field has content, the caption gets rendered,
+  otherwise it gets skipped when rendering.
+
 Image sidebar
 -------------
 
