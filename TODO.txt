@@ -102,9 +102,6 @@ Details
 
 - content position while moving invalidation ...
 
-- content ordering in the UI with default document.
-
-
 =======
 
 - You can published close, but not approve for future closed (there is
@@ -117,19 +114,3 @@ Details
 
 - folder convertion modified + tests (smi update and everything)
 
-
-======================
-
-renaming rules:
-
-- if you are not an author
-
-  you can always the ID of a document,
-
-  you can change the title if there is an editable version.
-
-- if you are an author,
-
-  you can change the ID of a document unless it is published or approved,
-
-  you can change the title if there is a draft version.
