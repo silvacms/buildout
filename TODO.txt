@@ -116,4 +116,7 @@ Details
 
 ===
 
+write test for:
+
 get_introduction document
+formulator adapter / interfacefield / emaillinesfield.
