@@ -18,7 +18,7 @@ UI
 
 - last author don't change on publication actions
 
-- reference portlet preview
+- reference portlet preview / preview should stays in SMI
 
 UI / JS
 =======
