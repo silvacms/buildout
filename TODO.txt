@@ -70,12 +70,6 @@ Ghost
 Code sources
 ============
 
-EXTRA - CSS / JS option to external source
-
-EXTRA - version
-
-EXTRA - mark outdated ones
-
 - XML import export
 
 - feedback on install / service
@@ -114,11 +108,16 @@ Details
 
 - folder convertion modified + tests (smi update and everything)
 
+- silva.ui.rest.container.generator error case (line 33)
+
 ===
 
 write test for:
 
-get_introduction document
-formulator adapter / interfacefield / emaillinesfield.
+-get_introduction document
+
+-formulator adapter / interfacefield / emaillinesfield.
+
+===
 
 minimise resources
