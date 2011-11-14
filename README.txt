@@ -17,7 +17,7 @@ Use
 Check out the buildout of the Silva trunk
 -----------------------------------------
 
-  $ svn co https://svn.infrae.com/buildout/silva/trunk/ Silva
+  $ svn co https://svn.infrae.com/buildout/silva/tag/Silva-3.0b1 Silva
 
 Go into your "checkout"
 -----------------------
@@ -36,14 +36,14 @@ itself.
 To use one of the configurations, you must create a new file called
 ``buildout.cfg`` in the root directory of the buildout (i.e. in the
 directory this ``README.txt`` file is in).  Put these contents into
-the ``buildout.cfg`` file to use the ``development.cfg``
+the ``buildout.cfg`` file to use the ``simple-instance.cfg``
 configuration::
 
   [buildout]
-  extends = profiles/development.cfg
+  extends = profiles/simple-instance.cfg
 
-The ``development.cfg`` configuration that we use in this example is
-intended for local development.  Most of the configuration is shared
+The ``simple-instance.cfg`` configuration that we use in this example is
+intended for a simple Silva instance.  Most of the configuration is shared
 through ``base.cfg`` and only overridden where necessary.
 
 Create a buildout configuration file or use the initial one as a base
