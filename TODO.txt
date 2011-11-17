@@ -108,8 +108,6 @@ Details
 
 - folder convertion modified + tests (smi update and everything)
 
-- silva.ui.rest.container.generator error case (line 33)
-
 ===
 
 write test for:
