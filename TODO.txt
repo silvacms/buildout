@@ -106,16 +106,29 @@ Details
 - file content encoding / content_type not updated when upload a new
   file (fileupload have no filename).
 
-- folder convertion modified + tests (smi update and everything)
-
 ===
 
 write test for:
 
--get_introduction document
+- get_introduction document
 
--formulator adapter / interfacefield / emaillinesfield.
+- formulator adapter / interfacefield / emaillinesfield.
 
 ===
 
 minimise resources
+
+
+
+=======
+
+WUW merge
+
+silva news local option
+
+
+=======
+
+
+convert file doesn't keep the silva metadata like it should. Work an
+api for the form and the silva.system.utils command.
