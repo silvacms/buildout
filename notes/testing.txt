@@ -1,8 +1,7 @@
 ﻿Silva 3.0 test notes
 ====================
 
-DONE signal
-
+This is done signal:
 DONE - "Informations" should be "Information".
 
 When something's done I'll test it and, assuming a positive result, delete it from this list.
@@ -35,6 +34,11 @@ Access screen
   could not login with this. I had to reload, which took me back to
   the home page with the nested login form, and then I could
   login. This is real glitch that could frustrate a user.
+
+- I left my screen open overnight, and when I came back the next
+  morning I tried to do something. That login form came up, the one
+  you can't ever successfully login to. Damn frustrating. Can we
+  remove it?
 
 Settings screen of folder
 -------------------------
@@ -99,15 +103,14 @@ Manage versions
 
 DONE - View: viewing an old version shows it as default html. It should be
   wrapped in layout like preview.
+XXX This is not working on next30.
 
 - View: when viewing an old version the "Publish now" button in the
   header should not appear, as you're not publishing the version
   you're viewing. Change it to a "Return" button?
 
 DONE - Compare: doesn't compare.
-
-DONE - If there are batched versions and you go to the second screen,
-  clicking the New version or Publish button in the header 404s.
+XXX This is not working on next30.
 
 - The buttons (Delete Copy for editing View Compare) are not working.
   http://next30.infrae.com/edit#/publish/view/0!about/index
@@ -133,16 +136,15 @@ Subscriptions screen
 Image
 =====
 
-- When adding an image the UI has two controls for the capsule, a checkbox
-  for if you want it, and a text string field for the content. Let's reduce
-  this to only the string field. We won't automatically fill it (like we do
-  the alt parameter). If the field has content, the caption gets rendered,
-  otherwise it gets skipped when rendering.
+- When an image is added it gets a yellow background which looks horrible.
+  This goes against WYSIWYG (and looks like the old forms editor, gah). That
+  yellow is only used to indicate something that does not show up in
+  preview/public view. Please remove the yellow from the image backgrounds.
 
 Image sidebar
 -------------
 
-- In the the edit tab the "edit content" icon for docs in References
+- Bug: In the the edit tab the "edit content" icon for docs in References
   is not found.
 
 - If an image is cropped, the thumbnail has incorrect proportions in
@@ -277,7 +279,11 @@ Message
 THEY DIDN'T HAVE IN THE OLD ONE EITHER. PLEASE PROPOSE TITLES - The
   "Request appoval", "Withdraw approval request", "Reject approval
   request", and probably more button/links don't have a title
-  attribute. Check an older Silva for the attribute content.
+  attribute.
+
+"Request approval": Submit this content to be published.
+"Withdraw approval request": Re-edit this content.
+"Reject approval request": Put this content back in a draft state.
 
 
 Logged in as ChiefEditor
@@ -305,8 +311,7 @@ SNN
   entry is?
 
 THAT SHOULD WORK NOW - Yup.
-
-When I paste html text into the editor it fails at the first tag. I'll show you. Hope this is a config thing.
+Works really well.
 
 
 Editor
@@ -314,4 +319,26 @@ Editor
 - The source view has light gray text and is hard to read.
 
 
-service_members logout
+Logout
+======
+- When a user logs out, they are sent to service_members/logout. This
+  triggers the login form to appear. Why? If you want to log in again,
+  you can't. Can we just send them to the public view of where they
+  were?
+
+Reference dialog
+----------------
+
+- Reference dialog title is "Lookup a content" / "Lookup a content item" or
+  "Lookup an item"
+
+- In the reference dialog clicking the icon of a container doesn't do
+  anything. It should have the same action as clicking the icon in the
+  contents screen, opening/descending into the container.
+
+- In the reference dialog clicking the icon of a non-container doesn't do
+  anything. Make it trigger the same action as the 'plus' icon on the right.
+  This obviates the need to move the mouse across the screen, which new
+  users find confusing because the selection checkbox used to be on the left.
+
+
