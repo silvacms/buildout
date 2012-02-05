@@ -342,3 +342,11 @@ Reference dialog
   users find confusing because the selection checkbox used to be on the left.
 
 
+Bugs
+====
+- This document seems to be corrupted and can't be opened/edited (possibly
+  a reference problem as it contains an image that doesn't show up, and/or
+  it's referenced by ghosts):
+  http://next30.infrae.com/contact/facet
+
+
