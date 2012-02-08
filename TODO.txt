@@ -1,8 +1,151 @@
-===========================================
-List of known bugs - issues - missing parts
-===========================================
+===========================
+List of known bugs - issues
+===========================
 
 This is a list of points that need attention before final release.
+
+Important issues
+================
+
+Editor
+------
+
+- The icon sprite used in the editor skin contains transparent
+  icons. They should be replaced with not transparent one (using the
+  transparent color is ok, but not semi transparent one). Base icon
+  set would be yumyum.
+
+- Code source and image selection and dragging around should be fixed
+  in IE, Chrome, Safari. It only works on Firefox. Those elements are
+  inline-block. Selection behave like block selection in Firefox, and
+  like inline selection in other browsers. This should be somehow
+  fixed.
+
+- An option should be added in the service_editor in order to ban the
+  use of colors in the text editor (think about the table background,
+  foreground and border colors).
+
+Silva core
+----------
+
+- Catalog indexing should be tested and fixed. Each action requiring a
+  reindexing of the object, should reindex all the object, as some
+  indexes used other index values (like fulltext). Fulltext should be
+  defined as its own interface.
+
+  This can be effeciently fixed, by collecting which content to
+  reindex during the action phase of the request, and reindexing them
+  at the end of this action (thread local, or request annotation).
+
+- File that are inside Image content should not be indexed (they
+  should not trigger any event, maybe adding a suppress_event).
+
+- If you create a Ghost Folder from a Folder, you cannot no longer
+  delete anything from the source Folder. You should be able to, and
+  that should delete the linked content in the Ghost Folder too.
+
+- Content order is not correct in some container events (rename is
+  one). This is due to the fact that is considered as it is removed
+  and added back after. During those operation, the order should
+  remain the same. This need testing.
+
+- If you upload a new File in an existing one, the content_type,
+  content_encoding and such are not properly updated. This need
+  testing.
+
+Forms
+-----
+
+- The image thumbnail displayed on the edit form should not have cache
+  headers.
+
+Merging
+=======
+
+2.1
+---
+
+- silva news local datetime option.
+
+- verify logging form changes (redirect to path option).
+
+2.3
+---
+
+- file convertion (keep metadata and references, include refactor part
+  of the code made in SilvaDocument for the migration).
+
+- file mimetype changes.
+
+- upgrade event.
+
+
+Tests
+=====
+
+This points need extra testing:
+
+- get_introduction document
+
+- formulator adapter / interfacefield / emaillinesfield.
+
+Packaging
+=========
+
+- i18nextract should create a launchpad tarball following the
+  launchpad structure. It should be able to extract a launchpad
+  tarball in a regular gettext translation structure too.
+
+  -> Update translation on launchpad after this.
+
+- minimise resources
+
+Low importance issues
+=====================
+
+Editor
+------
+
+- Code source parameter form is not usuable on small screens. We need
+  to figure out something here.
+
+Forms
+-----
+
+- update inline validation to work with nested form widget.
+
+- the file upload widget must tested in low latency networks. For the
+  moment it does work.
+
+- the middleware used by the file upload widget should not intercept
+  all file upload (test with the SilvaSoftwareCenter).
+
+Listing
+-------
+
+- keyboard shortcut change publishable<->asset.
+
+- prevent repeat on keys (ctrl-c).
+
+- if you delete all elements of a container, a line this container is empty
+  should be added.
+
+- if you filter out all elements of a container, a line no content
+  match your filter criteria should be added.
+
+- improve jstree reloading. at the moment it is impossible to reload
+  only an entry of the tree without changing its parent and all
+  children.
+
+Other
+-----
+
+- Formulator datetime widget using jQuery.
+
+
+==============================================================================
+
+Those points need review, testing and description.
 
 UI
 ==
@@ -10,11 +153,6 @@ UI
 - settings addable on install
 
 - form change notification
-
-- formulator datetime ?
-
-- empty message in listing not added if you delete everything / filter
-  out everything.
 
 - last author don't change on publication actions
 
@@ -25,18 +163,10 @@ UI / JS
 
 - on Zope restart invalidation is out of sync
 
-- keyboard change publishable<->asset
-
 - filter fix while adding
-
-- prevent repeat on keys (ctrl-c)
 
 Editor
 ======
-
-- CS icon in toolbar as good as not visible. We need to make a news
-  sprite with the icons we want to use as by default most actions have
-  a disbled (grey) sprite image.
 
 - Not able to add CS's with lots of fields. On a screen height of
   800px you can't see, and use the form actions in the popup for
@@ -45,9 +175,6 @@ Editor
 
 Document
 ========
-
-- selection / edit for images, code sources and anchors: doesn't work
-  except in Firefox.
 
 - code source error on preview and public rendering
 
@@ -59,13 +186,6 @@ Image
 =====
 
 - image (thumbnail) cache smi
-
-
-Ghost
-=====
-
-- Folder ghosted content delete
-
 
 Code sources
 ============
@@ -92,43 +212,8 @@ Details
 
 - code source XML import export / tests
 
-- image in file catalog
-
-- content position while moving invalidation ...
-
-=======
-
 - You can published close, but not approve for future closed (there is
   no version to set publication date). Shoud it be possible ?
 
 - add a whitelist to upgrade
 
-- file content encoding / content_type not updated when upload a new
-  file (fileupload have no filename).
-
-===
-
-write test for:
-
-- get_introduction document
-
-- formulator adapter / interfacefield / emaillinesfield.
-
-===
-
-minimise resources
-
-
-
-=======
-
-WUW merge
-
-silva news local option
-
-
-=======
-
-
-convert file doesn't keep the silva metadata like it should. Work an
-api for the form and the silva.system.utils command.
