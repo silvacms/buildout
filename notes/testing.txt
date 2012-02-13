@@ -329,8 +329,7 @@ Logout
 Reference dialog
 ----------------
 
-- Reference dialog title is "Lookup a content" / "Lookup a content item" or
-  "Lookup an item"
+- Reference dialog title is "Lookup a content" / "Lookup an item"
 
 - In the reference dialog clicking the icon of a container doesn't do
   anything. It should have the same action as clicking the icon in the
@@ -349,4 +348,10 @@ Bugs
   it's referenced by ghosts):
   http://next30.infrae.com/contact/facet
 
+- What is the status of OpenDocument export? It seems to be broken on the
+  infrae.com site with 2.3. I get an empty doc. The content is in the xml
+  but it doesn't appear, and not when I import it into Google Docs either.
+- How can a user export one document? We only have an export screen in
+  containers now. How about adding an Export button next to the
+  "New version"/"Publish now" button?
 
