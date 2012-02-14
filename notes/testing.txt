@@ -355,3 +355,8 @@ Bugs
   containers now. How about adding an Export button next to the
   "New version"/"Publish now" button?
 
+To Test
+-------
+- CSV upload has problems.
+  Invalid CSV file: new-line character seen in unquoted field - do you need to open the file in universal-newline mode?
+
