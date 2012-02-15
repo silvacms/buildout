@@ -15,6 +15,9 @@ Editor
   transparent color is ok, but not semi transparent one). Base icon
   set would be yumyum.
 
+- Update CKEditor, to support iPad (need a new verison of js.ckeditor
+  to be made on bitbutcket).
+
 - Code source and image selection and dragging around should be fixed
   in IE, Chrome, Safari. It only works on Firefox. Those elements are
   inline-block. Selection behave like block selection in Firefox, and
@@ -24,6 +27,9 @@ Editor
 - An option should be added in the service_editor in order to ban the
   use of colors in the text editor (think about the table background,
   foreground and border colors).
+
+- When all the editor issues are resolved, test all code sources (form
+  a user perspective).
 
 Silva core
 ----------
@@ -52,6 +58,10 @@ Silva core
 - If you upload a new File in an existing one, the content_type,
   content_encoding and such are not properly updated. This need
   testing.
+
+- SQL source is broken in SilvaExternalSources (not addable).
+
+- Update ODT export.
 
 Forms
 -----
@@ -142,6 +152,7 @@ Other
 
 - Formulator datetime widget using jQuery.
 
+- Check for newlines in HTTP headers in infrae.wsgi.
 
 ==============================================================================
 
