@@ -228,3 +228,11 @@ Details
 
 - add a whitelist to upgrade
 
+
+bugs
+====
+
+- silva_walk_tree require bug.
+
+- in versioning.py, get_viewable and co should _getOb(version_id,
+  None), in case of inconsistent document.
