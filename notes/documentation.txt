@@ -1,0 +1,24 @@
+======================
+Documentation required
+======================
+
+Developer documentation
+=======================
+
+Code sources
+------------
+
+- How to create an extension to contain installable Code sources,
+
+- How to create installable Code sources.
+
+Layout
+------
+
+- Fix broken links.
+
+
+SMI forms
+---------
+
+- Update naming scheme.

@@ -1,0 +1,13 @@
+=========
+Marketing
+=========
+
+
+Silva
+=====
+
+Support authentication schemes:
+
+- LDAP, Radius, Kerberos, SQL, OpenID, local Zope.
+
+Export.
