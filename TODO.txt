@@ -63,11 +63,27 @@ Silva core
 
 - Update ODT export.
 
+
+API
+---
+
+- silva_walk_tree require issue (is not passed when it recurse, in
+  silva.core.services).
+
+- in Silva, versioning.py, get_viewable and similar methods should do
+  _getOb(version_id, None), in case of inconsistent document. In case
+  of inconsistent document it should issued an error in the logs.
+
 Forms
 -----
 
 - The image thumbnail displayed on the edit form should not have cache
   headers.
+
+Extensions
+----------
+
+- Test and update silva.pas.openid.
 
 Merging
 =======
@@ -229,10 +245,3 @@ Details
 - add a whitelist to upgrade
 
 
-bugs
-====
-
-- silva_walk_tree require bug.
-
-- in versioning.py, get_viewable and co should _getOb(version_id,
-  None), in case of inconsistent document.
