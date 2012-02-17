@@ -124,11 +124,11 @@ Packaging
 
   -> Update translation on launchpad after this.
 
-- minimise resources.
-
 - make a buildout recipe with the fix_headers script. Add an option to
   detect missing headers, and add them. Verify that the LICENSE.txt is
-  in the package, add if missing. Verify MANIFEST.in (run egg_info,
+  in the package, add if missing.
+
+- minimise resources (JS, CSS).  Verify MANIFEST.in (run egg_info,
   check that sources.txt contains all required files).
 
 Low importance issues
