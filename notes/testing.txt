@@ -322,6 +322,8 @@ Editor
   artifact from the old editor, but it should not be rendered. Messes up
   layouts. However one time I got an empty p, same problem.
   http://next30.infrae.com/edit#content!tweetfeeder
+  If you're lucky you can hack around the p: section#follow p {display:none}
+  but there's no way to get the <br>.
 
 - Some code source fields lose their value when a new version is created.
   In this inv the heading is set to be a link, gets lost after new versioning:
