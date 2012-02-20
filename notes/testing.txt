@@ -358,6 +358,8 @@ Bugs
   a reference problem as it contains an image that doesn't show up, and/or
   it's referenced by ghosts):
   http://next30.infrae.com/contact/facet
+  XXX Do you want to look at this corrupted doc? If not, I'll delete it
+  and make a new one.
 
 - What is the status of OpenDocument export? It seems to be broken on the
   infrae.com site with 2.3. I get an empty doc. The content is in the xml
@@ -371,5 +373,11 @@ To Test
 - CSV upload has problems.
   Invalid CSV file: new-line character seen in unquoted field - do you need to open the file in universal-newline mode?
 
+External Sources
+----------------
+- Forms with radio buttons do not keep their value on successive new
+  versioning of the doc.
 
-
+Zope
+----
+- Image upload is broken
