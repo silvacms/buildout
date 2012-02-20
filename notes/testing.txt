@@ -310,9 +310,8 @@ SNN
   need to figure out something here. Don't we know what the invalid
   entry is?
 
-THAT SHOULD WORK NOW - Yup.
-Works really well.
-
+- See the double title:
+  http://next30.infrae.com/edit#content!news/silva_security_bulletin_04-10-11
 
 Editor
 ======
