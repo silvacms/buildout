@@ -6,14 +6,34 @@ DONE - "Informations" should be "Information".
 
 When something's done I'll test it and, assuming a positive result, delete it from this list.
 
+++ Items with a plus need to be fixed to get infrae.com running in 3.0.
+
 
 General comments
 ----------------
 
-NOTHING TO DO ? - New feedback colors are much more noticeable.
-
 - Changing languages does not change the UI. The user must reload. Can
   we do that for the user?
+
+- The "Settings" tab at the top of the screen should be an optioned
+  button like the "Content" tab. If you click Settings, you go to
+  Settings. If you click the down arrow, you see the options: Access,
+  Addables, Customization, etc.
+
+- Logout and in: after clicking the logout button the browser goes to:
+  http://next30.infrae.com/service_members/logout If I want to login
+  immediately (noticed a typo or as another user) it's not possible to
+  login and you can try as many times as you like. This was really
+  confusing and needs to change.
+
+- When in a tab and you want to reload it (just to be sure it's up to
+  date) you go to the selected tab, hover, your cursor turns to a
+  pointer so it's obviously a link, you click, and nothing
+  happens. However sometimes, when in a subscreen like "View previous
+  version", the link does work and it's the only way to get back to
+  the main screen. Best would be if the link always worked. Second
+  best is that the tab ceases to be a link when selected, but then you
+  have to go to another tab and back to get a reload.
 
 Import screen
 -------------
@@ -93,7 +113,7 @@ Manage versions
 
 - Please make the version status text a link to view it. Now we're
   adding a click, by making users first select a checkbox, then click
-  "View".
+  "View". If you want to keep it black we'll style the link that way.
 
 - Delete: When selecting items for deletion, the form remains sticky
   with selections after deletion, e.g. if you delete versions 2 and 3,
@@ -112,7 +132,7 @@ XXX This is not working on next30.
 DONE - Compare: doesn't compare.
 XXX This is not working on next30.
 
-- The buttons (Delete Copy for editing View Compare) are not working.
+++The buttons (Delete Copy for editing View Compare) are not working.
   http://next30.infrae.com/edit#/publish/view/0!about/index
 
 Properties screen
@@ -130,7 +150,7 @@ hide from tables of content
 Subscriptions screen
 --------------------
 
-+ Subscriptions don't seem to send mail
+++Subscriptions don't seem to send mail
 
 
 Image
@@ -153,13 +173,14 @@ Image sidebar
   proportions match the crop, but the thumbnail displays the original
   image, and should have the same proportions.
 
+
 Link
 ====
 
 target of relative link
 
 - Change to "Click the Lookup button to select an item to refer to."
-  (This is not good form "a content", the word content is treated as
+  (Writing "a content" is not good form, the word content is treated as
   a plural form. Not sure why....)
 
 
@@ -168,20 +189,13 @@ Add forms
 
 - The generic id and title field are too short. The id can't hold more
   than:'new_directions_in_econi'. This is way too short for our
-  clients. Those firlds should have a size that matches the
+  clients. Those fields should have a size that matches the
   textareas. For now make them bigger, like size="40".
 
 Ghost, Ghost Folder, Link
 
 - Change "no reference selected" to "Click the Lookup button to select
   a reference. "
-
-Silva News Filter
-
-- Title field(s) are too short. Make them size="40".
-
-- The "montrer les éléments d'agenda" checkbox with no label looks
-  lost. Can we always put a 'Yes" label next to these?
 
 
 Metadata system
@@ -233,31 +247,6 @@ Manage versions
 
 (BROWSER->DUTCH) Date rendering and interpretation
 
-
-
-More Notes (27-28 aug and later)
-================================
-
-- The "Settings" tab at the top of the screen should be an optioned
-  button like the "Content" tab. If you click Settings, you go to
-  Settings. If you click the down arrow, you see the options: Access,
-  Addables, Customization, etc.
-
-- Logout and in: after clicking the logout button the browser goes to:
-  http://next30.infrae.com/service_members/logout If I want to login
-  immediately (noticed a typo or as another user) it's not possible to
-  login and you can try as many times as you like. This was really
-  confusing and needs to change.
-
-- When in a tab and you want to reload it (just to be sure it's up to
-  date) you go to the selected tab, hover, your cursor turns to a
-  pointer so it's obviously a link, you click, and nothing
-  happens. However sometimes, when in a subscreen like "View previous
-  version", the link does work and it's the only way to get back to
-  the main screen. Best would be if the link always worked. Second
-  best is that the tab ceases to be a link when selected, but then you
-  have to go to another tab and back to get a reload.
-
 Logged in as Author
 ===================
 
@@ -275,12 +264,10 @@ Message
 - The text area (this and all the others) has a fixed width and is
   often too long. Granted, in Safari and recent FF you can scale it
   yourself. A max-width that is 20px less than its parent should work.
-
-THEY DIDN'T HAVE IN THE OLD ONE EITHER. PLEASE PROPOSE TITLES - The
+  THEY DIDN'T HAVE IN THE OLD ONE EITHER. PLEASE PROPOSE TITLES - The
   "Request appoval", "Withdraw approval request", "Reject approval
   request", and probably more button/links don't have a title
   attribute.
-
 "Request approval": Submit this content to be published.
 "Withdraw approval request": Re-edit this content.
 "Reject approval request": Put this content back in a draft state.
@@ -310,14 +297,21 @@ SNN
   need to figure out something here. Don't we know what the invalid
   entry is?
 
-- See the double title:
+++See the double title:
   http://next30.infrae.com/edit#content!news/silva_security_bulletin_04-10-11
+
+Silva News Filter
+
+- Title field(s) are too short. Make them size="40".
+
+- The "montrer les éléments d'agenda" checkbox with no label looks
+  lost. Can we always put a 'Yes" label next to these?
 
 Editor
 ======
 - The source view has light gray text and is hard to read. Make it dark gray.
 
-- When a document saves, there is always a break at the end. This may be an
+++When a document saves, there is always a break at the end. This may be an
   artifact from the old editor, but it should not be rendered. Messes up
   layouts. However one time I got an empty p, same problem.
   http://next30.infrae.com/edit#content!tweetfeeder
@@ -325,7 +319,8 @@ Editor
   but there's no way to get the <br>.
 
 - Some code source fields lose their value when a new version is created.
-  In this inv the heading is set to be a link, gets lost after new versioning:
+  In this inv the heading is set to be a link, but that gets lost after new
+  versioning:
   http://next30.infrae.com/edit#content!tweetfeeder
 
 Logout
@@ -338,7 +333,7 @@ Logout
 Reference dialog
 ----------------
 
-- Reference dialog title is "Lookup a content" / "Lookup an item"
+- Reference dialog title: s/"Lookup a content" / "Lookup an item"
 
 - In the reference dialog clicking the icon of a container doesn't do
   anything. It should have the same action as clicking the icon in the
@@ -349,12 +344,12 @@ Reference dialog
   This obviates the need to move the mouse across the screen, which new
   users find confusing because the selection checkbox used to be on the left.
 
-- Selecting containers doesn't select. Tried to select 'presentations' at:
+++Selecting containers doesn't select. Tried to select 'presentations' at:
   http://next30.infrae.com/edit#content!products/index
 
 Bugs
 ====
-- This document seems to be corrupted and can't be opened/edited (possibly
+++This document seems to be corrupted and can't be opened/edited (possibly
   a reference problem as it contains an image that doesn't show up, and/or
   it's referenced by ghosts):
   http://next30.infrae.com/contact/facet
@@ -375,9 +370,9 @@ To Test
 
 External Sources
 ----------------
-- Forms with radio buttons do not keep their value on successive new
+++Forms with radio buttons do not keep their value on successive new
   versioning of the doc.
 
 Zope
 ----
-- Image upload is broken
+- Image upload is broken.
