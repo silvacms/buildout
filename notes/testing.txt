@@ -359,6 +359,7 @@ Bugs
 - What is the status of OpenDocument export? It seems to be broken on the
   infrae.com site with 2.3. I get an empty doc. The content is in the xml
   but it doesn't appear, and not when I import it into Google Docs either.
+
 - How can a user export one document? We only have an export screen in
   containers now. How about adding an Export button next to the
   "New version"/"Publish now" button?
@@ -372,6 +373,10 @@ External Sources
 ----------------
 ++Forms with radio buttons do not keep their value on successive new
   versioning of the doc.
+
+++When editing an External Source in the editor, the source edit form doesn't
+  display the title of the source, so you have no idea which Code/SQP/CSV
+  source your editing. Please make the title display at the top of the form.
 
 Zope
 ----
