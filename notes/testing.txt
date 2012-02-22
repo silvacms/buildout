@@ -12,19 +12,10 @@ When something's done I'll test it and, assuming a positive result, delete it fr
 General comments
 ----------------
 
-- Changing languages does not change the UI. The user must reload. Can
-  we do that for the user?
-
 - The "Settings" tab at the top of the screen should be an optioned
   button like the "Content" tab. If you click Settings, you go to
   Settings. If you click the down arrow, you see the options: Access,
   Addables, Customization, etc.
-
-- Logout and in: after clicking the logout button the browser goes to:
-  http://next30.infrae.com/service_members/logout If I want to login
-  immediately (noticed a typo or as another user) it's not possible to
-  login and you can try as many times as you like. This was really
-  confusing and needs to change.
 
 - When in a tab and you want to reload it (just to be sure it's up to
   date) you go to the selected tab, hover, your cursor turns to a
@@ -35,6 +26,29 @@ General comments
   best is that the tab ceases to be a link when selected, but then you
   have to go to another tab and back to get a reload.
 
+- Changing languages does not change the UI. The user must reload. Can
+  we do that for the user?
+
+- What is this? :)
+  <link rel="shortcut icon"      href="http://next30.infrae.com/++static++/silvatheme.renaissance/:version:2011-10-31T20:22:09/('img', 'favicon.ico')" />
+
+Login
+=====
+= It seems the login form now appears in the content area of the
+  location where you're at, instead of displaying the layout at the
+  root of the site. Did this change? It's much more friendly.
+
+- Logout and in: after clicking the logout button the browser goes to:
+  http://next30.infrae.com/service_members/logout If I want to login
+  immediately (noticed a typo or as another user) it's not possible to
+  login and you can try as many times as you like. This was really
+  confusing and needs to change.
+
+- I left my screen open overnight, and when I came back the next
+  morning I tried to do something. That login form came up, the one
+  you can't ever successfully login to. Damn frustrating. What is its
+  purpose? Can we remove it?
+
 Import screen
 -------------
 
@@ -43,6 +57,21 @@ Export screen
 
 Contents screen
 ---------------
+
+- Feedback: x/"Cutted 2 content(s) in the clipboard."/"Cut 2 item(s) to the clipboard."
+
+- Bug: when cutting both a doc and an image and pasting them in a container,
+  after the paste only the doc is visible. It looks like I forgot to cut the
+  image. However the image is there, the asset disclosure triangle is pointing
+  down, but the image is not rendered.
+
+- When a document is closed it's not possible to publish it. You must create
+  a new version, and then publish it. Can we help the user and provide a
+  shortcut so closed content can be published in one shot? Any feature that
+  adds clicks is not an improvement.
+
+- When a document is published, the "Go to" button has Preview. as the first
+  option. It should have View too. Save a click.
 
 Access screen
 -------------
@@ -55,11 +84,6 @@ Access screen
   the home page with the nested login form, and then I could
   login. This is real glitch that could frustrate a user.
 
-- I left my screen open overnight, and when I came back the next
-  morning I tried to do something. That login form came up, the one
-  you can't ever successfully login to. Damn frustrating. Can we
-  remove it?
-
 Settings screen of folder
 -------------------------
 
@@ -67,6 +91,13 @@ Settings screen of folder
   button, I get feedback but nothing happens. The sidebar doesn't
   change and the icon in the header is still a folder icon. I have to
   reload to see the changes.
+
+Editor screen
+-------------
+- When I save a document often the next step is to preview. But, the feedback
+  obscures the button. Then if I want to place my cursor over my next click
+  target and I hover over the feedback, it never goes away! :) Let's move
+  the feedback. Down 30 pixels. Left 100 pixels. Or place it on the left.
 
 Publish screen of docs, logged in as Author
 -------------------------------------------
@@ -132,7 +163,7 @@ XXX This is not working on next30.
 DONE - Compare: doesn't compare.
 XXX This is not working on next30.
 
-++The buttons (Delete Copy for editing View Compare) are not working.
+++The buttons (Delete Copy for editing View Compare) are not working (FF).
   http://next30.infrae.com/edit#/publish/view/0!about/index
 
 Properties screen
@@ -156,10 +187,11 @@ Subscriptions screen
 Image
 =====
 
-- When an image is added it gets a yellow background which looks horrible.
+= When an image is added it gets a yellow background which looks horrible.
   This goes against WYSIWYG (and looks like the old forms editor, gah). That
   yellow is only used to indicate something that does not show up in
   preview/public view. Please remove the yellow from the image backgrounds.
+  I adjusted the yellow.
 
 Image sidebar
 -------------
@@ -183,6 +215,10 @@ target of relative link
   (Writing "a content" is not good form, the word content is treated as
   a plural form. Not sure why....)
 
+Autotoc
+=======
+
+- When previewing an Autotoc, content in draft mode doesn't appear.
 
 Add forms
 =========
@@ -196,6 +232,7 @@ Ghost, Ghost Folder, Link
 
 - Change "no reference selected" to "Click the Lookup button to select
   a reference. "
+
 
 
 Metadata system
@@ -267,10 +304,10 @@ Message
   THEY DIDN'T HAVE IN THE OLD ONE EITHER. PLEASE PROPOSE TITLES - The
   "Request appoval", "Withdraw approval request", "Reject approval
   request", and probably more button/links don't have a title
-  attribute.
+  attribute:
 "Request approval": Submit this content to be published.
 "Withdraw approval request": Re-edit this content.
-"Reject approval request": Put this content back in a draft state.
+"Reject approval request": Put this content back in draft mode.
 
 
 Logged in as ChiefEditor
@@ -335,9 +372,13 @@ Reference dialog
 
 - Reference dialog title: s/"Lookup a content" / "Lookup an item"
 
-- In the reference dialog clicking the icon of a container doesn't do
-  anything. It should have the same action as clicking the icon in the
-  contents screen, opening/descending into the container.
+++When trying to add an image in the ref dialog, the "+ Add" button doesn't
+  work (FF).
+
+- The reference dialog has a difficult user interface if there are more
+  than a few items in the listing. The selection(s) show up at the bottom
+  of the listing, often out of sight for the user. Can we put the selected
+  list on top?
 
 - In the reference dialog clicking the icon of a non-container doesn't do
   anything. Make it trigger the same action as the 'plus' icon on the right.
@@ -356,10 +397,6 @@ Bugs
   XXX Do you want to look at this corrupted doc? If not, I'll delete it
   and make a new one.
 
-- What is the status of OpenDocument export? It seems to be broken on the
-  infrae.com site with 2.3. I get an empty doc. The content is in the xml
-  but it doesn't appear, and not when I import it into Google Docs either.
-
 - How can a user export one document? We only have an export screen in
   containers now. How about adding an Export button next to the
   "New version"/"Publish now" button?
@@ -371,8 +408,8 @@ To Test
 
 External Sources
 ----------------
-++Forms with radio buttons do not keep their value on successive new
-  versioning of the doc.
+++Forms with radio buttons do not keep their value when createing new
+  versions of the doc.
 
 ++When editing an External Source in the editor, the source edit form doesn't
   display the title of the source, so you have no idea which Code/SQP/CSV
@@ -380,4 +417,9 @@ External Sources
 
 Zope
 ----
-- Image upload is broken.
+++Image upload is broken.
+
+
+
+= Any feature that adds clicks is not an improvement.
+
