@@ -234,6 +234,12 @@ News
 
 - XML import export
 
+Other
+=====
+
+- subscription breaks everything
+
+- silva find doesn't find
 
 Details
 =======
