@@ -58,7 +58,7 @@ Export screen
 Contents screen
 ---------------
 
-- Feedback: x/"Cutted 2 content(s) in the clipboard."/"Cut 2 item(s) to the clipboard."
+DONE (AND COPIED TOO) - Feedback: x/"Cutted 2 content(s) in the clipboard."/"Cut 2 item(s) to the clipboard."
 
 - Bug: when cutting both a doc and an image and pasting them in a container,
   after the paste only the doc is visible. It looks like I forgot to cut the

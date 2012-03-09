@@ -239,7 +239,7 @@ Other
 
 - subscription breaks everything
 
-- silva find doesn't find
+DONE - silva find doesn't find
 
 Details
 =======
