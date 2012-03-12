@@ -77,13 +77,26 @@ API
 Forms
 -----
 
-- The image thumbnail displayed on the edit form should not have cache
-  headers.
+- update inline validation to work with nested form widget.
+
+- the file upload widget must tested in low latency networks. For the
+  moment it does work.
+
+- the image thumbnail displayed in SMI should not have cache headers
+  (maybe no cache header if there is a ++preview++ in the image URL,
+  and use the preview URL for the image).
+
+- the middleware used by the file upload widget should not intercept
+  all file upload (test with the SilvaSoftwareCenter), or add image in
+  ZMI code source.
+
 
 Extensions
 ----------
 
 - Test and update silva.pas.openid.
+
+- test and update the global search and replace.
 
 Merging
 =======
@@ -139,17 +152,6 @@ Editor
 
 - Code source parameter form is not usuable on small screens. We need
   to figure out something here.
-
-Forms
------
-
-- update inline validation to work with nested form widget.
-
-- the file upload widget must tested in low latency networks. For the
-  moment it does work.
-
-- the middleware used by the file upload widget should not intercept
-  all file upload (test with the SilvaSoftwareCenter).
 
 Listing
 -------
@@ -211,13 +213,6 @@ Document
 - code source error on preview and public rendering
 
 OK - reference edit / multiple reference
-
-- unreadable icons (editor theme issue)
-
-Image
-=====
-
-- image (thumbnail) cache smi
 
 Code sources
 ============
