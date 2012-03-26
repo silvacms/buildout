@@ -28,7 +28,7 @@ Editor
   use of colors in the text editor (think about the table background,
   foreground and border colors).
 
-- When all the editor issues are resolved, test all code sources (form
+- When all the editor issues are resolved, test all code sources (from
   a user perspective).
 
 Silva core
