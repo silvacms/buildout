@@ -122,7 +122,7 @@ Merging
 Tests
 =====
 
-This points need extra testing:
+These points need extra testing:
 
 - get_introduction document
 
