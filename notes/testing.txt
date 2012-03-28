@@ -336,6 +336,8 @@ SNN
 
 ++See the double title:
   http://next30.infrae.com/edit#content!news/silva_security_bulletin_04-10-11
+  """WB: The title is not set in the content anymore so it can be removed from the
+  content. De we need an updated to remove this titel automatically?"""
 
 Silva News Filter
 
@@ -362,31 +364,44 @@ Editor
 
 Logout
 ======
+
 - When a user logs out, they are sent to service_members/logout. This
   triggers the login form to appear. Why? If you want to log in again,
   you can't. Can we just send them to the public view of where they
   were?
+  
+- When you logout from a certain location you can still visit that page in the
+  smi which looks like your still logged in, only when you do a hard refresh
+  (or other action like edit) you get the login screen. I suppose this has to
+  do with caching and that it is not an issue.
 
 Reference dialog
-----------------
+================
 
 - Reference dialog title: s/"Lookup a content" / "Lookup an item"
 
-++When trying to add an image in the ref dialog, the "+ Add" button doesn't
-  work (FF).
+DONE ++When trying to add an image in the ref dialog, the "+ Add" button doesn't
+     work (FF).
+     """WB: Works fine in FF on Linux and Mac, setting to done"""
 
 - The reference dialog has a difficult user interface if there are more
   than a few items in the listing. The selection(s) show up at the bottom
   of the listing, often out of sight for the user. Can we put the selected
   list on top?
+  """WB: Which reference dialog is this? The ones I use only use one reference
+  selection, which is never displayed"""
 
 - In the reference dialog clicking the icon of a non-container doesn't do
   anything. Make it trigger the same action as the 'plus' icon on the right.
   This obviates the need to move the mouse across the screen, which new
   users find confusing because the selection checkbox used to be on the left.
+  """WB: Non of the icons reference the add action, only the '+' icon adds a
+  reference."""
 
 ++Selecting containers doesn't select. Tried to select 'presentations' at:
   http://next30.infrae.com/edit#content!products/index
+  """WB: select 'presentations' for a link reference works for me. Are do you
+  mean that the path of the multiTOC code source is not valid?"""
 
 Bugs
 ====

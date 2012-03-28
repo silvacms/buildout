@@ -210,7 +210,7 @@ UI / JS
 Editor
 ======
 
-DOEN - Not able to add CS's with lots of fields. On a screen height of
+DONE - Not able to add CS's with lots of fields. On a screen height of
   800px you can't see, and use the form actions in the popup for
   adding a CS. There is a scrollbar but it doesn't scroll to the end
   of all fields.
