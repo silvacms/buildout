@@ -369,7 +369,7 @@ Logout
   triggers the login form to appear. Why? If you want to log in again,
   you can't. Can we just send them to the public view of where they
   were?
-  
+
 - When you logout from a certain location you can still visit that page in the
   smi which looks like your still logged in, only when you do a hard refresh
   (or other action like edit) you get the login screen. I suppose this has to
@@ -437,4 +437,13 @@ Zope
 
 
 = Any feature that adds clicks is not an improvement.
+
+
+Content Layout
+==============
+
+- Inside new News Pubs the addables are not set correctly.
+
+
+
 
