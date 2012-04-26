@@ -34,15 +34,6 @@ Editor
 Silva core
 ----------
 
-- Catalog indexing should be tested and fixed. Each action requiring a
-  reindexing of the object, should reindex all the object, as some
-  indexes used other index values (like fulltext). Fulltext should be
-  defined as its own interface.
-
-  This can be effeciently fixed, by collecting which content to
-  reindex during the action phase of the request, and reindexing them
-  at the end of this action (thread local, or request annotation).
-
 - File that are inside Image content should not be indexed (they
   should not trigger any event, maybe adding a suppress_event).
 
@@ -85,10 +76,6 @@ Forms
 - the image thumbnail displayed in SMI should not have cache headers
   (maybe no cache header if there is a ++preview++ in the image URL,
   and use the preview URL for the image).
-
-- the middleware used by the file upload widget should not intercept
-  all file upload (test with the SilvaSoftwareCenter), or add image in
-  ZMI code source.
 
 
 Extensions
