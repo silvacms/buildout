@@ -1,3 +1,8 @@
+
+IF YOU ARE NOT CALLED SYLVAIN YOU DON'T EDIT THIS FILE AND PUT THINGS
+IN notes instead.
+
+
 ===========================
 List of known bugs - issues
 ===========================
@@ -10,11 +15,6 @@ Important issues
 Editor
 ------
 
-- The icon sprite used in the editor skin contains transparent
-  icons. They should be replaced with not transparent one (using the
-  transparent color is ok, but not semi transparent one). Base icon
-  set would be yumyum.
-
 - Update CKEditor, to support iPad (need a new verison of js.ckeditor
   to be made on bitbutcket).
 
@@ -23,10 +23,6 @@ Editor
   inline-block. Selection behave like block selection in Firefox, and
   like inline selection in other browsers. This should be somehow
   fixed.
-
-- An option should be added in the service_editor in order to ban the
-  use of colors in the text editor (think about the table background,
-  foreground and border colors).
 
 - When all the editor issues are resolved, test all code sources (from
   a user perspective).
@@ -137,12 +133,18 @@ Low importance issues
 Editor
 ------
 
-DONE - Code source parameter form is not usuable as the pop-up height passes
+- Code source parameter form is not usuable as the pop-up height passes
   the screen height on small screens. We need to figure out something
   here.
 
-- Code sources options pop up shows checkboxes in the middle, it should
+???- Code sources options pop up shows checkboxes in the middle, it should
   be more obvious which checkbox belongs to which option.
+
+- Not able to add CS's with lots of fields. On a screen height of
+  800px you can't see, and use the form actions in the popup for
+  adding a CS. There is a scrollbar but it doesn't scroll to the end
+  of all fields.
+
 
 Listing
 -------
@@ -168,7 +170,7 @@ Other
 
 - Check for newlines in HTTP headers in infrae.wsgi.
 
-- When adding an image with a default alignment and the caption option,
+???- When adding an image with a default alignment and the caption option,
   it would be better to put the caption below the image and not next to
   the image.
 
@@ -197,10 +199,6 @@ UI / JS
 Editor
 ======
 
-DONE - Not able to add CS's with lots of fields. On a screen height of
-  800px you can't see, and use the form actions in the popup for
-  adding a CS. There is a scrollbar but it doesn't scroll to the end
-  of all fields.
 
 Document
 ========
