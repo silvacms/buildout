@@ -15,9 +15,6 @@ Important issues
 Editor
 ------
 
-- Update CKEditor, to support iPad (need a new verison of js.ckeditor
-  to be made on bitbutcket).
-
 - Code source and image selection and dragging around should be fixed
   in IE, Chrome, Safari. It only works on Firefox. Those elements are
   inline-block. Selection behave like block selection in Firefox, and
@@ -37,11 +34,6 @@ Silva core
   delete anything from the source Folder. You should be able to, and
   that should delete the linked content in the Ghost Folder too.
 
-- Content order is not correct in some container events (rename is
-  one). This is due to the fact that is considered as it is removed
-  and added back after. During those operation, the order should
-  remain the same. This need testing.
-
 - If you upload a new File in an existing one, the content_type,
   content_encoding and such are not properly updated. This need
   testing.
@@ -52,12 +44,14 @@ Silva core
 
 - Approve for future is broken.
 
+- Javscript folder view (re order, filter out elements).
+
 API
 ---
 
 - silva_walk_tree require issue (is not passed when it recurse, in
   silva.core.services).
-
+ 
 - in Silva, versioning.py, get_viewable and similar methods should do
   _getOb(version_id, None), in case of inconsistent document. In case
   of inconsistent document it should issued an error in the logs.
@@ -66,6 +60,8 @@ Forms
 -----
 
 - update inline validation to work with nested form widget.
+
+- template for nested form widget.
 
 - the file upload widget must tested in low latency networks. For the
   moment it does work.
@@ -88,19 +84,15 @@ Merging
 2.1
 ---
 
-- silva news local datetime option.
-
 - verify logging form changes (redirect to path option).
 
 2.3
 ---
 
-- file convertion (keep metadata and references, include refactor part
-  of the code made in SilvaDocument for the migration).
+NEED TESTING - file convertion (keep metadata and references, include refactor part
+  of the code made in SilvaDocument for the
 
-- file mimetype changes.
-
-- upgrade event.
+NEED TESTING - upgrade event.
 
 
 Tests
