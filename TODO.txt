@@ -24,6 +24,8 @@ Editor
 - When all the editor issues are resolved, test all code sources (from
   a user perspective).
 
+- Code source error reporting.
+
 Silva core
 ----------
 
@@ -52,7 +54,7 @@ API
 - silva_walk_tree require issue (is not passed when it recurse, in
   silva.core.services).
  
-- in Silva, versioning.py, get_viewable and similar methods should do
+DONE - in Silva, versioning.py, get_viewable and similar methods should do
   _getOb(version_id, None), in case of inconsistent document. In case
   of inconsistent document it should issued an error in the logs.
 
@@ -106,12 +108,6 @@ These points need extra testing:
 
 Packaging
 =========
-
-- i18nextract should create a launchpad tarball following the
-  launchpad structure. It should be able to extract a launchpad
-  tarball in a regular gettext translation structure too.
-
-  -> Update translation on launchpad after this.
 
 - make a buildout recipe with the fix_headers script. Add an option to
   detect missing headers, and add them. Verify that the LICENSE.txt is
