@@ -432,11 +432,9 @@ External Sources
 
 Zope
 ----
-++Image upload is broken.
+++Image upload is broken. Is this fixed? I think so.
 
-
-
-= Any feature that adds clicks is not an improvement.
+- The logo upload widget in /service_ui/manage_settings is buggy. Sylvain said he'll replace it with another. 
 
 
 Content Layout
@@ -445,5 +443,4 @@ Content Layout
 - Inside new News Pubs the addables are not set correctly.
 
 
-
-
+= Any feature that adds clicks is not an improvement.
