@@ -232,4 +232,9 @@ Details
 
 - add a whitelist to upgrade
 
+- select index in a selection widget
+
+- silva.core.messages transaction.abort()
+
+- option to list index in reference formulator widget
 
