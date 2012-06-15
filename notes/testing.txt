@@ -76,7 +76,7 @@ DONE (AND COPIED TOO) - Feedback: x/"Cutted 2 content(s) in the clipboard."/"Cut
 Access screen
 -------------
 
-- You can remove your own role, and then you're locked out. :-) This
+DONE - You can remove your own role, and then you're locked out. :-) This
   wasn't possible before.
 
 - If you get locked out, you get a model password prompt in the SMI. I

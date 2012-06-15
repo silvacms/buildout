@@ -36,8 +36,6 @@ Silva core
   delete anything from the source Folder. You should be able to, and
   that should delete the linked content in the Ghost Folder too.
 
-- SQL source is broken in SilvaExternalSources (not addable).
-
 - Javscript folder view (re order, filter out elements).
 
 API
@@ -188,8 +186,6 @@ Other
 - add a whitelist to upgrade
 
 
-
-
 TODO Clean
 ==========
 
@@ -200,14 +196,9 @@ TODO Clean
   select an index in the reference lookup widget. This option should
   be made available to the Formulator widget.
 
-- SMI: Reference portlet: clicking to the title show the preview of
-  the object. This should stay in the SMI environmnet.
-
 - SMI: Form: template for object (used with collections), should be
   reviewed, including the display template. Silva Agenda Item edit
   form is an example.
-
-- SMI: Listing: Approve for future is broken (due to API refactoring).
 
 - SMI: Silva Image edit form contains an thubnail image, a link to the
   preview should be used. We can modify the tag method to take two
@@ -217,3 +208,8 @@ TODO Clean
 - SMI: Silva File edit: when uploading a new file, the content_type,
   content_encoding is not updated. Upload a text file and replace it
   with a PDF for instance and you have an error.
+
+- test infrae.wsgi virtual hosting.
+
+- SQLSource rendering is broken.
+
