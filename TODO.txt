@@ -36,15 +36,7 @@ Silva core
   delete anything from the source Folder. You should be able to, and
   that should delete the linked content in the Ghost Folder too.
 
-- If you upload a new File in an existing one, the content_type,
-  content_encoding and such are not properly updated. This need
-  testing.
-
 - SQL source is broken in SilvaExternalSources (not addable).
-
-- Update ODT export.
-
-- Approve for future is broken.
 
 - Javscript folder view (re order, filter out elements).
 
@@ -53,24 +45,14 @@ API
 
 - silva_walk_tree require issue (is not passed when it recurse, in
   silva.core.services).
- 
-DONE - in Silva, versioning.py, get_viewable and similar methods should do
-  _getOb(version_id, None), in case of inconsistent document. In case
-  of inconsistent document it should issued an error in the logs.
 
 Forms
 -----
 
 - update inline validation to work with nested form widget.
 
-- template for nested form widget.
-
 - the file upload widget must tested in low latency networks. For the
   moment it does work.
-
-- the image thumbnail displayed in SMI should not have cache headers
-  (maybe no cache header if there is a ++preview++ in the image URL,
-  and use the preview URL for the image).
 
 
 Extensions
@@ -126,9 +108,6 @@ Editor
   the screen height on small screens. We need to figure out something
   here.
 
-???- Code sources options pop up shows checkboxes in the middle, it should
-  be more obvious which checkbox belongs to which option.
-
 - Not able to add CS's with lots of fields. On a screen height of
   800px you can't see, and use the form actions in the popup for
   adding a CS. There is a scrollbar but it doesn't scroll to the end
@@ -159,10 +138,6 @@ Other
 
 - Check for newlines in HTTP headers in infrae.wsgi.
 
-???- When adding an image with a default alignment and the caption option,
-  it would be better to put the caption below the image and not next to
-  the image.
-
 ==============================================================================
 
 Those points need review, testing and description.
@@ -170,13 +145,11 @@ Those points need review, testing and description.
 UI
 ==
 
-- settings addable on install
+?? - settings addable on install
 
 - form change notification
 
 - last author don't change on publication actions
-
-- reference portlet preview / preview should stays in SMI
 
 UI / JS
 =======
@@ -185,21 +158,13 @@ UI / JS
 
 - filter fix while adding
 
-Editor
-======
-
-
 Document
 ========
 
 - code source error on preview and public rendering
 
-OK - reference edit / multiple reference
-
 Code sources
 ============
-
-- XML import export
 
 - feedback on install / service
 
@@ -216,25 +181,39 @@ Other
 
 - subscription breaks everything
 
-DONE - silva find doesn't find
-
-Details
-=======
-
 - smi layout for download error
 
 - ghost cataloging when haunted change / tests
 
-- code source XML import export / tests
-
-- You can published close, but not approve for future closed (there is
-  no version to set publication date). Shoud it be possible ?
-
 - add a whitelist to upgrade
 
-- select index in a selection widget
 
-- silva.core.messages transaction.abort()
 
-- option to list index in reference formulator widget
 
+TODO Clean
+==========
+
+- silva.core.messages should use a datamanager to cancel any messages
+  on transaction.abort().
+
+- an option should be added to silva.core.references to be able to
+  select an index in the reference lookup widget. This option should
+  be made available to the Formulator widget.
+
+- SMI: Reference portlet: clicking to the title show the preview of
+  the object. This should stay in the SMI environmnet.
+
+- SMI: Form: template for object (used with collections), should be
+  reviewed, including the display template. Silva Agenda Item edit
+  form is an example.
+
+- SMI: Listing: Approve for future is broken (due to API refactoring).
+
+- SMI: Silva Image edit form contains an thubnail image, a link to the
+  preview should be used. We can modify the tag method to take two
+  more options: request and options. The URL should be obtained using
+  the IContentURL adapter.
+
+- SMI: Silva File edit: when uploading a new file, the content_type,
+  content_encoding is not updated. Upload a text file and replace it
+  with a PDF for instance and you have an error.
