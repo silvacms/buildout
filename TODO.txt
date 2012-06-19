@@ -205,10 +205,6 @@ TODO Clean
   more options: request and options. The URL should be obtained using
   the IContentURL adapter.
 
-- SMI: Silva File edit: when uploading a new file, the content_type,
-  content_encoding is not updated. Upload a text file and replace it
-  with a PDF for instance and you have an error.
-
 - test infrae.wsgi virtual hosting.
 
 - SQLSource rendering is broken.
