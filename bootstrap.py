@@ -70,6 +70,9 @@ except ImportError:
 
 
 def execute(cmd, env=None, stdout=None):
+    if sys.platform == 'win32':
+        # work around spawn lamosity on windows
+        cmd = map(lambda arg: '"%s"' % arg, cmd)
     return subprocess.call(cmd, env=env, stdout=stdout)
 
 
@@ -80,8 +83,6 @@ def install(requirement):
     else:
         egg = 'distribute'
     cmd = 'from setuptools.command.easy_install import main; main()'
-    if sys.platform == 'win32':
-        cmd = '"%s"' % cmd # work around spawn lamosity on windows
     cmd_path = pkg_resources.working_set.find(
         pkg_resources.Requirement.parse(egg)).location
     if execute(
