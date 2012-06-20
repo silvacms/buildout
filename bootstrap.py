@@ -69,14 +69,18 @@ except ImportError:
         import pkg_resources
 
 
+if sys.platform == 'win32':
+    quote = lambda arg: '"%s"' % arg
+else:
+    quote = str
+
+
 def execute(cmd, env=None, stdout=None):
     if sys.platform == 'win32':
-        quoted = [cmd[0]]
-        for arg in cmd[1:]:
-            if arg and arg[0] != '-':
-                arg = '"%s"' & arg
-            quoted.append(arg)
-        cmd = quoted
+        # subprocess doesn't work on windows with setuptools
+        if env:
+            return os.spawnle(*([os.P_WAIT, sys.executable] + cmd + [env]))
+        return os.spawnl(*([os.P_WAIT, sys.executable] + cmd))
     return subprocess.call(cmd, env=env, stdout=stdout)
 
 
@@ -90,7 +94,8 @@ def install(requirement):
     cmd_path = pkg_resources.working_set.find(
         pkg_resources.Requirement.parse(egg)).location
     if execute(
-        [sys.executable, '-c', cmd, '-mqNxd', tmp_eggs, requirement],
+        [sys.executable, '-c', quote(cmd), '-mqNxd', quote(tmp_eggs),
+         '-f', quote('http://pypi.python.org/simple'), requirement],
         env={'PYTHONPATH': cmd_path}, stdout=subprocess.PIPE):
         sys.stderr.write(
             "\n\nFatal error while installing %s\n" % requirement)
@@ -103,7 +108,7 @@ def install(requirement):
 if options.virtualenv:
     python_path = os.path.join(bin_dir, os.path.basename(sys.executable))
     if not os.path.isfile(python_path):
-        install('virtualenv >= 1.5')
+        install('virtualenv>=1.5')
         import virtualenv
         print "Running virtualenv"
         args = sys.argv[:]
@@ -127,7 +132,7 @@ extends = %s
     config.close()
 
 
-install('zc.buildout == %s' % options.buildout_version)
+install('zc.buildout==%s' % options.buildout_version)
 import zc.buildout.buildout
 zc.buildout.buildout.main(['-c', options.config, 'bootstrap'])
 
@@ -136,7 +141,7 @@ if options.install:
     print "Start installation ..."
     # Run install
     execute(
-        [sys.executable, os.path.join(bin_dir, 'buildout'),
+        [sys.executable, quote(os.path.join(bin_dir, 'buildout')),
          '-c', options.config, 'install'])
 
 sys.exit(0)
