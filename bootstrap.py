@@ -72,7 +72,7 @@ except ImportError:
 def execute(cmd, env=None, stdout=None):
     if sys.platform == 'win32':
         # work around spawn lamosity on windows
-        cmd = map(lambda arg: '"%s"' % arg, cmd)
+        cmd = cmd[0] + map(lambda arg: '"%s"' % arg, cmd[1:])
     return subprocess.call(cmd, env=env, stdout=stdout)
 
 
