@@ -159,12 +159,12 @@ UI / JS
 Document
 ========
 
-- code source error on preview and public rendering
+- code source error on preview and public rendering [kit]
 
 Code sources
 ============
 
-- feedback on install / service
+- feedback on install / service: error explanation.
 
 News
 ====
@@ -174,16 +174,23 @@ News
 
 - XML import export
 
+- Install Products.SilvaNews at the beginning the upgrade / remove it after.
+
 Other
 =====
 
-- subscription breaks everything
+- subscription breaks everything ??
 
 - smi layout for download error
 
 - ghost cataloging when haunted change / tests
 
-- add a whitelist to upgrade
+- Change upgrade to apply all the upgrader after each other on every
+  object instead of doing upgrader on every object after each
+  other. Add the concept of delayed upgrader that are executed by
+  order of version only after the upgrade process. Update index and
+  uninstall of Products.SilvaNews and Products.SilvaDocuments are
+  example of such things.
 
 
 TODO Clean
