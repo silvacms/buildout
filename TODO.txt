@@ -216,3 +216,5 @@ TODO Clean
 
 - SQLSource rendering is broken.
 
+- add forms in reference lookup widgets are broken. form JS
+  initialization is done correctly.
