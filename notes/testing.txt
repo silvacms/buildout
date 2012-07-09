@@ -1,7 +1,7 @@
 ﻿Silva 3.0 test notes
 ====================
 
-This is done signal:
+This is the done signal:
 DONE - "Informations" should be "Information".
 
 When something's done I'll test it and, assuming a positive result, delete it from this list.
@@ -12,10 +12,9 @@ When something's done I'll test it and, assuming a positive result, delete it fr
 General comments
 ----------------
 
-- The "Settings" tab at the top of the screen should be an optioned
-  button like the "Content" tab. If you click Settings, you go to
-  Settings. If you click the down arrow, you see the options: Access,
-  Addables, Customization, etc.
+++ We have to support these URL schemes: tel, itms, webcal. Someday we'll need a service for this, especially as we do more mobile sites, but for now a text list will suffice.
+  This goes back to https://issues.infrae.com/wuw/issue508
+  Ref.: https://en.wikipedia.org/wiki/URI_scheme
 
 - When in a tab and you want to reload it (just to be sure it's up to
   date) you go to the selected tab, hover, your cursor turns to a
@@ -48,6 +47,9 @@ Login
   morning I tried to do something. That login form came up, the one
   you can't ever successfully login to. Damn frustrating. What is its
   purpose? Can we remove it?
+  I hope so. It also displays a model dialog with "You are now authenticated."
+  and the page won't load until you click "Continue". But I realize that this
+  is temporary, it's just our users shouldn't use it.
 
 Import screen
 -------------
@@ -57,8 +59,6 @@ Export screen
 
 Contents screen
 ---------------
-
-DONE (AND COPIED TOO) - Feedback: x/"Cutted 2 content(s) in the clipboard."/"Cut 2 item(s) to the clipboard."
 
 - Bug: when cutting both a doc and an image and pasting them in a container,
   after the paste only the doc is visible. It looks like I forgot to cut the
@@ -97,7 +97,8 @@ Editor screen
 - When I save a document often the next step is to preview. But, the feedback
   obscures the button. Then if I want to place my cursor over my next click
   target and I hover over the feedback, it never goes away! :) Let's move
-  the feedback. Down 30 pixels. Left 100 pixels. Or place it on the left.
+  the feedback. Down 30 pixels so it doesn't obscure the Preview/View button.
+  Or place it on the left.
 
 Publish screen of docs, logged in as Author
 -------------------------------------------
@@ -131,10 +132,10 @@ Notes since changing the fields
 - If I remove the year completely, the whole row goes pink and I get
   validation feedback "Missing year value.". However if I fill in
   '11', the only feedback is the pink glowing border, and I can still
-  submit and the error described above.
+  submit and get the error described above.
 
 - Why can Authors successfully submit a year of '11' but not Editors?
-  The '11' gets correctly interpreted en Authors submit, but Editors
+  The '11' gets correctly interpreted in the Author's submit, but Editors
   get a system error. Can you make it interpret correctly for Editors
   too? Saves 2 chars.
 
@@ -152,31 +153,14 @@ Manage versions
 
 - Delete: We don't ask, "Are you sure?" on the delete action. Should we?
 
-DONE - View: viewing an old version shows it as default html. It should be
-  wrapped in layout like preview.
-XXX This is not working on next30.
-
 - View: when viewing an old version the "Publish now" button in the
   header should not appear, as you're not publishing the version
   you're viewing. Change it to a "Return" button?
 
-DONE - Compare: doesn't compare.
-XXX This is not working on next30.
-
-++The buttons (Delete Copy for editing View Compare) are not working (FF).
-  http://next30.infrae.com/edit#/publish/view/0!about/index
-
 Properties screen
 -----------------
 
-hide from tables of content
-
-- The hide from tables of content field absolutely does not belong in
-  Properties. It should be in Settings. We should change this now as
-  part of the content upgrade.
-
-- This screen really needs interaction design. I'm going to see if
-  Gert has an afternoon.
+- hide from tables of content
 
 Subscriptions screen
 --------------------
@@ -204,7 +188,6 @@ Image sidebar
   the img tag has attributes width="120" height="101". These
   proportions match the crop, but the thumbnail displays the original
   image, and should have the same proportions.
-
 
 Link
 ====
@@ -270,7 +253,6 @@ Manual close
 - Vertical space under "Manual close" between hint and button needs to
   collapse and match the spacing between hints and fields.
 
-
 Manage versions
 
 - Personally I miss the link colors for Unapproved, Published, and
@@ -325,6 +307,7 @@ Publish screen of docs
 
 SNN
 ===
+- Inside new News Pubs the addables are not set correctly.
 
 - The month field lets me fill in '19'. Can the inline validation do a
   range check like it does in publish?
@@ -334,7 +317,7 @@ SNN
   need to figure out something here. Don't we know what the invalid
   entry is?
 
-++See the double title:
+++ See the double title:
   http://next30.infrae.com/edit#content!news/silva_security_bulletin_04-10-11
   """WB: The title is not set in the content anymore so it can be removed from the
   content. De we need an updated to remove this titel automatically?"""
@@ -346,21 +329,133 @@ Silva News Filter
 - The "montrer les éléments d'agenda" checkbox with no label looks
   lost. Can we always put a 'Yes" label next to these?
 
-Editor
-======
+SilvaFind
+=========
+
++ The Zope level icons are being used in the search results. We should make the
+  Zope icons match. This is something Wim or I can do if you explain it.
+
++ How do we call a stylesheet for a specific metatype now? I used to include it
+  in the head inject but I think there's a cleaner way, e.g. I see calendar.css
+  in SNN. We need one for Find objects.
+
+- The rendering of Events is funky, seems to use get_intro but there's a year in
+  there and the title has a nested strong tag. Search for EuroPython to see it.
+
+External Sources
+================
+- When editing an External Source in the editor, the source edit form doesn't
+  display the title of the source, so you have no idea which Code/SQP/CSV
+  source you're editing. Please make the title display at the top of the form.
+
++ It's not possible to tab between fields in the External Source Settings form.
+  Somehow we have to fix this usability problem.
+
+++ When adding a Code Source there is now a built-in "Source alignment" field
+  which is nice, saves adding it to every source. The rendering of the classes
+  is problematic.
+  For align-right it adds the class 'source-right'. For float right it adds
+  "source-float-right". These must be the 'generic' selectors, as found in
+  existing stylesheets, in order to be compatible with existing skins. These are
+  the alignments in the CSS of various skins:
+.default
+.align-left
+.align-right
+.align-center
+.float-left
+.float-right
+
++ Bug: when an 'illegal' char is entered into certain Code Source fields, the
+  source becomes un-editable, e.g. try entering 'ünâligned' into the css style
+  field. This is new. The source/page saves, publishes, and renders just fine,
+  but when you try to edit the source you get a js error:
+  "An unexpected error happened on the server while retrieving Code source
+  parameters. The Code Source might be buggy."
+  http://preprod30.infrae.com/edit#content!lobby/testors/univalue
+  http://infrae.com/lobby/testors/univalue/edit/tab_edit
+  The only solution is to delete the whole source and make it again. But that's
+  a pain and the Author may not know what went wrong in the first place. See the
+  following bug....
+
++ Bug: this may be related to the preceding bug. Go to this document with FF:
+  http://preprod30.infrae.com/edit#content!lobby/testors/quote
+  Don't edit anything, just save. The values of the Code Source will be removed.
+  Then if you doubleclick it you can edit it without a problem (even if there
+  were curly quotes and other strange chars in the string fields). If, however,
+  you got to this page and modify the Code Source, then is saves fine. Weird.
+  Could the "Data encoding" metadata have something to do with it?
+
++ Bug: more weirdness. Maybe it has something to do with having two code sources
+  in one document. On this page I created two codes sources to test the
+  difference. I put the same content in both. Whichever one I edit last retains
+  its values on save. The other one loses all its values:
+  http://preprod30.infrae.com/edit#content!lobby/testors/relatedinfo
+  I just recreated both and they're both retained on the first save. Try saving
+  again and see what happens.
+
++ Bug: in Silva 3.0 existing Code Sources lose all their values if a parameter
+  is deleted. This happens on save when the Code Source itself wasn't edited:
+  http://preprod30.infrae.com/++preview++/about
+  If you scroll down, next to the "Open Source Experience" heading there's an
+  empty Code Source, which used to contain values as like here:
+  http://infrae.com/about
+  I deleted the alignment parameter, since it's now built-in, and when I tested
+  I noticed that it lost all parameter values. Can this be fixed so existing
+  values are preserved?
+
+External Source rendering
+-------------------------
++ This is the output of a Code Source:
+
+<div class="external-source source-right">
+<div><!-- PyPI Linker code source -->
+<div class="info plot">
+<h3>
+<a href="http://pypi.python.org/pypi" title="Visit the Python Package Index">
+<img alt="PyPI logo" src="++static++/silvatheme.renaissance/img/python.png" height="14" width="14"></a>
+<acronym title="Python Package Index">PyPI</acronym>
+</h3>
+<p>
+FCRepo is also available on the Python Package Index:
+<br><a href="http://pypi.python.org/pypi/fcrepo" title="See FCRepo on the PyPI site">http://pypi.python.org/pypi/fcrepo</a>
+</p>
+</div>
+<!-- /PyPI Linker code source --></div></div>
+
+++ Line 2: there's an extra div with no class. Please remove it, we're 'over-divving' :) and this messes up the selector cascade.
+
+- It would be nice if the last line had breaks before the divs. Can I tweak the 'to_html' code?
+
+CS Silva Portlet
+----------------
+++ If the document you're embedding is in the root, the souce throws an error.
+  Example doc: http://preprod30.infrae.com/edit#content!lobby/testors/portleteur
+  Embedded doc: http://preprod30.infrae.com/edit#content!lobby/locateabove
+  Code Source: http://preprod30.infrae.com/cs_portlet_element/editCodeSource
+
+
+CKEditor
+========
 - The source view has light gray text and is hard to read. Make it dark gray.
 
-++When a document saves, there is always a break at the end. This may be an
+++ When a document saves, there is always a break at the end. This may be an
   artifact from the old editor, but it should not be rendered. Messes up
-  layouts. However one time I got an empty p, same problem.
+  layouts. Another time I got an empty p, same problem.
   http://next30.infrae.com/edit#content!tweetfeeder
-  If you're lucky you can hack around the p: section#follow p {display:none}
-  but there's no way to get the <br>.
+  If you're lucky you can css hack around the p: section#follow p {display:none}
+  but there's no way to get rid of the <br>. The source contains:
+  <br></article>
 
-- Some code source fields lose their value when a new version is created.
-  In this inv the heading is set to be a link, but that gets lost after new
-  versioning:
-  http://next30.infrae.com/edit#content!tweetfeeder
++ How do we call a document without its title? Looks like @@content.html gets
+  the title and the body, but sometimes users call the title elsewhere, higher
+  up in the layout template, and they only want the body. Seems like this is a
+  problem with news items too. @@body.html ?
+
+- The document title seems to have a one-way connection to the metadata title.
+  If you edit the metadata title it doesn't show up in the document (yet it's
+  used in the SMI listing). However if you edit the title in the document, that
+  overwrites the metadata title.
+
 
 Logout
 ======
@@ -380,10 +475,6 @@ Reference dialog
 
 - Reference dialog title: s/"Lookup a content" / "Lookup an item"
 
-DONE ++When trying to add an image in the ref dialog, the "+ Add" button doesn't
-     work (FF).
-     """WB: Works fine in FF on Linux and Mac, setting to done"""
-
 - The reference dialog has a difficult user interface if there are more
   than a few items in the listing. The selection(s) show up at the bottom
   of the listing, often out of sight for the user. Can we put the selected
@@ -398,49 +489,23 @@ DONE ++When trying to add an image in the ref dialog, the "+ Add" button doesn't
   """WB: Non of the icons reference the add action, only the '+' icon adds a
   reference."""
 
-++Selecting containers doesn't select. Tried to select 'presentations' at:
-  http://next30.infrae.com/edit#content!products/index
-  """WB: select 'presentations' for a link reference works for me. Are do you
-  mean that the path of the multiTOC code source is not valid?"""
-
 Bugs
 ====
-++This document seems to be corrupted and can't be opened/edited (possibly
-  a reference problem as it contains an image that doesn't show up, and/or
-  it's referenced by ghosts):
-  http://next30.infrae.com/contact/facet
-  XXX Do you want to look at this corrupted doc? If not, I'll delete it
-  and make a new one.
-
 - How can a user export one document? We only have an export screen in
-  containers now. How about adding an Export button next to the
-  "New version"/"Publish now" button?
+  containers now. Can we add an Export option to the "Edit" tab, like the
+  Details option in news items?
 
 To Test
 -------
 - CSV upload has problems.
   Invalid CSV file: new-line character seen in unquoted field - do you need to open the file in universal-newline mode?
 
-External Sources
-----------------
-++Forms with radio buttons do not keep their value when createing new
-  versions of the doc.
-
-++When editing an External Source in the editor, the source edit form doesn't
-  display the title of the source, so you have no idea which Code/SQP/CSV
-  source your editing. Please make the title display at the top of the form.
-
 Zope
 ----
-++Image upload is broken. Is this fixed? I think so.
-
-- The logo upload widget in /service_ui/manage_settings is buggy. Sylvain said he'll replace it with another. 
+- The logo upload widget in /service_ui/manage_settings is buggy. Sylvain said he'll replace it with another.
 
 
 Content Layout
 ==============
-
-- Inside new News Pubs the addables are not set correctly.
-
 
 = Any feature that adds clicks is not an improvement.
