@@ -60,7 +60,7 @@ Export screen
 Contents screen
 ---------------
 
-- Bug: when cutting both a doc and an image and pasting them in a container,
+DONE - Bug: when cutting both a doc and an image and pasting them in a container,
   after the paste only the doc is visible. It looks like I forgot to cut the
   image. However the image is there, the asset disclosure triangle is pointing
   down, but the image is not rendered.
@@ -87,14 +87,14 @@ DONE - You can remove your own role, and then you're locked out. :-) This
 Settings screen of folder
 -------------------------
 
-- When changing a folder to a publication, after I click the convert
+DONE - When changing a folder to a publication, after I click the convert
   button, I get feedback but nothing happens. The sidebar doesn't
   change and the icon in the header is still a folder icon. I have to
   reload to see the changes.
 
 Editor screen
 -------------
-- When I save a document often the next step is to preview. But, the feedback
+DONE (Click on it) - When I save a document often the next step is to preview. But, the feedback
   obscures the button. Then if I want to place my cursor over my next click
   target and I hover over the feedback, it never goes away! :) Let's move
   the feedback. Down 30 pixels so it doesn't obscure the Preview/View button.
@@ -171,7 +171,7 @@ Subscriptions screen
 Image
 =====
 
-= When an image is added it gets a yellow background which looks horrible.
+DONE = When an image is added it gets a yellow background which looks horrible.
   This goes against WYSIWYG (and looks like the old forms editor, gah). That
   yellow is only used to indicate something that does not show up in
   preview/public view. Please remove the yellow from the image backgrounds.
@@ -180,7 +180,7 @@ Image
 Image sidebar
 -------------
 
-- Bug: In the the edit tab the "edit content" icon for docs in References
+DONE - Bug: In the the edit tab the "edit content" icon for docs in References
   is not found.
 
 - If an image is cropped, the thumbnail has incorrect proportions in
