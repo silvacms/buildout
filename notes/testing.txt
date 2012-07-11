@@ -456,6 +456,9 @@ CKEditor
   used in the SMI listing). However if you edit the title in the document, that
   overwrites the metadata title.
 
+++ We seem to have lost the preformatted text style. It can be added manually,
+  but for compatibility we should put in a pre at the end of the list.
+
 
 Logout
 ======
@@ -503,6 +506,8 @@ To Test
 Zope
 ----
 - The logo upload widget in /service_ui/manage_settings is buggy. Sylvain said he'll replace it with another.
+
++ I cannot cut and paste code sources. Tried to move cs_flash_source and cs_googlemaps down a level but I get a login prompt. I think this is recent.
 
 
 Content Layout
