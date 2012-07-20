@@ -12,7 +12,7 @@ When something's done I'll test it and, assuming a positive result, delete it fr
 General comments
 ----------------
 
-++ We have to support these URL schemes: tel, itms, webcal. Someday we'll need a service for this, especially as we do more mobile sites, but for now a text list will suffice.
+†† We have to support these URL schemes: tel, itms, webcal. Someday we'll need a service for this, especially as we do more mobile sites, but for now a text list will suffice.
   This goes back to https://issues.infrae.com/wuw/issue508
   Ref.: https://en.wikipedia.org/wiki/URI_scheme
 
