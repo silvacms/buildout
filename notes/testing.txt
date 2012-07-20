@@ -6,7 +6,7 @@ DONE - "Informations" should be "Information".
 
 When something's done I'll test it and, assuming a positive result, delete it from this list.
 
-++ Items with a plus need to be fixed to get infrae.com running in 3.0.
+++ Items with a double plus need to be fixed to get infrae.com running in 3.0.
 
 
 General comments
@@ -367,8 +367,9 @@ External Sources
 
 + Bug: when an 'illegal' char is entered into certain Code Source fields, the
   source becomes un-editable, e.g. try entering 'ünâligned' into the css style
-  field. This is new. The source/page saves, publishes, and renders just fine,
-  but when you try to edit the source you get a js error:
+  field of a Portlet Element code source. This is new. The source/page saves,
+  publishes, and renders just fine, but when you try to edit the source you get
+  a js error:
   "An unexpected error happened on the server while retrieving Code source
   parameters. The Code Source might be buggy."
   http://preprod30.infrae.com/edit#content!lobby/testors/univalue
@@ -377,15 +378,15 @@ External Sources
   a pain and the Author may not know what went wrong in the first place. See the
   following bug....
 
-+ Bug: this may be related to the preceding bug. Go to this document with FF:
+++ Bug: this may be related to the preceding bug. Go to this document with FF:
   http://preprod30.infrae.com/edit#content!lobby/testors/quote
   Don't edit anything, just save. The values of the Code Source will be removed.
   Then if you doubleclick it you can edit it without a problem (even if there
   were curly quotes and other strange chars in the string fields). If, however,
-  you got to this page and modify the Code Source, then is saves fine. Weird.
+  you got to this page and modify the Code Source, then it saves fine. Weird.
   Could the "Data encoding" metadata have something to do with it?
 
-+ Bug: more weirdness. Maybe it has something to do with having two code sources
+++ Bug: more weirdness. Maybe it has something to do with having 2 code sources
   in one document. On this page I created two codes sources to test the
   difference. I put the same content in both. Whichever one I edit last retains
   its values on save. The other one loses all its values:
