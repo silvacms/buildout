@@ -60,15 +60,10 @@ Export screen
 Contents screen
 ---------------
 
-DONE - Bug: when cutting both a doc and an image and pasting them in a container,
-  after the paste only the doc is visible. It looks like I forgot to cut the
-  image. However the image is there, the asset disclosure triangle is pointing
-  down, but the image is not rendered.
-
 - When a document is closed it's not possible to publish it. You must create
   a new version, and then publish it. Can we help the user and provide a
-  shortcut so closed content can be published in one shot? Any feature that
-  adds clicks is not an improvement.
+  shortcut so closed content can be published in one shot? We're adding clicks
+  here.
 
 - When a document is published, the "Go to" button has Preview. as the first
   option. It should have View too. Save a click.
@@ -76,29 +71,19 @@ DONE - Bug: when cutting both a doc and an image and pasting them in a container
 Access screen
 -------------
 
-DONE - You can remove your own role, and then you're locked out. :-) This
-  wasn't possible before.
-
-- If you get locked out, you get a model password prompt in the SMI. I
+- If you get locked out, you get a modal password prompt in the SMI. I
   could not login with this. I had to reload, which took me back to
   the home page with the nested login form, and then I could
   login. This is real glitch that could frustrate a user.
+  Apparently you have to get you login right the first time and then it works.
+  Is this fixable?
 
 Settings screen of folder
 -------------------------
-
-DONE - When changing a folder to a publication, after I click the convert
-  button, I get feedback but nothing happens. The sidebar doesn't
-  change and the icon in the header is still a folder icon. I have to
-  reload to see the changes.
+Thanks.
 
 Editor screen
 -------------
-DONE (Click on it) - When I save a document often the next step is to preview. But, the feedback
-  obscures the button. Then if I want to place my cursor over my next click
-  target and I hover over the feedback, it never goes away! :) Let's move
-  the feedback. Down 30 pixels so it doesn't obscure the Preview/View button.
-  Or place it on the left.
 
 Publish screen of docs, logged in as Author
 -------------------------------------------
@@ -165,23 +150,76 @@ Properties screen
 Subscriptions screen
 --------------------
 
-++Subscriptions don't seem to send mail
+++ Subscriptions don't seem to send mail
 
 
 Image
 =====
 
-DONE = When an image is added it gets a yellow background which looks horrible.
-  This goes against WYSIWYG (and looks like the old forms editor, gah). That
-  yellow is only used to indicate something that does not show up in
-  preview/public view. Please remove the yellow from the image backgrounds.
-  I adjusted the yellow.
+Image rendering
+---------------
+- There's a change in the image rendering which is not compatible with existing
+  stylesheets. Here's a 2.3 image:
+
+  <a href="tel:+31102437051" title="" target="_self"><img src="http://infrae.com/contact/infrae_qr_tel.png" alt="Infrae telephone QR code" class="default"></a>
+
+  Here's a converted 3.0 image:
+
+  <div class="image default">
+	  <a class="image-link" target="_self" title="Call Infrae HQ" href="tel:+31102437051"><img alt="Infrae telephone QR code" src="http://preprod30.infrae.com/++preview++/contact/infrae_qr_tel.png"></a></div>
+
+  The 3.0 image is wrapped in a div with a class, but the css class needs to be
+  put on the image itself. But of course it's not that simple. There are six
+  possible alignments:
+
+  default
+  align-left
+  align-center
+  align-right
+  float-left
+  float-right
+
+  The default and float-* styles get applied to the image itself and it's not
+  wrapped in a div. The three align-* styles need to be wrapped in a div (in
+  order to apply text-align) and the class is applied to both the div and the
+  image.
+
+  Here's an example output of a doc I created in the Infrae site. We can use
+  this doc to test the migration (html cleaned up). The test doc is at:
+  http://infrae.com/lobby/testors/imagealigns/edit/tab_preview
+
+<article class="col66 first">
+<h2 class="heading">Image Alignments</h2>
+
+<p class="p">default</p>
+<img src="http://infrae.com/++preview++/infrae_logo106x52t.png" alt="Infrae logo" class="default">
+
+<p class="p">align left</p>
+<div class="image-left">
+  <img src="http://infrae.com/++preview++/infrae_logo106x52t.png" alt="Infrae logo" class="image-left">
+</div>
+
+<p class="p">align center</p>
+<div class="image-center">
+  <img src="http://infrae.com/++preview++/infrae_logo106x52t.png" alt="Infrae logo" class="image-center">
+</div>
+
+<p class="p">align right</p>
+<div class="image-right">
+  <img src="http://infrae.com/++preview++/infrae_logo106x52t.png" alt="Infrae logo" class="image-right">
+</div>
+
+<p class="p">float left</p>
+<img src="http://infrae.com/++preview++/infrae_logo106x52t.png" alt="Infrae logo" class="float-left">
+
+<p class="p">float right</p>
+<img src="http://infrae.com/++preview++/infrae_logo106x52t.png" alt="Infrae logo" class="float-right">
+
+</article>
+
 
 Image sidebar
 -------------
-
-DONE - Bug: In the the edit tab the "edit content" icon for docs in References
-  is not found.
 
 - If an image is cropped, the thumbnail has incorrect proportions in
   the html. If the image is 804x465 pixels scaled to 142x120 pixels,
@@ -378,22 +416,6 @@ External Sources
   a pain and the Author may not know what went wrong in the first place. See the
   following bug....
 
-++ Bug: this may be related to the preceding bug. Go to this document with FF:
-  http://preprod30.infrae.com/edit#content!lobby/testors/quote
-  Don't edit anything, just save. The values of the Code Source will be removed.
-  Then if you doubleclick it you can edit it without a problem (even if there
-  were curly quotes and other strange chars in the string fields). If, however,
-  you got to this page and modify the Code Source, then it saves fine. Weird.
-  Could the "Data encoding" metadata have something to do with it?
-
-++ Bug: more weirdness. Maybe it has something to do with having 2 code sources
-  in one document. On this page I created two codes sources to test the
-  difference. I put the same content in both. Whichever one I edit last retains
-  its values on save. The other one loses all its values:
-  http://preprod30.infrae.com/edit#content!lobby/testors/relatedinfo
-  I just recreated both and they're both retained on the first save. Try saving
-  again and see what happens.
-
 + Bug: in Silva 3.0 existing Code Sources lose all their values if a parameter
   is deleted. This happens on save when the Code Source itself wasn't edited:
   http://preprod30.infrae.com/++preview++/about
@@ -406,30 +428,14 @@ External Sources
 
 External Source rendering
 -------------------------
-+ This is the output of a Code Source:
-
-<div class="external-source source-right">
-<div><!-- PyPI Linker code source -->
-<div class="info plot">
-<h3>
-<a href="http://pypi.python.org/pypi" title="Visit the Python Package Index">
-<img alt="PyPI logo" src="++static++/silvatheme.renaissance/img/python.png" height="14" width="14"></a>
-<acronym title="Python Package Index">PyPI</acronym>
-</h3>
-<p>
-FCRepo is also available on the Python Package Index:
-<br><a href="http://pypi.python.org/pypi/fcrepo" title="See FCRepo on the PyPI site">http://pypi.python.org/pypi/fcrepo</a>
-</p>
-</div>
-<!-- /PyPI Linker code source --></div></div>
-
-++ Line 2: there's an extra div with no class. Please remove it, we're 'over-divving' :) and this messes up the selector cascade.
-
-- It would be nice if the last line had breaks before the divs. Can I tweak the 'to_html' code?
+All Fixed, thanks.
 
 CS Silva Portlet
 ----------------
-++ If the document you're embedding is in the root, the souce throws an error.
++ New detail: the source only errors in preview. In the public view it renders
+  fine, regardless of where the embedded doc is. Still needs to be fixed, but
+  this makes it less urgent.
+  If the document you're embedding is in the root, the souce throws an error.
   Example doc: http://preprod30.infrae.com/edit#content!lobby/testors/portleteur
   Embedded doc: http://preprod30.infrae.com/edit#content!lobby/locateabove
   Code Source: http://preprod30.infrae.com/cs_portlet_element/editCodeSource
@@ -437,7 +443,19 @@ CS Silva Portlet
 
 CKEditor
 ========
-- The source view has light gray text and is hard to read. Make it dark gray.
+- The source view has light gray text and is hard to read. If we make it black
+  it becomes a darker gray.
+.cke_skin_silva textarea.cke_source {
+    ....
+    color: black;
+}
+
++ In the add image dialog "Use image alternative text as caption" is checked.
+  This means users always add images with a caption. Wim did this in the UCL
+  documentation. This is a handy feature, but please make it unchecked by
+  default. That way it's more obvious that you can add a caption (assuming
+  stylesheets have been updated for 3.0 to support it) and people won't
+  mistakenly add a caption without realizing it.
 
 ++ When a document saves, there is always a break at the end. This may be an
   artifact from the old editor, but it should not be rendered. Messes up
@@ -457,8 +475,9 @@ CKEditor
   used in the SMI listing). However if you edit the title in the document, that
   overwrites the metadata title.
 
-++ We seem to have lost the preformatted text style. It can be added manually,
-  but for compatibility we should put in a pre at the end of the list.
+++ We seem to have lost the preformatted text style. This can be added later
+  by a Manager, but we for compatibility we should put in Preformatted at the
+  end of the styles list.
 
 
 Logout
