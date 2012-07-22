@@ -12,9 +12,16 @@ When something's done I'll test it and, assuming a positive result, delete it fr
 General comments
 ----------------
 
-†† We have to support these URL schemes: tel, itms, webcal. Someday we'll need a service for this, especially as we do more mobile sites, but for now a text list will suffice.
++ Is this the correct doctype declaration? We're doing html5:
+  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+† We have to support these URL schemes: tel, itms, webcal. Someday we'll need a
+  service for this, especially as we do more mobile sites, but for now a text
+  list will suffice.
   This goes back to https://issues.infrae.com/wuw/issue508
   Ref.: https://en.wikipedia.org/wiki/URI_scheme
+  Here's a test page:
+  http://preprod30.infrae.com/edit#content!lobby/testors/tal_links
 
 - When in a tab and you want to reload it (just to be sure it's up to
   date) you go to the selected tab, hover, your cursor turns to a
@@ -28,8 +35,10 @@ General comments
 - Changing languages does not change the UI. The user must reload. Can
   we do that for the user?
 
-- What is this? :)
+++ This returns a 404.
   <link rel="shortcut icon"      href="http://next30.infrae.com/++static++/silvatheme.renaissance/:version:2011-10-31T20:22:09/('img', 'favicon.ico')" />
+  <link rel="shortcut icon" href="http://preprod30.infrae.com/++static++/silva.core.layout.porto/:version:2012-06-22T16:46:25/('img', 'favicon.ico')" />
+
 
 Login
 =====
@@ -60,7 +69,7 @@ Export screen
 Contents screen
 ---------------
 
-- When a document is closed it's not possible to publish it. You must create
++ When a document is closed it's not possible to publish it. You must create
   a new version, and then publish it. Can we help the user and provide a
   shortcut so closed content can be published in one shot? We're adding clicks
   here.
@@ -156,9 +165,16 @@ Subscriptions screen
 Image
 =====
 
+++ Adding a link to an image fails. It just doesn't stick.
+
+++ When you add an image in CKEditor, you usually add the image on an empty
+  line. When done adding, it looks fine. After saving, the editor inserts an
+  extra p with a nbsp above the image. You always have to remove this p after
+  saving.
+
 Image rendering
 ---------------
-- There's a change in the image rendering which is not compatible with existing
+++ There's a change in the image rendering which is not compatible with existing
   stylesheets. Here's a 2.3 image:
 
   <a href="tel:+31102437051" title="" target="_self"><img src="http://infrae.com/contact/infrae_qr_tel.png" alt="Infrae telephone QR code" class="default"></a>
@@ -171,13 +187,12 @@ Image rendering
   The 3.0 image is wrapped in a div with a class, but the css class needs to be
   put on the image itself. But of course it's not that simple. There are six
   possible alignments:
-
-  default
-  align-left
-  align-center
-  align-right
-  float-left
-  float-right
+.default
+.image-left
+.image-center
+.image-right
+.float-left
+.float-right
 
   The default and float-* styles get applied to the image itself and it's not
   wrapped in a div. The three align-* styles need to be wrapped in a div (in
@@ -390,7 +405,7 @@ External Sources
   Somehow we have to fix this usability problem.
 
 ++ When adding a Code Source there is now a built-in "Source alignment" field
-  which is nice, saves adding it to every source. The rendering of the classes
+  which is nice. Saves adding it to every source. The rendering of the classes
   is problematic.
   For align-right it adds the class 'source-right'. For float right it adds
   "source-float-right". These must be the 'generic' selectors, as found in
