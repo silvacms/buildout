@@ -21,7 +21,7 @@ General comments
   This goes back to https://issues.infrae.com/wuw/issue508
   Ref.: https://en.wikipedia.org/wiki/URI_scheme
   Here's a test page:
-  http://preprod30.infrae.com/edit#content!lobby/testors/tal_links
+  http://preprod30.infrae.com/edit#content!lobby/testors/tel_links
 
 - When in a tab and you want to reload it (just to be sure it's up to
   date) you go to the selected tab, hover, your cursor turns to a
@@ -165,13 +165,6 @@ Subscriptions screen
 Image
 =====
 
-++ Adding a link to an image fails. It just doesn't stick.
-
-++ When you add an image in CKEditor, you usually add the image on an empty
-  line. When done adding, it looks fine. After saving, the editor inserts an
-  extra p with a nbsp above the image. You always have to remove this p after
-  saving.
-
 Image rendering
 ---------------
 ++ There's a change in the image rendering which is not compatible with existing
@@ -242,6 +235,7 @@ Image sidebar
   proportions match the crop, but the thumbnail displays the original
   image, and should have the same proportions.
 
+
 Link
 ====
 
@@ -258,11 +252,6 @@ Autotoc
 
 Add forms
 =========
-
-- The generic id and title field are too short. The id can't hold more
-  than:'new_directions_in_econi'. This is way too short for our
-  clients. Those fields should have a size that matches the
-  textareas. For now make them bigger, like size="40".
 
 Ghost, Ghost Folder, Link
 
@@ -458,19 +447,62 @@ CS Silva Portlet
 
 CKEditor
 ========
-- The source view has light gray text and is hard to read. If we make it black
-  it becomes a darker gray.
-.cke_skin_silva textarea.cke_source {
-    ....
-    color: black;
-}
+++ Adding a link to an image fails. It just doesn't stick.
 
-+ In the add image dialog "Use image alternative text as caption" is checked.
-  This means users always add images with a caption. Wim did this in the UCL
-  documentation. This is a handy feature, but please make it unchecked by
-  default. That way it's more obvious that you can add a caption (assuming
-  stylesheets have been updated for 3.0 to support it) and people won't
-  mistakenly add a caption without realizing it.
+  Now I've finally figured out that you can't add a link to an image. You can
+  only add a link to text. But if you edit the image, then when you're editing
+  it, you can add a link. Is this CKEditor behavior? Because I fear our users
+  will never unlearn this process. Or is it a bug?
+
+  Can we code it so that if a user selects an image and then clicks the link
+  icon, they're brought to the image edit dialog with the link tab forward?
+
+++ Adding a tel link to an image works the first time but the next time you save
+  it gets corrupted. This link:
+  tel:+31102437051
+  first worked but then became:
+  http://preprod30.infrae.com/++preview++/lobby/testors/tel_links/
+  after saving again.
+
+  After saving, normal links get corrupted too. This was an external link going
+  to http://firefox.co. But after saving it goes to, uh, model:
+  http://preprod30.infrae.com/++preview++/lobby/testors/tel_links/
+
+  So the problem with tel links may not exist, it's a problem with links on
+  images in general.
+
++ Here's a doozy. When you add a link to an image with a caption, the href
+  surrounds the whole thing and the caption becomes a link too. This is not
+  good. Sometimes captions contain links, but usually only certain words. This
+  which is why we make our captions manually in the docs. We need to wrap the
+  href around only the image. In the html the caption is inside the link:
+
+  <div class="image default">
+	  <a class="image-link" target="_self" href=""><img alt="Infrae telephone QR code" src="http://preprod30.infrae.com/++preview++/contact/infrae_qr_tel.png"><span class="image-caption">Infrae telephone QR code</span></a></div>
+
+  This is not a problem for getting infrae.com live, we just won't use captions.
+
+++ When you add a link to an image it's not possible to remove the link. You
+  can only change it.
+
+++ When you add an image in CKEditor, you usually add the image on an empty
+  line. When done adding, it looks fine. After saving, the editor inserts an
+  extra p with a nbsp above the image. You always have to remove this p after
+  saving.
+
++ In the add image dialog "Use image alternative text as caption" is checked by
+  default.This means users always add images with a caption but don't realize it
+  (e.g. Wim did it in the UCL documentation). This is a handy feature, but
+  please make it unchecked by default. That way it's more obvious that you can
+  add a caption (assuming stylesheets have been updated for 3.0 to support it)
+  and people won't mistakenly add a caption and have to re-edit.
+
+  Also, if the image doesn't have a title, it adds the file name as caption
+  (e.g. 'atmosphere.gif') which is something nobody would want to keep.
+
+  When making unchecked the default, it's probably friendlier to move the
+  checkbox above the "Image caption" field. That way when an Author decides the
+  us the alternative text, the string field will disappear.
 
 ++ When a document saves, there is always a break at the end. This may be an
   artifact from the old editor, but it should not be rendered. Messes up
@@ -479,6 +511,12 @@ CKEditor
   If you're lucky you can css hack around the p: section#follow p {display:none}
   but there's no way to get rid of the <br>. The source contains:
   <br></article>
+
+++ When I click Save and Publish now, I get an alert:
+  This document have been modified. If you continue you will loose thoses modifications. Do you want to continue?
+  Slow browser, I know.
+  Please change the text to:
+  This document has been modified. If you continue you will lose these modifications. Do you want to continue?
 
 + How do we call a document without its title? Looks like @@content.html gets
   the title and the body, but sometimes users call the title elsewhere, higher
@@ -489,6 +527,13 @@ CKEditor
   If you edit the metadata title it doesn't show up in the document (yet it's
   used in the SMI listing). However if you edit the title in the document, that
   overwrites the metadata title.
+
+- The source view has light gray text and is hard to read. If we make it black
+  it becomes a darker gray.
+.cke_skin_silva textarea.cke_source {
+    ....
+    color: #000;
+}
 
 ++ We seem to have lost the preformatted text style. This can be added later
   by a Manager, but we for compatibility we should put in Preformatted at the
