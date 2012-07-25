@@ -377,12 +377,13 @@ SilvaFind
 + The Zope level icons are being used in the search results. We should make the
   Zope icons match. This is something Wim or I can do if you explain it.
 
-+ How do we call a stylesheet for a specific metatype now? I used to include it
+++ How do we call a stylesheet for a specific metatype now? I used to include it
   in the head inject but I think there's a cleaner way, e.g. I see calendar.css
   in SNN. We need one for Find objects.
 
-- The rendering of Events is funky, seems to use get_intro but there's a year in
-  there and the title has a nested strong tag. Search for EuroPython to see it.
+++ The rendering of Events is funky, seems to use get_intro but there's a year
+  in there and the title has a nested strong tag. Search for EuroPython to see
+  it.
 
 External Sources
 ================
