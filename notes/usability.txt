@@ -1,3 +1,5 @@
+Just checking, did you svn up? :)
+
 == general UI ==
 
 - the form-content should be made smaller on every page (this will also fix the problem of the error message being positioned 
