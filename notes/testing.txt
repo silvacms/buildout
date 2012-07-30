@@ -77,6 +77,10 @@ Contents screen
 - When a document is published, the "Go to" button has Preview. as the first
   option. It should have View too. Save a click.
 
++ When a document doesn't have a tile, it's id gets displayed instead. Thus one
+  thinks the doc does have a title (albeit a lousy one). We need to display the
+  string "no title" instead.
+
 Access screen
 -------------
 
@@ -346,6 +350,12 @@ Publish screen of docs
   Now" and "Reject Request" button (looking good together). Not sure
   if we should do something more.
 
+Feedback
+========
+- Can we remove the little 'x' from the feedback messages? Users will think
+  they have click it, and it's tiny, while they can click the entire message.
+
+- And moving it down 30 pixels will solve the problem completely :)
 
 SNN
 ===
@@ -448,6 +458,25 @@ CS Silva Portlet
 
 CKEditor
 ========
++ When upgrading from previous Silvas can we bump up the heading size? So an h3
+  becomes h2, etc.
+
+++ When inserting an image that is scaled to 20%, CKEditor inserts the full size
+  hires version. See the Silva icon:
+  http://preprod30.infrae.com/edit#content!lobby/testors/linkedimages
+
+++ When looking up an image, then adding one in the dailog, the add form has
+  a bizarre layout. Must be missing some key classes for the new css.
+
+++ The link on one of my images got transformed to a local anchor. Don't know
+  how, or what it was, but it wasn't a local anchor.
+
+- When linking an image to its hires version, you click the "Link to the hires
+  version of the image" checkbox. However if you return to check this, the
+  checkbox is no longer checked. Instead, the other checkox, "Link to an another
+  content" is checked. This is technically correct, but weird UX. You think
+  something went wrong and it somehow got linked to something else.
+
 ++ Adding a link to an image fails. It just doesn't stick.
 
   Now I've finally figured out that you can't add a link to an image. You can
@@ -482,6 +511,7 @@ CKEditor
 	  <a class="image-link" target="_self" href=""><img alt="Infrae telephone QR code" src="http://preprod30.infrae.com/++preview++/contact/infrae_qr_tel.png"><span class="image-caption">Infrae telephone QR code</span></a></div>
 
   This is not a problem for getting infrae.com live, we just won't use captions.
+  But the link should not enclose both.
 
 ++ When you add a link to an image it's not possible to remove the link. You
   can only change it.
@@ -540,6 +570,15 @@ CKEditor
   by a Manager, but we for compatibility we should put in Preformatted at the
   end of the styles list.
 
++ If a document doesn't have a title, an empty h1 tag gets rendered. This
+  is semantically bad and means you need display:none hacks in the css.
+
+- Documents containing only a code source (no title or other elements) must
+  have a br or a p. If you delete it in the source editor, the code source
+  vanished from the document. Means you need display:none for the p.
+
+- When images are rendered, they're missing their height and width
+  attributes, which makes pages perceptually slow.
 
 Logout
 ======
