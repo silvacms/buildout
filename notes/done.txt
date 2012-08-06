@@ -1,0 +1,107 @@
+
+=========================================================
+Those issues should be fixed, or I didn't understood them
+=========================================================
+
+Zope
+----
+
+- The logo upload widget in /service_ui/manage_settings is
+  buggy. Sylvain said he'll replace it with another.
+
++ I cannot cut and paste code sources. Tried to move cs_flash_source
+  and cs_googlemaps down a level but I get a login prompt. I think this
+  is recent.
+
+Document
+-------
+
++ If a document doesn't have a title, an empty h1 tag gets rendered. This
+  is semantically bad and means you need display:none hacks in the css.
+
+- The document title seems to have a one-way connection to the metadata title.
+  If you edit the metadata title it doesn't show up in the document (yet it's
+  used in the SMI listing). However if you edit the title in the document, that
+  overwrites the metadata title.
+
+(You cannot remove the title from the document editor. Should this be possible ?)
+
++ When upgrading from previous Silvas can we bump up the heading size? So an h3
+  becomes h2, etc.
+
+
++ Bug: when an 'illegal' char is entered into certain Code Source fields, the
+  source becomes un-editable, e.g. try entering 'ünâligned' into the css style
+  field of a Portlet Element code source. This is new. The source/page saves,
+  publishes, and renders just fine, but when you try to edit the source you get
+  a js error:
+  "An unexpected error happened on the server while retrieving Code source
+  parameters. The Code Source might be buggy."
+  http://preprod30.infrae.com/edit#content!lobby/testors/univalue
+  http://infrae.com/lobby/testors/univalue/edit/tab_edit
+  The only solution is to delete the whole source and make it again. But that's
+  a pain and the Author may not know what went wrong in the first place. See the
+  following bug....
+
+++ When looking up an image, then adding one in the dailog, the add form has
+  a bizarre layout. Must be missing some key classes for the new css.
+
+++ When I click Save and Publish now, I get an alert:
+  This document have been modified. If you continue you will loose thoses modifications. Do you want to continue?
+  Slow browser, I know.
+  Please change the text to:
+  This document has been modified. If you continue you will lose these modifications. Do you want to continue?
+
+Login
+-----
+
+- I left my screen open overnight, and when I came back the next
+  morning I tried to do something. That login form came up, the one
+  you can't ever successfully login to. Damn frustrating. What is its
+  purpose? Can we remove it?
+  I hope so. It also displays a model dialog with "You are now authenticated."
+  and the page won't load until you click "Continue". But I realize that this
+  is temporary, it's just our users shouldn't use it.
+
+- If you get locked out, you get a modal password prompt in the SMI. I
+  could not login with this. I had to reload, which took me back to
+  the home page with the nested login form, and then I could
+  login. This is real glitch that could frustrate a user.
+  Apparently you have to get you login right the first time and then it works.
+  Is this fixable?
+
+Properties screen
+-----------------
+
+- hide from tables of content
+
+Subscriptions screen
+--------------------
+
+++ Subscriptions don't seem to send mail
+
+Image sidebar
+-------------
+
+- If an image is cropped, the thumbnail has incorrect proportions in
+  the html. If the image is 804x465 pixels scaled to 142x120 pixels,
+  the img tag has attributes width="120" height="101". These
+  proportions match the crop, but the thumbnail displays the original
+  image, and should have the same proportions.
+
+Metadata system
+---------------
+
++ It's not possible to make a metadata set editable. It 404s.
+
++ It's not possible to add a field to a metadata set. It 404s.
+
+Silva news
+----------
+
+- Inside new News Pubs the addables are not set correctly.
+
+++ See the double title:
+  http://next30.infrae.com/edit#content!news/silva_security_bulletin_04-10-11
+  """WB: The title is not set in the content anymore so it can be removed from the
+  content. De we need an updated to remove this titel automatically?"""

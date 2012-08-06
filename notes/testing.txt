@@ -52,20 +52,6 @@ Login
   login and you can try as many times as you like. This was really
   confusing and needs to change.
 
-- I left my screen open overnight, and when I came back the next
-  morning I tried to do something. That login form came up, the one
-  you can't ever successfully login to. Damn frustrating. What is its
-  purpose? Can we remove it?
-  I hope so. It also displays a model dialog with "You are now authenticated."
-  and the page won't load until you click "Continue". But I realize that this
-  is temporary, it's just our users shouldn't use it.
-
-Import screen
--------------
-
-Export screen
--------------
-
 Contents screen
 ---------------
 
@@ -81,31 +67,13 @@ Contents screen
   thinks the doc does have a title (albeit a lousy one). We need to display the
   string "no title" instead.
 
-Access screen
--------------
+-----> This was the same behavior in the old Silva.
 
-- If you get locked out, you get a modal password prompt in the SMI. I
-  could not login with this. I had to reload, which took me back to
-  the home page with the nested login form, and then I could
-  login. This is real glitch that could frustrate a user.
-  Apparently you have to get you login right the first time and then it works.
-  Is this fixable?
-
-Settings screen of folder
--------------------------
-Thanks.
-
-Editor screen
--------------
-
-Publish screen of docs, logged in as Author
--------------------------------------------
 
 Publish screen of docs, logged in as ChiefEditor
 ------------------------------------------------
 
-THERE UNITTEST AT LEAST FOR THAT + To test: Is the publishing workflow
-  email working?
+To test: Is the publishing workflow email working?
 
 Functional fixes
 ~~~~~~~~~~~~~~~~
@@ -154,17 +122,6 @@ Manage versions
 - View: when viewing an old version the "Publish now" button in the
   header should not appear, as you're not publishing the version
   you're viewing. Change it to a "Return" button?
-
-Properties screen
------------------
-
-- hide from tables of content
-
-Subscriptions screen
---------------------
-
-++ Subscriptions don't seem to send mail
-
 
 Image
 =====
@@ -230,16 +187,6 @@ Image rendering
 </article>
 
 
-Image sidebar
--------------
-
-- If an image is cropped, the thumbnail has incorrect proportions in
-  the html. If the image is 804x465 pixels scaled to 142x120 pixels,
-  the img tag has attributes width="120" height="101". These
-  proportions match the crop, but the thumbnail displays the original
-  image, and should have the same proportions.
-
-
 Link
 ====
 
@@ -248,6 +195,8 @@ target of relative link
 - Change to "Click the Lookup button to select an item to refer to."
   (Writing "a content" is not good form, the word content is treated as
   a plural form. Not sure why....)
+
+-----> 'content' is mentioned all the place. I guess all messages should be changed ?
 
 Autotoc
 =======
@@ -261,15 +210,6 @@ Ghost, Ghost Folder, Link
 
 - Change "no reference selected" to "Click the Lookup button to select
   a reference. "
-
-
-
-Metadata system
-===============
-
-+ It's not possible to make a metadata set editable. It 404s.
-
-+ It's not possible to add a field to a metadata set. It 404s.
 
 
 UI/usability fixes
@@ -359,7 +299,6 @@ Feedback
 
 SNN
 ===
-- Inside new News Pubs the addables are not set correctly.
 
 - The month field lets me fill in '19'. Can the inline validation do a
   range check like it does in publish?
@@ -368,11 +307,6 @@ SNN
   and I have no idea which of the seven fields contains the error. We
   need to figure out something here. Don't we know what the invalid
   entry is?
-
-++ See the double title:
-  http://next30.infrae.com/edit#content!news/silva_security_bulletin_04-10-11
-  """WB: The title is not set in the content anymore so it can be removed from the
-  content. De we need an updated to remove this titel automatically?"""
 
 Silva News Filter
 
@@ -418,19 +352,6 @@ External Sources
 .float-left
 .float-right
 
-+ Bug: when an 'illegal' char is entered into certain Code Source fields, the
-  source becomes un-editable, e.g. try entering 'ünâligned' into the css style
-  field of a Portlet Element code source. This is new. The source/page saves,
-  publishes, and renders just fine, but when you try to edit the source you get
-  a js error:
-  "An unexpected error happened on the server while retrieving Code source
-  parameters. The Code Source might be buggy."
-  http://preprod30.infrae.com/edit#content!lobby/testors/univalue
-  http://infrae.com/lobby/testors/univalue/edit/tab_edit
-  The only solution is to delete the whole source and make it again. But that's
-  a pain and the Author may not know what went wrong in the first place. See the
-  following bug....
-
 + Bug: in Silva 3.0 existing Code Sources lose all their values if a parameter
   is deleted. This happens on save when the Code Source itself wasn't edited:
   http://preprod30.infrae.com/++preview++/about
@@ -440,10 +361,6 @@ External Sources
   I deleted the alignment parameter, since it's now built-in, and when I tested
   I noticed that it lost all parameter values. Can this be fixed so existing
   values are preserved?
-
-External Source rendering
--------------------------
-All Fixed, thanks.
 
 CS Silva Portlet
 ----------------
@@ -458,15 +375,10 @@ CS Silva Portlet
 
 CKEditor
 ========
-+ When upgrading from previous Silvas can we bump up the heading size? So an h3
-  becomes h2, etc.
 
 ++ When inserting an image that is scaled to 20%, CKEditor inserts the full size
   hires version. See the Silva icon:
   http://preprod30.infrae.com/edit#content!lobby/testors/linkedimages
-
-++ When looking up an image, then adding one in the dailog, the add form has
-  a bizarre layout. Must be missing some key classes for the new css.
 
 ++ The link on one of my images got transformed to a local anchor. Don't know
   how, or what it was, but it wasn't a local anchor.
@@ -543,21 +455,10 @@ CKEditor
   but there's no way to get rid of the <br>. The source contains:
   <br></article>
 
-++ When I click Save and Publish now, I get an alert:
-  This document have been modified. If you continue you will loose thoses modifications. Do you want to continue?
-  Slow browser, I know.
-  Please change the text to:
-  This document has been modified. If you continue you will lose these modifications. Do you want to continue?
-
 + How do we call a document without its title? Looks like @@content.html gets
   the title and the body, but sometimes users call the title elsewhere, higher
   up in the layout template, and they only want the body. Seems like this is a
   problem with news items too. @@body.html ?
-
-- The document title seems to have a one-way connection to the metadata title.
-  If you edit the metadata title it doesn't show up in the document (yet it's
-  used in the SMI listing). However if you edit the title in the document, that
-  overwrites the metadata title.
 
 - The source view has light gray text and is hard to read. If we make it black
   it becomes a darker gray.
@@ -566,12 +467,15 @@ CKEditor
     color: #000;
 }
 
+-----> This is something you changed, before it used to the same color than in Kupu,
+-----> so your responsability.
+
 ++ We seem to have lost the preformatted text style. This can be added later
   by a Manager, but we for compatibility we should put in Preformatted at the
   end of the styles list.
 
-+ If a document doesn't have a title, an empty h1 tag gets rendered. This
-  is semantically bad and means you need display:none hacks in the css.
+-----> pre is still here. If you have other requirements, please provide a Name an
+-----> a tag and attributes that should be added to the list of formats.
 
 - Documents containing only a code source (no title or other elements) must
   have a br or a p. If you delete it in the source editor, the code source
@@ -588,10 +492,13 @@ Logout
   you can't. Can we just send them to the public view of where they
   were?
 
+----> I cannot reproduce this.
+
 - When you logout from a certain location you can still visit that page in the
   smi which looks like your still logged in, only when you do a hard refresh
   (or other action like edit) you get the login screen. I suppose this has to
   do with caching and that it is not an issue.
+----> I cannot reproduce this
 
 Reference dialog
 ================
@@ -618,19 +525,18 @@ Bugs
   containers now. Can we add an Export option to the "Edit" tab, like the
   Details option in news items?
 
+----> How did do you in the past ?
+
 To Test
 -------
 - CSV upload has problems.
   Invalid CSV file: new-line character seen in unquoted field - do you need to open the file in universal-newline mode?
-
-Zope
-----
-- The logo upload widget in /service_ui/manage_settings is buggy. Sylvain said he'll replace it with another.
-
-+ I cannot cut and paste code sources. Tried to move cs_flash_source and cs_googlemaps down a level but I get a login prompt. I think this is recent.
 
 
 Content Layout
 ==============
 
 = Any feature that adds clicks is not an improvement.
+
+----> This doesn't describe any bug, what am I supposed to do ?
+
