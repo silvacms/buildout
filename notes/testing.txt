@@ -12,9 +12,6 @@ When something's done I'll test it and, assuming a positive result, delete it fr
 General comments
 ----------------
 
-+ Is this the correct doctype declaration? We're doing html5:
-  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 - When in a tab and you want to reload it (just to be sure it's up to
   date) you go to the selected tab, hover, your cursor turns to a
   pointer so it's obviously a link, you click, and nothing

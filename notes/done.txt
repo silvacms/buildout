@@ -13,6 +13,11 @@ Zope
   and cs_googlemaps down a level but I get a login prompt. I think this
   is recent.
 
++ Is this the correct doctype declaration? We're doing html5:
+  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+  > Fix in the SMI template.
+
 ++ This returns a 404.
   <link rel="shortcut icon"      href="http://next30.infrae.com/++static++/silvatheme.renaissance/:version:2011-10-31T20:22:09/('img', 'favicon.ico')" />
   <link rel="shortcut icon" href="http://preprod30.infrae.com/++static++/silva.core.layout.porto/:version:2012-06-22T16:46:25/('img', 'favicon.ico')" />
