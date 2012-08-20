@@ -80,6 +80,29 @@ Document
 ++ The link on one of my images got transformed to a local anchor. Don't know
   how, or what it was, but it wasn't a local anchor.
 
+- When images are rendered, they're missing their height and width
+  attributes, which makes pages perceptually slow.
+
++ How do we call a document without its title? Looks like @@content.html gets
+  the title and the body, but sometimes users call the title elsewhere, higher
+  up in the layout template, and they only want the body. Seems like this is a
+  problem with news items too. @@body.html ?
+
+  > version document/get_viewable
+  > details version/@@details
+  > details/get_text
+  > details/get_introduction
+  > details/get_thumbnail
+
+  We can even add an get_title.
+
+++ We seem to have lost the preformatted text style. This can be added later
+  by a Manager, but we for compatibility we should put in Preformatted at the
+  end of the styles list.
+
+-----> pre is still here. If you have other requirements, please provide a Name an
+-----> a tag and attributes that should be added to the list of formats.
+
 Login
 -----
 

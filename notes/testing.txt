@@ -443,19 +443,9 @@ CKEditor
 -----> This is something you changed, before it used to the same color than in Kupu,
 -----> so your responsability.
 
-++ We seem to have lost the preformatted text style. This can be added later
-  by a Manager, but we for compatibility we should put in Preformatted at the
-  end of the styles list.
-
------> pre is still here. If you have other requirements, please provide a Name an
------> a tag and attributes that should be added to the list of formats.
-
 - Documents containing only a code source (no title or other elements) must
   have a br or a p. If you delete it in the source editor, the code source
   vanished from the document. Means you need display:none for the p.
-
-- When images are rendered, they're missing their height and width
-  attributes, which makes pages perceptually slow.
 
 Logout
 ======
