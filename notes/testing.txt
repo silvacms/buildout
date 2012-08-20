@@ -15,14 +15,6 @@ General comments
 + Is this the correct doctype declaration? We're doing html5:
   <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-† We have to support these URL schemes: tel, itms, webcal. Someday we'll need a
-  service for this, especially as we do more mobile sites, but for now a text
-  list will suffice.
-  This goes back to https://issues.infrae.com/wuw/issue508
-  Ref.: https://en.wikipedia.org/wiki/URI_scheme
-  Here's a test page:
-  http://preprod30.infrae.com/edit#content!lobby/testors/tel_links
-
 - When in a tab and you want to reload it (just to be sure it's up to
   date) you go to the selected tab, hover, your cursor turns to a
   pointer so it's obviously a link, you click, and nothing
@@ -35,16 +27,14 @@ General comments
 - Changing languages does not change the UI. The user must reload. Can
   we do that for the user?
 
-++ This returns a 404.
-  <link rel="shortcut icon"      href="http://next30.infrae.com/++static++/silvatheme.renaissance/:version:2011-10-31T20:22:09/('img', 'favicon.ico')" />
-  <link rel="shortcut icon" href="http://preprod30.infrae.com/++static++/silva.core.layout.porto/:version:2012-06-22T16:46:25/('img', 'favicon.ico')" />
-
 
 Login
 =====
 = It seems the login form now appears in the content area of the
   location where you're at, instead of displaying the layout at the
   root of the site. Did this change? It's much more friendly.
+
+----> This doesn't describe any bug, what am I supposed to do ?
 
 - Logout and in: after clicking the logout button the browser goes to:
   http://next30.infrae.com/service_members/logout If I want to login
@@ -380,9 +370,6 @@ CKEditor
   hires version. See the Silva icon:
   http://preprod30.infrae.com/edit#content!lobby/testors/linkedimages
 
-++ The link on one of my images got transformed to a local anchor. Don't know
-  how, or what it was, but it wasn't a local anchor.
-
 - When linking an image to its hires version, you click the "Link to the hires
   version of the image" checkbox. However if you return to check this, the
   checkbox is no longer checked. Instead, the other checkox, "Link to an another
@@ -398,20 +385,6 @@ CKEditor
 
   Can we code it so that if a user selects an image and then clicks the link
   icon, they're brought to the image edit dialog with the link tab forward?
-
-++ Adding a tel link to an image works the first time but the next time you save
-  it gets corrupted. This link:
-  tel:+31102437051
-  first worked but then became:
-  http://preprod30.infrae.com/++preview++/lobby/testors/tel_links/
-  after saving again.
-
-  After saving, normal links get corrupted too. This was an external link going
-  to http://firefox.co. But after saving it goes to, uh, model:
-  http://preprod30.infrae.com/++preview++/lobby/testors/tel_links/
-
-  So the problem with tel links may not exist, it's a problem with links on
-  images in general.
 
 + Here's a doozy. When you add a link to an image with a caption, the href
   surrounds the whole thing and the caption becomes a link too. This is not
