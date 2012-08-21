@@ -1,4 +1,3 @@
-
 =========================================================
 Those issues should be fixed, or I didn't understood them
 =========================================================
@@ -6,35 +5,14 @@ Those issues should be fixed, or I didn't understood them
 Zope
 ----
 
-- The logo upload widget in /service_ui/manage_settings is
-  buggy. Sylvain said he'll replace it with another.
-
-+ I cannot cut and paste code sources. Tried to move cs_flash_source
-  and cs_googlemaps down a level but I get a login prompt. I think this
-  is recent.
-
-+ Is this the correct doctype declaration? We're doing html5:
-  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-  > Fix in the SMI template.
-
+XXX Not fixed, this rel link 404s (line 17 if you view source at http://preprod30.infrae.com/++preview++/products):
+<link rel="shortcut icon" href="http://preprod30.infrae.com/++static++/silva.core.layout.porto/:version:2012-06-22T16:46:25/img/favicon.ico" />
 ++ This returns a 404.
   <link rel="shortcut icon"      href="http://next30.infrae.com/++static++/silvatheme.renaissance/:version:2011-10-31T20:22:09/('img', 'favicon.ico')" />
   <link rel="shortcut icon" href="http://preprod30.infrae.com/++static++/silva.core.layout.porto/:version:2012-06-22T16:46:25/('img', 'favicon.ico')" />
 
-† We have to support these URL schemes: tel, itms, webcal. Someday we'll need a
-  service for this, especially as we do more mobile sites, but for now a text
-  list will suffice.
-  This goes back to https://issues.infrae.com/wuw/issue508
-  Ref.: https://en.wikipedia.org/wiki/URI_scheme
-  Here's a test page:
-  http://preprod30.infrae.com/edit#content!lobby/testors/tel_links
-
 Document
--------
-
-+ If a document doesn't have a title, an empty h1 tag gets rendered. This
-  is semantically bad and means you need display:none hacks in the css.
+--------
 
 - The document title seems to have a one-way connection to the metadata title.
   If you edit the metadata title it doesn't show up in the document (yet it's
@@ -43,50 +21,17 @@ Document
 
 (You cannot remove the title from the document editor. Should this be possible ?)
 
+[Let's keep it this way. The only way to remove the title is in properties.]
+
+To test after upgrade:
 + When upgrading from previous Silvas can we bump up the heading size? So an h3
   becomes h2, etc.
 
-+ Bug: when an 'illegal' char is entered into certain Code Source fields, the
-  source becomes un-editable, e.g. try entering 'ünâligned' into the css style
-  field of a Portlet Element code source. This is new. The source/page saves,
-  publishes, and renders just fine, but when you try to edit the source you get
-  a js error:
-  "An unexpected error happened on the server while retrieving Code source
-  parameters. The Code Source might be buggy."
-  http://preprod30.infrae.com/edit#content!lobby/testors/univalue
-  http://infrae.com/lobby/testors/univalue/edit/tab_edit
-  The only solution is to delete the whole source and make it again. But that's
-  a pain and the Author may not know what went wrong in the first place. See the
-  following bug....
-
+XXX Something's broken, When clicking the "Upload" button (in FF) nothing happens.
+Actually, the upload dialog appears, but behind the "Lookup a content" dialog.
+But now I can't reproduce this....
 ++ When looking up an image, then adding one in the dailog, the add form has
   a bizarre layout. Must be missing some key classes for the new css.
-
-++ When I click Save and Publish now, I get an alert:
-  This document have been modified. If you continue you will loose thoses modifications. Do you want to continue?
-  Slow browser, I know.
-  Please change the text to:
-  This document has been modified. If you continue you will lose these modifications. Do you want to continue?
-
-++ Adding a tel link to an image works the first time but the next time you save
-  it gets corrupted. This link:
-  tel:+31102437051
-  first worked but then became:
-  http://preprod30.infrae.com/++preview++/lobby/testors/tel_links/
-  after saving again.
-
-  After saving, normal links get corrupted too. This was an external link going
-  to http://firefox.co. But after saving it goes to, uh, model:
-  http://preprod30.infrae.com/++preview++/lobby/testors/tel_links/
-
-  So the problem with tel links may not exist, it's a problem with links on
-  images in general.
-
-++ The link on one of my images got transformed to a local anchor. Don't know
-  how, or what it was, but it wasn't a local anchor.
-
-- When images are rendered, they're missing their height and width
-  attributes, which makes pages perceptually slow.
 
 + How do we call a document without its title? Looks like @@content.html gets
   the title and the body, but sometimes users call the title elsewhere, higher
@@ -101,6 +46,7 @@ Document
 
   We can even add an get_title.
 
+To test after upgrade:
 ++ We seem to have lost the preformatted text style. This can be added later
   by a Manager, but we for compatibility we should put in Preformatted at the
   end of the styles list.
@@ -108,56 +54,24 @@ Document
 -----> pre is still here. If you have other requirements, please provide a Name an
 -----> a tag and attributes that should be added to the list of formats.
 
-Login
------
-
-- I left my screen open overnight, and when I came back the next
-  morning I tried to do something. That login form came up, the one
-  you can't ever successfully login to. Damn frustrating. What is its
-  purpose? Can we remove it?
-  I hope so. It also displays a model dialog with "You are now authenticated."
-  and the page won't load until you click "Continue". But I realize that this
-  is temporary, it's just our users shouldn't use it.
-
-- If you get locked out, you get a modal password prompt in the SMI. I
-  could not login with this. I had to reload, which took me back to
-  the home page with the nested login form, and then I could
-  login. This is real glitch that could frustrate a user.
-  Apparently you have to get you login right the first time and then it works.
-  Is this fixable?
-
-Properties screen
------------------
-
-- hide from tables of content
-
 Subscriptions screen
 --------------------
 
 ++ Subscriptions don't seem to send mail
 
-Image sidebar
--------------
-
-- If an image is cropped, the thumbnail has incorrect proportions in
-  the html. If the image is 804x465 pixels scaled to 142x120 pixels,
-  the img tag has attributes width="120" height="101". These
-  proportions match the crop, but the thumbnail displays the original
-  image, and should have the same proportions.
-
 Metadata system
 ---------------
 
+XXX Still 404s:
+http://preprod30.infrae.com/service_metadata/collection/augmentation/manage_settings
 + It's not possible to make a metadata set editable. It 404s.
 
+XXX Still 404s:
+http://preprod30.infrae.com/service_metadata/collection/augmentation/?%3Amethod=addElementForm&submit=+Add+Metadata+Element
 + It's not possible to add a field to a metadata set. It 404s.
 
 Silva news
 ----------
 
+To test after upgrade:
 - Inside new News Pubs the addables are not set correctly.
-
-++ See the double title:
-  http://next30.infrae.com/edit#content!news/silva_security_bulletin_04-10-11
-  """WB: The title is not set in the content anymore so it can be removed from the
-  content. De we need an updated to remove this titel automatically?"""
