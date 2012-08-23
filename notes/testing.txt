@@ -369,13 +369,15 @@ CKEditor
 
 ++ When inserting an image that is scaled to 20%, CKEditor inserts the full size
   hires version. See the Silva icon:
-  http://preprod30.infrae.com/edit#content!lobby/testors/linkedimages
+  http://preprod30.infrae.com/edit#content!lobby/testors/imaging
 
 - When linking an image to its hires version, you click the "Link to the hires
   version of the image" checkbox. However if you return to check this, the
   checkbox is no longer checked. Instead, the other checkox, "Link to an another
   content" is checked. This is technically correct, but weird UX. You think
   something went wrong and it somehow got linked to something else.
+
+++ Linking to hires doesn't work. It links to the image sans argument.
 
 - Adding a link to an image fails. It just doesn't stick.
 
