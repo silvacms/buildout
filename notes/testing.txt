@@ -452,6 +452,11 @@ Bugs
 
 ----> How did do you in the past ?
 
+Folder/container order
+======================
+
+If you change the order of a container, the order will be reset to its previous order after a restart of the server.
+
 To Test
 -------
 - CSV upload has problems.
