@@ -14,25 +14,10 @@ XXX Not fixed, this rel link 404s (line 17 if you view source at http://preprod3
 Document
 --------
 
-- The document title seems to have a one-way connection to the metadata title.
-  If you edit the metadata title it doesn't show up in the document (yet it's
-  used in the SMI listing). However if you edit the title in the document, that
-  overwrites the metadata title.
-
 (You cannot remove the title from the document editor. Should this be possible ?)
-
 [Let's keep it this way. The only way to remove the title is in properties.]
 
-To test after upgrade:
-+ When upgrading from previous Silvas can we bump up the heading size? So an h3
-  becomes h2, etc.
-
-XXX Something's broken, When clicking the "Upload" button (in FF) nothing happens.
-Actually, the upload dialog appears, but behind the "Lookup a content" dialog.
-But now I can't reproduce this....
-++ When looking up an image, then adding one in the dailog, the add form has
-  a bizarre layout. Must be missing some key classes for the new css.
-
+To test:
 + How do we call a document without its title? Looks like @@content.html gets
   the title and the body, but sometimes users call the title elsewhere, higher
   up in the layout template, and they only want the body. Seems like this is a
@@ -46,17 +31,10 @@ But now I can't reproduce this....
 
   We can even add an get_title.
 
-To test after upgrade:
-++ We seem to have lost the preformatted text style. This can be added later
-  by a Manager, but we for compatibility we should put in Preformatted at the
-  end of the styles list.
-
------> pre is still here. If you have other requirements, please provide a Name an
------> a tag and attributes that should be added to the list of formats.
-
 Subscriptions screen
 --------------------
 
+To test after upgrade:
 ++ Subscriptions don't seem to send mail
 
 Metadata system
@@ -73,5 +51,8 @@ http://preprod30.infrae.com/service_metadata/collection/augmentation/?%3Amethod=
 Silva news
 ----------
 
-To test after upgrade:
+Tested:
 - Inside new News Pubs the addables are not set correctly.
+  After a fresh upgrade the News Item is not selected in Addables (but
+  strangely enough News Item is).
+

@@ -113,6 +113,10 @@ Manage versions
 Image
 =====
 
+- Something's broken, When clicking the "Upload" button (in FF) nothing happens.
+Actually, the upload dialog appears, but behind the "Lookup a content" dialog.
+But now I can't reproduce this....
+
 Image rendering
 ---------------
 ++ There's a change in the image rendering which is not compatible with existing
@@ -373,7 +377,7 @@ CKEditor
   content" is checked. This is technically correct, but weird UX. You think
   something went wrong and it somehow got linked to something else.
 
-++ Adding a link to an image fails. It just doesn't stick.
+- Adding a link to an image fails. It just doesn't stick.
 
   Now I've finally figured out that you can't add a link to an image. You can
   only add a link to text. But if you edit the image, then when you're editing
@@ -499,4 +503,10 @@ Content Layout
 = Any feature that adds clicks is not an improvement.
 
 ----> This doesn't describe any bug, what am I supposed to do ?
+
+XXX Something's broken, When clicking the "Upload" button (in FF) nothing happens.
+Actually, the upload dialog appears, but behind the "Lookup a content" dialog.
+But now I can't reproduce this....
+++ When looking up an image, then adding one in the dailog, the add form has
+  a bizarre layout. Must be missing some key classes for the new css.
 
