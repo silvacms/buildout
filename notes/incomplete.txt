@@ -2,13 +2,6 @@
 Issues with nothing to do on it, where the description / action is incomplete
 =============================================================================
 
-Content Layout
-==============
-
-= Any feature that adds clicks is not an improvement.
-
-----> This doesn't describe any bug, what am I supposed to do ?
-
 Login
 =====
 
@@ -17,6 +10,8 @@ Login
   root of the site. Did this change? It's much more friendly.
 
 ----> This doesn't describe any bug, what am I supposed to do ?
+
+++++> Nothing. I was just saying that it's much better now.
 
 Logout
 ======
@@ -28,10 +23,7 @@ Logout
 
 ----> I cannot reproduce this.
 
-- When you logout from a certain location you can still visit that page in the
-  smi which looks like your still logged in, only when you do a hard refresh
-  (or other action like edit) you get the login screen. I suppose this has to
-  do with caching and that it is not an issue.
-
-----> I cannot reproduce this
-
+++++> Go to http://preprod30.infrae.com/edit#content!about
+      Click the logout button. You end up at:
+      http://preprod30.infrae.com/service_members/logout
+      You see a login form but you cannot login at this address.
