@@ -1,10 +1,6 @@
-﻿Silva 3.0 test notes
-====================
-
-This is the done signal:
-DONE - "Informations" should be "Information".
-
-When something's done I'll test it and, assuming a positive result, delete it from this list.
+﻿================
+Silva 3.0 issues
+================
 
 ++ Items with a double plus need to be fixed to get infrae.com running in 3.0.
 
@@ -27,11 +23,6 @@ General comments
 
 Login
 =====
-= It seems the login form now appears in the content area of the
-  location where you're at, instead of displaying the layout at the
-  root of the site. Did this change? It's much more friendly.
-
-----> This doesn't describe any bug, what am I supposed to do ?
 
 - Logout and in: after clicking the logout button the browser goes to:
   http://next30.infrae.com/service_members/logout If I want to login
@@ -91,8 +82,6 @@ Notes since changing the fields
   The '11' gets correctly interpreted in the Author's submit, but Editors
   get a system error. Can you make it interpret correctly for Editors
   too? Saves 2 chars.
-
-Expiration time
 
 Manage versions
 
@@ -177,7 +166,6 @@ Image rendering
 
 </article>
 
-
 Link
 ====
 
@@ -251,9 +239,9 @@ Publish screen of docs
 
 Publication time
 
-I HAVE TO EXPLAIN THAT ONE - Strangely, if I enter '11' into the year
-  field as an Author, the value is accepted and becomes 2011. This
-  fails when an Editor publishes.
+- Strangely, if I enter '11' into the year field as an Author, the
+  value is accepted and becomes 2011. This fails when an Editor
+  publishes.
 
 Message
 
@@ -280,13 +268,6 @@ Publish screen of docs
   waiting for approval. The only indication is there's both a "Publish
   Now" and "Reject Request" button (looking good together). Not sure
   if we should do something more.
-
-Feedback
-========
-- Can we remove the little 'x' from the feedback messages? Users will think
-  they have click it, and it's tiny, while they can click the entire message.
-
-- And moving it down 30 pixels will solve the problem completely :)
 
 SNN
 ===
@@ -322,6 +303,7 @@ SilvaFind
 
 External Sources
 ================
+
 - When editing an External Source in the editor, the source edit form doesn't
   display the title of the source, so you have no idea which Code/SQP/CSV
   source you're editing. Please make the title display at the top of the form.
@@ -436,37 +418,12 @@ CKEditor
   up in the layout template, and they only want the body. Seems like this is a
   problem with news items too. @@body.html ?
 
-- The source view has light gray text and is hard to read. If we make it black
-  it becomes a darker gray.
-.cke_skin_silva textarea.cke_source {
-    ....
-    color: #000;
-}
-
------> This is something you changed, before it used to the same color than in Kupu,
------> so your responsability.
 
 - Documents containing only a code source (no title or other elements) must
   have a br or a p. If you delete it in the source editor, the code source
   vanished from the document. Means you need display:none for the p.
-  
-++ External images get broken after saving. If you add external images, they get removed one by one after a save. Looking at the source it looks like a stripping action occurs on "<img data-silva-src="http://www.packtpub.com/sites/default/files/Article-Images/silva-468x60.gif" />" whyich becomes "<img data-silva-="" src="http://www.packtpub.com/sites/default/files/Article-Images/silva-468x60.gif" />" after a save. After a second save the img element becomes empty.  
 
-Logout
-======
-
-- When a user logs out, they are sent to service_members/logout. This
-  triggers the login form to appear. Why? If you want to log in again,
-  you can't. Can we just send them to the public view of where they
-  were?
-
-----> I cannot reproduce this.
-
-- When you logout from a certain location you can still visit that page in the
-  smi which looks like your still logged in, only when you do a hard refresh
-  (or other action like edit) you get the login screen. I suppose this has to
-  do with caching and that it is not an issue.
-----> I cannot reproduce this
+++ External images get broken after saving. If you add external images, they get removed one by one after a save. Looking at the source it looks like a stripping action occurs on "<img data-silva-src="http://www.packtpub.com/sites/default/files/Article-Images/silva-468x60.gif" />" whyich becomes "<img data-silva-="" src="http://www.packtpub.com/sites/default/files/Article-Images/silva-468x60.gif" />" after a save. After a second save the img element becomes empty.
 
 Reference dialog
 ================
@@ -501,16 +458,29 @@ To Test
   Invalid CSV file: new-line character seen in unquoted field - do you need to open the file in universal-newline mode?
 
 
-Content Layout
-==============
-
-= Any feature that adds clicks is not an improvement.
-
-----> This doesn't describe any bug, what am I supposed to do ?
-
 XXX Something's broken, When clicking the "Upload" button (in FF) nothing happens.
 Actually, the upload dialog appears, but behind the "Lookup a content" dialog.
 But now I can't reproduce this....
 ++ When looking up an image, then adding one in the dailog, the add form has
   a bizarre layout. Must be missing some key classes for the new css.
 
+
+Silva news
+----------
+
+Tested:
+- Inside new News Pubs the addables are not set correctly.
+  After a fresh upgrade the News Item is not selected in Addables (but
+  strangely enough News Item is).
+
+
+Metadata system
+---------------
+
+XXX Still 404s:
+http://preprod30.infrae.com/service_metadata/collection/augmentation/manage_settings
++ It's not possible to make a metadata set editable. It 404s.
+
+XXX Still 404s:
+http://preprod30.infrae.com/service_metadata/collection/augmentation/?%3Amethod=addElementForm&submit=+Add+Metadata+Element
++ It's not possible to add a field to a metadata set. It 404s.

@@ -1,0 +1,37 @@
+=============================================================================
+Issues with nothing to do on it, where the description / action is incomplete
+=============================================================================
+
+Content Layout
+==============
+
+= Any feature that adds clicks is not an improvement.
+
+----> This doesn't describe any bug, what am I supposed to do ?
+
+Login
+=====
+
+= It seems the login form now appears in the content area of the
+  location where you're at, instead of displaying the layout at the
+  root of the site. Did this change? It's much more friendly.
+
+----> This doesn't describe any bug, what am I supposed to do ?
+
+Logout
+======
+
+- When a user logs out, they are sent to service_members/logout. This
+  triggers the login form to appear. Why? If you want to log in again,
+  you can't. Can we just send them to the public view of where they
+  were?
+
+----> I cannot reproduce this.
+
+- When you logout from a certain location you can still visit that page in the
+  smi which looks like your still logged in, only when you do a hard refresh
+  (or other action like edit) you get the login screen. I suppose this has to
+  do with caching and that it is not an issue.
+
+----> I cannot reproduce this
+

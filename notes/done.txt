@@ -1,58 +1,47 @@
-=========================================================
-Those issues should be fixed, or I didn't understood them
-=========================================================
+============================
+Those issues should be fixed
+============================
 
 Zope
 ----
 
-XXX Not fixed, this rel link 404s (line 17 if you view source at http://preprod30.infrae.com/++preview++/products):
-<link rel="shortcut icon" href="http://preprod30.infrae.com/++static++/silva.core.layout.porto/:version:2012-06-22T16:46:25/img/favicon.ico" />
 ++ This returns a 404.
   <link rel="shortcut icon"      href="http://next30.infrae.com/++static++/silvatheme.renaissance/:version:2011-10-31T20:22:09/('img', 'favicon.ico')" />
   <link rel="shortcut icon" href="http://preprod30.infrae.com/++static++/silva.core.layout.porto/:version:2012-06-22T16:46:25/('img', 'favicon.ico')" />
 
+  > This have nothing to do with Silva. That's the creative person who
+    built the silvatheme.renaissance fault.
+
 Document
 --------
 
-(You cannot remove the title from the document editor. Should this be possible ?)
-[Let's keep it this way. The only way to remove the title is in properties.]
+- (You cannot remove the title from the document editor. Should this be possible ?)
+  [Let's keep it this way. The only way to remove the title is in properties.]
 
-To test:
+  > I can change this, that is trivial. If yes, move point to
+    testing.txt. If no delete it.
+
+
 + How do we call a document without its title? Looks like @@content.html gets
   the title and the body, but sometimes users call the title elsewhere, higher
   up in the layout template, and they only want the body. Seems like this is a
   problem with news items too. @@body.html ?
 
-  > version document/get_viewable
-  > details version/@@details
-  > details/get_text
-  > details/get_introduction
-  > details/get_thumbnail
+   version document/get_viewable
+   details version/@@details
+   details/get_text
+   details/get_introduction
+   details/get_thumbnail
 
-  We can even add an get_title.
+  > We can even add an get_title. If yes move point to testing.txt, If
+    no delete it.
+
 
 Subscriptions screen
 --------------------
 
-To test after upgrade:
 ++ Subscriptions don't seem to send mail
 
-Metadata system
----------------
-
-XXX Still 404s:
-http://preprod30.infrae.com/service_metadata/collection/augmentation/manage_settings
-+ It's not possible to make a metadata set editable. It 404s.
-
-XXX Still 404s:
-http://preprod30.infrae.com/service_metadata/collection/augmentation/?%3Amethod=addElementForm&submit=+Add+Metadata+Element
-+ It's not possible to add a field to a metadata set. It 404s.
-
-Silva news
-----------
-
-Tested:
-- Inside new News Pubs the addables are not set correctly.
-  After a fresh upgrade the News Item is not selected in Addables (but
-  strangely enough News Item is).
+   > This have nothing to do with Silva. Maildrophost is now running
+     and sending emails.
 

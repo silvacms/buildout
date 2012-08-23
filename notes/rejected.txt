@@ -1,0 +1,24 @@
+================================
+Those issues I don't want to fix
+================================
+
+Feedback
+========
+
+- Can we remove the little 'x' from the feedback messages? Users will think
+  they have click it, and it's tiny, while they can click the entire message.
+
+- And moving it down 30 pixels will solve the problem completely :)
+
+CKEditor
+========
+
+- The source view has light gray text and is hard to read. If we make it black
+  it becomes a darker gray.
+.cke_skin_silva textarea.cke_source {
+    ....
+    color: #000;
+}
+
+-----> This is something you changed, before it used to the same color than in Kupu,
+-----> so your responsability.
