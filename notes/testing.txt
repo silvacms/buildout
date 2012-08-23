@@ -449,6 +449,8 @@ CKEditor
 - Documents containing only a code source (no title or other elements) must
   have a br or a p. If you delete it in the source editor, the code source
   vanished from the document. Means you need display:none for the p.
+  
+++ External images get broken after saving. If you add external images, they get removed one by one after a save. Looking at the source it looks like a stripping action occurs on "<img data-silva-src="http://www.packtpub.com/sites/default/files/Article-Images/silva-468x60.gif" />" whyich becomes "<img data-silva-="" src="http://www.packtpub.com/sites/default/files/Article-Images/silva-468x60.gif" />" after a save. After a second save the img element becomes empty.  
 
 Logout
 ======
