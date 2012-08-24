@@ -419,6 +419,32 @@ CKEditor
 
 ++ External images get broken after saving. If you add external images, they get removed one by one after a save. Looking at the source it looks like a stripping action occurs on "<img data-silva-src="http://www.packtpub.com/sites/default/files/Article-Images/silva-468x60.gif" />" whyich becomes "<img data-silva-="" src="http://www.packtpub.com/sites/default/files/Article-Images/silva-468x60.gif" />" after a save. After a second save the img element becomes empty.
 
+Lists
+-----
+
+- creating sub level lists using the tab doesn't work (FF and IE8). In IE8 the SMI green loading lights keep spinning when trying to indent a level so probably this is some SJ issue.
+
+- migration: in order to presever list styling the following classes need to get migrated:
+
+Unordered lists:
+
+ ul type="disc"   --> ul style="list-style-type: disc;" (now a plain ul)
+ ul type="square" --> ul style="list-style-type: square;"
+ ul type="circle" --> ul style="list-style-type: circle;"
+ ul type="none"   --> ul style="list-style-type: none;"
+
+In Kupu you can select the option to have no bullets (type=none) there is no option to do that anymore in CK.
+
+Ordered lists:
+
+ ol type="1"      --> ol style="list-style-type: decimal;"
+ ol type="I"      --> ol style="list-style-type: upper-roman;"
+ ol type="i"      --> ol style="list-style-type: lower-roman;"
+ ol type="A"      --> ol style="list-style-type: upper-alpha;"
+ ol type="a"      --> ol style="list-style-type: lower-alpha;"
+
+Should there also be a manual upgrade if you copy/paste old Silva source code?
+
 Reference dialog
 ================
 
