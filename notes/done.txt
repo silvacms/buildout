@@ -12,14 +12,9 @@ Zope
   > This have nothing to do with Silva. That's the creative person who
     built the silvatheme.renaissance fault.
 
+
 Document
 --------
-
-- (You cannot remove the title from the document editor. Should this be possible ?)
-  [Let's keep it this way. The only way to remove the title is in properties.]
-
-  > I can change this, that is trivial. If yes, move point to
-    testing.txt. If no delete it.
 
 
 + How do we call a document without its title? Looks like @@content.html gets
@@ -45,3 +40,7 @@ Subscriptions screen
    > This have nothing to do with Silva. Maildrophost is now running
      and sending emails.
 
+Fixed:
+++ The rendering of Events is funky, seems to use get_intro but there's a year
+  in there and the title has a nested strong tag. Search for EuroPython to see
+  it.
