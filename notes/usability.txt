@@ -1,72 +1,134 @@
-Just checking, did you svn up? :) Yes, I did :) 
+Usability issues
+================
 
 == general UI ==
 
-- the form-content should be made smaller on every page (this will also fix the problem of the error message being positioned 
-  outside the screen). The <div> should be given a <class="forms">. 
-- I think all 'positive' buttons should have a green icon and all 'negative' buttons should have a red icon. There should only
-  be an icon in the buttons when it makes sense (for example, I don't think the little circles in the buttons add any meaning 
-  to the action that button performs).
-- non-editable fields are now skipped when using tab. However, they are still focused when selected. 
+- the form-content should be made smaller on every page (this will also fix the
+  problem of the error message being positioned outside the screen). The <div>
+  should be given a <class="forms">.
+- I think all 'positive' buttons should have a green icon and all 'negative'
+  buttons should have a red icon.
+  There should only be an icon in the buttons when it makes sense (for example,
+  I don't think the little circles in the buttons add any meaning to the action
+  that button performs).
+  [Kit] The problem is that sometimes there's a row of buttons, some with icons,
+  some without, and that looks really strange. So we decided to have a generic
+  icon for visual consistency. Someday we may choose icons for all buttons, but
+  in practice people only recognize a few icons. I like the idea of green for
+  'Go' actions and red for 'negative' actions.
+- non-editable fields are now skipped when using tab. However, they are still
+  focused when selected. [see below]
 
 == portlet ==
 
-- when there's multiple H4's in the portlet, it looks too crowded. And also when the title is longer than one line, it does not   
-  look good. The H4's in the portlet can be different from the ones in the form-content.  
+- when there's multiple H4's in the portlet, it looks too crowded. And also when
+  the title is longer than one line, it does not look good. The H4's in the
+  portlet can be different from the ones in the form-content.
 
-== add 'Silva page' == 
+== add 'Silva page' ==
 
-- the cursor in the title bar is set as pointer. Since this is not a link, it should probably be default. 
+- the cursor in the title bar is set as pointer. Since this is not a link, it
+  should probably be default.
 
 == add 'Image' ==
 
-- when you click 'send' without uploading an image, a progress bar shows, when it probably shouldn't. 
+- when you click 'send' without uploading an image, a progress bar shows, when
+  it probably shouldn't.
 
 == Settings screen ==
 
-- On the 'manage subscriptions' page, the textarea is too wide (it has inline styling, so it needs a change to the HTML). 
+- On the 'manage subscriptions' page, the textarea is too wide (it has inline
+  styling, so it needs a change to the HTML).
 
 == dialog boxes ==
 
-- the style of the cke_dialog boxes is different from the other dialog boxes. It should probably be more consistent. 
-- the 'upload' dialog box displays a scroll bar. The box now has a width of 300px (inline styling). Changing the width 
-  to 310px will fix it. 
-- the buttons in dialog boxes look different from the others. I think all buttons should look the same. 
+- the style of the cke_dialog boxes is different from the other dialog boxes. It
+  should probably be more consistent.
+- the 'upload' dialog box displays a scroll bar. The box now has a width of
+  300px (inline styling). Changing the width to 310px will fix it.
+- the buttons in dialog boxes look different from the others. I think all
+  buttons should look the same.
 
 == error messages ==
 
-- the border-left on error messages only appears when the field is not focused. It should also appear when focused. 
+- the border-left on error messages only appears when the field is not focused.
+  It should also appear when focused.
 
 == ideas ==
 
-- maybe we can add the icon of each content type in the tab 'add'. 
+- maybe we can add the icon of each content type in the tab 'add'.
 
 == CKEditor ==
 
-- when looking up an image, the icon of the identifier should be clickable as well, either for moving into a folder, or 
-  for adding an image (instead of having to move your cursor to the right to add something). I keep clicking
-  the icon, expecting it will be added, before I realize I need to click the add icon. 
-  Or maybe you should be able to select an image and then click an 'Add' button in the right bottom corner. 
+- when looking up an image, the icon of the identifier should be clickable as
+  well, either for moving into a folder, or for adding an image (instead of
+  having to move your cursor to the right to add something). I keep clicking the
+  icon, expecting it will be added, before I realize I need to click the add
+  icon. Or maybe you should be able to select an image and then click an 'Add'
+  button in the right bottom corner.
 
-- when you add a 'link to the hires version of the image', the link does not lead you to the unscaled or uncropped image. 
+- when you add a 'link to the hires version of the image', the link does not
+  lead you to the unscaled or uncropped image.
 
-- 'Link to an another content' should be changed to 'Link to another content'. 
+- 'Link to an another content' should be changed to 'Link to another content item'.
 
-- when you've added an external image, and you want to make some changes later, you have to fill in the external URL again, it 
-  doesn't stick.  
+- when you've added an external image, and you want to make some changes later,
+  you have to fill in the external URL again, it doesn't stick.
 
-- the 'use image alternative text as caption' check box is checked by default. However, only when you uncheck the box,
-  it shows the input field. Somehow it doesn't make sense that the input field does not show when the box is checked. 
-  Maybe the input field should always be there, automatically filling in the caption when checking the checkbox. 
+- the 'use image alternative text as caption' check box is checked by default.
+  However, only when you uncheck the box, it shows the input field. Somehow it
+  doesn't make sense that the input field does not show when the box is checked.
+  Maybe the input field should always be there, automatically filling in the
+  caption when checking the checkbox.
 
-- I added an external image, then previewed the page, and the image was shown. Then I went back to the edit page, made some   
-  changes to another (internal) image, and previewed the page again. Now it didn't show the image anymore (but its alternative 
-  text). I've tried it a couple of time and the same thing happened. 
-  
+- I added an external image, then previewed the page, and the image was shown.
+  Then I went back to the edit page, made some changes to another (internal)
+  image, and previewed the page again. Now it didn't show the image anymore (but
+  its alternative text). I've tried it a couple of time and the same thing
+  happened.
 
+To Fix
+======
 
++ An h4 in the information portlet has both a border and an underline. The
+  underline can go, the border is enough text-decoration. Maybe those h4s should
+  have a bg color? Maybe not....
+  http://preprod30.infrae.com/edit#content!lobby/testors/silva400.png
 
+- Do we need a little more space between the forms? See the forms in the above
+  example. Say, 30px?
 
+Properties screen
+-----------------
++ On focus, the field element texts darken. Make that happen on hover too.
+  Sometimes I focus a field just to read the gray acquired metadata better.
+- The textareas need a little padding (2px?), they look cramped.
+  http://preprod30.infrae.com/edit#properties!/
+- The Acquirable and Acquired Value markers don't line up perfectly. See a
+  published document.
++ The "acquirable" marker is not long enough.
++ In the Acquirable and Acquired Value markers, since the letters are all caps,
+  they sit a little high.
+  Actually, why are these 'uppercase'? If you make them 'capitalize', everything
+  fits! :)
+
+Login form
+----------
+- This is the form that appears when you leave an SMI window open overnight and
+  try to do something.
+  + The required marker should be float:right so it's close to the field.
+  + The id and password fields should be wider.
+  + The Cancel and Login buttons are small, should have more padding to make
+    easier click targets.
+  + After login, a modal dialogue appears with a Continue button that should
+    be larger too.
+
+Contents screen
+---------------
++ The colored ball icons, which show the version state of the document, require
+  a title attribute (title="Published") to be added to the 'ins' tag. This needs
+  to be done with Sylvain. There are five states:
+  Draft, Pending, Approved, Published, Closed
 
 
 

@@ -5,6 +5,12 @@ Documentation required
 Developer documentation
 =======================
 
+CSS changes
+-----------
+- This selector needs to be added to the alignments in the site css:
+    div.image.default { margin-bottom:0.7em; }
+  With whatever properties are appropriate.....
+
 Code sources
 ------------
 
@@ -22,3 +28,43 @@ SMI forms
 ---------
 
 - Update naming scheme.
+
+
+Manager documentation
+=====================
+
+These are items that should be documented:
++ Means do it
+- Means only if there's a need
+
+- Migration: in order to preserve list styling the following classes (may) need
+  to get migrated.
+
+We aren't going to migrate the list styles. Most of our customers probably don't
+use them. However, if the styles - like class="square" are needed, they can be
+added to the formats. An Author will then need to first create an unordered list
+using the button in the toolbar, then apply a style to it using the format
+dropdown.
+
+Unordered lists:
+
+ ul type="disc"   --> ul style="list-style-type: disc;" (now a plain ul)
+ ul type="square" --> ul style="list-style-type: square;"
+ ul type="circle" --> ul style="list-style-type: circle;"
+ ul type="none"   --> ul style="list-style-type: none;"
+
+In Kupu you can select the option to have no bullets (type=none) there is no option to do that anymore in CK.
+
+Ordered lists:
+
+ ol type="1"      --> ol style="list-style-type: decimal;"
+ ol type="I"      --> ol style="list-style-type: upper-roman;"
+ ol type="i"      --> ol style="list-style-type: lower-roman;"
+ ol type="A"      --> ol style="list-style-type: upper-alpha;"
+ ol type="a"      --> ol style="list-style-type: lower-alpha;"
+
+Definition lists:
+
+Seems it's not out of the box, but there may be a plugin:
+http://developer.mindtouch.com/en/docs/MindTouch/Editor/Plug-in:_Definition_lists
+

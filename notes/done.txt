@@ -5,19 +5,19 @@ Those issues should be fixed
 Zope
 ----
 
-++ This returns a 404.
+= This returns a 404.
   <link rel="shortcut icon"      href="http://next30.infrae.com/++static++/silvatheme.renaissance/:version:2011-10-31T20:22:09/('img', 'favicon.ico')" />
-  <link rel="shortcut icon" href="http://preprod30.infrae.com/++static++/silva.core.layout.porto/:version:2012-06-22T16:46:25/('img', 'favicon.ico')" />
 
   > This have nothing to do with Silva. That's the creative person who
     built the silvatheme.renaissance fault.
+
+  = Aha, it was a creative! Figures. Well, it's gone now.
 
 
 Document
 --------
 
-
-+ How do we call a document without its title? Looks like @@content.html gets
+- How do we call a document without its title? Looks like @@content.html gets
   the title and the body, but sometimes users call the title elsewhere, higher
   up in the layout template, and they only want the body. Seems like this is a
   problem with news items too. @@body.html ?
@@ -28,19 +28,33 @@ Document
    details/get_introduction
    details/get_thumbnail
 
-  > We can even add an get_title. If yes move point to testing.txt, If
-    no delete it.
+This is great. So I changed the code from:
+
+  <tal:tweet tal:define="feeder provider.search('twitterfeeder')"
+    tal:condition="feeder is not None">
+    <tal:embed tal:replace="structure path:feeder/@@content.html">
+      latest tweet
+    </tal:embed>
+  </tal:tweet>
+
+to:
+
+  <tal:tweet tal:define="feeder provider.search('twitterfeeder')"
+    tal:condition="feeder is not None">
+    <tal:embed
+      tal:define="
+        version path:feeder/get_viewable;
+        details path:version/@@details"
+      tal:replace="structure path:details/get_text">
+      latest tweet
+    </tal:embed>
+  </tal:tweet>
+
+Is there a more efficient way to do this?
+I guess you can't combine defines and gets: feeder/get_viewable/details/get_text
 
 
 Subscriptions screen
 --------------------
 
-++ Subscriptions don't seem to send mail
-
-   > This have nothing to do with Silva. Maildrophost is now running
-     and sending emails.
-
-Fixed:
-++ The rendering of Events is funky, seems to use get_intro but there's a year
-  in there and the title has a nested strong tag. Search for EuroPython to see
-  it.
+= Subscriptions are working!
