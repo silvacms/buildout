@@ -30,6 +30,30 @@ SMI forms
 
 - Update naming scheme.
 
+Calling documents in portlets
+-----------------------------
+- How do we call a document without its title?
+
+  version document/get_viewable
+  details version/@@details
+  details/get_text
+  details/get_introduction
+  details/get_thumbnail
+
+  <tal:tweet tal:define="feeder provider.search('twitterfeeder')"
+    tal:condition="feeder is not None">
+    <tal:embed
+      tal:define="
+        version path:feeder/get_viewable;
+        details path:version/@@details"
+      tal:replace="structure path:details/get_text">
+      latest tweet
+    </tal:embed>
+  </tal:tweet>
+
+XXX: add explanation of new search_document API:
+  <tal:tweet tal:define="feeder provider.search_document('twitterfeeder')"
+  ...
 
 Manager documentation
 =====================
