@@ -2,16 +2,27 @@
 Issues with nothing to do on it, where the description / action is incomplete
 =============================================================================
 
-Login
-=====
+CKEditor
+========
 
-= It seems the login form now appears in the content area of the
-  location where you're at, instead of displaying the layout at the
-  root of the site. Did this change? It's much more friendly.
+++ When inserting an image that is scaled to 20%, CKEditor inserts the full size
+  hires version. See the Silva icon:
+  http://preprod30.infrae.com/edit#content!lobby/testors/imaging
 
-----> This doesn't describe any bug, what am I supposed to do ?
+-----> If you look at the hires version, I believe this is 20%:
 
-++++> Nothing. I was just saying that it's much better now.
+       http://preprod30.infrae.com/edit#preview/hires!lobby/testors/silva400.png
+
+       Or this bug got fixed in the mean time (I believe it just be a
+       caching issue on your browser, that I already fixed).
+
+Code source
+===========
+
+No problems here, just wanted to say that the new forms that link to
+the file system are great. They work really well, allowing the manager
+to decide what to do. This also solves the problem of copying and
+changing, as you can disconnect as well. That was brilliant.
 
 Logout
 ======

@@ -352,10 +352,6 @@ CKEditor
 
 + s/r "Link to an another content" "Link to a content item"
 
-++ When inserting an image that is scaled to 20%, CKEditor inserts the full size
-  hires version. See the Silva icon:
-  http://preprod30.infrae.com/edit#content!lobby/testors/imaging
-
 - When linking an image to its hires version, you click the "Link to the hires
   version of the image" checkbox. However if you return to check this, the
   checkbox is no longer checked. Instead, the other checkox, "Link to an another
@@ -416,19 +412,6 @@ CKEditor
   > We can even add a get_title.
   + Yes, please.
 
-++ External images get broken after saving. If you add external images, they get removed one by one after a save. Looking at the source it looks like a stripping action occurs on "<img data-silva-src="http://www.packtpub.com/sites/default/files/Article-Images/silva-468x60.gif" />" whyich becomes "<img data-silva-="" src="http://www.packtpub.com/sites/default/files/Article-Images/silva-468x60.gif" />" after a save. After a second save the img element becomes empty.
-
-Lists
------
-
-+ creating sub level lists using the tab doesn't work (FF and IE8). In IE8 the SMI green loading lights keep spinning when trying to indent a level so probably this is some JS issue.
-
-Note: moved list types and css selectors from here to documentation.txt.
-We aren't going to migrate the list styles. Most of our customers probably don't
-use them. However, if the styles - like class="square" - are needed they can be
-added to the formats. An Author will then need to first create an unordered list
-using the button in the toolbar, then apply a style to it using the format
-dropdown.
 
 Reference dialog
 ================
@@ -462,11 +445,6 @@ Bugs
       But there's some hack that somehow brings you up into the folder with an
       argument to export only that particular document. This is an extremely
       handy feature.
-
-Folder/container order
-----------------------
-
-If you change the order of a container, the order will be reset to its previous order after a restart of the server.
 
 To Test
 -------
@@ -520,11 +498,6 @@ The bad news is there's a glitch where sometimes the content in the editor doesn
 You can view source once and see html, but the WYSIWYG never displays. Strangely, you can only view source once.
 
 If I delete things like a broken external source, the text appears in WYSIWYG but I get a server error on saving the document.
-
-
-Code source updating
-
-No problems here, just wanted to say that the new forms that link to the file system are great. They work really well, allowing the manager to decide what to do. This also solves the problem of copying and changing, as you can disconnect as well. That was brilliant.
 
 
 Alignments

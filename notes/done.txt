@@ -2,17 +2,10 @@
 Those issues should be fixed
 ============================
 
-Zope
-----
+Testing
+=======
 
-= This returns a 404.
-  <link rel="shortcut icon"      href="http://next30.infrae.com/++static++/silvatheme.renaissance/:version:2011-10-31T20:22:09/('img', 'favicon.ico')" />
-
-  > This have nothing to do with Silva. That's the creative person who
-    built the silvatheme.renaissance fault.
-
-  = Aha, it was a creative! Figures. Well, it's gone now.
-
+Those issues comes from the testing.txt file.
 
 Document
 --------
@@ -53,8 +46,52 @@ to:
 Is there a more efficient way to do this?
 I guess you can't combine defines and gets: feeder/get_viewable/details/get_text
 
+-----> It is way faster yes. That would be too easy. And I fixed you
+       code so it doesn't fail if there is no published version, and
+       works if it is a Ghost, and I moved in the Python file.
 
-Subscriptions screen
---------------------
+CKEditor
+--------
 
-= Subscriptions are working!
+- External images get broken after saving. If you add external images,
+  they get removed one by one after a save. Looking at the source it
+  looks like a stripping action occurs on "<img
+  data-silva-src="http://www.packtpub.com/sites/default/files/Article-Images/silva-468x60.gif"
+  />" whyich becomes "<img data-silva-=""
+  src="http://www.packtpub.com/sites/default/files/Article-Images/silva-468x60.gif"
+  />" after a save. After a second save the img element becomes empty.
+
++ creating sub level lists using the tab doesn't work (FF and IE8). In
+  IE8 the SMI green loading lights keep spinning when trying to indent a
+  level so probably this is some JS issue.
+
+  Note: moved list types and css selectors from here to
+  documentation.txt.  We aren't going to migrate the list styles. Most
+  of our customers probably don't use them. However, if the styles -
+  like class="square" - are needed they can be added to the
+  formats. An Author will then need to first create an unordered list
+  using the button in the toolbar, then apply a style to it using the
+  format dropdown.
+
+RTFM: http://docs.cksource.com/CKEditor_3.x/Users_Guide/Rich_Text/Lists
+
+
+Folder
+------
+
+- If you change the order of a container, the order will be reset to its
+  previous order after a restart of the server.
+
+Usability
+=========
+
+Those issues comes from the usability.txt file.
+
+CKEditor
+--------
+
+- I added an external image, then previewed the page, and the image was shown.
+  Then I went back to the edit page, made some changes to another (internal)
+  image, and previewed the page again. Now it didn't show the image anymore (but
+  its alternative text). I've tried it a couple of time and the same thing
+  happened.

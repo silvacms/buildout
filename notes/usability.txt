@@ -58,6 +58,8 @@ Usability issues
 
 - maybe we can add the icon of each content type in the tab 'add'.
 
+I would love it too.
+
 == CKEditor ==
 
 - when looking up an image, the icon of the identifier should be clickable as
@@ -80,12 +82,6 @@ Usability issues
   doesn't make sense that the input field does not show when the box is checked.
   Maybe the input field should always be there, automatically filling in the
   caption when checking the checkbox.
-
-- I added an external image, then previewed the page, and the image was shown.
-  Then I went back to the edit page, made some changes to another (internal)
-  image, and previewed the page again. Now it didn't show the image anymore (but
-  its alternative text). I've tried it a couple of time and the same thing
-  happened.
 
 To Fix
 ======

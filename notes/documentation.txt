@@ -7,6 +7,7 @@ Developer documentation
 
 CSS changes
 -----------
+
 - This selector needs to be added to the alignments in the site css:
     div.image.default { margin-bottom:0.7em; }
   With whatever properties are appropriate.....
