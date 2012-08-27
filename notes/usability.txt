@@ -69,19 +69,7 @@ I would love it too.
   icon. Or maybe you should be able to select an image and then click an 'Add'
   button in the right bottom corner.
 
-- when you add a 'link to the hires version of the image', the link does not
-  lead you to the unscaled or uncropped image.
-
 - 'Link to an another content' should be changed to 'Link to another content item'.
-
-- when you've added an external image, and you want to make some changes later,
-  you have to fill in the external URL again, it doesn't stick.
-
-- the 'use image alternative text as caption' check box is checked by default.
-  However, only when you uncheck the box, it shows the input field. Somehow it
-  doesn't make sense that the input field does not show when the box is checked.
-  Maybe the input field should always be there, automatically filling in the
-  caption when checking the checkbox.
 
 To Fix
 ======

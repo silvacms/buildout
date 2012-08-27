@@ -282,6 +282,7 @@ SNN
   entry is?
 
 Silva News Filter
+-----------------
 
 - Title field(s) are too short. Make them size="40".
 
@@ -311,21 +312,6 @@ External Sources
 + It's not possible to tab between fields in the External Source Settings form.
   Somehow we have to fix this usability problem.
 
-++ See fix below....
-  When adding a Code Source there is now a built-in "Source alignment" field
-  which is nice. Saves adding it to every source. The rendering of the classes
-  is problematic.
-  For align-right it adds the class 'source-right'. For float right it adds
-  "source-float-right". These must be the 'generic' selectors, as found in
-  existing stylesheets, in order to be compatible with existing skins. These are
-  the alignments in the CSS of various skins:
-.default
-.align-left
-.align-right
-.align-center
-.float-left
-.float-right
-
 + Bug: in Silva 3.0 existing Code Sources lose all their values if a parameter
   is deleted. This happens on save when the Code Source itself wasn't edited:
   http://preprod30.infrae.com/++preview++/about
@@ -350,17 +336,6 @@ CS Silva Portlet
 CKEditor
 ========
 
-+ s/r "Link to an another content" "Link to a content item"
-
-- When linking an image to its hires version, you click the "Link to the hires
-  version of the image" checkbox. However if you return to check this, the
-  checkbox is no longer checked. Instead, the other checkox, "Link to an another
-  content" is checked. This is technically correct, but weird UX. You think
-  something went wrong and it somehow got linked to something else. We'll need
-  to figure out a better way.
-
-++ Linking to hires doesn't work. It links to the image sans argument.
-
 - Adding a link to an image fails. It just doesn't stick.
 
   Now I've finally figured out that you can't add a link to an image. You can
@@ -371,33 +346,10 @@ CKEditor
   Can we code it so that if a user selects an image and then clicks the link
   icon, they're brought to the image edit dialog with the link tab forward?
 
-+ Here's a doozy. When you add a link to an image with a caption, the href
-  surrounds the whole thing and the caption becomes a link too. This is not
-  good. Sometimes captions contain links, but usually only certain words. This
-  which is why we make our captions manually in the docs. We need to wrap the
-  href around only the image. In the html the caption is inside the link:
-
-  <div class="image default">
-	  <a class="image-link" target="_self" href=""><img alt="Infrae telephone QR code" src="http://preprod30.infrae.com/++preview++/contact/infrae_qr_tel.png"><span class="image-caption">Infrae telephone QR code</span></a></div>
-
-  This is not a problem for getting infrae.com live, we just won't use captions.
-  But the link should not enclose both.
-
 ++ When you add an image in CKEditor, you usually add the image on an empty
   line. When done adding, it looks fine. After saving, the editor inserts an
   extra p with a nbsp above the image. You always have to remove this p after
   saving.
-
-+ In the add image dialog "Use image alternative text as caption" is checked by
-  default.This means users always add images with a caption but don't realize it
-  (e.g. Wim did it in the UCL documentation). This is a handy feature, but
-  please make it unchecked by default. That way it's more obvious that you can
-  add a caption (assuming stylesheets have been updated for 3.0 to support it)
-  and people won't mistakenly add a caption and have to re-edit.
-
-  When making unchecked the default, it's probably friendlier to move the
-  checkbox above the "Image caption" field. That way when an Author decides to
-  use the alternative text, the string field will disappear.
 
 ++ version document/get_viewable
   details version/@@details
@@ -412,11 +364,8 @@ CKEditor
   > We can even add a get_title.
   + Yes, please.
 
-
 Reference dialog
 ================
-
-- Reference dialog title: s/"Lookup a content" / "Lookup an item"
 
 - The reference dialog has a difficult user interface if there are more
   than a few items in the listing. The selection(s) show up at the bottom
@@ -500,66 +449,3 @@ You can view source once and see html, but the WYSIWYG never displays. Strangely
 If I delete things like a broken external source, the text appears in WYSIWYG but I get a server error on saving the document.
 
 
-Alignments
-
-I've done some work and specced some simple changes. But let me provide context. The image and external source rendering has changed and the previous alignment classes don't work anymore. If we can't fix this, it means Silva users will have to duplicate a bunch of selectors as part of the upgrade.
-
-Here the keyword is duplicate, because they need to keep the old ones, for those docs that haven't been edited yet, and add new ones for the new classes that appear after a doc gets edited.
-
-Just to make this clear, here are the old alignment selectors, as used in all the Infrae sites:
-
-  /* alignments */
-  .align-left {  }
-  .align-right { float:right; clear:both; }
-  .float-left { float:left; clear:both; }
-  .float-right { float:right; clear:both; } /* display:none in mobile skin */
-  div.align-center { text-align:center; margin:0; }
-  /* image alignments */
-  div.image-left { float:left; margin:5px 6px 5px 0; } /* icons midline */
-  div.image-center { text-align:center; margin:0; }
-  div.image-right { float:right; margin:8px 0 10px 20px; }
-  img.default { margin-bottom:0.7em; }
-  div.image.float-left { margin:6px 10px 5px 0; } /* nested cap height */
-  div.image.float-right { margin:6px 0 5px 10px; }  /* nested x height */
-
-I've added the following to the Renaissance skin:
-
-  /* duplicated selectors for 3.0 alignment classes */
-  div.source-left { float:left; clear:both; }
-  div.source-center { text-align:center; margin:0; }
-  div.source-right { float:right; clear:both; }
-  div.source-float-left { float:left; clear:both; }
-  div.source-float-right { float:right; clear:both; } /* XXX must display:none in mobile skin */
-  /* duplicated image alignments */
-  div.image.default { margin-bottom:0.7em; }
-  div.image-float-left { float:left; clear:both; margin:6px 10px 5px 0; } /* nested cap height */
-  div.image-float-right { float:right; clear:both; margin:6px 0 5px 10px; }  /* nested x height */
-
-We can get rid of almost all of these by doing the following:
-
-For external sources (which have the alignment field by default), change the option values in the select list to:
-
-  default
-  align-left
-  align-center
-  align-right
-  float-left
-  float-right
-
-This will get rid of all the duplicated 'source-*' selectors.
-
-For images, we just need to remove the 'image-' on the floats. So:
-
-  image-float-left
-  image-float-right
-
-become:
-
-  float-left
-  float-right
-
-Then we'll have only one new selector and all pages will display the same as before the upgrade.
-
-It's still annoying that we're wrapping extra divs around images when they're not needed, but we can say that's not us, that's the editor. So there's still one selector that we will need to add for the default image. But just one,
-
-Can you make these changes to the css classes? If for any reason it's problematic, let me know.
