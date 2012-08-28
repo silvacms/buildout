@@ -102,81 +102,9 @@ Manage versions
 Image
 =====
 
-- Something's broken, When clicking the "Upload" button (in FF) nothing happens.
-Actually, the upload dialog appears, but behind the "Lookup a content" dialog.
-But now I can't reproduce this....
-
-Image rendering
----------------
-++ See fix below....
-  There's a change in the image rendering which is not compatible with existing
-  stylesheets. Here's a 2.3 image:
-
-  <a href="tel:+31102437051" title="" target="_self"><img src="http://infrae.com/contact/infrae_qr_tel.png" alt="Infrae telephone QR code" class="default"></a>
-
-  Here's a converted 3.0 image:
-
-  <div class="image default">
-	  <a class="image-link" target="_self" title="Call Infrae HQ" href="tel:+31102437051"><img alt="Infrae telephone QR code" src="http://preprod30.infrae.com/++preview++/contact/infrae_qr_tel.png"></a></div>
-
-  The 3.0 image is wrapped in a div with a class, but the css class needs to be
-  put on the image itself. But of course it's not that simple. There are six
-  possible alignments:
-.default
-.image-left
-.image-center
-.image-right
-.float-left
-.float-right
-
-  The default and float-* styles get applied to the image itself and it's not
-  wrapped in a div. The three align-* styles need to be wrapped in a div (in
-  order to apply text-align) and the class is applied to both the div and the
-  image.
-
-  Here's an example output of a doc I created in the Infrae site. We can use
-  this doc to test the migration (html cleaned up). The test doc is at:
-  http://infrae.com/lobby/testors/imagealigns/edit/tab_preview
-
-<article class="col66 first">
-<h2 class="heading">Image Alignments</h2>
-
-<p class="p">default</p>
-<img src="http://infrae.com/++preview++/infrae_logo106x52t.png" alt="Infrae logo" class="default">
-
-<p class="p">align left</p>
-<div class="image-left">
-  <img src="http://infrae.com/++preview++/infrae_logo106x52t.png" alt="Infrae logo" class="image-left">
-</div>
-
-<p class="p">align center</p>
-<div class="image-center">
-  <img src="http://infrae.com/++preview++/infrae_logo106x52t.png" alt="Infrae logo" class="image-center">
-</div>
-
-<p class="p">align right</p>
-<div class="image-right">
-  <img src="http://infrae.com/++preview++/infrae_logo106x52t.png" alt="Infrae logo" class="image-right">
-</div>
-
-<p class="p">float left</p>
-<img src="http://infrae.com/++preview++/infrae_logo106x52t.png" alt="Infrae logo" class="float-left">
-
-<p class="p">float right</p>
-<img src="http://infrae.com/++preview++/infrae_logo106x52t.png" alt="Infrae logo" class="float-right">
-
-</article>
-
 Link
 ====
 
-target of relative link
-
-- Change to "Click the Lookup button to select an item to refer to."
-  (Writing "a content" is not good form, the word content is treated as
-  a plural form. Not sure why....)
-
------> 'content' is mentioned all the place. I guess all messages should be changed ?
 
 Autotoc
 =======
@@ -357,9 +285,6 @@ CKEditor
   details/get_introduction
   details/get_thumbnail
   details version/@@details....
-
-  These don't work for Ghosts. The @@details fails:
-  http://preprod30.infrae.com/++preview++/service
 
   > We can even add a get_title.
   + Yes, please.
