@@ -7,42 +7,6 @@ Testing
 
 Those issues comes from the testing.txt file.
 
-Document
---------
-
-- How do we call a document without its title? Looks like @@content.html gets
-  the title and the body, but sometimes users call the title elsewhere, higher
-  up in the layout template, and they only want the body. Seems like this is a
-  problem with news items too. @@body.html ?
-
-   version document/get_viewable
-   details version/@@details
-   details/get_text
-   details/get_introduction
-   details/get_thumbnail
-
-This is great. So I changed the code from:
-
-  <tal:tweet tal:define="feeder provider.search('twitterfeeder')"
-    tal:condition="feeder is not None">
-    <tal:embed tal:replace="structure path:feeder/@@content.html">
-      latest tweet
-    </tal:embed>
-  </tal:tweet>
-
-to:
-
-  <tal:tweet tal:define="feeder provider.search('twitterfeeder')"
-    tal:condition="feeder is not None">
-    <tal:embed
-      tal:define="
-        version path:feeder/get_viewable;
-        details path:version/@@details"
-      tal:replace="structure path:details/get_text">
-      latest tweet
-    </tal:embed>
-  </tal:tweet>
-
 Is there a more efficient way to do this?
 I guess you can't combine defines and gets: feeder/get_viewable/details/get_text
 
@@ -53,121 +17,12 @@ I guess you can't combine defines and gets: feeder/get_viewable/details/get_text
 CKEditor
 --------
 
-+ s/r "Link to an another content" "Link to a content item"
-
-- External images get broken after saving. If you add external images,
-  they get removed one by one after a save. Looking at the source it
-  looks like a stripping action occurs on "<img
-  data-silva-src="http://www.packtpub.com/sites/default/files/Article-Images/silva-468x60.gif"
-  />" whyich becomes "<img data-silva-=""
-  src="http://www.packtpub.com/sites/default/files/Article-Images/silva-468x60.gif"
-  />" after a save. After a second save the img element becomes empty.
-
-+ creating sub level lists using the tab doesn't work (FF and IE8). In
+= creating sub level lists using the tab doesn't work (FF and IE8). In
   IE8 the SMI green loading lights keep spinning when trying to indent a
   level so probably this is some JS issue.
 
-  Note: moved list types and css selectors from here to
-  documentation.txt.  We aren't going to migrate the list styles. Most
-  of our customers probably don't use them. However, if the styles -
-  like class="square" - are needed they can be added to the
-  formats. An Author will then need to first create an unordered list
-  using the button in the toolbar, then apply a style to it using the
-  format dropdown.
-
+Saving for Wim:
 RTFM: http://docs.cksource.com/CKEditor_3.x/Users_Guide/Rich_Text/Lists
-
-++ When adding a Code Source there is now a built-in "Source alignment" field
-   which is nice. Saves adding it to every source. The rendering of the classes
-   is problematic.
-   For align-right it adds the class 'source-right'. For float right it adds
-   "source-float-right". These must be the 'generic' selectors, as found in
-   existing stylesheets, in order to be compatible with existing skins. These are
-   the alignments in the CSS of various skins:
-
-    .default
-    .align-left
-    .align-right
-    .align-center
-    .float-left
-    .float-right
-
-- When linking an image to its hires version, you click the "Link to the hires
-  version of the image" checkbox. However if you return to check this, the
-  checkbox is no longer checked. Instead, the other checkox, "Link to an another
-  content" is checked. This is technically correct, but weird UX. You think
-  something went wrong and it somehow got linked to something else. We'll need
-  to figure out a better way.
-
-++ Linking to hires doesn't work. It links to the image sans argument.
-
-+ Here's a doozy. When you add a link to an image with a caption, the href
-  surrounds the whole thing and the caption becomes a link too. This is not
-  good. Sometimes captions contain links, but usually only certain words. This
-  which is why we make our captions manually in the docs. We need to wrap the
-  href around only the image. In the html the caption is inside the link:
-
-  <div class="image default">
-	  <a class="image-link" target="_self" href=""><img alt="Infrae telephone QR code" src="http://preprod30.infrae.com/++preview++/contact/infrae_qr_tel.png"><span class="image-caption">Infrae telephone QR code</span></a></div>
-
-  This is not a problem for getting infrae.com live, we just won't use captions.
-  But the link should not enclose both.
-
-
-+ In the add image dialog "Use image alternative text as caption" is checked by
-  default.This means users always add images with a caption but don't realize it
-  (e.g. Wim did it in the UCL documentation). This is a handy feature, but
-  please make it unchecked by default. That way it's more obvious that you can
-  add a caption (assuming stylesheets have been updated for 3.0 to support it)
-  and people won't mistakenly add a caption and have to re-edit.
-
-  When making unchecked the default, it's probably friendlier to move the
-  checkbox above the "Image caption" field. That way when an Author decides to
-  use the alternative text, the string field will disappear.
-
-CKEditor alignments
--------------------
-
-- For external sources (which have the alignment field by default),
-  change the option values in the select list to:
-
-    default
-    align-left
-    align-center
-    align-right
-    float-left
-    float-right
-
-  This will get rid of all the duplicated 'source-*' selectors.
-
-- For images, we just need to remove the 'image-' on the floats. So:
-
-    image-float-left
-    image-float-right
-
-  become:
-
-    float-left
-    float-right
-
-  Then we'll have only one new selector and all pages will display the
-  same as before the upgrade.
-
-  It's still annoying that we're wrapping extra divs around images when
-  they're not needed, but we can say that's not us, that's the
-  editor. So there's still one selector that we will need to add for the
-  default image. But just one,
-
-Folder
-------
-
-- If you change the order of a container, the order will be reset to its
-  previous order after a restart of the server.
-
-Reference dialog
-----------------
-
-- Reference dialog title: s/"Lookup a content" / "Lookup an item"
 
 
 Usability
@@ -175,23 +30,3 @@ Usability
 
 Those issues comes from the usability.txt file.
 
-CKEditor
---------
-
-- I added an external image, then previewed the page, and the image was shown.
-  Then I went back to the edit page, made some changes to another (internal)
-  image, and previewed the page again. Now it didn't show the image anymore (but
-  its alternative text). I've tried it a couple of time and the same thing
-  happened.
-
-- when you add a 'link to the hires version of the image', the link does not
-  lead you to the unscaled or uncropped image.
-
-- when you've added an external image, and you want to make some changes later,
-  you have to fill in the external URL again, it doesn't stick.
-
-- the 'use image alternative text as caption' check box is checked by default.
-  However, only when you uncheck the box, it shows the input field. Somehow it
-  doesn't make sense that the input field does not show when the box is checked.
-  Maybe the input field should always be there, automatically filling in the
-  caption when checking the checkbox.
