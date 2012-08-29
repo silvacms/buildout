@@ -3,7 +3,7 @@ Usability issues
 
 == general UI ==
 
-- the form-content should be made smaller on every page (this will also fix the
++ the form-content should be made smaller on every page (this will also fix the
   problem of the error message being positioned outside the screen). The <div>
   should be given a <class="forms">.
 - I think all 'positive' buttons should have a green icon and all 'negative'
@@ -16,7 +16,7 @@ Usability issues
   icon for visual consistency. Someday we may choose icons for all buttons, but
   in practice people only recognize a few icons. I like the idea of green for
   'Go' actions and red for 'negative' actions.
-- non-editable fields are now skipped when using tab. However, they are still
++ non-editable fields are now skipped when using tab. However, they are still
   focused when selected. [see below]
 
 == portlet ==
@@ -24,52 +24,54 @@ Usability issues
 - when there's multiple H4's in the portlet, it looks too crowded. And also when
   the title is longer than one line, it does not look good. The H4's in the
   portlet can be different from the ones in the form-content.
+    = The H4's in the portlet are now underlined, without border and 
+      background color (see below)
 
 == add 'Silva page' ==
 
-- the cursor in the title bar is set as pointer. Since this is not a link, it
++ the cursor in the title bar is set as pointer. Since this is not a link, it
   should probably be default.
 
 == add 'Image' ==
 
-- when you click 'send' without uploading an image, a progress bar shows, when
++ when you click 'send' without uploading an image, a progress bar shows, when
   it probably shouldn't.
 
 == Settings screen ==
 
-- On the 'manage subscriptions' page, the textarea is too wide (it has inline
++ On the 'manage subscriptions' page, the textarea is too wide (it has inline
   styling, so it needs a change to the HTML).
 
 == dialog boxes ==
 
-- the style of the cke_dialog boxes is different from the other dialog boxes. It
-  should probably be more consistent.
-- the 'upload' dialog box displays a scroll bar. The box now has a width of
++ the 'upload' dialog box displays a scroll bar. The box now has a width of
   300px (inline styling). Changing the width to 310px will fix it.
 - the buttons in dialog boxes look different from the others. I think all
   buttons should look the same.
+    = buttons in dialog boxes are bigger, have more padding, to make
+      easier click targets.
 
 == error messages ==
 
-- the border-left on error messages only appears when the field is not focused.
++ the border-left on error messages only appears when the field is not focused.
   It should also appear when focused.
 
 == ideas ==
 
 - maybe we can add the icon of each content type in the tab 'add'.
 
-I would love it too.
+  I would love it too.
 
 == CKEditor ==
 
-- when looking up an image, the icon of the identifier should be clickable as
++ when looking up an image, the icon of the identifier should be clickable as
   well, either for moving into a folder, or for adding an image (instead of
   having to move your cursor to the right to add something). I keep clicking the
   icon, expecting it will be added, before I realize I need to click the add
   icon. Or maybe you should be able to select an image and then click an 'Add'
   button in the right bottom corner.
 
-- 'Link to an another content' should be changed to 'Link to another content item'.
++ 'Link to an another content' should be changed to 'Link to another content item'.
 
 To Fix
 ======
@@ -78,41 +80,55 @@ To Fix
   underline can go, the border is enough text-decoration. Maybe those h4s should
   have a bg color? Maybe not....
   http://preprod30.infrae.com/edit#content!lobby/testors/silva400.png
+    = h4 is underlined (see above)
 
 - Do we need a little more space between the forms? See the forms in the above
   example. Say, 30px?
+    = I've changed it to 25px
 
 Properties screen
 -----------------
 + On focus, the field element texts darken. Make that happen on hover too.
   Sometimes I focus a field just to read the gray acquired metadata better.
+    = done
 - The textareas need a little padding (2px?), they look cramped.
   http://preprod30.infrae.com/edit#properties!/
+    = done
 - The Acquirable and Acquired Value markers don't line up perfectly. See a
   published document.
-+ The "acquirable" marker is not long enough.
+    = fixed
++ The "acquirable" marker is not long enough. 
+    = fixed by capitalizing letters 
 + In the Acquirable and Acquired Value markers, since the letters are all caps,
   they sit a little high.
   Actually, why are these 'uppercase'? If you make them 'capitalize', everything
   fits! :)
+    = letters are now capitalized
 
 Login form
 ----------
 - This is the form that appears when you leave an SMI window open overnight and
   try to do something.
-  + The required marker should be float:right so it's close to the field.
-  + The id and password fields should be wider.
+  + The required marker should be float:right so it's close to the field. 
+    = done
+  + The id and password fields should be wider. 
+    = changing the width of the form field affects all fields. In some cases, 
+      e.g. in adding a TOC - 'depth of listing', or in case of a date,
+      the fielda are too wide. I asked Sylvain and he will fix this. 
   + The Cancel and Login buttons are small, should have more padding to make
     easier click targets.
+    = done
   + After login, a modal dialogue appears with a Continue button that should
     be larger too.
+    = done
 
 Contents screen
 ---------------
 + The colored ball icons, which show the version state of the document, require
   a title attribute (title="Published") to be added to the 'ins' tag. This needs
   to be done with Sylvain. There are five states:
-  Draft, Pending, Approved, Published, Closed
+  Draft, Pending, Approved, Published, Closed 
+  
 
 
 
