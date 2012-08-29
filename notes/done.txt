@@ -24,6 +24,41 @@ CKEditor
 Saving for Wim:
 RTFM: http://docs.cksource.com/CKEditor_3.x/Users_Guide/Rich_Text/Lists
 
+Add forms
+---------
+
+Ghost, Ghost Folder, Link
+
+- Change "no reference selected" to "Click the Lookup button to select
+  a reference. "
+
+Publish tab
+-----------
+
+- Personally I miss the link colors for Unapproved, Published, and
+  Last closed. They made it so clear and you could instantly see what
+  was what. Now you have to read each one. We do have room to put
+  colored balls next to the version number but they won't look good.
+
+Reference dialog
+----------------
+
+- In the reference dialog clicking the icon of a non-container doesn't do
+  anything. Make it trigger the same action as the 'plus' icon on the right.
+  This obviates the need to move the mouse across the screen, which new
+  users find confusing because the selection checkbox used to be on the left.
+  """WB: Non of the icons reference the add action, only the '+' icon adds a
+  reference."""
+
+-------> If you click on the icon of a container, you go inside this
+         container, in order to have the same behavior than the
+         generic folder listing. This was discussed on the ML to have
+         the same behavior.
+
+-------> By so, clicking on the icon of a content doesn't select it,
+         as it will be a different behavior for container ans
+         non-containers.
+
 
 Usability
 =========

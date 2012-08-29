@@ -99,25 +99,11 @@ Manage versions
   header should not appear, as you're not publishing the version
   you're viewing. Change it to a "Return" button?
 
-Image
-=====
-
-Link
-====
-
 
 Autotoc
 =======
 
 - When previewing an Autotoc, content in draft mode doesn't appear.
-
-Add forms
-=========
-
-Ghost, Ghost Folder, Link
-
-- Change "no reference selected" to "Click the Lookup button to select
-  a reference. "
 
 
 UI/usability fixes
@@ -148,11 +134,6 @@ Manual close
   collapse and match the spacing between hints and fields.
 
 Manage versions
-
-- Personally I miss the link colors for Unapproved, Published, and
-  Last closed. They made it so clear and you could instantly see what
-  was what. Now you have to read each one. We do have room to put
-  colored balls next to the version number but they won't look good.
 
 - View: when viewing an old version there's no obvious way to get back
   the publish screen. We can let people learn to click on the already
