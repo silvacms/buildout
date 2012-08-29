@@ -24,7 +24,7 @@ Usability issues
 - when there's multiple H4's in the portlet, it looks too crowded. And also when
   the title is longer than one line, it does not look good. The H4's in the
   portlet can be different from the ones in the form-content.
-    = The H4's in the portlet are now underlined, without border and 
+    = The H4's in the portlet are now underlined, without border and
       background color (see below)
 
 == add 'Silva page' ==
@@ -97,8 +97,8 @@ Properties screen
 - The Acquirable and Acquired Value markers don't line up perfectly. See a
   published document.
     = fixed
-+ The "acquirable" marker is not long enough. 
-    = fixed by capitalizing letters 
++ The "acquirable" marker is not long enough.
+    = fixed by capitalizing letters
 + In the Acquirable and Acquired Value markers, since the letters are all caps,
   they sit a little high.
   Actually, why are these 'uppercase'? If you make them 'capitalize', everything
@@ -109,12 +109,12 @@ Login form
 ----------
 - This is the form that appears when you leave an SMI window open overnight and
   try to do something.
-  + The required marker should be float:right so it's close to the field. 
+  + The required marker should be float:right so it's close to the field.
     = done
-  + The id and password fields should be wider. 
-    = changing the width of the form field affects all fields. In some cases, 
+  + The id and password fields should be wider.
+    = changing the width of the form field affects all fields. In some cases,
       e.g. in adding a TOC - 'depth of listing', or in case of a date,
-      the fielda are too wide. I asked Sylvain and he will fix this. 
+      the fielda are too wide. I asked Sylvain and he will fix this.
   + The Cancel and Login buttons are small, should have more padding to make
     easier click targets.
     = done
@@ -127,10 +127,51 @@ Contents screen
 + The colored ball icons, which show the version state of the document, require
   a title attribute (title="Published") to be added to the 'ins' tag. This needs
   to be done with Sylvain. There are five states:
-  Draft, Pending, Approved, Published, Closed 
-  
+  Draft, Pending, Approved, Published, Closed
 
 
+
+For Sanne's review:
+
+Reference dialog
+----------------
+
+- In the reference dialog clicking the icon of a non-container doesn't do
+  anything. Make it trigger the same action as the 'plus' icon on the right.
+  This obviates the need to move the mouse across the screen, which new
+  users find confusing because the selection checkbox used to be on the left.
+  """WB: Non of the icons reference the add action, only the '+' icon adds a
+  reference."""
+
+-------> If you click on the icon of a container, you go inside this
+         container, in order to have the same behavior than the
+         generic folder listing. This was discussed on the ML to have
+         the same behavior.
+
+-------> By so, clicking on the icon of a content doesn't select it,
+         as it will be a different behavior for container and
+         non-containers.
+
+-------+ I think once we get the links working, this will become less of an
+         issue. It'll be very obvious that you need to click on the folder id
+         or title to enter it. The behavior in the lookup window should be more
+         or less the same as the Contents screen:
+         - Hover over any row and it changes to a darker color
+         - Hover over a content icon, see a preview
+         - Hover over a container icon, see nothing (or metatype?)
+         - Hover over a container id and the link underlines and turns blue
+         - Hover over a container title and the link underlines and turns blue
+         - Hover over a content item id and nothing happens
+         - Hover over a container title and nothing happens
+
+         In order to select, click on empty space in the row:
+         - For content, selecting is the same as clicking the plus button, so
+           clicking anywhere, including on the id/title selects the item(s).
+         - For containers, if it's selectable (like for a TOC) the behavior
+           stays the same as with content. If the container is not selectable
+           (as with an image lookup) nothing happens. If the user wants to
+           descend into the container the id/title must be clicked. This allows
+           multiple items to be easily selected.
 
 
 

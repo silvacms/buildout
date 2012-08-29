@@ -201,13 +201,13 @@ Silva News Filter
 Silva Find
 ==========
 
-++ The templates that include headings need to be adjusted (h1, etc.).
++ The templates that include headings need to be adjusted (h1, etc.).
   subscriptions.html
 
 + The Zope level icons are being used in the search results. We should make the
   Zope icons match. This is something Wim or I can do if you explain it.
 
-++ How do we call a stylesheet for a specific metatype now? I used to include it
++ How do we call a stylesheet for a specific metatype now? I used to include it
   in the head inject but I think there's a cleaner way, e.g. I see calendar.css
   in SNN. We need one for Find objects.
 
@@ -260,7 +260,7 @@ CKEditor
   extra p with a nbsp above the image. You always have to remove this p after
   saving.
 
-++ version document/get_viewable
++ version document/get_viewable
   details version/@@details
   details/get_text
   details/get_introduction

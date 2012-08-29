@@ -24,14 +24,6 @@ CKEditor
 Saving for Wim:
 RTFM: http://docs.cksource.com/CKEditor_3.x/Users_Guide/Rich_Text/Lists
 
-Add forms
----------
-
-Ghost, Ghost Folder, Link
-
-- Change "no reference selected" to "Click the Lookup button to select
-  a reference. "
-
 Publish tab
 -----------
 
