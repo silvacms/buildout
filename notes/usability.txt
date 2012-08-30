@@ -1,19 +1,19 @@
 Usability issues
 ================
 
--- new issues are marked with * -- 
+-- new issues are marked with * --
 
 == general UI ==
 
 + the form-content should be made smaller on every page (this will also fix the
   problem of the error message being positioned outside the screen). The <div>
   should be given a <class="forms">.
-* Sometimes there is a check box which is required; unchecking the check box 
-  yields an error message. Since you don't have an option, should this be a 
-  check box, or something that not editable?  
-* There should be a border-left on the subtab icon of the 'add' tab, as 
+* Sometimes there is a check box which is required; unchecking the check box
+  yields an error message. Since you don't have an option, should this be a
+  check box, or something that not editable?
+* There should be a border-left on the subtab icon of the 'add' tab, as
   the 'content' and 'settings' tab have.
-  
+
 == buttons ==
 
 - I think all 'positive' buttons should have a green icon and all 'negative'
@@ -27,19 +27,23 @@ Usability issues
   in practice people only recognize a few icons.
   BTW, I really like the idea of green for 'Go' actions and red for 'negative'
   actions. Think about how to implement that....
-  * I've changed the icon on the cancel button to a red cross, which I think 
-    looks better.  
-    However,  although I think the icon related to 'cancel' should be a red 
-    cross, the cancel button takes you back to the previous screen, so 
-    in this way the 'return arrow' icon makes more sense.. 
+  * I've changed the icon on the cancel button to a red cross, which I think
+    looks better.
+    However,  although I think the icon related to 'cancel' should be a red
+    cross, the cancel button takes you back to the previous screen, so
+    in this way the 'return arrow' icon makes more sense..
+      We actually want the cancel buttons that take you back to the previous
+      screen to read "Back", and then the return arrow fits. But that requires
+      some doing....
     Regarding visual consistency, it may look strange if some icons are
     colored and others are not.
-* The 'add' and 'remove' buttons on some 'add' pages, e.g. add a Silva agenda 
-  page', are styled different from the other buttons. 
-    I gave them the same styling as the other buttons. While in general the 
+* The 'add' and 'remove' buttons on some 'add' pages, e.g. add a Silva agenda
+  page', are styled different from the other buttons.
+    I gave them the same styling as the other buttons. While in general the
     'negative action' buttons is on the right, and the 'positive action' button
-    is on the left, in the case, it's the other way around. They may 
-    need to have icons as well. 
+    is on the left, in the case, it's the other way around. They may
+    need to have icons as well.
+      We can use a green plus and red minus icon. They're in the set.
 
 == add 'Silva page' ==
 
@@ -50,37 +54,37 @@ Usability issues
 
 + when you click 'send' without uploading an image, a progress bar shows, when
   it probably shouldn't.
-  
-== add 'Silva agenda page' == 
- 
-* The 'happens' in the label p should be changed to 'happen'. 
+
+== add 'Silva agenda page' ==
+
+* The 'happens' in the label p should be changed to 'happen'.
 * When filling in a date, I get an error message, saying 'missing day/month/
-  year/ value', when moving from on field to another. 
+  year/ value', when moving from on field to another.
 * You are able to fill in a date in the past. Maybe there shoud be an error
-  message when you do that? 
+  message when you do that?
 * Selecting a timezone other than 'local' yields an error message.
-* Because the 'add' and 'remove' buttons are below the form, you might think 
-  that you have to click 'add' after filling in the above form to add the 
+* Because the 'add' and 'remove' buttons are below the form, you might think
+  that you have to click 'add' after filling in the above form to add the
   event.
   If you want to remove an occurrence, you have to check the box above the
   form and then click the 'remove' button below the form. It would make more
   sense if those two were closer together, so you know checking the box is
-  related to the buttons. 
-  Same applies to adding a RSS Aggregator. 
+  related to the buttons.
+  Same applies to adding a RSS Aggregator.
 
 == Settings screen ==
 
 + On the 'manage subscriptions' page, the textarea is too wide (it has inline
   styling, so it needs a change to the HTML).
-* On the 'settings'-'manage' page, there's a required marker without CSS 
+* On the 'settings'-'manage' page, there's a required marker without CSS
   applied to it.
-  
-== Publish screen == 
 
-* Under 'manage version' the 'compare button' is the only button without 
-  a title attribute. 
-* In the portlet, when an item is pending, the p should be changed from 
-  'This is item has..' to 'This item has..'. 
+== Publish screen ==
+
+* Under 'manage version' the 'compare button' is the only button without
+  a title attribute.
+* In the portlet, when an item is pending, the p should be changed from
+  'This is item has..' to 'This item has..'.
 
 == error messages ==
 
@@ -102,9 +106,6 @@ Usability issues
   icon. Or maybe you should be able to select an image and then click an 'Add'
   button in the right bottom corner.
 
-+ 'Link to an another content' should be changed to 'Link to another content 
-  item'.
-
 To Fix
 ======
 
@@ -124,10 +125,36 @@ Contents screen
   to be done with Sylvain. There are five states:
   Draft, Pending, Approved, Published, Closed
 
+Copied from testing.txt:
+Properties screen
+-----------------
+- Some fields have class="field" with a 2px margin, others don't.
+  Example: http://preprod30.infrae.com/edit#properties!lobby/testors
+  The textareas are wrapped in a class="form-field" and then class="field". The
+  select and string fields are not wrapped with class="field" and thus the
+  Acquired value p bumps against the field.
+
+Copied from testing.txt:
+Publish screen of a doc
+-----------------------
+- The "Request approval history" table in the Publish screen of a doc needs
+  attention, e.g.:
+  http://preprod30.infrae.com/edit#publish!lobby/testors/codesourceadd
+  @Sanne: Looks like we need clear:both or something with the floats. In order
+  to fix this you'll need to login as an Author. You can use Torvald's account.
+  @Sylvain: Please move this table down so it appears just above the "Manage
+  versions" table. Right now the "Publish closed version" table is underneath,
+  and "Request approval history" could be a long table.
+
+
+
 For Sanne's review:
 
 Reference dialog
 ----------------
+
+@Sanne: ask about upcoming changes to the Contents screen links, and then this
+will make more sense....
 
 - In the reference dialog clicking the icon of a non-container doesn't do
   anything. Make it trigger the same action as the 'plus' icon on the right.
@@ -165,7 +192,6 @@ Reference dialog
            (as with an image lookup) nothing happens. If the user wants to
            descend into the container the id/title must be clicked. This allows
            multiple items to be easily selected.
-
 
 
 

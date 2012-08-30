@@ -25,18 +25,14 @@ Login
 =====
 
 - Logout and in: after clicking the logout button the browser goes to:
-  http://next30.infrae.com/service_members/logout If I want to login
+  http://next30.infrae.com/service_members/logout or
+  http://preprod30.infrae.com/service_members/logout If I want to login
   immediately (noticed a typo or as another user) it's not possible to
   login and you can try as many times as you like. This was really
   confusing and needs to change.
 
 Contents screen
 ---------------
-
-+ When a document is closed it's not possible to publish it. You must create
-  a new version, and then publish it. Can we help the user and provide a
-  shortcut so closed content can be published in one shot? We're adding clicks
-  here.
 
 - When a document is published, the "Go to" button has Preview. as the first
   option. It should have View too. Save a click.
@@ -46,7 +42,7 @@ Contents screen
   string "no title" instead.
 
 -----> This was the same behavior in the old Silva.
-
+-----+ Well, in the Contents screen the old Silva displayed "no title".
 
 Publish screen of docs, logged in as ChiefEditor
 ------------------------------------------------
@@ -82,6 +78,15 @@ Notes since changing the fields
   The '11' gets correctly interpreted in the Author's submit, but Editors
   get a system error. Can you make it interpret correctly for Editors
   too? Saves 2 chars.
+
++ The "Request approval history" table in the Publish screen of a doc needs
+  attention, e.g.:
+  http://preprod30.infrae.com/edit#publish!lobby/testors/codesourceadd
+  @Sanne: Looks like we need clear:both or something with the floats. In order
+  to fix this you'll need to login as an Author. You can use Torvald's account.
+  @Sylvain: Please move this table down so it appears just above the "Manage
+  versions" table. Right now the "Publish closed version" table is underneath,
+  and "Request approval history" could be a long table.
 
 Manage versions
 
