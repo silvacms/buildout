@@ -1,11 +1,21 @@
 Usability issues
 ================
 
+-- new issues are marked with * -- 
+
 == general UI ==
 
 + the form-content should be made smaller on every page (this will also fix the
   problem of the error message being positioned outside the screen). The <div>
   should be given a <class="forms">.
+* Sometimes there is a check box which is required; unchecking the check box 
+  yields an error message. Since you don't have an option, should this be a 
+  check box, or something that not editable?  
+* There should be a border-left on the subtab icon of the 'add' tab, as 
+  the 'content' and 'settings' tab have.
+  
+== buttons ==
+
 - I think all 'positive' buttons should have a green icon and all 'negative'
   buttons should have a red icon.
   There should only be an icon in the buttons when it makes sense (for example,
@@ -17,6 +27,19 @@ Usability issues
   in practice people only recognize a few icons.
   BTW, I really like the idea of green for 'Go' actions and red for 'negative'
   actions. Think about how to implement that....
+  * I've changed the icon on the cancel button to a red cross, which I think 
+    looks better.  
+    However,  although I think the icon related to 'cancel' should be a red 
+    cross, the cancel button takes you back to the previous screen, so 
+    in this way the 'return arrow' icon makes more sense.. 
+    Regarding visual consistency, it may look strange if some icons are
+    colored and others are not.
+* The 'add' and 'remove' buttons on some 'add' pages, e.g. add a Silva agenda 
+  page', are styled different from the other buttons. 
+    I gave them the same styling as the other buttons. While in general the 
+    'negative action' buttons is on the right, and the 'positive action' button
+    is on the left, in the case, it's the other way around. They may 
+    need to have icons as well. 
 
 == add 'Silva page' ==
 
@@ -27,11 +50,37 @@ Usability issues
 
 + when you click 'send' without uploading an image, a progress bar shows, when
   it probably shouldn't.
+  
+== add 'Silva agenda page' == 
+ 
+* The 'happens' in the label p should be changed to 'happen'. 
+* When filling in a date, I get an error message, saying 'missing day/month/
+  year/ value', when moving from on field to another. 
+* You are able to fill in a date in the past. Maybe there shoud be an error
+  message when you do that? 
+* Selecting a timezone other than 'local' yields an error message.
+* Because the 'add' and 'remove' buttons are below the form, you might think 
+  that you have to click 'add' after filling in the above form to add the 
+  event.
+  If you want to remove an occurrence, you have to check the box above the
+  form and then click the 'remove' button below the form. It would make more
+  sense if those two were closer together, so you know checking the box is
+  related to the buttons. 
+  Same applies to adding a RSS Aggregator. 
 
 == Settings screen ==
 
 + On the 'manage subscriptions' page, the textarea is too wide (it has inline
   styling, so it needs a change to the HTML).
+* On the 'settings'-'manage' page, there's a required marker without CSS 
+  applied to it.
+  
+== Publish screen == 
+
+* Under 'manage version' the 'compare button' is the only button without 
+  a title attribute. 
+* In the portlet, when an item is pending, the p should be changed from 
+  'This is item has..' to 'This item has..'. 
 
 == error messages ==
 
@@ -53,7 +102,8 @@ Usability issues
   icon. Or maybe you should be able to select an image and then click an 'Add'
   button in the right bottom corner.
 
-+ 'Link to an another content' should be changed to 'Link to another content item'.
++ 'Link to an another content' should be changed to 'Link to another content 
+  item'.
 
 To Fix
 ======
@@ -73,7 +123,6 @@ Contents screen
   a title attribute (title="Published") to be added to the 'ins' tag. This needs
   to be done with Sylvain. There are five states:
   Draft, Pending, Approved, Published, Closed
-
 
 For Sanne's review:
 
