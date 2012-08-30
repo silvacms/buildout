@@ -14,18 +14,9 @@ Usability issues
   [Kit] The problem is that sometimes there's a row of buttons, some with icons,
   some without, and that looks really strange. So we decided to have a generic
   icon for visual consistency. Someday we may choose icons for all buttons, but
-  in practice people only recognize a few icons. I like the idea of green for
-  'Go' actions and red for 'negative' actions.
-+ non-editable fields are now skipped when using tab. However, they are still
-  focused when selected. [see below]
-
-== portlet ==
-
-- when there's multiple H4's in the portlet, it looks too crowded. And also when
-  the title is longer than one line, it does not look good. The H4's in the
-  portlet can be different from the ones in the form-content.
-    = The H4's in the portlet are now underlined, without border and
-      background color (see below)
+  in practice people only recognize a few icons.
+  BTW, I really like the idea of green for 'Go' actions and red for 'negative'
+  actions. Think about how to implement that....
 
 == add 'Silva page' ==
 
@@ -41,15 +32,6 @@ Usability issues
 
 + On the 'manage subscriptions' page, the textarea is too wide (it has inline
   styling, so it needs a change to the HTML).
-
-== dialog boxes ==
-
-+ the 'upload' dialog box displays a scroll bar. The box now has a width of
-  300px (inline styling). Changing the width to 310px will fix it.
-- the buttons in dialog boxes look different from the others. I think all
-  buttons should look the same.
-    = buttons in dialog boxes are bigger, have more padding, to make
-      easier click targets.
 
 == error messages ==
 
@@ -76,51 +58,14 @@ Usability issues
 To Fix
 ======
 
-+ An h4 in the information portlet has both a border and an underline. The
-  underline can go, the border is enough text-decoration. Maybe those h4s should
-  have a bg color? Maybe not....
-  http://preprod30.infrae.com/edit#content!lobby/testors/silva400.png
-    = h4 is underlined (see above)
-
-- Do we need a little more space between the forms? See the forms in the above
-  example. Say, 30px?
-    = I've changed it to 25px
-
-Properties screen
------------------
-+ On focus, the field element texts darken. Make that happen on hover too.
-  Sometimes I focus a field just to read the gray acquired metadata better.
-    = done
-- The textareas need a little padding (2px?), they look cramped.
-  http://preprod30.infrae.com/edit#properties!/
-    = done
-- The Acquirable and Acquired Value markers don't line up perfectly. See a
-  published document.
-    = fixed
-+ The "acquirable" marker is not long enough.
-    = fixed by capitalizing letters
-+ In the Acquirable and Acquired Value markers, since the letters are all caps,
-  they sit a little high.
-  Actually, why are these 'uppercase'? If you make them 'capitalize', everything
-  fits! :)
-    = letters are now capitalized
-
 Login form
 ----------
 - This is the form that appears when you leave an SMI window open overnight and
   try to do something.
-  + The required marker should be float:right so it's close to the field.
-    = done
   + The id and password fields should be wider.
     = changing the width of the form field affects all fields. In some cases,
       e.g. in adding a TOC - 'depth of listing', or in case of a date,
       the fielda are too wide. I asked Sylvain and he will fix this.
-  + The Cancel and Login buttons are small, should have more padding to make
-    easier click targets.
-    = done
-  + After login, a modal dialogue appears with a Continue button that should
-    be larger too.
-    = done
 
 Contents screen
 ---------------
@@ -128,7 +73,6 @@ Contents screen
   a title attribute (title="Published") to be added to the 'ins' tag. This needs
   to be done with Sylvain. There are five states:
   Draft, Pending, Approved, Published, Closed
-
 
 
 For Sanne's review:

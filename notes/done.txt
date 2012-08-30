@@ -57,3 +57,72 @@ Usability
 
 Those issues comes from the usability.txt file.
 
+== general UI ==
+
++ non-editable fields are now skipped when using tab. However, they are still
+  focused when selected.
+
+== portlet ==
+
+- when there's multiple H4's in the portlet, it looks too crowded. And also when
+  the title is longer than one line, it does not look good. The H4's in the
+  portlet can be different from the ones in the form-content.
+    = The H4's in the portlet are now underlined, without border and
+      background color (see below)
+
+== dialog boxes ==
+
++ the 'upload' dialog box displays a scroll bar. The box now has a width of
+  300px (inline styling). Changing the width to 310px will fix it.
+- the buttons in dialog boxes look different from the others. I think all
+  buttons should look the same.
+    = buttons in dialog boxes are bigger, have more padding, to make
+      easier click targets.
+
+
+Login form
+----------
+- This is the form that appears when you leave an SMI window open overnight and
+  try to do something.
+  + The required marker should be float:right so it's close to the field.
+    = done
+  + The Cancel and Login buttons are small, should have more padding to make
+    easier click targets.
+    = done
+  + After login, a modal dialogue appears with a Continue button that should
+    be larger too.
+    = done
+
+
+Properties screen
+-----------------
++ On focus, the field element texts darken. Make that happen on hover too.
+  Sometimes I focus a field just to read the gray acquired metadata better.
+    = done
+- The textareas need a little padding (2px?), they look cramped.
+  http://preprod30.infrae.com/edit#properties!/
+    = done
+- The Acquirable and Acquired Value markers don't line up perfectly. See a
+  published document.
+    = fixed
++ The "acquirable" marker is not long enough.
+    = fixed by capitalizing letters
++ In the Acquirable and Acquired Value markers, since the letters are all caps,
+  they sit a little high.
+  Actually, why are these 'uppercase'? If you make them 'capitalize', everything
+  fits! :)
+    = letters are now capitalized
+
+To Fix
+======
+
++ An h4 in the information portlet has both a border and an underline. The
+  underline can go, the border is enough text-decoration. Maybe those h4s should
+  have a bg color? Maybe not....
+  http://preprod30.infrae.com/edit#content!lobby/testors/silva400.png
+    = h4 is underlined (see above)
+
+- Do we need a little more space between the forms? See the forms in the above
+  example. Say, 30px?
+    = I've changed it to 25px
+
