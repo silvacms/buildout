@@ -8,9 +8,9 @@ Usability issues
 + the form-content should be made smaller on every page (this will also fix the
   problem of the error message being positioned outside the screen). The <div>
   should be given a <class="forms">.
-* Sometimes there is a check box which is required; unchecking the check box
+* Sometimes, there is a check box which is required; unchecking the check box
   yields an error message. Since you don't have an option, should this be a
-  check box, or something that not editable?
+  check box, or something that's not editable?
 * There should be a border-left on the subtab icon of the 'add' tab, as
   the 'content' and 'settings' tab have.
 
@@ -21,29 +21,41 @@ Usability issues
   There should only be an icon in the buttons when it makes sense (for example,
   I don't think the little circles in the buttons add any meaning to the action
   that button performs).
-  [Kit] The problem is that sometimes there's a row of buttons, some with icons,
-  some without, and that looks really strange. So we decided to have a generic
-  icon for visual consistency. Someday we may choose icons for all buttons, but
-  in practice people only recognize a few icons.
-  BTW, I really like the idea of green for 'Go' actions and red for 'negative'
-  actions. Think about how to implement that....
-  * I've changed the icon on the cancel button to a red cross, which I think
-    looks better.
-    However,  although I think the icon related to 'cancel' should be a red
-    cross, the cancel button takes you back to the previous screen, so
-    in this way the 'return arrow' icon makes more sense..
-      We actually want the cancel buttons that take you back to the previous
-      screen to read "Back", and then the return arrow fits. But that requires
-      some doing....
-    Regarding visual consistency, it may look strange if some icons are
-    colored and others are not.
-* The 'add' and 'remove' buttons on some 'add' pages, e.g. add a Silva agenda
+    [Kit] The problem is that sometimes there's a row of buttons, some with 
+    icons, some without, and that looks really strange. So we decided to have a 
+    generic icon for visual consistency. Someday we may choose icons for all 
+    buttons, but in practice people only recognize a few icons.
+    BTW, I really like the idea of green for 'Go' actions and red for 'negative'
+    actions. Think about how to implement that....
+      = I gave all 'positive' action buttons a green 'check' icon, and all 
+        'negative' action buttons a red icon. The red icon is a return arrow 
+        in case it takes you back to the previous screen - the text should be 
+        changed to 'back' - or it's a cross, in case you want to undo an action.  
+        However, on the settings - customization page, there's a 'add marker' 
+        and 'remove' button and, for consistency, they should have a plus and
+        minus icon (see below). This needs a change to the class name. 
+    * I've changed the icon on the cancel button to a red cross, which I think
+      looks better.
+      However,  although I think the icon related to 'cancel' should be a red
+      cross, the cancel button takes you back to the previous screen, so
+      in this way the 'return arrow' icon makes more sense..
+        [Kit] We actually want the cancel buttons that take you back to the 
+        previous screen to read "Back", and then the return arrow fits. 
+        But that requires some doing...
+          = I've changed it into a red return arrow icon (see above).
+      Regarding visual consistency, it may look strange if some icons are
+      colored and others are not.
+* The 'add' and 'remove' buttons on some 'add' pages, e.g. 'add a Silva agenda
   page', are styled different from the other buttons.
-    I gave them the same styling as the other buttons. While in general the
-    'negative action' buttons is on the right, and the 'positive action' button
-    is on the left, in the case, it's the other way around. They may
-    need to have icons as well.
-      We can use a green plus and red minus icon. They're in the set.
+  I gave them the same styling as the other buttons. While in general the
+  'negative action' buttons is on the right, and the 'positive action' button
+  is on the left, in the case, it's the other way around. They may need to have 
+  icons as well.
+      [Kit] We can use a green plus and red minus icon. They're in the set.
+        = I've added the icons as a background-image to the buttons (see above). 
+          Now, the bg color is different from the other buttons, because their
+          background is an image. I think it needs a change to the HTML to 
+          keep the bg and the icon. 
 
 == add 'Silva page' ==
 
@@ -78,6 +90,7 @@ Usability issues
   styling, so it needs a change to the HTML).
 * On the 'settings'-'manage' page, there's a required marker without CSS
   applied to it.
+    = done
 
 == Publish screen ==
 
@@ -133,6 +146,8 @@ Properties screen
   The textareas are wrapped in a class="form-field" and then class="field". The
   select and string fields are not wrapped with class="field" and thus the
   Acquired value p bumps against the field.
+    = instead of the 2px margin on the .field, i've added a margin-top to the
+      p.form-acquired. 
 
 Copied from testing.txt:
 Publish screen of a doc
@@ -142,11 +157,10 @@ Publish screen of a doc
   http://preprod30.infrae.com/edit#publish!lobby/testors/codesourceadd
   @Sanne: Looks like we need clear:both or something with the floats. In order
   to fix this you'll need to login as an Author. You can use Torvald's account.
+    = done
   @Sylvain: Please move this table down so it appears just above the "Manage
   versions" table. Right now the "Publish closed version" table is underneath,
   and "Request approval history" could be a long table.
-
-
 
 For Sanne's review:
 
@@ -192,9 +206,6 @@ will make more sense....
            (as with an image lookup) nothing happens. If the user wants to
            descend into the container the id/title must be clicked. This allows
            multiple items to be easily selected.
-
-
-
 
 
 
