@@ -258,16 +258,6 @@ CKEditor
   extra p with a nbsp above the image. You always have to remove this p after
   saving.
 
-+ version document/get_viewable
-  details version/@@details
-  details/get_text
-  details/get_introduction
-  details/get_thumbnail
-  details version/@@details....
-
-  > We can even add a get_title.
-  + Yes, please.
-
 Reference dialog
 ================
 
@@ -322,34 +312,4 @@ http://preprod30.infrae.com/service_metadata/collection/augmentation/manage_sett
 XXX Still 404s:
 http://preprod30.infrae.com/service_metadata/collection/augmentation/?%3Amethod=addElementForm&submit=+Add+Metadata+Element
 + It's not possible to add a field to a metadata set. It 404s.
-
-+ (You cannot remove the title from the document editor. Should this be possible
-  ?)
-  [Let's keep it this way. The only way to remove the title is in properties.]
-
-  > I can change this, that is trivial. If yes, move point to
-    testing.txt. If no delete it.
-
-Migration
-=========
-++ These docs and many others are not editable:
-  http://preprod30.infrae.com/edit#content!service/support
-  http://preprod30.infrae.com/edit#content!products/mobi
-  There seems to be a glitch sometimes where the content in the editor doesn't load. Either you make a new version or change screens and the green loading lights continue to pulse, but the content never shows up.
-  - You can view source (once) and see html, but the WYSIWYG never displays.
-  - If I delete things like a broken external source, the text appears but I get a server error on saving the document.
-
-
-Here are weekend testing results. There's good news and bad news of course.
-
-Editor content display problem
-
-The bad news is there's a glitch where sometimes the content in the editor doesn't display. Happens with FF and WebKit browsers. The green loading lights continue to pulse, but the content never shows up. However the source is there. These docs and many others are not editable:
-  http://preprod30.infrae.com/edit#content!service/support
-  http://preprod30.infrae.com/edit#content!products/mobi
-
-You can view source once and see html, but the WYSIWYG never displays. Strangely, you can only view source once.
-
-If I delete things like a broken external source, the text appears in WYSIWYG but I get a server error on saving the document.
-
 
