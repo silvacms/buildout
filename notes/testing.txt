@@ -90,10 +90,6 @@ Notes since changing the fields
 
 Manage versions
 
-- Please make the version status text a link to view it. Now we're
-  adding a click, by making users first select a checkbox, then click
-  "View". If you want to keep it black we'll style the link that way.
-
 - Delete: When selecting items for deletion, the form remains sticky
   with selections after deletion, e.g. if you delete versions 2 and 3,
   the form comes back with items 0 and 1 selected.
@@ -205,9 +201,6 @@ Silva News Filter
 
 Silva Find
 ==========
-
-+ The templates that include headings need to be adjusted (h1, etc.).
-  subscriptions.html
 
 + The Zope level icons are being used in the search results. We should make the
   Zope icons match. This is something Wim or I can do if you explain it.

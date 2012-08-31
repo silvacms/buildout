@@ -32,6 +32,10 @@ Publish tab
   was what. Now you have to read each one. We do have room to put
   colored balls next to the version number but they won't look good.
 
+- Please make the version status text a link to view it. Now we're
+  adding a click, by making users first select a checkbox, then click
+  "View". If you want to keep it black we'll style the link that way.
+
 Reference dialog
 ----------------
 
@@ -50,6 +54,12 @@ Reference dialog
 -------> By so, clicking on the icon of a content doesn't select it,
          as it will be a different behavior for container ans
          non-containers.
+
+Silva Find
+----------
+
++ The templates that include headings need to be adjusted (h1, etc.).
+  subscriptions.html
 
 
 Usability
