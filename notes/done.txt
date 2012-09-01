@@ -14,6 +14,11 @@ I guess you can't combine defines and gets: feeder/get_viewable/details/get_text
        code so it doesn't fail if there is no published version, and
        works if it is a Ghost, and I moved in the Python file.
 
+-----+ @Sylvain So, in terms of documenting this, the provider.search_document()
+       API returns the body without title, yes?
+       For the other things such as get_introduction, get_thumbnail and
+       get_title we still need to define version and @@details, yes?
+
 CKEditor
 --------
 
@@ -21,14 +26,8 @@ CKEditor
   IE8 the SMI green loading lights keep spinning when trying to indent a
   level so probably this is some JS issue.
 
-Saving for Wim:
-RTFM: http://docs.cksource.com/CKEditor_3.x/Users_Guide/Rich_Text/Lists
-
-+ You cannot remove the title from the document editor. Should this be
-  possible ?
-
-------> Now it is.
-
+  @Wim:
+  RTFM: http://docs.cksource.com/CKEditor_3.x/Users_Guide/Rich_Text/Lists
 
 + version document/get_viewable
   details version/@@details
@@ -40,37 +39,7 @@ RTFM: http://docs.cksource.com/CKEditor_3.x/Users_Guide/Rich_Text/Lists
   > We can even add a get_title.
 
 ------> Now with a get_title method.
-
-
-Migration
----------
-
-++ These docs and many others are not editable:
-
-  http://preprod30.infrae.com/edit#content!service/support
-  http://preprod30.infrae.com/edit#content!products/mobi
-
-  There seems to be a glitch sometimes where the content in the editor
-  doesn't load. Either you make a new version or change screens and
-  the green loading lights continue to pulse, but the content never
-  shows up.
-
-  - You can view source (once) and see html, but the WYSIWYG never displays.
-
-  - If I delete things like a broken external source, the text appears
-    but I get a server error on saving the document.
-
-Publish tab
------------
-
-- Personally I miss the link colors for Unapproved, Published, and
-  Last closed. They made it so clear and you could instantly see what
-  was what. Now you have to read each one. We do have room to put
-  colored balls next to the version number but they won't look good.
-
-- Please make the version status text a link to view it. Now we're
-  adding a click, by making users first select a checkbox, then click
-  "View". If you want to keep it black we'll style the link that way.
+------+ Cool! This will be useful.
 
 Reference dialog
 ----------------
@@ -88,25 +57,13 @@ Reference dialog
          the same behavior.
 
 -------> By so, clicking on the icon of a content doesn't select it,
-         as it will be a different behavior for container ans
+         as it will be a different behavior for container and
          non-containers.
-
-Silva Find
-----------
-
-+ The templates that include headings need to be adjusted (h1, etc.).
-  subscriptions.html
-
 
 Usability
 =========
 
 Those issues comes from the usability.txt file.
-
-== general UI ==
-
-+ non-editable fields are now skipped when using tab. However, they are still
-  focused when selected.
 
 == portlet ==
 
@@ -115,6 +72,7 @@ Those issues comes from the usability.txt file.
   portlet can be different from the ones in the form-content.
     = The H4's in the portlet are now underlined, without border and
       background color (see below)
+    +
 
 == dialog boxes ==
 
@@ -126,49 +84,5 @@ Those issues comes from the usability.txt file.
       easier click targets.
 
 
-Login form
-----------
-- This is the form that appears when you leave an SMI window open overnight and
-  try to do something.
-  + The required marker should be float:right so it's close to the field.
-    = done
-  + The Cancel and Login buttons are small, should have more padding to make
-    easier click targets.
-    = done
-  + After login, a modal dialogue appears with a Continue button that should
-    be larger too.
-    = done
-
-
-Properties screen
------------------
-+ On focus, the field element texts darken. Make that happen on hover too.
-  Sometimes I focus a field just to read the gray acquired metadata better.
-    = done
-- The textareas need a little padding (2px?), they look cramped.
-  http://preprod30.infrae.com/edit#properties!/
-    = done
-- The Acquirable and Acquired Value markers don't line up perfectly. See a
-  published document.
-    = fixed
-+ The "acquirable" marker is not long enough.
-    = fixed by capitalizing letters
-+ In the Acquirable and Acquired Value markers, since the letters are all caps,
-  they sit a little high.
-  Actually, why are these 'uppercase'? If you make them 'capitalize', everything
-  fits! :)
-    = letters are now capitalized
-
 To Fix
 ======
-
-+ An h4 in the information portlet has both a border and an underline. The
-  underline can go, the border is enough text-decoration. Maybe those h4s should
-  have a bg color? Maybe not....
-  http://preprod30.infrae.com/edit#content!lobby/testors/silva400.png
-    = h4 is underlined (see above)
-
-- Do we need a little more space between the forms? See the forms in the above
-  example. Say, 30px?
-    = I've changed it to 25px
-

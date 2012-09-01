@@ -44,6 +44,10 @@ Contents screen
 -----> This was the same behavior in the old Silva.
 -----+ Well, in the Contents screen the old Silva displayed "no title".
 
+- The 'collapser' reads "Structural content(s)", "Structural content" is enough.
+  The others, Asset(s) and Page Model(s) can dispense with the parentheses and
+  just read Assets and Page Models.
+
 Publish screen of docs, logged in as ChiefEditor
 ------------------------------------------------
 
@@ -253,10 +257,10 @@ CKEditor
   Can we code it so that if a user selects an image and then clicks the link
   icon, they're brought to the image edit dialog with the link tab forward?
 
-++ When you add an image in CKEditor, you usually add the image on an empty
++ When you add an image in CKEditor, you usually add the image on an empty
   line. When done adding, it looks fine. After saving, the editor inserts an
   extra p with a nbsp above the image. You always have to remove this p after
-  saving.
+  saving. Annoying. Same goes for Code Sources.
 
 Reference dialog
 ================
@@ -265,8 +269,9 @@ Reference dialog
   than a few items in the listing. The selection(s) show up at the bottom
   of the listing, often out of sight for the user. Can we put the selected
   list on top?
-  """WB: Which reference dialog is this? The ones I use only use one reference
-  selection, which is never displayed"""
+  Wim: Which reference dialog is this? The ones I use only use one reference
+  selection, which is never displayed.
+  Kit: Try the TOC CS, in which you can add multiple containers.
 
 - In the reference dialog clicking the icon of a non-container doesn't do
   anything. Make it trigger the same action as the 'plus' icon on the right.
@@ -292,7 +297,8 @@ Bugs
 To Test
 -------
 - CSV upload has problems.
-  Invalid CSV file: new-line character seen in unquoted field - do you need to open the file in universal-newline mode?
+  Invalid CSV file: new-line character seen in unquoted field - do you need to
+  open the file in universal-newline mode?
 
 Silva news
 ----------
@@ -308,6 +314,8 @@ Metadata system
 XXX Still 404s:
 http://preprod30.infrae.com/service_metadata/collection/augmentation/manage_settings
 + It's not possible to make a metadata set editable. It 404s.
+  This seems to be an Apache-related problem. Actually, the action succeeded,
+  it's the subsequent redirect that failed.
 
 XXX Still 404s:
 http://preprod30.infrae.com/service_metadata/collection/augmentation/?%3Amethod=addElementForm&submit=+Add+Metadata+Element

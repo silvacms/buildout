@@ -21,26 +21,26 @@ Usability issues
   There should only be an icon in the buttons when it makes sense (for example,
   I don't think the little circles in the buttons add any meaning to the action
   that button performs).
-    [Kit] The problem is that sometimes there's a row of buttons, some with 
-    icons, some without, and that looks really strange. So we decided to have a 
-    generic icon for visual consistency. Someday we may choose icons for all 
+    [Kit] The problem is that sometimes there's a row of buttons, some with
+    icons, some without, and that looks really strange. So we decided to have a
+    generic icon for visual consistency. Someday we may choose icons for all
     buttons, but in practice people only recognize a few icons.
     BTW, I really like the idea of green for 'Go' actions and red for 'negative'
     actions. Think about how to implement that....
-      = I gave all 'positive' action buttons a green 'check' icon, and all 
-        'negative' action buttons a red icon. The red icon is a return arrow 
-        in case it takes you back to the previous screen - the text should be 
-        changed to 'back' - or it's a cross, in case you want to undo an action.  
-        However, on the settings - customization page, there's a 'add marker' 
+      = I gave all 'positive' action buttons a green 'check' icon, and all
+        'negative' action buttons a red icon. The red icon is a return arrow
+        in case it takes you back to the previous screen - the text should be
+        changed to 'back' - or it's a cross, in case you want to undo an action.
+        However, on the settings - customization page, there's a 'add marker'
         and 'remove' button and, for consistency, they should have a plus and
-        minus icon (see below). This needs a change to the class name. 
+        minus icon (see below). This needs a change to the class name.
     * I've changed the icon on the cancel button to a red cross, which I think
       looks better.
       However,  although I think the icon related to 'cancel' should be a red
       cross, the cancel button takes you back to the previous screen, so
       in this way the 'return arrow' icon makes more sense..
-        [Kit] We actually want the cancel buttons that take you back to the 
-        previous screen to read "Back", and then the return arrow fits. 
+        [Kit] We actually want the cancel buttons that take you back to the
+        previous screen to read "Back", and then the return arrow fits.
         But that requires some doing...
           = I've changed it into a red return arrow icon (see above).
       Regarding visual consistency, it may look strange if some icons are
@@ -49,13 +49,17 @@ Usability issues
   page', are styled different from the other buttons.
   I gave them the same styling as the other buttons. While in general the
   'negative action' buttons is on the right, and the 'positive action' button
-  is on the left, in the case, it's the other way around. They may need to have 
+  is on the left, in the case, it's the other way around. They may need to have
   icons as well.
       [Kit] We can use a green plus and red minus icon. They're in the set.
-        = I've added the icons as a background-image to the buttons (see above). 
+        = I've added the icons as a background-image to the buttons (see above).
           Now, the bg color is different from the other buttons, because their
-          background is an image. I think it needs a change to the HTML to 
-          keep the bg and the icon. 
+          background is an image. I think it needs a change to the HTML to
+          keep the bg and the icon.
+- I'm wondering about the hover on buttons. Right now the gradation background
+  disappears on hover and the button turns flat white. Looks like it's not
+  finished yet. What about reversing the gradation? Or something....
+
 
 == add 'Silva page' ==
 
@@ -84,14 +88,6 @@ Usability issues
   related to the buttons.
   Same applies to adding a RSS Aggregator.
 
-== Settings screen ==
-
-+ On the 'manage subscriptions' page, the textarea is too wide (it has inline
-  styling, so it needs a change to the HTML).
-* On the 'settings'-'manage' page, there's a required marker without CSS
-  applied to it.
-    = done
-
 == Publish screen ==
 
 * Under 'manage version' the 'compare button' is the only button without
@@ -118,13 +114,14 @@ Usability issues
   icon, expecting it will be added, before I realize I need to click the add
   icon. Or maybe you should be able to select an image and then click an 'Add'
   button in the right bottom corner.
+  Kit: This will need to change when we make the id/titles links.
 
 To Fix
 ======
 
 Login form
 ----------
-- This is the form that appears when you leave an SMI window open overnight and
++ This is the form that appears when you leave an SMI window open overnight and
   try to do something.
   + The id and password fields should be wider.
     = changing the width of the form field affects all fields. In some cases,
@@ -147,7 +144,7 @@ Properties screen
   select and string fields are not wrapped with class="field" and thus the
   Acquired value p bumps against the field.
     = instead of the 2px margin on the .field, i've added a margin-top to the
-      p.form-acquired. 
+      p.form-acquired.
 
 Copied from testing.txt:
 Publish screen of a doc
