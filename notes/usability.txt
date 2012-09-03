@@ -134,6 +134,9 @@ Contents screen
   a title attribute (title="Published") to be added to the 'ins' tag. This needs
   to be done with Sylvain. There are five states:
   Draft, Pending, Approved, Published, Closed
+  
++ When copy pasting content, you need to do a browser refresh to see the content 
+you pasted.  
 
 Copied from testing.txt:
 Properties screen
