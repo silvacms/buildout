@@ -8,9 +8,11 @@ Usability issues
 + the form-content should be made smaller on every page (this will also fix the
   problem of the error message being positioned outside the screen). The <div>
   should be given a <class="forms">.
-* Sometimes, there is a check box which is required; unchecking the check box
-  yields an error message. Since you don't have an option, should this be a
-  check box, or something that's not editable?
++ The form validation messages like for the expiration date don't
+  disappear when the new values meet validation.
+* Sometimes, there is a check box which is required; unchecking the
+  check box yields an error message. Since you don't have an option,
+  should this be a check box, or something that's not editable?
 * There should be a border-left on the subtab icon of the 'add' tab, as
   the 'content' and 'settings' tab have.
 
@@ -134,9 +136,9 @@ Contents screen
   a title attribute (title="Published") to be added to the 'ins' tag. This needs
   to be done with Sylvain. There are five states:
   Draft, Pending, Approved, Published, Closed
-  
-+ When copy pasting content, you need to do a browser refresh to see the content 
-you pasted.  
+
++ When copy pasting content, you need to do a browser refresh to see the
+  content you pasted.
 
 Copied from testing.txt:
 Properties screen
