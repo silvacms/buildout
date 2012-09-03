@@ -26,9 +26,9 @@ Login
 
 - Logout and in: after clicking the logout button the browser goes to:
   http://next30.infrae.com/service_members/logout or
-  http://preprod30.infrae.com/service_members/logout If I want to login
-  immediately (noticed a typo or as another user) it's not possible to
-  login and you can try as many times as you like. This was really
+  http://preprod30.infrae.com/service_members/logout
+  If I want to login again immediately it's not possible to login and you can
+  try as many times as you like. Is this a non-wsgi occurance? It was really
   confusing and needs to change.
 
 Contents screen
@@ -191,9 +191,13 @@ SNN
   range check like it does in publish?
 
 - After submitting the above entry, the entire multi-field goes pink,
-  and I have no idea which of the seven fields contains the error. We
+  and I have no idea which of the seven subfields contains the error. We
   need to figure out something here. Don't we know what the invalid
   entry is?
+
+++ It seems the API has changed as the Inline News Viewer is failing on
+  creation_datetime. A week or two ago this was working. Ref.:
+  http://preprod30.infrae.com/++preview++/about
 
 Silva News Filter
 -----------------
@@ -232,6 +236,15 @@ External Sources
   I deleted the alignment parameter, since it's now built-in, and when I tested
   I noticed that it lost all parameter values. Can this be fixed so existing
   values are preserved?
+
+++ After adding a TOC CS in the editor, during which it displayed fine, upon
+  save it disappears and gets replaced with this error message:
+  "External Source unknow is not available."
+  http://preprod30.infrae.com/edit#content!products/mobi
+
++ Typo in the error message:
+  "External Source unknow is not available."
+  "External Source unknown is not available."
 
 CS Silva Portlet
 ----------------
