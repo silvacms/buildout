@@ -172,6 +172,7 @@ Message
 "Reject approval request": Put this content back in draft mode.
 
 
+
 Logged in as ChiefEditor
 ========================
 
@@ -258,6 +259,17 @@ CS Silva Portlet
   Embedded doc: http://preprod30.infrae.com/edit#content!lobby/locateabove
   Code Source: http://preprod30.infrae.com/cs_portlet_element/editCodeSource
 
+Is there a more efficient way to do this?
+I guess you can't combine defines and gets: feeder/get_viewable/details/get_text
+
+-----> It is way faster yes. That would be too easy. And I fixed you
+       code so it doesn't fail if there is no published version, and
+       works if it is a Ghost, and I moved in the Python file.
+
+-----+ @Sylvain So, in terms of documenting this, the provider.search_document()
+       API returns the body without title, yes?
+       For the other things such as get_introduction, get_thumbnail and
+       get_title we still need to define version and @@details, yes?
 
 CKEditor
 ========

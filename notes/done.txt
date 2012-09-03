@@ -7,18 +7,6 @@ Testing
 
 Those issues comes from the testing.txt file.
 
-Is there a more efficient way to do this?
-I guess you can't combine defines and gets: feeder/get_viewable/details/get_text
-
------> It is way faster yes. That would be too easy. And I fixed you
-       code so it doesn't fail if there is no published version, and
-       works if it is a Ghost, and I moved in the Python file.
-
------+ @Sylvain So, in terms of documenting this, the provider.search_document()
-       API returns the body without title, yes?
-       For the other things such as get_introduction, get_thumbnail and
-       get_title we still need to define version and @@details, yes?
-
 CKEditor
 --------
 
@@ -28,19 +16,6 @@ CKEditor
 
   @Wim:
   RTFM: http://docs.cksource.com/CKEditor_3.x/Users_Guide/Rich_Text/Lists
-
-+ version document/get_viewable
-  details version/@@details
-  details/get_text
-  details/get_introduction
-  details/get_thumbnail
-  details version/@@details....
-
-  > We can even add a get_title.
-
-------> Now with a get_title method.
-------+ Cool! This will be useful.
-
 
 Reference dialog
 ----------------
@@ -73,17 +48,6 @@ Those issues comes from the usability.txt file.
   portlet can be different from the ones in the form-content.
     = The H4's in the portlet are now underlined, without border and
       background color (see below)
-    +
-
-== dialog boxes ==
-
-+ the 'upload' dialog box displays a scroll bar. The box now has a width of
-  300px (inline styling). Changing the width to 310px will fix it.
-- the buttons in dialog boxes look different from the others. I think all
-  buttons should look the same.
-    = buttons in dialog boxes are bigger, have more padding, to make
-      easier click targets.
-
 
 To Fix
 ======
