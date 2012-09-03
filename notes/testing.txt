@@ -241,6 +241,8 @@ External Sources
   save it disappears and gets replaced with this error message:
   "External Source unknow is not available."
   http://preprod30.infrae.com/edit#content!products/mobi
+  Maybe related: in Webkit browser when you try to edit an existing code source,
+  pressing Save in the form dialog seems to hang.
 
 + Typo in the error message:
   "External Source unknow is not available."
