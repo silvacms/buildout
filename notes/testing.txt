@@ -348,3 +348,16 @@ XXX Still 404s:
 http://preprod30.infrae.com/service_metadata/collection/augmentation/?%3Amethod=addElementForm&submit=+Add+Metadata+Element
 + It's not possible to add a field to a metadata set. It 404s.
 
+Silva page
+==========
+
+- When in the Publish overview of a Silva page you get an error while
+  switching to the Properties overview.
+  ::
+  Traceback (innermost last):
+    Module infrae.wsgi.publisher, line 335, in publish_and_manage_errors
+    Module infrae.wsgi.publisher, line 290, in publish
+    Module infrae.wsgi.traverser, line 108, in __call__
+    Module ZPublisher.BaseRequest, line 338, in traverseName
+    Module infrae.rest.components, line 93, in publishTraverse
+  NotFound: publish
