@@ -69,14 +69,16 @@ Usability issues
 - I'm wondering about the hover on buttons. Right now the gradation background
   disappears on hover and the button turns flat white. Looks like it's not
   finished yet. What about reversing the gradation? Or something....
-        = Done
+        = Done. I am wondering about the active state. I would make sense to 
+          give it a dark background, but this doesn't work in case of an icon..
+          I've tried several things, but nothing really looks good. 
 
 == add 'Silva page' ==
 
 + the cursor in the title bar is set as pointer. Since this is not a link, it
   should probably be default.
 
-== add 'Image' ==
+== Upload ==
 
 + when you click 'send' without uploading an image, a progress bar shows. It
   probably shouldn't.
@@ -95,7 +97,7 @@ Usability issues
   If you want to remove an occurrence, you have to check the box above the
   form and then click the 'remove' button below the form. It would make more
   sense if those two were closer together, so you know checking the box is
-  related to the buttons.
+  related to the remove button.
   Same applies to adding a RSS Aggregator.
 
 == Publish screen ==
@@ -113,8 +115,8 @@ Usability issues
 == ideas ==
 
 - maybe we can add the icon of each content type in the tab 'add'.
-
   I would love it too.
+* maybe there should be a breadcrumb in the header.
 
 == CKEditor ==
 
