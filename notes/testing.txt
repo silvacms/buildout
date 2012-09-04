@@ -321,6 +321,17 @@ Bugs
       argument to export only that particular document. This is an extremely
       handy feature.
 
+- When in the Publish overview of a container you get an error while
+  switching to the properties overview.
+  ::
+  Traceback (innermost last):
+    Module infrae.wsgi.publisher, line 335, in publish_and_manage_errors
+    Module infrae.wsgi.publisher, line 290, in publish
+    Module infrae.wsgi.traverser, line 108, in __call__
+    Module ZPublisher.BaseRequest, line 338, in traverseName
+    Module infrae.rest.components, line 93, in publishTraverse
+  NotFound: publish
+
 To Test
 -------
 - CSV upload has problems.
