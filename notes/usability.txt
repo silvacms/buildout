@@ -106,6 +106,8 @@ Usability issues
   a title attribute.
 * In the portlet, when an item is pending, the p should be changed from
   'This is item has..' to 'This item has..'.
+* Unapproved should be renamed to draft as draft != unapproved &&
+  pending == unapproved
 
 == error messages ==
 
