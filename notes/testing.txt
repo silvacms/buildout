@@ -249,6 +249,11 @@ External Sources
   "External Source unknow is not available."
   "External Source unknown is not available."
 
++ It is not possible to add a csv source anymore, although content with
+  one embedded still
+  works. http://preprod30.infrae.com/edit#content!lobby/testors/tabbed
+  and http://preprod30.infrae.com/edit#content!lobby/testors/tablular
+
 CS Silva Portlet
 ----------------
 + New detail: the source only errors in preview. In the public view it renders
