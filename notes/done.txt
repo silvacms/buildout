@@ -36,6 +36,32 @@ Reference dialog
          as it will be a different behavior for container and
          non-containers.
 
+
+Publish tab, manage version
+---------------------------
+
+
+SilvaNews
+---------
+
+++ It seems the API has changed as the Inline News Viewer is failing on
+  creation_datetime. A week or two ago this was working. Ref.:
+  http://preprod30.infrae.com/++preview++/about
+
+
+Metadata system
+---------------
+
+XXX Still 404s:
+http://preprod30.infrae.com/service_metadata/collection/augmentation/manage_settings
++ It's not possible to make a metadata set editable. It 404s.
+  This seems to be an Apache-related problem. Actually, the action succeeded,
+  it's the subsequent redirect that failed.
+
+XXX Still 404s:
+http://preprod30.infrae.com/service_metadata/collection/augmentation/?%3Amethod=addElementForm&submit=+Add+Metadata+Element
++ It's not possible to add a field to a metadata set. It 404s.
+
 Usability
 =========
 
@@ -49,5 +75,3 @@ Those issues comes from the usability.txt file.
     = The H4's in the portlet are now underlined, without border and
       background color (see below)
 
-To Fix
-======

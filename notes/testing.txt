@@ -196,10 +196,6 @@ SNN
   need to figure out something here. Don't we know what the invalid
   entry is?
 
-++ It seems the API has changed as the Inline News Viewer is failing on
-  creation_datetime. A week or two ago this was working. Ref.:
-  http://preprod30.infrae.com/++preview++/about
-
 Silva News Filter
 -----------------
 
@@ -339,30 +335,3 @@ Tested:
 - Inside new News Pubs the addables are not set correctly.
   After a fresh upgrade the News Item is not selected in Addables (but
   strangely enough Agenda Item is).
-
-Metadata system
----------------
-
-XXX Still 404s:
-http://preprod30.infrae.com/service_metadata/collection/augmentation/manage_settings
-+ It's not possible to make a metadata set editable. It 404s.
-  This seems to be an Apache-related problem. Actually, the action succeeded,
-  it's the subsequent redirect that failed.
-
-XXX Still 404s:
-http://preprod30.infrae.com/service_metadata/collection/augmentation/?%3Amethod=addElementForm&submit=+Add+Metadata+Element
-+ It's not possible to add a field to a metadata set. It 404s.
-
-Silva page
-==========
-
-- When in the Publish overview of a Silva page you get an error while
-  switching to the Properties overview.
-  ::
-  Traceback (innermost last):
-    Module infrae.wsgi.publisher, line 335, in publish_and_manage_errors
-    Module infrae.wsgi.publisher, line 290, in publish
-    Module infrae.wsgi.traverser, line 108, in __call__
-    Module ZPublisher.BaseRequest, line 338, in traverseName
-    Module infrae.rest.components, line 93, in publishTraverse
-  NotFound: publish

@@ -22,3 +22,20 @@ CKEditor
 
 -----> This is something you changed, before it used to the same color than in Kupu,
 -----> so your responsability.
+
+
+Silva page
+==========
+
+- When in the Publish overview of a Silva page you get an error while
+  switching to the Properties overview.
+  ::
+  Traceback (innermost last):
+    Module infrae.wsgi.publisher, line 335, in publish_and_manage_errors
+    Module infrae.wsgi.publisher, line 290, in publish
+    Module infrae.wsgi.traverser, line 108, in __call__
+    Module ZPublisher.BaseRequest, line 338, in traverseName
+    Module infrae.rest.components, line 93, in publishTraverse
+  NotFound: publish
+
+---> Don't use debug.ini and complain about this.
