@@ -5,8 +5,10 @@ Usability issues
 
 == general UI ==
 
-+ the form-content should be made smaller on every page. The <div> should be
-  given a <class="forms">.
++ the textarea for "Reject approval request" in the Publish screen is to
+  wide.
++ the form-content should be made smaller on every page. The <div>
+  should be given a <class="forms">.
 + The form validation messages like for the expiration date don't
   disappear when the new values meet validation.
 + The form validation raises an error, and can't handle if you fill in
@@ -20,8 +22,8 @@ Usability issues
   check box yields an error message. Since you don't have an option,
   should this be a check box, or something that's not editable?
 * There should be a border-left on the subtab icon of the 'add' tab, as
-  the 'content' and 'settings' tab have, and the colors should be the same
-  as well.
+  the 'content' and 'settings' tab have, and the colors should be the
+  same as well.
 * It could be handy to see as which user your are logged in.
 
 == buttons ==
