@@ -310,6 +310,12 @@ Reference dialog
 
 Bugs
 ====
+
+- If you fill in a publication date as an author and request approval,
+  the editor will only see the current date filled in as publication
+  date, and not the one set by the author. He therefore will always
+  approve and publish immediately.
+
 - How can a user export one document? We only have an export screen in
   containers now. Can we add an Export option to the "Edit" tab, like the
   Details option in news items?
