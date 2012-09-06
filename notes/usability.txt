@@ -13,9 +13,9 @@ Usability issues
   an old Silva date short format like '7-7-7' (I don't think we need to
   support the old short date format, but it should at least handle the
   error.
-+ The label to clear the expiration date is called "Delete expiration
-  date" with a cross icon. Better would be clear expiration date with a
-  broom icon.
++ The label to clear the expiration/publication date is called "Remove
+  the ...  date" with a cross icon. Better would be "Clear ... date"
+  with a broom icon.
 * Sometimes, there is a check box which is required; unchecking the
   check box yields an error message. Since you don't have an option,
   should this be a check box, or something that's not editable?
