@@ -21,12 +21,9 @@ Usability issues
 * Sometimes, there is a check box which is required; unchecking the
   check box yields an error message. Since you don't have an option,
   should this be a check box, or something that's not editable?
-* There should be a border-left on the subtab icon of the 'add' tab, as
-  the 'content' and 'settings' tab have, and the colors should be the
-  same as well.
 * It could be handy to see as which user your are logged in.
 
-== buttons ==
+== buttons and icons ==
 
 - I think all 'positive' buttons should have a green icon and all 'negative'
   buttons should have a red icon.
@@ -74,6 +71,13 @@ Usability issues
         = Done. I am wondering about the active state. I would make sense to 
           give it a dark background, but this doesn't work in case of an icon..
           I've tried several things, but nothing really looks good. 
+* Logged in as author: when you've edited something and request approvel, you 
+  click the button 'request approval', which now has a 'check' icon. You can 
+  withdraw your request by clicking the 'withdraw request' button, which has
+  a 'cross' icon, which makes sense. Then when you go to the publish screen,
+  in the header, there's still the negative button, but in the workspace there 
+  a button which has the same text, 'withdraw approval request', but has a 
+  'check' icon. 
 
 == add 'Silva page' ==
 
@@ -131,6 +135,7 @@ Usability issues
   icon. Or maybe you should be able to select an image and then click an 'Add'
   button in the right bottom corner.
     Kit: This will need to change when we make the id/titles links.
+
 
 To Fix
 ======
@@ -221,6 +226,19 @@ will make more sense....
            (as with an image lookup) nothing happens. If the user wants to
            descend into the container the id/title must be clicked. This allows
            multiple items to be easily selected.
+
+== Thoughts on link styling == 
+
+Regarding the links on the content page and the lookup window, I think making 
+the title and id slightly darker and underlining them on hover, might be 
+sufficient, because the user probably expects those to be links anyway (at least 
+I did at first). 
+There are some links on the Publish page that probably do need a different
+color and underline, to make clear those are links (e.g. in the portlet, when an
+item is published). 
+
+
+
 
 
 

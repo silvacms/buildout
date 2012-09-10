@@ -20,7 +20,6 @@ General comments
 - Changing languages does not change the UI. The user must reload. Can
   we do that for the user?
 
-
 Login
 =====
 
