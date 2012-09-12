@@ -233,11 +233,14 @@ External Sources
   I noticed that it lost all parameter values. Can this be fixed so existing
   values are preserved?
 
-++ After adding a TOC CS in the editor, during which it displayed fine, upon
-  save it disappears and gets replaced with this error message:
+++ File system CS's that contain files like .js, .swf, .fla, ... are
+ seen as images in the ZMI.
+
+++ After adding a TOC CS in the editor, during which it displayed fine,
+  upon save it disappears and gets replaced with this error message:
   "External Source unknow is not available."
-  http://preprod30.infrae.com/edit#content!products/mobi
-  Maybe related: in Webkit browser when you try to edit an existing code source,
+  http://preprod30.infrae.com/edit#content!products/mobi Maybe related:
+  in Webkit browser when you try to edit an existing code source,
   pressing Save in the form dialog seems to hang.
 
 + Typo in the error message:
