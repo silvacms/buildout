@@ -184,8 +184,8 @@ Publish screen of docs
   Now" and "Reject Request" button (looking good together). Not sure
   if we should do something more.
 
-SNN
-===
+Silva News Network
+==================
 
 - The month field lets me fill in '19'. Can the inline validation do a
   range check like it does in publish?
@@ -194,6 +194,16 @@ SNN
   and I have no idea which of the seven subfields contains the error. We
   need to figure out something here. Don't we know what the invalid
   entry is?
+
+Addables
+--------
+
++ In the WU wwwtest site the Addables are not set correctly:
+  1. In the root Silva News Page, Agenda Page, News Item, and Agenda Item
+     were available.
+  2. In the "News WU" News Pub none of the article types were available.
+  Both of these were manually fixed (had to turn off Acquire, also in the root),
+  and they are many more News Pubs scattered around the site.
 
 Silva News Filter
 -----------------
@@ -336,7 +346,7 @@ To Test
   Invalid CSV file: new-line character seen in unquoted field - do you need to
   open the file in universal-newline mode?
 
-Silva news
+Silva News
 ----------
 
 Tested:
