@@ -35,6 +35,7 @@ Contents screen
 
 - When a document is published, the "Go to" button has Preview. as the first
   option. It should have View too. Save a click.
+  We're going to make that menu optional, right?
 
 + When a document doesn't have a tile, it's id gets displayed instead. Thus one
   thinks the doc does have a title (albeit a lousy one). We need to display the
@@ -202,8 +203,12 @@ Addables
   1. In the root Silva News Page, Agenda Page, News Item, and Agenda Item
      were available.
   2. In the "News WU" News Pub none of the article types were available.
+  3. In the root, Silva Forum Topic and Forum Comment were available. These
+     should only appear inside Silva Forums. Haven't checked those....
   Both of these were manually fixed (had to turn off Acquire, also in the root),
   and they are many more News Pubs scattered around the site.
+
+
 
 Silva News Filter
 -----------------
@@ -246,14 +251,7 @@ External Sources
 ++ File system CS's that contain files like .js, .swf, .fla, ... are
  seen as images in the ZMI.
 
-++ After adding a TOC CS in the editor, during which it displayed fine,
-  upon save it disappears and gets replaced with this error message:
-  "External Source unknow is not available."
-  http://preprod30.infrae.com/edit#content!products/mobi Maybe related:
-  in Webkit browser when you try to edit an existing code source,
-  pressing Save in the form dialog seems to hang.
-
-+ Typo in the error message:
+- Typo in the error message:
   "External Source unknow is not available."
   "External Source unknown is not available."
 
