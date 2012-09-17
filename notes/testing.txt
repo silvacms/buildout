@@ -300,6 +300,15 @@ CKEditor
   extra p with a nbsp above the image. You always have to remove this p after
   saving. Annoying. Same goes for Code Sources.
 
++ Typo: when saving in CKEditor and it fails the error message states:
+  "Error on the server while saving document, Please consult log server for
+   detail"
+  "An error occurred while saving this document, Please consult the server log
+   for details."
+  However, we should not show this text to Authors, so fallback to:
+  "Sorry, an error occurred while saving this document, We won't tell anybody
+   you did it."
+
 Reference dialog
 ================
 
