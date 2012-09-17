@@ -51,6 +51,8 @@ Contents screen
 Publish screen of docs, logged in as ChiefEditor
 ------------------------------------------------
 
++ Compare versions doesn't compare.
+
 To test: Is the publishing workflow email working?
 
 Functional fixes
