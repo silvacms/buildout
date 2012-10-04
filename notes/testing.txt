@@ -139,7 +139,6 @@ Manual close
 
 - Vertical space under "Manual close" between hint and button needs to
   collapse and match the spacing between hints and fields.
-
 Manage versions
 
 - View: when viewing an old version there's no obvious way to get back
@@ -331,6 +330,8 @@ Reference dialog
 
 Bugs
 ====
+
+- Pop-ups like the Image properties one can't be resized anymore.
 
 - If you fill in a publication date as an author and request approval,
   the editor will only see the current date filled in as publication
