@@ -17,61 +17,9 @@ CKEditor
   @Wim:
   RTFM: http://docs.cksource.com/CKEditor_3.x/Users_Guide/Rich_Text/Lists
 
-Reference dialog
-----------------
-
-- In the reference dialog clicking the icon of a non-container doesn't do
-  anything. Make it trigger the same action as the 'plus' icon on the right.
-  This obviates the need to move the mouse across the screen, which new
-  users find confusing because the selection checkbox used to be on the left.
-  """WB: Non of the icons reference the add action, only the '+' icon adds a
-  reference."""
-
--------> If you click on the icon of a container, you go inside this
-         container, in order to have the same behavior than the
-         generic folder listing. This was discussed on the ML to have
-         the same behavior.
-
--------> By so, clicking on the icon of a content doesn't select it,
-         as it will be a different behavior for container and
-         non-containers.
-
-
-Publish tab, manage version
----------------------------
-
-
-SilvaNews
----------
-
-++ It seems the API has changed as the Inline News Viewer is failing on
-  creation_datetime. A week or two ago this was working. Ref.:
-  http://preprod30.infrae.com/++preview++/about
-
-
-Metadata system
----------------
-
-XXX Still 404s:
-http://preprod30.infrae.com/service_metadata/collection/augmentation/manage_settings
-+ It's not possible to make a metadata set editable. It 404s.
-  This seems to be an Apache-related problem. Actually, the action succeeded,
-  it's the subsequent redirect that failed.
-
-XXX Still 404s:
-http://preprod30.infrae.com/service_metadata/collection/augmentation/?%3Amethod=addElementForm&submit=+Add+Metadata+Element
-+ It's not possible to add a field to a metadata set. It 404s.
 
 Usability
 =========
 
 Those issues comes from the usability.txt file.
-
-== portlet ==
-
-- when there's multiple H4's in the portlet, it looks too crowded. And also when
-  the title is longer than one line, it does not look good. The H4's in the
-  portlet can be different from the ones in the form-content.
-    = The H4's in the portlet are now underlined, without border and
-      background color (see below)
 

@@ -48,10 +48,28 @@ Contents screen
   The others, Asset(s) and Page Model(s) can dispense with the parentheses and
   just read Assets and Page Models.
 
+Export xcreen
+-------------
++ Error page:
+  "You tried to export the content [Chief Editor] which contains the content
+  [Roles and permissions] who have a reference to the content [Author – basic]
+  which is not itself contained in the exported content. ."
+  to:
+  "Sorry, you tried to export the content [Chief Editor]. This contains the content
+  [Roles and permissions] which has a reference to the content [Author – basic]
+  which is not itself contained in the exported content.
+  Please go back using your browser's back button"
+
+Edit screen of docs
+-------------------
++ When I make multiple edits of a document, and then publish, it seems I get a
+  jGrowl notification for each of the preceding saves. Sometimes twenty, and
+  then the feedback falls off the screen. Can we consolidate this to one?
+
 Publish screen of docs, logged in as ChiefEditor
 ------------------------------------------------
 
-+ Compare versions doesn't compare.
+= Compare is really cool! Looks and works great!
 
 To test: Is the publishing workflow email working?
 
@@ -209,7 +227,18 @@ Addables
   Both of these were manually fixed (had to turn off Acquire, also in the root),
   and they are many more News Pubs scattered around the site.
 
+Metadata system
+---------------
 
+Still 404s:
+http://next30.infrae.com/service_metadata/collection/augmentation/manage_settings
++ It's not possible to make a metadata set editable. It 404s.
+  This seems to be an Apache-related problem. Actually, the action succeeded,
+  it's the subsequent redirect that failed.
+
+XXX Still 404s:
+http://next30.infrae.com/service_metadata/collection/augmentation/?%3Amethod=addElementForm&submit=+Add+Metadata+Element
++ It's not possible to add a field to a metadata set. It 404s.
 
 Silva News Filter
 -----------------
@@ -248,9 +277,6 @@ External Sources
   I deleted the alignment parameter, since it's now built-in, and when I tested
   I noticed that it lost all parameter values. Can this be fixed so existing
   values are preserved?
-
-++ File system CS's that contain files like .js, .swf, .fla, ... are
- seen as images in the ZMI.
 
 - Typo in the error message:
   "External Source unknow is not available."
@@ -310,6 +336,10 @@ CKEditor
   "Sorry, an error occurred while saving this document, We won't tell anybody
    you did it."
 
++ It's not possible to edit an Anchor. I tried to change this anchor into
+  'Forest_Paths'. It doesn't stick after saving. See:
+  infrae.com/products/silva/developer/blueprints/shorturls#Marketing_Links
+
 Reference dialog
 ================
 
@@ -328,10 +358,18 @@ Reference dialog
   """WB: Non of the icons reference the add action, only the '+' icon adds a
   reference."""
 
+Footer
+======
++ Change "User preferences" button to just "Preferences". When it gets
+  translated (to "Préférences utilisateur") it falls out of the bos.
+
 Bugs
 ====
 
-- Pop-ups like the Image properties one can't be resized anymore.
++ In a document on infrae.com going to the Customization or Subscriptions
+  screen throws an error.
+
++ Pop-ups like the Image properties one can't be resized anymore.
 
 - If you fill in a publication date as an author and request approval,
   the editor will only see the current date filled in as publication
