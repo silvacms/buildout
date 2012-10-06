@@ -7,16 +7,6 @@ Testing
 
 Those issues comes from the testing.txt file.
 
-CKEditor
---------
-
-= creating sub level lists using the tab doesn't work (FF and IE8). In
-  IE8 the SMI green loading lights keep spinning when trying to indent a
-  level so probably this is some JS issue.
-
-  @Wim:
-  RTFM: http://docs.cksource.com/CKEditor_3.x/Users_Guide/Rich_Text/Lists
-
 
 Usability
 =========

@@ -405,8 +405,8 @@ Tested:
 Error log
 =========
 
-Settings button
----------------
+Settings button errors
+----------------------
 
 Error at http://infrae.com/st/silva_docs_trunk/++rest++silva.ui/settings/GET on 2012-09-27 16:13:10.075214:
 
@@ -527,6 +527,8 @@ Google bot
 ----------
 
 Error at https://m.m.m.m.*.infrae.com/infrae.com/infrae.com/products/kupu_editor/@@index.html on 2012-09-27 15:37:29.842874:
+
+[How can this be reproduced?]
 
 Error while rendering error message
 Object class: Products.Silva.Ghost.Ghost
