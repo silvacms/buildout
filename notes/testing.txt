@@ -383,6 +383,9 @@ SMI Footer
 Bugs
 ====
 
++ View unscaled image doesn't
+  work. http://infrae.com/st/edit#content!silva_docs_trunk/getting_started/accessedit.png
+
 + In a document on infrae.com going to the Customization or Subscriptions
   screen throws an error.
 
