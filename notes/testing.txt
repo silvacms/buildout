@@ -383,6 +383,9 @@ SMI Footer
 Bugs
 ====
 
++ Preview of an image doesn't go away. In some cases the small preview
+  of an image doesn't go away.
+
 + Empty crop coordinates can't be saved, so you need to crop every
   image for a change in image format or other change.
 
