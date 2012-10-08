@@ -383,6 +383,9 @@ SMI Footer
 Bugs
 ====
 
++ Empty crop coordinates can't be saved, so you need to crop every
+  image for a change in image format or other change.
+
 + View unscaled image doesn't
   work. http://infrae.com/st/edit#content!silva_docs_trunk/getting_started/accessedit.png
 
