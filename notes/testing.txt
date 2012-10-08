@@ -383,6 +383,9 @@ SMI Footer
 Bugs
 ====
 
++ After uploading a new image to replace a different one, you see the
+  scaled old image to the dimensions of the new image.
+
 + Preview of an image doesn't go away. In some cases the small preview
   of an image doesn't go away.
 
