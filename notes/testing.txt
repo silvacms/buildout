@@ -324,6 +324,9 @@ I guess you can't combine defines and gets: feeder/get_viewable/details/get_text
 CKEditor
 ========
 
+- Updating an excisting anchor names fails. After saving it gets replaced with 
+  the old anchor name.
+
 - Adding a link to an image fails. It just doesn't stick.
 
   Now I've finally figured out that you can't add a link to an image. You can
