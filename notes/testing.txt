@@ -324,8 +324,11 @@ I guess you can't combine defines and gets: feeder/get_viewable/details/get_text
 CKEditor
 ========
 
-- Updating an excisting anchor names fails. After saving it gets replaced with 
-  the old anchor name.
+- You can't remove anchors, not with the remove link, and not with
+  backspace are del key.
+
+- Updating an existing anchor names fails. After saving it gets
+  replaced with the old anchor name.
 
 - Adding a link to an image fails. It just doesn't stick.
 
