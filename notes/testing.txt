@@ -324,6 +324,9 @@ I guess you can't combine defines and gets: feeder/get_viewable/details/get_text
 CKEditor
 ========
 
+- Anchors don't work in Preview mode. If you click on an anchor you don't go
+  to the anchor target.
+
 - You can't remove anchors, not with the remove link, and not with
   backspace are del key.
 
