@@ -54,6 +54,17 @@ Calling documents in portlets
 XXX: add explanation of new search_document API:
   <tal:tweet tal:define="feeder provider.search_document('twitterfeeder')"
   ...
+Is there a more efficient way to do this?
+I guess you can't combine defines and gets: feeder/get_viewable/details/get_text
+
+-----> It is way faster yes. That would be too easy. And I fixed you
+       code so it doesn't fail if there is no published version, and
+       works if it is a Ghost, and I moved in the Python file.
+
+-----+ @Sylvain So, in terms of documenting this, the provider.search_document()
+       API returns the body without title, yes?
+       For the other things such as get_introduction, get_thumbnail and
+       get_title we still need to define version and @@details, yes?
 
 Manager documentation
 =====================

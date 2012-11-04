@@ -103,22 +103,7 @@ Notes since changing the fields
   get a system error. Can you make it interpret correctly for Editors
   too? Saves 2 chars.
 
-+ The "Request approval history" table in the Publish screen of a doc needs
-  attention, e.g.:
-  http://preprod30.infrae.com/edit#publish!lobby/testors/codesourceadd
-  @Sanne: Looks like we need clear:both or something with the floats. In order
-  to fix this you'll need to login as an Author. You can use Torvald's account.
-  @Sylvain: Please move this table down so it appears just above the "Manage
-  versions" table. Right now the "Publish closed version" table is underneath,
-  and "Request approval history" could be a long table.
-
 Manage versions
-
-- Delete: When selecting items for deletion, the form remains sticky
-  with selections after deletion, e.g. if you delete versions 2 and 3,
-  the form comes back with items 0 and 1 selected.
-
-- Delete: We don't ask, "Are you sure?" on the delete action. Should we?
 
 - View: when viewing an old version the "Publish now" button in the
   header should not appear, as you're not publishing the version
@@ -136,7 +121,7 @@ UI/usability fixes
 
 Submit buttons and reporting
 
-- When a doc is approved for the future, you can't see that it is
++ When a doc is approved for the future, you can't see that it is
   approved for the future. The only indication is the "Publish Now"
   button changes to "Revoke Approval". No information about the future
   date of publication is visible. You only see "Manage versions". It's
@@ -146,22 +131,18 @@ Submit buttons and reporting
   (http://next30.infrae.com/edit#publish!products/lxml). We can
   display the future approval date in the "Information", but I'd
   rather see it in the form body itself because that's where users
-  will be looking.
+  will be looking, and they can change it if needed.
 
-Manual close
-
-- Under "Manual close", the hint should have the same font-style as
-  the field hints. The selector is '.form-head p'. Currently hints are
-  in italic (which should change because it doesn't make sense, but
-  let's first be consistent).
-
-- Vertical space under "Manual close" between hint and button needs to
-  collapse and match the spacing between hints and fields.
 Manage versions
 
 - View: when viewing an old version there's no obvious way to get back
   the publish screen. We can let people learn to click on the already
-  selected tab, but that's not obvious.
+  selected tab, but that's not obvious. Let's replace the workflow-action
+  button (which appears under the item icon/title) with a "Back" button.
+  We need to get rid of the "New version"/"Revoke..."/"Publish" action
+  button when viewing an old version anyway.
+  [However this is not optimal because we're mixing actions with navigation.
+  Any better ideas? Deselect the Publish tab and select the Preview button?]
 
 (BROWSER->DUTCH) Date rendering and interpretation
 
@@ -262,7 +243,7 @@ Silva Indexer
 =============
 
 + The Indexer is indexing all anchors, not just those that have a title. This
-  needs to be fixed. See infrae.com, where the first items have not term but are
+  needs to be fixed. See infrae.com, where the first items have no term but are
   still listed:
     http://infrae.com/edit#preview!../indexer
   From  the docs:
@@ -308,18 +289,6 @@ CS Silva Portlet
   Example doc: http://preprod30.infrae.com/edit#content!lobby/testors/portleteur
   Embedded doc: http://preprod30.infrae.com/edit#content!lobby/locateabove
   Code Source: http://preprod30.infrae.com/cs_portlet_element/editCodeSource
-
-Is there a more efficient way to do this?
-I guess you can't combine defines and gets: feeder/get_viewable/details/get_text
-
------> It is way faster yes. That would be too easy. And I fixed you
-       code so it doesn't fail if there is no published version, and
-       works if it is a Ghost, and I moved in the Python file.
-
------+ @Sylvain So, in terms of documenting this, the provider.search_document()
-       API returns the body without title, yes?
-       For the other things such as get_introduction, get_thumbnail and
-       get_title we still need to define version and @@details, yes?
 
 CKEditor
 ========
@@ -384,11 +353,6 @@ SMI Sidebar
 + The sidebar navigation should use short titles. So instead of "The Silva
   Content Management System" it should just read "Silva".
 
-SMI Footer
-==========
-+ Change "User preferences" button to just "Preferences". When it gets
-  translated (to "Préférences utilisateur") it falls out of the bos.
-
 Bugs
 ====
 
@@ -401,11 +365,8 @@ Bugs
 + Empty crop coordinates can't be saved, so you need to crop every
   image for a change in image format or other change.
 
-+ View unscaled image doesn't
-  work. http://infrae.com/st/edit#content!silva_docs_trunk/getting_started/accessedit.png
-
-+ In a document on infrae.com going to the Customization or Subscriptions
-  screen throws an error.
++ View unscaled image doesn't work.
+  http://infrae.com/st/edit#content!silva_docs_trunk/getting_started/accessedit.png
 
 + Pop-ups like the Image properties one can't be resized anymore.
 
