@@ -356,6 +356,10 @@ SMI Sidebar
 Bugs
 ====
 
++ It looks like the messaging service is not working. I added a
+  mailhost, configured the service, add emails for the users, but I
+  don't receive messages nor get a PDB.
+
 + After uploading a new image to replace a different one, you see the
   scaled old image to the dimensions of the new image.
 
