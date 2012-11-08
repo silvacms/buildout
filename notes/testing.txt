@@ -172,7 +172,6 @@ Message
 "Reject approval request": Put this content back in draft mode.
 
 
-
 Logged in as ChiefEditor
 ========================
 
@@ -182,8 +181,8 @@ Publish screen of docs
 - When an Editor goes to the Publish screen of a doc that's been
   submitted for approval, it's not really obvious that the doc is
   waiting for approval. The only indication is there's both a "Publish
-  Now" and "Reject Request" button (looking good together). Not sure
-  if we should do something more.
+  Now" and "Reject Request" button (looking good together). We need to
+  say something, "This document is pending approval for publication.".
 
 Silva News Network
 ==================
@@ -193,8 +192,8 @@ Silva News Network
 
 - After submitting the above entry, the entire multi-field goes pink,
   and I have no idea which of the seven subfields contains the error. We
-  need to figure out something here. Don't we know what the invalid
-  entry is?
+  need to figure out something here. We know what the invalid entry is,
+  right? Can we display the field's name?
 
 Addables
 --------
@@ -207,6 +206,16 @@ Addables
      should only appear inside Silva Forums. Haven't checked those....
   Both of these were manually fixed (had to turn off Acquire, also in the root),
   and they are many more News Pubs scattered around the site.
+
+Silva Services
+==============
+
+UI Generic settings
+-------------------
+
+Two new fields in the form seem to be required which means you can't edit,
+say, just the title. The error says "The URI is malformed."
+http://infrae.com/st/service_ui/manage_settings
 
 Metadata system
 ---------------
@@ -385,8 +394,8 @@ Bugs
 
 - If you fill in a publication date as an author and request approval,
   the editor will only see the current date filled in as publication
-  date, and not the one set by the author. He therefore will always
-  approve and publish immediately.
+  date, and not the one set by the author. This field should contain
+  the value set by the author, not the current date.
 
 - How can a user export one document? We only have an export screen in
   containers now. Can we add an Export option to the "Edit" tab, like the
@@ -400,19 +409,20 @@ Bugs
       argument to export only that particular document. This is an extremely
       handy feature.
 
+Silva News
+----------
+
++ Inside new News Pubs the addables are not set correctly.
+  After a fresh upgrade the News Item is not selected in Addables (but
+  strangely enough Agenda Item is).
+
 To Test
 -------
 - CSV upload has problems.
   Invalid CSV file: new-line character seen in unquoted field - do you need to
   open the file in universal-newline mode?
 
-Silva News
-----------
 
-Tested:
-- Inside new News Pubs the addables are not set correctly.
-  After a fresh upgrade the News Item is not selected in Addables (but
-  strangely enough Agenda Item is).
 
 Error log
 =========

@@ -68,16 +68,16 @@ Usability issues
 - I'm wondering about the hover on buttons. Right now the gradation background
   disappears on hover and the button turns flat white. Looks like it's not
   finished yet. What about reversing the gradation? Or something....
-        = Done. I am wondering about the active state. I would make sense to 
+        = Done. I am wondering about the active state. I would make sense to
           give it a dark background, but this doesn't work in case of an icon..
-          I've tried several things, but nothing really looks good. 
-* Logged in as author: when you've edited something and request approvel, you 
-  click the button 'request approval', which now has a 'check' icon. You can 
+          I've tried several things, but nothing really looks good.
+* Logged in as author: when you've edited something and request approvel, you
+  click the button 'request approval', which now has a 'check' icon. You can
   withdraw your request by clicking the 'withdraw request' button, which has
   a 'cross' icon, which makes sense. Then when you go to the publish screen,
-  in the header, there's still the negative button, but in the workspace there 
-  a button which has the same text, 'withdraw approval request', but has a 
-  'check' icon. 
+  in the header, there's still the negative button, but in the workspace there
+  a button which has the same text, 'withdraw approval request', but has a
+  'check' icon.
 
 == add 'Silva page' ==
 
@@ -144,6 +144,9 @@ Usability issues
 
 To Fix
 ======
+
++ The location indication in the sidebar is really subtle, the current container
+  turns bold. Let's add some more indication. How about a bg?
 
 Login form
 ----------
@@ -232,15 +235,15 @@ will make more sense....
            descend into the container the id/title must be clicked. This allows
            multiple items to be easily selected.
 
-== Thoughts on link styling == 
+== Thoughts on link styling ==
 
-Regarding the links on the content page and the lookup window, I think making 
-the title and id slightly darker and underlining them on hover, might be 
-sufficient, because the user probably expects those to be links anyway (at least 
-I did at first). 
+Regarding the links on the content page and the lookup window, I think making
+the title and id slightly darker and underlining them on hover, might be
+sufficient, because the user probably expects those to be links anyway (at least
+I did at first).
 There are some links on the Publish page that probably do need a different
 color and underline, to make clear those are links (e.g. in the portlet, when an
-item is published). 
+item is published).
 
 
 
