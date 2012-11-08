@@ -356,6 +356,8 @@ SMI Sidebar
 Bugs
 ====
 
++ The 'Pending' status text is not shown in the 'Manage versions' table.
+
 + When asking for approval as an author a document with an expiration
   date, there is no screen where any role can verify the set expiration
   date. You can only see the expiration date if you make a new version
