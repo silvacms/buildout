@@ -138,7 +138,9 @@ Usability issues
 
 == Silva CSV Source ==
 
-+ Add an option to set the delimiter as LibreOffice now also uses Semicolon.
++ Add an option to set the delimiter as LibreOffice now also uses
+  Semicolon. By default it falls back to ','
+  http://docs.python.org/2/library/csv.html#dialects-and-formatting-parameters
 
 To Fix
 ======
