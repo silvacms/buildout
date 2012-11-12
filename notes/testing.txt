@@ -378,16 +378,16 @@ Bugs
   mailhost, configured the service, add emails for the users, but I
   don't receive messages nor get a PDB when sending a request for approval.
 
-+ After uploading a new image to replace a different one, you see the
+- After uploading a new image to replace a different one, you see the
   scaled old image to the dimensions of the new image.
 
 + Preview of an image doesn't go away. In some cases the small preview
   of an image doesn't go away.
 
-+ Empty crop coordinates can't be saved, so you need to crop every
-  image for a change in image format or other change.
+++ Empty crop coordinates can't be saved, the field is required, so you need
+  to crop every image for a change in image format or scaling.
 
-+ View unscaled image doesn't work.
+++ View unscaled image doesn't work.
   http://infrae.com/st/edit#content!silva_docs_trunk/getting_started/accessedit.png
 
 + Pop-ups like the Image properties one can't be resized anymore.
@@ -426,6 +426,8 @@ To Test
 
 Error log
 =========
+
+= Can we remove these error log entries now?
 
 Settings button errors
 ----------------------

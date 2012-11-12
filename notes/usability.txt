@@ -5,72 +5,23 @@ Usability issues
 
 == general UI ==
 
-+ the textarea for "Reject approval request" in the Publish screen is to
-  wide.
-+ the form-content should be made smaller on every page. The <div>
-  should be given a <class="forms">.
-+ The form validation messages like for the expiration date don't
-  disappear when the new values meet validation.
-+ The form validation raises an error, and can't handle if you fill in
-  an old Silva date short format like '7-7-7' (I don't think we need to
-  support the old short date format, but it should at least handle the
-  error.
-+ The label to clear the expiration/publication date is called "Remove
-  the ...  date" with a cross icon. Better would be "Clear ... date"
-  with a broom icon.
-* Sometimes, there is a check box which is required; unchecking the
-  check box yields an error message. Since you don't have an option,
-  should this be a check box, or something that's not editable?
 * It could be handy to see as which user your are logged in.
 
 == buttons and icons ==
 
-- I think all 'positive' buttons should have a green icon and all 'negative'
-  buttons should have a red icon.
-  There should only be an icon in the buttons when it makes sense (for example,
-  I don't think the little circles in the buttons add any meaning to the action
-  that button performs).
-    [Kit] The problem is that sometimes there's a row of buttons, some with
-    icons, some without, and that looks really strange. So we decided to have a
-    generic icon for visual consistency. Someday we may choose icons for all
-    buttons, but in practice people only recognize a few icons.
-    BTW, I really like the idea of green for 'Go' actions and red for 'negative'
-    actions. Think about how to implement that....
-      = I gave all 'positive' action buttons a green 'check' icon, and all
-        'negative' action buttons a red icon. The red icon is a return arrow
-        in case it takes you back to the previous screen - the text should be
-        changed to 'back' - or it's a cross, in case you want to undo an action.
-        However, on the settings - customization page, there's a 'add marker'
-        and 'remove' button and, for consistency, they should have a plus and
-        minus icon (see below). This needs a change to the class name.
-    * I've changed the icon on the cancel button to a red cross, which I think
-      looks better.
-      However,  although I think the icon related to 'cancel' should be a red
-      cross, the cancel button takes you back to the previous screen, so
-      in this way the 'return arrow' icon makes more sense..
-        [Kit] We actually want the cancel buttons that take you back to the
-        previous screen to read "Back", and then the return arrow fits.
-        But that requires some doing...
-          = I've changed it into a red return arrow icon (see above).
-      Regarding visual consistency, it may look strange if some icons are
-      colored and others are not.
 * The 'add' and 'remove' buttons on some 'add' pages, e.g. 'add a Silva agenda
-  page', are styled different from the other buttons.
+  item', need some text spacing adjustment.
+  are styled different from the other buttons.
   I gave them the same styling as the other buttons. While in general the
   'negative action' buttons is on the right, and the 'positive action' button
-  is on the left, in the case, it's the other way around. They may need to have
-  icons as well.
-      [Kit] We can use a green plus and red minus icon. They're in the set.
-        = I've added the icons as a background-image to the buttons (see above).
-          Now, the bg color is different from the other buttons, because their
-          background is an image. I think it needs a change to the HTML to
-          keep the bg and the icon.
-- I'm wondering about the hover on buttons. Right now the gradation background
-  disappears on hover and the button turns flat white. Looks like it's not
-  finished yet. What about reversing the gradation? Or something....
-        = Done. I am wondering about the active state. I would make sense to
-          give it a dark background, but this doesn't work in case of an icon..
-          I've tried several things, but nothing really looks good.
+  is on the left, in the case, it's the other way around.
+    [Kit] They should be the other way around :)
+      = I've added the icons as a background-image to the buttons (see above).
+        Now, the bg color is different from the other buttons, because their
+        background is an image. I think it needs a change to the HTML to
+        keep the bg and the icon.
+    + They need adjustment, see:
+      next30.infrae.com/edit#adding/Silva Agenda Item!../news/events
 * Logged in as author: when you've edited something and request approvel, you
   click the button 'request approval', which now has a 'check' icon. You can
   withdraw your request by clicking the 'withdraw request' button, which has
@@ -117,14 +68,10 @@ Usability issues
 
 == error messages ==
 
-+ the border-left on error messages only appears when the field is not focused.
-  It should also appear when focused.
-
 == ideas ==
 
 - maybe we can add the icon of each content type in the tab 'add'.
   I would love it too.
-* maybe there should be a breadcrumb in the header.
 
 == CKEditor ==
 
@@ -150,12 +97,6 @@ To Fix
 
 Login form
 ----------
-+ This is the form that appears when you leave an SMI window open overnight and
-  try to do something.
-  + The id and password fields should be wider.
-    = changing the width of the form field affects all fields. In some cases,
-      e.g. in adding a TOC - 'depth of listing', or in case of a date,
-      the fielda are too wide. I asked Sylvain and he will fix this.
 
 Contents screen
 ---------------
@@ -163,19 +104,6 @@ Contents screen
   a title attribute (title="Published") to be added to the 'ins' tag. This needs
   to be done with Sylvain. There are five states:
   Draft, Pending, Approved, Published, Closed
-+ When copy pasting content, you need to do a browser refresh to see the
-  content you pasted.
-
-Copied from testing.txt:
-Properties screen
------------------
-- Some fields have class="field" with a 2px margin, others don't.
-  Example: http://preprod30.infrae.com/edit#properties!lobby/testors
-  The textareas are wrapped in a class="form-field" and then class="field". The
-  select and string fields are not wrapped with class="field" and thus the
-  Acquired value p bumps against the field.
-    = instead of the 2px margin on the .field, i've added a margin-top to the
-      p.form-acquired.
 
 Copied from testing.txt:
 Publish screen of a doc
@@ -183,9 +111,6 @@ Publish screen of a doc
 - The "Request approval history" table in the Publish screen of a doc needs
   attention, e.g.:
   http://preprod30.infrae.com/edit#publish!lobby/testors/codesourceadd
-  @Sanne: Looks like we need clear:both or something with the floats. In order
-  to fix this you'll need to login as an Author. You can use Torvald's account.
-    = done
   @Sylvain: Please move this table down so it appears just above the "Manage
   versions" table. Right now the "Publish closed version" table is underneath,
   and "Request approval history" could be a long table.
@@ -220,11 +145,11 @@ will make more sense....
          or less the same as the Contents screen:
          - Hover over any row and it changes to a darker color
          - Hover over a content icon, see a preview
-         - Hover over a container icon, see nothing (or metatype?)
+         - Hover over a container icon, see the metatype
          - Hover over a container id and the link underlines and turns blue
          - Hover over a container title and the link underlines and turns blue
          - Hover over a content item id and nothing happens
-         - Hover over a container title and nothing happens
+         - Hover over a content title and nothing happens
 
          In order to select, click on empty space in the row:
          - For content, selecting is the same as clicking the plus button, so
@@ -241,13 +166,24 @@ Regarding the links on the content page and the lookup window, I think making
 the title and id slightly darker and underlining them on hover, might be
 sufficient, because the user probably expects those to be links anyway (at least
 I did at first).
-There are some links on the Publish page that probably do need a different
-color and underline, to make clear those are links (e.g. in the portlet, when an
-item is published).
+There are links in the Information portlet that need a different color, to make
+clear those are links (e.g. the word 'editor' in the portlet when an item is
+published).
 
 
+Interface update
+================
 
+- We need link styling for the text in the UI. Example:
+  "RSS/Atom is activated for this container. You can access the RSS feed at
+  this URL, and the Atom feed at this URL." Both of the URL words are in fact
+  links but you can't see that. It needs to be very obvious, jumping out at
+  the user, this is a link. Maybe good old blue.
 
+- There's a problem with indenting of the fields and headers. Go to the
+  Settings screen of a publication like:
+  http://next30.infrae.com/edit#settings!../news
 
+- We need dl styling in the Information portlet for the new Short URL feature.
 
 
