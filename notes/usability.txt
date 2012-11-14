@@ -30,6 +30,10 @@ Usability issues
   a button which has the same text, 'withdraw approval request', but has a
   'check' icon.
 
+* Logged in as editor: when you close a document in the content overview, 
+  you can not immidiately publish it. You hove to select it then Select 
+  'Publish' from the Go to menu.
+
 == add 'Silva page' ==
 
 + the cursor in the title bar is set as pointer. Since this is not a link, it
