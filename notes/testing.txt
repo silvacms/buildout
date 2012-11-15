@@ -365,6 +365,9 @@ SMI Sidebar
 Bugs
 ====
 
++ If you do a user clipboard the smi keeps spinning, and you need to do
+  a browser refresh, to see the user(s) in the clipboard.
+
 + The 'Pending' status text is not shown in the 'Manage versions' table.
 
 + When asking for approval as an author a document with an expiration
