@@ -87,6 +87,12 @@ Usability issues
   button in the right bottom corner.
     Kit: This will need to change when we make the id/titles links.
 
++ there is no way to figure out where an image is located as you you only see the
+  title.
+
++ target links can't be followed in edit mode, most cms allow a ctrl + click on the link to open 
+  in a new tab or window.
+
 == Silva CSV Source ==
 
 + Add an option to set the delimiter as LibreOffice now also uses
