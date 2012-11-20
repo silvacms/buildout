@@ -263,6 +263,10 @@ Silva Indexer
 External Sources
 ================
 
+- When adding a DateTimeField, LinkField, and probably other type of
+  field as well they don't get correctly rendered in the Code Source add
+  form in the editor.
+
 - When editing an External Source in the editor, the source edit form doesn't
   display the title of the source, so you have no idea which Code/SQP/CSV
   source you're editing. Please make the title display at the top of the form.
