@@ -30,8 +30,8 @@ Usability issues
   a button which has the same text, 'withdraw approval request', but has a
   'check' icon.
 
-* Logged in as editor: when you close a document in the content overview, 
-  you can not immidiately publish it. You hove to select it then Select 
+* Logged in as editor: when you close a document in the content overview,
+  you can not immidiately publish it. You hove to select it then Select
   'Publish' from the Go to menu.
 
 == add 'Silva page' ==
@@ -77,6 +77,9 @@ Usability issues
 - maybe we can add the icon of each content type in the tab 'add'.
   I would love it too.
 
+- If you're in a Local site it would be nice that the "Manage" link goes
+  to the zmi of that local site and not the Silva root.
+
 == CKEditor ==
 
 + when looking up an image, the icon of the identifier should be clickable as
@@ -90,8 +93,8 @@ Usability issues
 + there is no way to figure out where an image is located as you you only see the
   title.
 
-+ target links can't be followed in edit mode, most cms allow a ctrl + click on the link to open 
-  in a new tab or window.
++ target links can't be followed in edit mode, most cms allow a ctrl +
+  click on the link to open in a new tab or window.
 
 == Silva CSV Source ==
 
