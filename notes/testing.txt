@@ -369,6 +369,8 @@ SMI Sidebar
 Bugs
 ====
 
++ The close icon white/red cross doesn't work for closing a pop up.
+
 + Customization service error when clicking the Customize button:
   AttributeError: REQUEST
 
