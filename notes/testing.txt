@@ -369,6 +369,11 @@ SMI Sidebar
 Bugs
 ====
 
++ After enabling subscriptions, and manually adding some subscribers,
+  they don't appear in the settings overview under "Other
+  subscriptions". I think it is the idea that subscribers appear here,
+  but the name is quite vague.
+
 + After you log out, you get a welcome screen, with an edit link. The
   edit link points to the root and not the silva root.
 
