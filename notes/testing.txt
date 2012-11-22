@@ -369,6 +369,8 @@ SMI Sidebar
 Bugs
 ====
 
++ Clicking Settings raises error: http://pastebin.stonekeep.com/12473 
+
 + After enabling subscriptions, and manually adding some subscribers,
   they don't appear in the settings overview under "Other
   subscriptions". I think it is the idea that subscribers appear here,
