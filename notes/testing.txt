@@ -369,7 +369,12 @@ SMI Sidebar
 Bugs
 ====
 
-+ Clicking Settings raises error: http://pastebin.stonekeep.com/12473 
++ Clicking Preferences on 'st' raises error:
+  http://pastebin.stonekeep.com/12475 and everything is edited as
+  "unknown".
+
++ Clicking Settings on 'st' raises error:
+  http://pastebin.stonekeep.com/12473
 
 + After enabling subscriptions, and manually adding some subscribers,
   they don't appear in the settings overview under "Other
