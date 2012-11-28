@@ -90,8 +90,9 @@ Usability issues
   button in the right bottom corner.
     Kit: This will need to change when we make the id/titles links.
 
-+ there is no way to figure out where an image is located as you you only see the
-  title.
++ it would be handy if you would be able to go from the image properties
+  in the editor, to the image properties in silva to resize/crop the
+  corresponding image.
 
 + target links can't be followed in edit mode, most cms allow a ctrl +
   click on the link to open in a new tab or window.
