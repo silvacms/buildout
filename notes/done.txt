@@ -48,6 +48,27 @@ Manual close
 ++ View unscaled image doesn't work.
   http://infrae.com/st/edit#content!silva_docs_trunk/getting_started/accessedit.png
 
+- You can't remove anchors, not with the remove link, and not with
+  backspace are del key.
+
+- Updating an existing anchor names fails. After saving it gets
+  replaced with the old anchor name.
+
++ It's not possible to edit an Anchor. I tried to change this anchor into
+  'Forest_Paths'. It doesn't stick after saving. See:
+  infrae.com/products/silva/developer/blueprints/shorturls#Marketing_Links
+
+- Anchors don't work in Preview mode. If you click on an anchor you don't go
+  to the anchor target.
+
+Silva News Filter
+-----------------
+
+- The "montrer les éléments d'agenda" checkbox with no label looks
+  lost. Can we always put a 'Yes" label next to these?
+
+- Title field(s) are too short. Make them size="40".
+
 
 Settings button errors
 ----------------------

@@ -214,14 +214,6 @@ XXX Still 404s:
 http://next30.infrae.com/service_metadata/collection/augmentation/?%3Amethod=addElementForm&submit=+Add+Metadata+Element
 + It's not possible to add a field to a metadata set. It 404s.
 
-Silva News Filter
------------------
-
-- Title field(s) are too short. Make them size="40".
-
-- The "montrer les éléments d'agenda" checkbox with no label looks
-  lost. Can we always put a 'Yes" label next to these?
-
 Silva Find
 ==========
 
@@ -290,15 +282,6 @@ CS Silva Portlet
 CKEditor
 ========
 
-- Anchors don't work in Preview mode. If you click on an anchor you don't go
-  to the anchor target.
-
-- You can't remove anchors, not with the remove link, and not with
-  backspace are del key.
-
-- Updating an existing anchor names fails. After saving it gets
-  replaced with the old anchor name.
-
 - Adding a link to an image fails. It just doesn't stick.
 
   Now I've finally figured out that you can't add a link to an image. You can
@@ -322,10 +305,6 @@ CKEditor
   However, we should not show this text to Authors, so fallback to:
   "Sorry, an error occurred while saving this document, We won't tell anybody
    you did it."
-
-+ It's not possible to edit an Anchor. I tried to change this anchor into
-  'Forest_Paths'. It doesn't stick after saving. See:
-  infrae.com/products/silva/developer/blueprints/shorturls#Marketing_Links
 
 Reference dialog
 ================
