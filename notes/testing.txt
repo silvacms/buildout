@@ -37,13 +37,6 @@ Contents screen
   option. It should have View too. Save a click.
   We're going to make that menu optional, right?
 
-+ When a document doesn't have a tile, it's id gets displayed instead. Thus one
-  thinks the doc does have a title (albeit a lousy one). We need to display the
-  string "no title" instead.
-
------> This was the same behavior in the old Silva.
------+ Well, in the Contents screen the old Silva displayed "no title".
-
 - The 'collapser' reads "Structural content(s)", "Structural content" is enough.
   The others, Asset(s) and Page Model(s) can dispense with the parentheses and
   just read Assets and Page Models.
@@ -68,8 +61,6 @@ Edit screen of docs
 
 Publish screen of docs, logged in as ChiefEditor
 ------------------------------------------------
-
-= Compare is really cool! Looks and works great!
 
 To test: Is the publishing workflow email working?
 
@@ -209,13 +200,6 @@ Addables
 
 Silva Services
 ==============
-
-UI Generic settings
--------------------
-
-Two new fields in the form seem to be required which means you can't edit,
-say, just the title. The error says "The URI is malformed."
-http://infrae.com/st/service_ui/manage_settings
 
 Metadata system
 ---------------
@@ -369,13 +353,6 @@ SMI Sidebar
 Bugs
 ====
 
-+ Clicking Preferences on 'st' raises error:
-  http://pastebin.stonekeep.com/12475 and everything is edited as
-  "unknown".
-
-+ Clicking Settings on 'st' raises error:
-  http://pastebin.stonekeep.com/12473
-
 + After enabling subscriptions, and manually adding some subscribers,
   they don't appear in the settings overview under "Other
   subscriptions". I think it is the idea that subscribers appear here,
@@ -410,12 +387,6 @@ Bugs
 
 + Preview of an image doesn't go away. In some cases the small preview
   of an image doesn't go away.
-
-++ Empty crop coordinates can't be saved, the field is required, so you need
-  to crop every image for a change in image format or scaling.
-
-++ View unscaled image doesn't work.
-  http://infrae.com/st/edit#content!silva_docs_trunk/getting_started/accessedit.png
 
 + Pop-ups like the Image properties one can't be resized anymore.
 
@@ -455,75 +426,6 @@ Error log
 =========
 
 = Can we remove these error log entries now?
-
-Settings button errors
-----------------------
-
-Error at http://infrae.com/st/silva_docs_trunk/++rest++silva.ui/settings/GET on 2012-09-27 16:13:10.075214:
-
-Object class: __builtin__.instancemethod
-Object path: n/a
-Request URL: http://infrae.com/st/silva_docs_trunk/++rest++silva.ui/settings/GET
-Request method: GET
-Query string: _=1348755190556
-User: wim
-User-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.7; rv:15.0) Gecko/20100101 Firefox/15.0.1
-Refer: http://infrae.com/st/edit
-Traceback (innermost last):
-  Module infrae.wsgi.publisher, line 350, in publish_and_manage_errors
-  Module infrae.wsgi.publisher, line 329, in publish
-   - Published class: __builtin__.instancemethod
-   - Object path: n/a
-   - Object type: n/a
-  Module ZPublisher.mapply, line 77, in mapply
-  Module infrae.wsgi.publisher, line 40, in call_object
-  Module silva.ui.rest.base, line 89, in GET
-  Module silva.ui.rest.base, line 135, in get_payload
-  Module zeam.form.silva.form.smi, line 157, in payload
-  Module zeam.form.base.form, line 114, in render
-  Module megrok.pagetemplate.components, line 16, in __call__
-  Module grokcore.chameleon.components, line 98, in render
-  Module chameleon.template, line 125, in __call__
-  Module chameleon.zpt.template, line 259, in render
-  Module chameleon.template, line 172, in render
-  Module smicomposedformtemplate_fca77c6e43af3c957e4419a005da6a9994e99afa, line 275, in render
-  Module zeam.form.base.form, line 114, in render
-  Module megrok.pagetemplate.components, line 16, in __call__
-  Module grokcore.chameleon.components, line 98, in render
-  Module chameleon.template, line 125, in __call__
-  Module chameleon.zpt.template, line 259, in render
-  Module chameleon.template, line 172, in render
-  Module smisubformgrouptemplate_07c4c2dcc6bbd88378c39c5ed32abb46f93af1a2, line 272, in render
-  Module zeam.form.base.form, line 110, in render
-  Module grokcore.chameleon.components, line 98, in render
-  Module chameleon.template, line 125, in __call__
-  Module chameleon.zpt.template, line 259, in render
-  Module chameleon.template, line 190, in render
-  Module chameleon.template, line 172, in render
-  Module metadataform_92381f19bd56de402bd68d176c80f51f9477d4f2, line 397, in render
-  Module silva.core.smi.content.metadata, line 127, in is_element_editable
-  Module Products.Silva.Security.management, line 41, in is_role_greater_or_equal
-ValueError: tuple.index(x): x not in tuple
-
- - Expression: "form.render()"
- - Filename:   ... orm/silva/form/smi_templates/smicomposedformtemplate.cpt
- - Location:   (14:35)
- - Expression: "view.is_element_editable(*identifier)"
- - Filename:   ... lva/core/smi/content/metadata_templates/metadataform.cpt
- - Location:   (22:33)
- - Arguments:  repeat: {...} (0)
-               static: <ZopeFanstaticResource - at 0x367ff0d0>
-               escape: False
-               is_hidden: False
-               is_acquired: False
-               element_name: skin
-               target_language: en
-               set_name: silva-layout
-               request: <instance - at 0x182c5320>
-               context: <ImplicitAcquisitionWrapper silva_docs_trunk at 0x2fb52960>
-               error: <NoneType - at 0x68ac90>
-               identifier: <tuple - at 0x180755f0>
-               view: <NonVersionedContentMetadataForm - at 0x367ffc50>
 
 Export (export of imported content)
 -----------------------------------
@@ -573,38 +475,3 @@ Traceback (innermost last):
   Module zeam.form.silva.xml, line 32, in serialize
   Module Products.Formulator.Validator, line 623, in serializeValue
 TypeError: 'NoneType' object is not iterable
-
-Google bot
-----------
-
-Error at https://m.m.m.m.*.infrae.com/infrae.com/infrae.com/products/kupu_editor/@@index.html on 2012-09-27 15:37:29.842874:
-
-[How can this be reproduced?]
-
-Error while rendering error message
-Object class: Products.Silva.Ghost.Ghost
-Object path: /infrae.com/products/kupu_editor
-Request URL: https://m.m.m.m.*.infrae.com/infrae.com/infrae.com/products/kupu_editor/@@index.html
-Request method: GET
-Query string: n/a
-User: Anonymous User
-User-agent: Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)
-Refer: n/a
-Traceback (innermost last):
-  Module infrae.wsgi.publisher, line 228, in error
-  Module grokcore.layout.components, line 88, in __call__
-  Module grokcore.layout.components, line 68, in __call__
-  Module silva.core.layout.porto.porto, line 57, in update
-  Module silva.core.layout.porto.porto, line 36, in update
-  Module Products.Silva.SilvaObject, line 80, in get_title_or_id
-  Module Products.Silva.VersionedContent.content, line 64, in get_title
-  Module Products.Silva.Ghost, line 93, in get_title
-  Module Products.Silva.Ghost, line 147, in get_haunted
-  Module silva.core.references.service, line 77, in get_reference
-  Module silva.core.references.reference, line 33, in get_content_id
-  Module five.intid.intid, line 36, in register
-  Module zope.component.hookable, line 33, in __call__
-  Module zope.component.hooks, line 104, in adapter_hook
-  Module five.intid.keyreference, line 55, in __init__
-NotYet: <GhostVersion at 1>
-

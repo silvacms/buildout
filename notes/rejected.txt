@@ -39,3 +39,40 @@ Silva page
   NotFound: publish
 
 ---> Don't use debug.ini and complain about this.
+
+
+Google bot
+----------
+
+Error at https://m.m.m.m.*.infrae.com/infrae.com/infrae.com/products/kupu_editor/@@index.html on 2012-09-27 15:37:29.842874:
+
+[How can this be reproduced?]
+
+Error while rendering error message
+Object class: Products.Silva.Ghost.Ghost
+Object path: /infrae.com/products/kupu_editor
+Request URL: https://m.m.m.m.*.infrae.com/infrae.com/infrae.com/products/kupu_editor/@@index.html
+Request method: GET
+Query string: n/a
+User: Anonymous User
+User-agent: Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)
+Refer: n/a
+Traceback (innermost last):
+  Module infrae.wsgi.publisher, line 228, in error
+  Module grokcore.layout.components, line 88, in __call__
+  Module grokcore.layout.components, line 68, in __call__
+  Module silva.core.layout.porto.porto, line 57, in update
+  Module silva.core.layout.porto.porto, line 36, in update
+  Module Products.Silva.SilvaObject, line 80, in get_title_or_id
+  Module Products.Silva.VersionedContent.content, line 64, in get_title
+  Module Products.Silva.Ghost, line 93, in get_title
+  Module Products.Silva.Ghost, line 147, in get_haunted
+  Module silva.core.references.service, line 77, in get_reference
+  Module silva.core.references.reference, line 33, in get_content_id
+  Module five.intid.intid, line 36, in register
+  Module zope.component.hookable, line 33, in __call__
+  Module zope.component.hooks, line 104, in adapter_hook
+  Module five.intid.keyreference, line 55, in __init__
+NotYet: <GhostVersion at 1>
+
+--> Google indexed acquired pages. Those won't work (either they did in 2.3).
