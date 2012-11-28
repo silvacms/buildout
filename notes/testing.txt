@@ -224,17 +224,6 @@ Silva Find
   in the head inject but I think there's a cleaner way, e.g. I see calendar.css
   in SNN. We need one for Find objects.
 
-Silva Indexer
-=============
-
-+ The Indexer is indexing all anchors, not just those that have a title. This
-  needs to be fixed. See infrae.com, where the first items have no term but are
-  still listed:
-    http://infrae.com/edit#preview!../indexer
-  From  the docs:
-  "The difference is an index item has both a name and a title. The Indexer only
-  presents anchor/index items that have a title."
-
 
 External Sources
 ================
@@ -344,9 +333,6 @@ Bugs
 
 + Customization service error when clicking the Customize button:
   AttributeError: REQUEST
-
-+ If you do a user clipboard the smi keeps spinning, and you need to do
-  a browser refresh, to see the user(s) in the clipboard.
 
 + The 'Pending' status text is not shown in the 'Manage versions' table.
 

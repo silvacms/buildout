@@ -61,6 +61,17 @@ Manual close
 - Anchors don't work in Preview mode. If you click on an anchor you don't go
   to the anchor target.
 
++ The Indexer is indexing all anchors, not just those that have a title. This
+  needs to be fixed. See infrae.com, where the first items have no term but are
+  still listed:
+    http://infrae.com/edit#preview!../indexer
+  From  the docs:
+  "The difference is an index item has both a name and a title. The Indexer only
+  presents anchor/index items that have a title."
+
++ If you do a user clipboard the smi keeps spinning, and you need to do
+  a browser refresh, to see the user(s) in the clipboard.
+
 Silva News Filter
 -----------------
 
