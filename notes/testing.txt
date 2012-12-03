@@ -321,9 +321,7 @@ SMI Sidebar
 Bugs
 ====
 
-+ service_ckeditor formats not working. After adding a new format that
-  adds a class 'no-shadow' to a 'img' tag you see the style in the
-  editor drop-down but you can't apply it.
++ Pop-ups like image pop-ups don't close automatically anymore.
 
 + After enabling subscriptions, and manually adding some subscribers,
   they don't appear in the settings overview under "Other
