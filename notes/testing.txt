@@ -41,7 +41,7 @@ Contents screen
   The others, Asset(s) and Page Model(s) can dispense with the parentheses and
   just read Assets and Page Models.
 
-Export xcreen
+Export screen
 -------------
 + Error page:
   "You tried to export the content [Chief Editor] which contains the content
@@ -442,3 +442,11 @@ Traceback (innermost last):
   Module zeam.form.silva.xml, line 32, in serialize
   Module Products.Formulator.Validator, line 623, in serializeValue
 TypeError: 'NoneType' object is not iterable
+
+UI
+==
+
+Spelling
+--------
+
+Image properties Link tab has option 'Link to an another item.'
