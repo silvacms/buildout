@@ -328,7 +328,8 @@ Bugs
 ====
 
 + Silva search not working correctly. If you set to not show images, it still
-  shows image results. http://infrae.com/st/silva_docs_trunk/search
+  shows image results. If you make the content type option public, it doesn't 
+  find anything.http://infrae.com/st/silva_docs_trunk/search
 
 + You can't make anchors anymore the 'Flag' icon only makes it possible to
   remove anchors anymore.
