@@ -327,6 +327,9 @@ SMI Sidebar
 Bugs
 ====
 
++ You can't make anchors anymore the 'Flag' icon only makes it possible to
+  remove anchors anymore.
+
 + The pop-up from the publish action keeps hanging, making the editor 
   toolbar unusable.
 
