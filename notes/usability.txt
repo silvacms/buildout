@@ -61,6 +61,13 @@ Usability issues
   related to the remove button.
   Same applies to adding a RSS Aggregator.
 
+== Content screen ==
+
+* When deleting multiple images, it breaks even if only one image is 
+  referenced in a document. It would be better if it would delete all 
+  non referenced images and then end saying. Could not delete image x, y, 
+  z as they are referenced.
+
 == Publish screen ==
 
 * Under 'manage version' the 'compare button' is the only button without
