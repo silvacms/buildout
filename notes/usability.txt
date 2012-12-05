@@ -7,6 +7,11 @@ Usability issues
 
 * It could be handy to see as which user your are logged in.
 
+* The 'view' button opens in a new window, my [wimbou] personal preference is 
+  to get rid of this behaviour as you soon start to get a tab overhead. Better
+  would be view in same window and use the browser back button to go back to 
+  the edit mode.
+
 == buttons and icons ==
 
 * The 'add' and 'remove' buttons on some 'add' pages, e.g. 'add a Silva agenda
