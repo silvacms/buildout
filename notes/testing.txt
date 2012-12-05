@@ -228,6 +228,12 @@ Silva Find
 External Sources
 ================
 
++ When editing a table cell with only an image in it, you can't alter cell properties
+  and cell content. Example: 
+  http://infrae.com/st/edit#content!silva_docs_trunk/getting_started/navigation
+  It is not possible to add or alter the cell content and properties on the cell 
+  with the image icon.
+
 - When adding a DateTimeField, LinkField, and probably other type of
   field as well they don't get correctly rendered in the Code Source add
   form in the editor.
