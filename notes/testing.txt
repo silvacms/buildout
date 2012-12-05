@@ -327,6 +327,8 @@ SMI Sidebar
 Bugs
 ====
 
++ The SMI pop-ups look like shit in IE8, dark blue unreadable buttons, ... etc.
+
 + SMI not working in Iternet Explorer 8. The smi loading icons keep spinning.
   You can't creat a new version as the button never appears. Seems to be hanging
   on line 2 of jquery.min.js Tested on a virtual windows XP with EI8.
