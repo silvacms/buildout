@@ -333,9 +333,6 @@ Bugs
   shows image results. If you make the content type option public, it doesn't 
   find anything.http://infrae.com/st/silva_docs_trunk/search
 
-+ You can't make anchors anymore the 'Flag' icon only makes it possible to
-  remove anchors anymore.
-
 + Pop-ups like image pop-ups don't close automatically anymore.
 
 + After enabling subscriptions, and manually adding some subscribers,

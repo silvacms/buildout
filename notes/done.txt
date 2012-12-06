@@ -87,6 +87,9 @@ Manual close
   You can't creat a new version as the button never appears. Seems to be hanging
   on line 2 of jquery.min.js Tested on a virtual windows XP with EI8.
 
++ You can't make anchors anymore the 'Flag' icon only makes it possible to
+  remove anchors anymore.
+
 
 Silva News Filter
 -----------------
