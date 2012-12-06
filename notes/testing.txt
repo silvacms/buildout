@@ -327,6 +327,8 @@ SMI Sidebar
 Bugs
 ====
 
++ Table alignement on table cell does not work when set in the editor.
+
 + The SMI pop-ups look like shit in IE8, dark blue unreadable buttons, ... etc.
 
 + SMI not working in Iternet Explorer 8. The smi loading icons keep spinning.
