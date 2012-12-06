@@ -72,6 +72,22 @@ Manual close
 + If you do a user clipboard the smi keeps spinning, and you need to do
   a browser refresh, to see the user(s) in the clipboard.
 
+- After uploading a new image to replace a different one, you see the
+  scaled old image to the dimensions of the new image.
+
++ Preview of an image doesn't go away. In some cases the small preview
+  of an image doesn't go away.
+
++ The pop-up from the publish action keeps hanging, making the editor 
+  toolbar unusable.
+
++ The SMI pop-ups look like shit in IE8, dark blue unreadable buttons, ... etc.
+
++ SMI not working in Iternet Explorer 8. The smi loading icons keep spinning.
+  You can't creat a new version as the button never appears. Seems to be hanging
+  on line 2 of jquery.min.js Tested on a virtual windows XP with EI8.
+
+
 Silva News Filter
 -----------------
 
@@ -160,6 +176,58 @@ ValueError: tuple.index(x): x not in tuple
 
 
 = Compare is really cool! Looks and works great!
+
+
+Export (export of imported content)
+-----------------------------------
+
+Error at http://infrae.com/st/silva_docs_trunk/++rest++silva.ui/content/export/GET on 2012-09-27 16:11:49.038653:
+
+Object class: __builtin__.instancemethod
+Object path: n/a
+Request URL: http://infrae.com/st/silva_docs_trunk/++rest++silva.ui/content/export/GET
+Request method: GET
+Query string: form.field.export_format=zip&form.field.html_skin=silva.export.html.interfaces.IDefaultHTMLExportSkin&form.field.export_newest_version_only=True&form.action.export=%0A++%0A++Export%0A
+User: wim
+User-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.7; rv:15.0) Gecko/20100101 Firefox/15.0.1
+Refer: http://infrae.com/st/edit
+Traceback (innermost last):
+  Module infrae.wsgi.publisher, line 350, in publish_and_manage_errors
+  Module infrae.wsgi.publisher, line 329, in publish
+   - Published class: __builtin__.instancemethod
+   - Object path: n/a
+   - Object type: n/a
+  Module ZPublisher.mapply, line 77, in mapply
+  Module infrae.wsgi.publisher, line 40, in call_object
+  Module silva.ui.rest.base, line 89, in GET
+  Module silva.ui.rest.base, line 135, in get_payload
+  Module zeam.form.silva.form.smi, line 98, in payload
+  Module zeam.form.base.form, line 301, in updateActions
+  Module zeam.form.base.actions, line 60, in process
+  Module silva.core.smi.content.xml.export, line 70, in __call__
+  Module Products.Silva.adapters.zipfileexport, line 60, in export
+  Module Products.Silva.silvaxml.xmlexport, line 547, in exportToString
+  Module sprout.saxext.xmlexport, line 125, in exportToString
+  Module sprout.saxext.xmlexport, line 114, in exportToFile
+  Module sprout.saxext.xmlexport, line 102, in exportToSax
+  Module Products.Silva.silvaxml.xmlexport, line 425, in sax
+  Module sprout.saxext.xmlexport, line 270, in subsax
+  Module Products.Silva.silvaxml.xmlexport, line 232, in sax
+  Module Products.Silva.silvaxml.xmlexport, line 195, in contents
+  Module sprout.saxext.xmlexport, line 270, in subsax
+  Module silva.app.document.silvaxml.xmlexport, line 24, in sax
+  Module Products.Silva.silvaxml.xmlexport, line 175, in versions
+  Module sprout.saxext.xmlexport, line 270, in subsax
+  Module silva.app.document.silvaxml.xmlexport, line 37, in sax
+  Module silva.core.editor.transform.silvaxml.xmlexport, line 111, in sax
+  Module silva.core.editor.transform.base, line 68, in __call__
+  Module Products.SilvaExternalSources.silvaxml.xmlexport, line 80, in __call__
+  Module zeam.form.silva.xml, line 35, in __call__
+  Module zeam.form.silva.xml, line 32, in serialize
+  Module Products.Formulator.Validator, line 623, in serializeValue
+TypeError: 'NoneType' object is not iterable
+
+
 
 UI Generic settings
 -------------------

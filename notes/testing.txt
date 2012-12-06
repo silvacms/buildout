@@ -329,21 +329,12 @@ Bugs
 
 + Table alignement on table cell does not work when set in the editor.
 
-+ The SMI pop-ups look like shit in IE8, dark blue unreadable buttons, ... etc.
-
-+ SMI not working in Iternet Explorer 8. The smi loading icons keep spinning.
-  You can't creat a new version as the button never appears. Seems to be hanging
-  on line 2 of jquery.min.js Tested on a virtual windows XP with EI8.
-
 + Silva search not working correctly. If you set to not show images, it still
   shows image results. If you make the content type option public, it doesn't 
   find anything.http://infrae.com/st/silva_docs_trunk/search
 
 + You can't make anchors anymore the 'Flag' icon only makes it possible to
   remove anchors anymore.
-
-+ The pop-up from the publish action keeps hanging, making the editor 
-  toolbar unusable.
 
 + Pop-ups like image pop-ups don't close automatically anymore.
 
@@ -372,12 +363,6 @@ Bugs
 + It looks like the messaging service is not working. I added a
   mailhost, configured the service, add emails for the users, but I
   don't receive messages nor get a PDB when sending a request for approval.
-
-- After uploading a new image to replace a different one, you see the
-  scaled old image to the dimensions of the new image.
-
-+ Preview of an image doesn't go away. In some cases the small preview
-  of an image doesn't go away.
 
 + Pop-ups like the Image properties one can't be resized anymore.
 
@@ -418,59 +403,10 @@ Error log
 
 = Can we remove these error log entries now?
 
-Export (export of imported content)
------------------------------------
-
-Error at http://infrae.com/st/silva_docs_trunk/++rest++silva.ui/content/export/GET on 2012-09-27 16:11:49.038653:
-
-Object class: __builtin__.instancemethod
-Object path: n/a
-Request URL: http://infrae.com/st/silva_docs_trunk/++rest++silva.ui/content/export/GET
-Request method: GET
-Query string: form.field.export_format=zip&form.field.html_skin=silva.export.html.interfaces.IDefaultHTMLExportSkin&form.field.export_newest_version_only=True&form.action.export=%0A++%0A++Export%0A
-User: wim
-User-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.7; rv:15.0) Gecko/20100101 Firefox/15.0.1
-Refer: http://infrae.com/st/edit
-Traceback (innermost last):
-  Module infrae.wsgi.publisher, line 350, in publish_and_manage_errors
-  Module infrae.wsgi.publisher, line 329, in publish
-   - Published class: __builtin__.instancemethod
-   - Object path: n/a
-   - Object type: n/a
-  Module ZPublisher.mapply, line 77, in mapply
-  Module infrae.wsgi.publisher, line 40, in call_object
-  Module silva.ui.rest.base, line 89, in GET
-  Module silva.ui.rest.base, line 135, in get_payload
-  Module zeam.form.silva.form.smi, line 98, in payload
-  Module zeam.form.base.form, line 301, in updateActions
-  Module zeam.form.base.actions, line 60, in process
-  Module silva.core.smi.content.xml.export, line 70, in __call__
-  Module Products.Silva.adapters.zipfileexport, line 60, in export
-  Module Products.Silva.silvaxml.xmlexport, line 547, in exportToString
-  Module sprout.saxext.xmlexport, line 125, in exportToString
-  Module sprout.saxext.xmlexport, line 114, in exportToFile
-  Module sprout.saxext.xmlexport, line 102, in exportToSax
-  Module Products.Silva.silvaxml.xmlexport, line 425, in sax
-  Module sprout.saxext.xmlexport, line 270, in subsax
-  Module Products.Silva.silvaxml.xmlexport, line 232, in sax
-  Module Products.Silva.silvaxml.xmlexport, line 195, in contents
-  Module sprout.saxext.xmlexport, line 270, in subsax
-  Module silva.app.document.silvaxml.xmlexport, line 24, in sax
-  Module Products.Silva.silvaxml.xmlexport, line 175, in versions
-  Module sprout.saxext.xmlexport, line 270, in subsax
-  Module silva.app.document.silvaxml.xmlexport, line 37, in sax
-  Module silva.core.editor.transform.silvaxml.xmlexport, line 111, in sax
-  Module silva.core.editor.transform.base, line 68, in __call__
-  Module Products.SilvaExternalSources.silvaxml.xmlexport, line 80, in __call__
-  Module zeam.form.silva.xml, line 35, in __call__
-  Module zeam.form.silva.xml, line 32, in serialize
-  Module Products.Formulator.Validator, line 623, in serializeValue
-TypeError: 'NoneType' object is not iterable
-
 UI
 ==
 
 Spelling
 --------
 
-Image properties Link tab has option 'Link to an another item.'
+Image properties Link tab has option 'Link to an another item.' 
