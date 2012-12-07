@@ -37,10 +37,6 @@ Contents screen
   option. It should have View too. Save a click.
   We're going to make that menu optional, right?
 
-- The 'collapser' reads "Structural content(s)", "Structural content" is enough.
-  The others, Asset(s) and Page Model(s) can dispense with the parentheses and
-  just read Assets and Page Models.
-
 Export screen
 -------------
 + Error page:
@@ -52,12 +48,6 @@ Export screen
   [Roles and permissions] which has a reference to the content [Author – basic]
   which is not itself contained in the exported content.
   Please go back using your browser's back button"
-
-Edit screen of docs
--------------------
-+ When I make multiple edits of a document, and then publish, it seems I get a
-  jGrowl notification for each of the preceding saves. Sometimes twenty, and
-  then the feedback falls off the screen. Can we consolidate this to one?
 
 Publish screen of docs, logged in as ChiefEditor
 ------------------------------------------------
@@ -99,12 +89,7 @@ Manage versions
 - View: when viewing an old version the "Publish now" button in the
   header should not appear, as you're not publishing the version
   you're viewing. Change it to a "Return" button?
-
-
-Autotoc
-=======
-
-- When previewing an Autotoc, content in draft mode doesn't appear.
+  Still a problem. Can we fix this?
 
 
 UI/usability fixes
@@ -134,8 +119,6 @@ Manage versions
   button when viewing an old version anyway.
   [However this is not optimal because we're mixing actions with navigation.
   Any better ideas? Deselect the Publish tab and select the Preview button?]
-
-(BROWSER->DUTCH) Date rendering and interpretation
 
 Logged in as Author
 ===================
@@ -229,9 +212,9 @@ External Sources
 ================
 
 + When editing a table cell with only an image in it, you can't alter cell properties
-  and cell content. Example: 
+  and cell content. Example:
   http://infrae.com/st/edit#content!silva_docs_trunk/getting_started/navigation
-  It is not possible to add or alter the cell content and properties on the cell 
+  It is not possible to add or alter the cell content and properties on the cell
   with the image icon.
 
 - When adding a DateTimeField, LinkField, and probably other type of
@@ -277,16 +260,6 @@ CS Silva Portlet
 CKEditor
 ========
 
-- Adding a link to an image fails. It just doesn't stick.
-
-  Now I've finally figured out that you can't add a link to an image. You can
-  only add a link to text. But if you edit the image, then when you're editing
-  it, you can add a link. Is this CKEditor behavior? Because I fear our users
-  will never unlearn this process. Or is it a bug?
-
-  Can we code it so that if a user selects an image and then clicks the link
-  icon, they're brought to the image edit dialog with the link tab forward?
-
 + When you add an image in CKEditor, you usually add the image on an empty
   line. When done adding, it looks fine. After saving, the editor inserts an
   extra p with a nbsp above the image. You always have to remove this p after
@@ -330,8 +303,8 @@ Bugs
 + Table alignement on table cell does not work when set in the editor.
 
 + Silva search not working correctly. If you set to not show images, it still
-  shows image results. If you make the content type option public, it doesn't 
-  find anything.http://infrae.com/st/silva_docs_trunk/search
+  shows image results. If you make the content type option public, it doesn't
+  find anything. http://infrae.com/st/silva_docs_trunk/search
 
 + Pop-ups like image pop-ups don't close automatically anymore.
 
@@ -406,4 +379,4 @@ UI
 Spelling
 --------
 
-Image properties Link tab has option 'Link to an another item.' 
+Image properties Link tab has option 'Link to an another item.'
