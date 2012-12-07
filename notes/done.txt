@@ -7,21 +7,6 @@ Testing
 
 Those issues comes from the testing.txt file.
 
-+ The "Request approval history" table in the Publish screen of a doc needs
-  attention, e.g.:
-  http://preprod30.infrae.com/edit#publish!lobby/testors/codesourceadd
-  @Sanne: Looks like we need clear:both or something with the floats. In order
-  to fix this you'll need to login as an Author. You can use Torvald's account.
-  @Sylvain: Please move this table down so it appears just above the "Manage
-  versions" table. Right now the "Publish closed version" table is underneath,
-  and "Request approval history" could be a long table.
-
-- Delete: When selecting items for deletion, the form remains sticky
-  with selections after deletion, e.g. if you delete versions 2 and 3,
-  the form comes back with items 0 and 1 selected.
-
-- Delete: We don't ask, "Are you sure?" on the delete action. Should we?
-
 Manual close
 
 - Under "Manual close", the hint should have the same font-style as
@@ -78,7 +63,7 @@ Manual close
 + Preview of an image doesn't go away. In some cases the small preview
   of an image doesn't go away.
 
-+ The pop-up from the publish action keeps hanging, making the editor 
++ The pop-up from the publish action keeps hanging, making the editor
   toolbar unusable.
 
 + The SMI pop-ups look like shit in IE8, dark blue unreadable buttons, ... etc.
