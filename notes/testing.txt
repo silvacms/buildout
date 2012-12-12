@@ -2,9 +2,6 @@
 Silva 3.0 issues
 ================
 
-++ Items with a double plus need to be fixed to get infrae.com running in 3.0.
-
-
 General comments
 ----------------
 
@@ -30,13 +27,6 @@ Login
   try as many times as you like. Is this a non-wsgi occurance? It was really
   confusing and needs to change.
 
-Contents screen
----------------
-
-- When a document is published, the "Go to" button has Preview. as the first
-  option. It should have View too. Save a click.
-  We're going to make that menu optional, right?
-
 Export screen
 -------------
 + Error page:
@@ -49,40 +39,8 @@ Export screen
   which is not itself contained in the exported content.
   Please go back using your browser's back button"
 
-Publish screen of docs, logged in as ChiefEditor
-------------------------------------------------
-
-To test: Is the publishing workflow email working?
-
 Functional fixes
 ~~~~~~~~~~~~~~~~
-
-Datetime fields
-
-Publication time
-
-- Manually filling in 28-8-11 causes an error (on the 11). The server
-  should interpret the 11 as 2011. Only happens for Editors, for
-  Authors the year is correctly interpreted. Should be easy to
-  fix. Then we can probably ignore the following:
-
-- Wrong feedback after internal system error. To reproduce, go to a
-  document and fill in a year of '11'. Click "Publish now". You'll
-  get the "An internal error happened" alert. Click "Continue". Then
-  click a folder in the sidebar. Feedback appears, saying "Version
-  published".
-
-Notes since changing the fields
-
-- If I remove the year completely, the whole row goes pink and I get
-  validation feedback "Missing year value.". However if I fill in
-  '11', the only feedback is the pink glowing border, and I can still
-  submit and get the error described above.
-
-- Why can Authors successfully submit a year of '11' but not Editors?
-  The '11' gets correctly interpreted in the Author's submit, but Editors
-  get a system error. Can you make it interpret correctly for Editors
-  too? Saves 2 chars.
 
 Manage versions
 
@@ -94,6 +52,15 @@ Manage versions
 
 UI/usability fixes
 ~~~~~~~~~~~~~~~~~~
+
++ When a document doesn't have a tile, it's id gets displayed instead. Thus one
+  thinks the doc does have a title (albeit a lousy one). We need to display the
+  string "no title" instead.
+
+-----> This was the same behavior in the old Silva.
+-----+ Well, in the Contents screen the old Silva displayed "no title".
+-----+ I still see titles in Content that are the same as the id (when there
+       is no title).
 
 Submit buttons and reporting
 
@@ -132,20 +99,6 @@ Publication time
   value is accepted and becomes 2011. This fails when an Editor
   publishes.
 
-Message
-
-- The text area (this and all the others) has a fixed width and is
-  often too long. Granted, in Safari and recent FF you can scale it
-  yourself. A max-width that is 20px less than its parent should work.
-  THEY DIDN'T HAVE IN THE OLD ONE EITHER. PLEASE PROPOSE TITLES - The
-  "Request appoval", "Withdraw approval request", "Reject approval
-  request", and probably more button/links don't have a title
-  attribute:
-"Request approval": Submit this content to be published.
-"Withdraw approval request": Re-edit this content.
-"Reject approval request": Put this content back in draft mode.
-
-
 Logged in as ChiefEditor
 ========================
 
@@ -169,45 +122,6 @@ Silva News Network
   need to figure out something here. We know what the invalid entry is,
   right? Can we display the field's name?
 
-Addables
---------
-
-+ In the WU wwwtest site the Addables are not set correctly:
-  1. In the root Silva News Page, Agenda Page, News Item, and Agenda Item
-     were available.
-  2. In the "News WU" News Pub none of the article types were available.
-  3. In the root, Silva Forum Topic and Forum Comment were available. These
-     should only appear inside Silva Forums. Haven't checked those....
-  Both of these were manually fixed (had to turn off Acquire, also in the root),
-  and they are many more News Pubs scattered around the site.
-
-Silva Services
-==============
-
-Metadata system
----------------
-
-Still 404s:
-http://next30.infrae.com/service_metadata/collection/augmentation/manage_settings
-+ It's not possible to make a metadata set editable. It 404s.
-  This seems to be an Apache-related problem. Actually, the action succeeded,
-  it's the subsequent redirect that failed.
-
-XXX Still 404s:
-http://next30.infrae.com/service_metadata/collection/augmentation/?%3Amethod=addElementForm&submit=+Add+Metadata+Element
-+ It's not possible to add a field to a metadata set. It 404s.
-
-Silva Find
-==========
-
-+ The Zope level icons are being used in the search results. We should make the
-  Zope icons match. This is something Wim or I can do if you explain it.
-
-+ How do we call a stylesheet for a specific metatype now? I used to include it
-  in the head inject but I think there's a cleaner way, e.g. I see calendar.css
-  in SNN. We need one for Find objects.
-
-
 External Sources
 ================
 
@@ -228,35 +142,6 @@ External Sources
 + It's not possible to tab between fields in the External Source Settings form.
   Somehow we have to fix this usability problem.
 
-+ Bug: in Silva 3.0 existing Code Sources lose all their values if a parameter
-  is deleted. This happens on save when the Code Source itself wasn't edited:
-  http://preprod30.infrae.com/++preview++/about
-  If you scroll down, next to the "Open Source Experience" heading there's an
-  empty Code Source, which used to contain values as like here:
-  http://infrae.com/about
-  I deleted the alignment parameter, since it's now built-in, and when I tested
-  I noticed that it lost all parameter values. Can this be fixed so existing
-  values are preserved?
-
-- Typo in the error message:
-  "External Source unknow is not available."
-  "External Source unknown is not available."
-
-+ It is not possible to add a csv source anymore, although content with
-  one embedded still
-  works. http://preprod30.infrae.com/edit#content!lobby/testors/tabbed
-  and http://preprod30.infrae.com/edit#content!lobby/testors/tablular
-
-CS Silva Portlet
-----------------
-+ New detail: the source only errors in preview. In the public view it renders
-  fine, regardless of where the embedded doc is. Still needs to be fixed, but
-  this makes it less urgent.
-  If the document you're embedding is in the root, the souce throws an error.
-  Example doc: http://preprod30.infrae.com/edit#content!lobby/testors/portleteur
-  Embedded doc: http://preprod30.infrae.com/edit#content!lobby/locateabove
-  Code Source: http://preprod30.infrae.com/cs_portlet_element/editCodeSource
-
 CKEditor
 ========
 
@@ -265,113 +150,10 @@ CKEditor
   extra p with a nbsp above the image. You always have to remove this p after
   saving. Annoying. Same goes for Code Sources.
 
-+ Typo: when saving in CKEditor and it fails the error message states:
-  "Error on the server while saving document, Please consult log server for
-   detail"
-  "An error occurred while saving this document, Please consult the server log
-   for details."
-  However, we should not show this text to Authors, so fallback to:
-  "Sorry, an error occurred while saving this document, We won't tell anybody
-   you did it."
-
-Reference dialog
-================
-
-- The reference dialog has a difficult user interface if there are more
-  than a few items in the listing. The selection(s) show up at the bottom
-  of the listing, often out of sight for the user. Can we put the selected
-  list on top?
-  Wim: Which reference dialog is this? The ones I use only use one reference
-  selection, which is never displayed.
-  Kit: Try the TOC CS, in which you can add multiple containers.
-
-- In the reference dialog clicking the icon of a non-container doesn't do
-  anything. Make it trigger the same action as the 'plus' icon on the right.
-  This obviates the need to move the mouse across the screen, which new
-  users find confusing because the selection checkbox used to be on the left.
-  """WB: Non of the icons reference the add action, only the '+' icon adds a
-  reference."""
-
 SMI Sidebar
 ===========
 + The sidebar navigation should use short titles. So instead of "The Silva
   Content Management System" it should just read "Silva".
-
-Bugs
-====
-
-+ Table alignement on table cell does not work when set in the editor.
-
-+ Silva search not working correctly. If you set to not show images, it still
-  shows image results. If you make the content type option public, it doesn't
-  find anything. http://infrae.com/st/silva_docs_trunk/search
-
-+ Pop-ups like image pop-ups don't close automatically anymore.
-
-+ After enabling subscriptions, and manually adding some subscribers,
-  they don't appear in the settings overview under "Other
-  subscriptions". I think it is the idea that subscribers appear here,
-  but the name is quite vague.
-
-+ After you log out, you get a welcome screen, with an edit link. The
-  edit link points to the root and not the silva root.
-
-+ The close icon white/red cross doesn't work for closing a pop up.
-
-+ Customization service error when clicking the Customize button:
-  AttributeError: REQUEST
-
-+ The 'Pending' status text is not shown in the 'Manage versions' table.
-
-+ When asking for approval as an author a document with an expiration
-  date, there is no screen where any role can verify the set expiration
-  date. You can only see the expiration date if you make a new version
-  of it and then you can see it in the date time field next to the
-  date/time picker. It does not get listed in the 'Manage versions'
-  overview, nor in any screen for the editor.
-
-+ It looks like the messaging service is not working. I added a
-  mailhost, configured the service, add emails for the users, but I
-  don't receive messages nor get a PDB when sending a request for approval.
-
-+ Pop-ups like the Image properties one can't be resized anymore.
-
-- If you fill in a publication date as an author and request approval,
-  the editor will only see the current date filled in as publication
-  date, and not the one set by the author. This field should contain
-  the value set by the author, not the current date.
-
-- How can a user export one document? We only have an export screen in
-  containers now. Can we add an Export option to the "Edit" tab, like the
-  Details option in news items?
-
-----> How did you do this in the past ?
-
-----+ In the Status screen, click the Export button, e.g.:
-      http://infrae.com/lobby/testors/imagealigns/edit/tab_status
-      But there's some hack that somehow brings you up into the folder with an
-      argument to export only that particular document. This is an extremely
-      handy feature.
-
-Silva News
-----------
-
-+ Inside new News Pubs the addables are not set correctly.
-  After a fresh upgrade the News Item is not selected in Addables (but
-  strangely enough Agenda Item is).
-
-To Test
--------
-- CSV upload has problems.
-  Invalid CSV file: new-line character seen in unquoted field - do you need to
-  open the file in universal-newline mode?
-
-
-
-Error log
-=========
-
-= Can we remove these error log entries now?
 
 UI
 ==
