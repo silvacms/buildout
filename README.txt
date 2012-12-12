@@ -17,7 +17,7 @@ Use
 Check out the buildout of the Silva trunk
 -----------------------------------------
 
-  $ svn co https://svn.infrae.com/buildout/silva/tag/Silva-3.0c1 Silva
+  $ svn co https://svn.infrae.com/buildout/silva/tag/Silva-3.0 Silva
 
 Go into your "checkout"
 -----------------------
