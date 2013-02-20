@@ -34,6 +34,9 @@ parser.add_option(
     help="create a virtualenv to install the software. " \
         "This is recommended if you don't need to rely on globally installed " \
         "libraries")
+parser.add_option(
+    "--verbose", dest="verbose", action="store_true", default=False,
+    help="Display more informations.")
 
 options, args = parser.parse_args()
 
@@ -77,10 +80,18 @@ else:
 
 def execute(cmd, env=None, stdout=None):
     if sys.platform == 'win32':
-        # subprocess doesn't work on windows with setuptools
+        # Subprocess doesn't work on windows with setuptools
         if env:
             return os.spawnle(*([os.P_WAIT, sys.executable] + cmd + [env]))
         return os.spawnl(*([os.P_WAIT, sys.executable] + cmd))
+    if env:
+        # Keep proxy settings during installation.
+        for key, value in os.environ.items():
+            if key.endswith('_proxy'):
+                env[key] = value
+    stdout = None
+    if not options.verbose:
+        stdout = subprocess.PIPE
     return subprocess.call(cmd, env=env, stdout=stdout)
 
 
@@ -96,7 +107,7 @@ def install(requirement):
     if execute(
         [sys.executable, '-c', quote(cmd), '-mqNxd', quote(tmp_eggs),
          '-f', quote('http://pypi.python.org/simple'), requirement],
-        env={'PYTHONPATH': cmd_path}, stdout=subprocess.PIPE):
+        env={'PYTHONPATH': cmd_path}):
         sys.stderr.write(
             "\n\nFatal error while installing %s\n" % requirement)
         sys.exit(1)
