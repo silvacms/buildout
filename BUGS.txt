@@ -87,18 +87,6 @@ Manage versions
   [However this is not optimal because we're mixing actions with navigation.
   Any better ideas? Deselect the Publish tab and select the Preview button?]
 
-Logged in as Author
-===================
-
-Publish screen of docs
-----------------------
-
-Publication time
-
-- Strangely, if I enter '11' into the year field as an Author, the
-  value is accepted and becomes 2011. This fails when an Editor
-  publishes.
-
 Logged in as ChiefEditor
 ========================
 
@@ -149,11 +137,6 @@ CKEditor
   line. When done adding, it looks fine. After saving, the editor inserts an
   extra p with a nbsp above the image. You always have to remove this p after
   saving. Annoying. Same goes for Code Sources.
-
-SMI Sidebar
-===========
-+ The sidebar navigation should use short titles. So instead of "The Silva
-  Content Management System" it should just read "Silva".
 
 UI
 ==
