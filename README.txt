@@ -17,7 +17,7 @@ Use
 Check out the buildout of the Silva trunk
 -----------------------------------------
 
-  $ svn co https://svn.infrae.com/buildout/silva/tag/Silva-3.0 Silva
+  $ svn co https://svn.infrae.com/buildout/silva/tag/Silva-3.0.1 Silva
 
 Go into your "checkout"
 -----------------------
@@ -120,14 +120,3 @@ and backing up the ZODB respectively.
 
 Another directory of interest is ``var/filestorage``, which holds the
 ZODB file(s).  ``var/log`` contains the Zope logfiles.
-
-
-Developing with this buildout
-=============================
-
-This buildout is aimed at both deploying Silva and developing with
-Silva.  You'll find checkouts of the individual Silva components in
-the ``parts`` subdirectory in the buildout.  This directory will be
-preserved in case you accidentally leave changes in there and run the
-buildout again, thanks to the ``infrae.subversion`` buildout recipe.
-
