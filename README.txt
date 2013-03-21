@@ -73,7 +73,13 @@ to run this the first time that you're doing the build::
   $ python2.7 bootstrap.py
 
 We use python2.7 here as we are using Zope 2.13.x which requires
-Python 2.7.
+Python 2.7. Other requirements are needed: libxml2, libxslt, libjpeg,
+and zlib.
+
+A detailed list of those requirements can be found in the Silva
+technical documentation:
+
+http://docs.silvacms.org/trunk/buildout/requirements.html
 
 Run the buildout script
 -----------------------
@@ -105,6 +111,14 @@ You can log in to your zope with the default Zope user
 earlier, rather than later, and definitely before you allow access to
 your site from anywhere but your own machine.
 
+
+Upgrading a previous installation
+=================================
+
+In order to upgrade an existing installation, you can consult the
+guidelines online in the Silva technical documentation:
+
+http://docs.silvacms.org/trunk/buildout.html#upgrading-your-installation
 
 Directory structure
 ===================
