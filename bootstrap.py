@@ -15,17 +15,14 @@ parser = OptionParser(usage="python bootstrap.py\n\n"
                       "Bootstrap the installation process.",
                       version="bootstrap.py $Revision$")
 parser.add_option(
-    "--setuptools", dest="setuptools", action='store_true',
-    help="use setuptools instead of distribute")
-parser.add_option(
     "--buildout-config", dest="config", default="buildout.cfg",
     help="specify buildout configuration file to use, default to buildout.cfg")
 parser.add_option(
     "--buildout-profile", dest="profile",
     help="specify a buildout profile to extends as configuration")
 parser.add_option(
-    "--buildout-version", dest="buildout_version", default="1.4.4",
-    help="specify version of zc.buildout to use, default to 1.4.4")
+    "--buildout-version", dest="buildout_version", default="2.1.0",
+    help="specify version of zc.buildout to use, default to 2.1.0")
 parser.add_option(
     "--install", dest="install", action="store_true", default=False,
     help="directly start the install process after bootstrap")
@@ -50,26 +47,20 @@ to_reload = False
 try:
     import pkg_resources
     # Verify it is distribute
-    if ((not options.setuptools) and
-        (not hasattr(pkg_resources, '_distribute'))):
+    if not hasattr(pkg_resources, '_distribute'):
         to_reload = True
         raise ImportError
 except ImportError:
     # Install setup tools or distribute
     setup_url = 'http://dist.infrae.com/thirdparty/distribute_setup.py'
-    if options.setuptools:
-        setup_url = 'http://peak.telecommunity.com/dist/ez_setup.py'
     ez = {}
-    ez_options = {'to_dir': tmp_eggs, 'download_delay': 0}
-    if not options.setuptools:
-        ez_options['no_fake'] = True
+    ez_options = {'to_dir': tmp_eggs, 'download_delay': 0, 'no_fake': True}
     exec urllib2.urlopen(setup_url).read() in ez
     ez['use_setuptools'](**ez_options)
 
     if to_reload:
         reload(pkg_resources)
-    else:
-        import pkg_resources
+    import pkg_resources
 
 
 if sys.platform == 'win32':
@@ -97,13 +88,9 @@ def execute(cmd, env=None, stdout=None):
 
 def install(requirement):
     print "Installing %s ..." % requirement
-    if options.setuptools:
-        egg = 'setuptools'
-    else:
-        egg = 'distribute'
     cmd = 'from setuptools.command.easy_install import main; main()'
     cmd_path = pkg_resources.working_set.find(
-        pkg_resources.Requirement.parse(egg)).location
+        pkg_resources.Requirement.parse('distribute')).location
     if execute(
         [sys.executable, '-c', quote(cmd), '-mqNxd', quote(tmp_eggs),
          '-f', quote('http://pypi.python.org/simple'), requirement],
