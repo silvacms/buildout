@@ -21,7 +21,7 @@ parser.add_option(
     "--buildout-profile", dest="profile",
     help="specify a buildout profile to extends as configuration")
 parser.add_option(
-    "--buildout-version", dest="buildout_version", default="2.1.0",
+    "--buildout-version", dest="buildout_version", default="2.1.0-infrae1",
     help="specify version of zc.buildout to use, default to 2.1.0")
 parser.add_option(
     "--install", dest="install", action="store_true", default=False,
@@ -93,7 +93,7 @@ def install(requirement):
         pkg_resources.Requirement.parse('distribute')).location
     if execute(
         [sys.executable, '-c', quote(cmd), '-mqNxd', quote(tmp_eggs),
-         '-f', quote('http://pypi.python.org/simple'), requirement],
+         '-f', quote('http://pypi.python.org/simple'), '-f', quote('http://dist.infrae.com/thirdparty/'), requirement],
         env={'PYTHONPATH': cmd_path}):
         sys.stderr.write(
             "\n\nFatal error while installing %s\n" % requirement)
