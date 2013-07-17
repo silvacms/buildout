@@ -21,8 +21,8 @@ parser.add_option(
     "--buildout-profile", dest="profile",
     help="specify a buildout profile to extends as configuration")
 parser.add_option(
-    "--buildout-version", dest="buildout_version", default="2.1.0-infrae1",
-    help="specify version of zc.buildout to use, default to 2.1.0")
+    "--buildout-version", dest="buildout_version", default="2.2.0-infrae1",
+    help="specify version of zc.buildout to use, default to 2.2.0")
 parser.add_option(
     "--install", dest="install", action="store_true", default=False,
     help="directly start the install process after bootstrap")
@@ -43,23 +43,17 @@ if sys.platform.startswith('win'):
 
 tmp_eggs = tempfile.mkdtemp()
 atexit.register(shutil.rmtree, tmp_eggs)
-to_reload = False
 try:
     import pkg_resources
-    # Verify it is distribute
-    if not hasattr(pkg_resources, '_distribute'):
-        to_reload = True
-        raise ImportError
+    import setuptools
 except ImportError:
-    # Install setup tools or distribute
-    setup_url = 'http://dist.infrae.com/thirdparty/distribute_setup.py'
+    # Install setuptools
+    setup_url = 'http://dist.infrae.com/thirdparty/ez_setup.py'
     ez = {}
-    ez_options = {'to_dir': tmp_eggs, 'download_delay': 0, 'no_fake': True}
+    ez_options = {'to_dir': tmp_eggs, 'download_delay': 0}
     exec urllib2.urlopen(setup_url).read() in ez
     ez['use_setuptools'](**ez_options)
 
-    if to_reload:
-        reload(pkg_resources)
     import pkg_resources
 
 
@@ -90,10 +84,11 @@ def install(requirement):
     print "Installing %s ..." % requirement
     cmd = 'from setuptools.command.easy_install import main; main()'
     cmd_path = pkg_resources.working_set.find(
-        pkg_resources.Requirement.parse('distribute')).location
+        pkg_resources.Requirement.parse('setuptools')).location
     if execute(
         [sys.executable, '-c', quote(cmd), '-mqNxd', quote(tmp_eggs),
-         '-f', quote('http://pypi.python.org/simple'), '-f', quote('http://dist.infrae.com/thirdparty/'), requirement],
+         '-f', quote('http://pypi.python.org/simple'),
+         '-f', quote('http://dist.infrae.com/thirdparty/'), requirement],
         env={'PYTHONPATH': cmd_path}):
         sys.stderr.write(
             "\n\nFatal error while installing %s\n" % requirement)
@@ -110,8 +105,7 @@ if options.virtualenv:
         import virtualenv
         print "Running virtualenv"
         args = sys.argv[:]
-        sys.argv = ['bootstrap', os.getcwd(),
-                    '--clear', '--no-site-package', '--distribute']
+        sys.argv = ['bootstrap', os.getcwd(), '--clear', '--no-site-package']
         virtualenv.main()
         execute([python_path] + args)
         sys.exit(0)
