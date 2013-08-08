@@ -633,3 +633,60 @@ You can't drag and drop CS.
 
 Clicking on an image that has float left in a CS (encapsulated), brings
 you to that image and removes everything else.
+
+Tables
+======
+
+Firefox 23
+----------
+
+Merging cells
+~~~~~~~~~~~~~
+
+Starting point 3 x 5 table
+
++---+---+---+
+|1.1|1.2|1.3|
++---+---+---+
+|2.1|2.2|2.3|
++---+---+---+
+|3.1|3.2|3.3|
++---+---+---+
+|4.1|4.2|4.3|
++---+---+---+
+|5.1|5.2|5.3|
++---+---+---+
+
+Merging down cell makes two extra columns. If we merge down cell 2.2 it
+should get merged with 3.2, which it does but instead you get this table
+layout:
+
++---+---+---+
+|1.1|1.2|1.3|
++--+----+---+---+---+
+|2.1|2.2|2.3|3.1|3.3|
++---+   +---+---+---+
+|4.1|3.2|4.2|4.3|
++---+---+---+---+
+|5.1|5.2|5.3|
++---+---+---+
+
+Splitting cells
+~~~~~~~~~~~~~~~
+
+Splitting vertically a cell merges merges vertically the two cells right
+next to it. If we merge down cell 2.2 you get this table layout:
+
++---+---+---+
+|1.1|1.2|1.3|
++---+---+---+
+|2.1|2.2|2.3|
++   +---+   +
+|   |   |   |
++---+---+   +
+|3.1|3.2|3.3|
++---+---+---+
+|4.1|4.2|4.3|
++---+---+---+
+|5.1|5.2|5.3|
++---+---+---+
