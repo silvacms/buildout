@@ -1,0 +1,635 @@
+Translations
+============
+
+Language settings
+-----------------
+
+When in English mode there is a language preference option: "Occitan (post 1500); Provençal" in other language there is just "Occtitan (post 1500)"
+Appearantly this name is correct, but it might nice to have a service where you can set which languages or shown or add fovorite languages on top as the languege list is getting really big and is full of languages that most people don't care about. Or at least we should order them alphabetically.
+
+Dutch
+-----
+
+Has some weird spanish or portugese translations.
+
+Code sources
+============
+
+Empty Code Sources
+------------------
+
+ There is(are) 6 error(s) reported.
+
+    An error happened 1 times, first seen the 2013-08-05 16:38:59.196191:
+
+    Traceback (innermost last):
+      Module Products.SilvaExternalSources.ExternalSource, line 445, in render
+      Module Products.SilvaExternalSources.CodeSource, line 183, in to_html
+       - Source path: /test/cs_portlet_element
+       - Document type: Silva Document
+       - Document path: /test/index
+       - Document version: 2
+       - Parameter capsule_style: ''
+       - Parameter REQUEST: <WSGIRequest, URL=http://localhost:8080/test/index/++rest++Products.SilvaExternalSources.source.preview/POST>
+       - Parameter capsule_title: ''
+       - Parameter capsule_id: ''
+       - Parameter show_title: ''
+       - Parameter document: ''
+       - Parameter capsule_class: ''
+      Module Shared.DC.Scripts.Bindings, line 322, in __call__
+      Module Shared.DC.Scripts.Bindings, line 359, in _bindAndExec
+      Module Products.SilvaExternalSources.patches, line 43, in _exec
+      Module Products.PageTemplates.ZopePageTemplate, line 435, in pt_render
+      Module Products.PageTemplates.PageTemplate, line 79, in pt_render
+      Module zope.pagetemplate.pagetemplate, line 113, in pt_render
+      Module zope.tal.talinterpreter, line 271, in __call__
+      Module zope.tal.talinterpreter, line 343, in interpret
+      Module zope.tal.talinterpreter, line 533, in do_optTag_tal
+      Module zope.tal.talinterpreter, line 518, in do_optTag
+      Module zope.tal.talinterpreter, line 513, in no_tag
+      Module zope.tal.talinterpreter, line 343, in interpret
+      Module zope.tal.talinterpreter, line 533, in do_optTag_tal
+      Module zope.tal.talinterpreter, line 518, in do_optTag
+      Module zope.tal.talinterpreter, line 513, in no_tag
+      Module zope.tal.talinterpreter, line 343, in interpret
+      Module zope.tal.talinterpreter, line 742, in do_insertStructure_tal
+      Module Products.PageTemplates.Expressions, line 218, in evaluateStructure
+      Module zope.tales.tales, line 696, in evaluate
+       - URL: /test/cs_portlet_element/portlet_element
+       - Line 17, Column 4
+       - Expression: <PathExpr standard:u'document/@@content.html'>
+       - Names:
+          {'container': <CodeSource at /test/cs_portlet_element used for /test/index/2>,
+           'context': <CodeSource at /test/cs_portlet_element used for /test/index/2>,
+           'default': <object object at 0x7fa04b8d1210>,
+           'here': <CodeSource at /test/cs_portlet_element used for /test/index/2>,
+           'loop': {},
+           'nothing': None,
+           'options': {'args': (),
+                       'capsule_class': '',
+                       'capsule_id': '',
+                       'capsule_style': '',
+                       'capsule_title': '',
+                       'document': '',
+                       'model': <Document at /test/index>,
+                       'show_title': '',
+                       'version': <DocumentVersion at /test/index/2>},
+           'repeat': <Products.PageTemplates.Expressions.SafeMapping object at 0x7fa028301f70>,
+           'request': <WSGIRequest, URL=http://localhost:8080/test/index/++rest++Products.SilvaExternalSources.source.preview/POST>,
+           'root': <Application at >,
+           'template': <ZopePageTemplate at /test/cs_portlet_element/portlet_element>,
+           'traverse_subpath': [],
+           'user': <PropertiedUser 'admin'>}
+      Module zope.tales.expressions, line 217, in __call__
+      Module Products.PageTemplates.Expressions, line 147, in _eval
+      Module zope.tales.expressions, line 124, in _eval
+      Module Products.PageTemplates.Expressions, line 77, in boboAwareZopeTraverse
+      Module zope.traversing.adapters, line 126, in traversePathElement
+       - __traceback_info__: ('', '@@content.html')
+      Module zope.traversing.namespace, line 112, in namespaceLookup
+      Module zope.traversing.namespace, line 329, in traverse
+    LocationError: ('', 'content.html')
+
+    An error happened 1 times, first seen the 2013-08-05 16:38:59.187231:
+
+    Traceback (innermost last):
+      Module Products.SilvaExternalSources.ExternalSource, line 445, in render
+      Module Products.SilvaExternalSources.CodeSource, line 183, in to_html
+       - Source path: /test/cs_encaptionate
+       - Document type: Silva Document
+       - Document path: /test/index
+       - Document version: 2
+       - Parameter REQUEST: <WSGIRequest, URL=http://localhost:8080/test/index/++rest++Products.SilvaExternalSources.source.preview/POST>
+       - Parameter image_path: ''
+       - Parameter alt_text: ''
+       - Parameter credit_link: ''
+       - Parameter link_url: ''
+       - Parameter caption_text: ''
+       - Parameter capsule_title: ''
+       - Parameter image_link: ''
+       - Parameter creditlink_tooltip: ''
+       - Parameter link_tooltip: ''
+       - Parameter credit_text: ''
+       - Parameter credit_prefix: ''
+       - Parameter capsule_style: ''
+      Module Shared.DC.Scripts.Bindings, line 322, in __call__
+      Module Shared.DC.Scripts.Bindings, line 359, in _bindAndExec
+      Module Products.SilvaExternalSources.patches, line 43, in _exec
+      Module Products.PageTemplates.ZopePageTemplate, line 435, in pt_render
+      Module Products.PageTemplates.PageTemplate, line 79, in pt_render
+      Module zope.pagetemplate.pagetemplate, line 113, in pt_render
+      Module zope.tal.talinterpreter, line 271, in __call__
+      Module zope.tal.talinterpreter, line 343, in interpret
+      Module zope.tal.talinterpreter, line 583, in do_setLocal_tal
+      Module zope.tales.tales, line 696, in evaluate
+       - URL: /test/cs_encaptionate/capsule
+       - Line 1, Column 0
+       - Expression: <PythonExpr image.get_canonical_web_scale()>
+       - Names:
+          {'container': <CodeSource at /test/cs_encaptionate used for /test/index/2>,
+           'context': <CodeSource at /test/cs_encaptionate used for /test/index/2>,
+           'default': <object object at 0x7fa04b8d1210>,
+           'here': <CodeSource at /test/cs_encaptionate used for /test/index/2>,
+           'loop': {},
+           'nothing': None,
+           'options': {'alt_text': '',
+                       'args': (),
+                       'capsule_style': '',
+                       'capsule_title': '',
+                       'caption_text': '',
+                       'credit_link': '',
+                       'credit_prefix': '',
+                       'credit_text': '',
+                       'creditlink_tooltip': '',
+                       'image_link': '',
+                       'image_path': '',
+                       'link_tooltip': '',
+                       'link_url': '',
+                       'model': <Document at /test/index>,
+                       'version': <DocumentVersion at /test/index/2>},
+           'repeat': <Products.PageTemplates.Expressions.SafeMapping object at 0x7fa028301470>,
+           'request': <WSGIRequest, URL=http://localhost:8080/test/index/++rest++Products.SilvaExternalSources.source.preview/POST>,
+           'root': <Application at >,
+           'template': <ZopePageTemplate at /test/cs_encaptionate/capsule>,
+           'traverse_subpath': [],
+           'user': <PropertiedUser 'admin'>}
+      Module Products.PageTemplates.ZRPythonExpr, line 48, in __call__
+       - __traceback_info__: image.get_canonical_web_scale()
+      Module PythonExpr, line 1, in <expression>
+    AttributeError: 'str' object has no attribute 'get_canonical_web_scale'
+
+    An error happened 1 times, first seen the 2013-08-05 16:37:42.408621:
+
+    Traceback (innermost last):
+      Module Products.SilvaExternalSources.ExternalSource, line 445, in render
+      Module Products.SilvaExternalSources.CodeSource, line 183, in to_html
+       - Source path: /test/cs_portlet_element
+       - Document type: Silva Document
+       - Document path: /test/index
+       - Document version: 1
+       - Parameter capsule_style: ''
+       - Parameter REQUEST: <WSGIRequest, URL=http://localhost:8080/test/++preview++/index/@@index.html>
+       - Parameter capsule_title: ''
+       - Parameter capsule_id: ''
+       - Parameter show_title: ''
+       - Parameter document: ''
+       - Parameter capsule_class: ''
+      Module Shared.DC.Scripts.Bindings, line 322, in __call__
+      Module Shared.DC.Scripts.Bindings, line 359, in _bindAndExec
+      Module Products.SilvaExternalSources.patches, line 43, in _exec
+      Module Products.PageTemplates.ZopePageTemplate, line 435, in pt_render
+      Module Products.PageTemplates.PageTemplate, line 79, in pt_render
+      Module zope.pagetemplate.pagetemplate, line 113, in pt_render
+      Module zope.tal.talinterpreter, line 271, in __call__
+      Module zope.tal.talinterpreter, line 343, in interpret
+      Module zope.tal.talinterpreter, line 533, in do_optTag_tal
+      Module zope.tal.talinterpreter, line 518, in do_optTag
+      Module zope.tal.talinterpreter, line 513, in no_tag
+      Module zope.tal.talinterpreter, line 343, in interpret
+      Module zope.tal.talinterpreter, line 533, in do_optTag_tal
+      Module zope.tal.talinterpreter, line 518, in do_optTag
+      Module zope.tal.talinterpreter, line 513, in no_tag
+      Module zope.tal.talinterpreter, line 343, in interpret
+      Module zope.tal.talinterpreter, line 742, in do_insertStructure_tal
+      Module Products.PageTemplates.Expressions, line 218, in evaluateStructure
+      Module zope.tales.tales, line 696, in evaluate
+       - URL: portlet_element
+       - Line 17, Column 4
+       - Expression: <PathExpr standard:u'document/@@content.html'>
+       - Names:
+          {'container': <CodeSource at /test/cs_portlet_element used for /test/index/1>,
+           'context': <CodeSource at /test/cs_portlet_element used for /test/index/1>,
+           'default': <object object at 0x7fa04b8d1210>,
+           'here': <CodeSource at /test/cs_portlet_element used for /test/index/1>,
+           'loop': {},
+           'nothing': None,
+           'options': {'args': (),
+                       'capsule_class': '',
+                       'capsule_id': '',
+                       'capsule_style': '',
+                       'capsule_title': '',
+                       'document': '',
+                       'model': <Document at /test/index>,
+                       'show_title': '',
+                       'version': <DocumentVersion at /test/index/1>},
+           'repeat': <Products.PageTemplates.Expressions.SafeMapping object at 0x7fa0282e4a48>,
+           'request': <WSGIRequest, URL=http://localhost:8080/test/++preview++/index/@@index.html>,
+           'root': <Application at >,
+           'template': <ZopePageTemplate at /test/cs_portlet_element/portlet_element>,
+           'traverse_subpath': [],
+           'user': <PropertiedUser 'admin'>}
+      Module zope.tales.expressions, line 217, in __call__
+      Module Products.PageTemplates.Expressions, line 147, in _eval
+      Module zope.tales.expressions, line 124, in _eval
+      Module Products.PageTemplates.Expressions, line 77, in boboAwareZopeTraverse
+      Module zope.traversing.adapters, line 126, in traversePathElement
+       - __traceback_info__: ('', '@@content.html')
+      Module zope.traversing.namespace, line 112, in namespaceLookup
+      Module zope.traversing.namespace, line 329, in traverse
+    LocationError: ('', 'content.html')
+
+    An error happened 1 times, first seen the 2013-08-05 16:37:42.388468:
+
+    Traceback (innermost last):
+      Module Products.SilvaExternalSources.ExternalSource, line 445, in render
+      Module Products.SilvaExternalSources.CodeSource, line 183, in to_html
+       - Source path: /test/cs_encaptionate
+       - Document type: Silva Document
+       - Document path: /test/index
+       - Document version: 1
+       - Parameter REQUEST: <WSGIRequest, URL=http://localhost:8080/test/++preview++/index/@@index.html>
+       - Parameter image_path: ''
+       - Parameter alt_text: ''
+       - Parameter credit_link: ''
+       - Parameter link_url: ''
+       - Parameter caption_text: ''
+       - Parameter capsule_title: ''
+       - Parameter image_link: ''
+       - Parameter creditlink_tooltip: ''
+       - Parameter link_tooltip: ''
+       - Parameter credit_text: ''
+       - Parameter credit_prefix: ''
+       - Parameter capsule_style: ''
+      Module Shared.DC.Scripts.Bindings, line 322, in __call__
+      Module Shared.DC.Scripts.Bindings, line 359, in _bindAndExec
+      Module Products.SilvaExternalSources.patches, line 43, in _exec
+      Module Products.PageTemplates.ZopePageTemplate, line 435, in pt_render
+      Module Products.PageTemplates.PageTemplate, line 79, in pt_render
+      Module zope.pagetemplate.pagetemplate, line 113, in pt_render
+      Module zope.tal.talinterpreter, line 271, in __call__
+      Module zope.tal.talinterpreter, line 343, in interpret
+      Module zope.tal.talinterpreter, line 583, in do_setLocal_tal
+      Module zope.tales.tales, line 696, in evaluate
+       - URL: capsule
+       - Line 1, Column 0
+       - Expression: <PythonExpr image.get_canonical_web_scale()>
+       - Names:
+          {'container': <CodeSource at /test/cs_encaptionate used for /test/index/1>,
+           'context': <CodeSource at /test/cs_encaptionate used for /test/index/1>,
+           'default': <object object at 0x7fa04b8d1210>,
+           'here': <CodeSource at /test/cs_encaptionate used for /test/index/1>,
+           'loop': {},
+           'nothing': None,
+           'options': {'alt_text': '',
+                       'args': (),
+                       'capsule_style': '',
+                       'capsule_title': '',
+                       'caption_text': '',
+                       'credit_link': '',
+                       'credit_prefix': '',
+                       'credit_text': '',
+                       'creditlink_tooltip': '',
+                       'image_link': '',
+                       'image_path': '',
+                       'link_tooltip': '',
+                       'link_url': '',
+                       'model': <Document at /test/index>,
+                       'version': <DocumentVersion at /test/index/1>},
+           'repeat': <Products.PageTemplates.Expressions.SafeMapping object at 0x7fa0282e1368>,
+           'request': <WSGIRequest, URL=http://localhost:8080/test/++preview++/index/@@index.html>,
+           'root': <Application at >,
+           'template': <ZopePageTemplate at /test/cs_encaptionate/capsule>,
+           'traverse_subpath': [],
+           'user': <PropertiedUser 'admin'>}
+      Module Products.PageTemplates.ZRPythonExpr, line 48, in __call__
+       - __traceback_info__: image.get_canonical_web_scale()
+      Module PythonExpr, line 1, in <expression>
+    AttributeError: 'str' object has no attribute 'get_canonical_web_scale'
+
+    An error happened 1 times, first seen the 2013-08-05 16:37:34.043569:
+
+    Traceback (innermost last):
+      Module Products.SilvaExternalSources.ExternalSource, line 445, in render
+      Module Products.SilvaExternalSources.CodeSource, line 183, in to_html
+       - Source path: /test/cs_portlet_element
+       - Document type: Silva Document
+       - Document path: /test/index
+       - Document version: 1
+       - Parameter capsule_style: ''
+       - Parameter REQUEST: <WSGIRequest, URL=http://localhost:8080/test/index/++rest++Products.SilvaExternalSources.source.preview/POST>
+       - Parameter capsule_title: ''
+       - Parameter capsule_id: ''
+       - Parameter show_title: ''
+       - Parameter document: ''
+       - Parameter capsule_class: ''
+      Module Shared.DC.Scripts.Bindings, line 322, in __call__
+      Module Shared.DC.Scripts.Bindings, line 359, in _bindAndExec
+      Module Products.SilvaExternalSources.patches, line 43, in _exec
+      Module Products.PageTemplates.ZopePageTemplate, line 435, in pt_render
+      Module Products.PageTemplates.PageTemplate, line 79, in pt_render
+      Module zope.pagetemplate.pagetemplate, line 113, in pt_render
+      Module zope.tal.talinterpreter, line 271, in __call__
+      Module zope.tal.talinterpreter, line 343, in interpret
+      Module zope.tal.talinterpreter, line 533, in do_optTag_tal
+      Module zope.tal.talinterpreter, line 518, in do_optTag
+      Module zope.tal.talinterpreter, line 513, in no_tag
+      Module zope.tal.talinterpreter, line 343, in interpret
+      Module zope.tal.talinterpreter, line 533, in do_optTag_tal
+      Module zope.tal.talinterpreter, line 518, in do_optTag
+      Module zope.tal.talinterpreter, line 513, in no_tag
+      Module zope.tal.talinterpreter, line 343, in interpret
+      Module zope.tal.talinterpreter, line 742, in do_insertStructure_tal
+      Module Products.PageTemplates.Expressions, line 218, in evaluateStructure
+      Module zope.tales.tales, line 696, in evaluate
+       - URL: portlet_element
+       - Line 17, Column 4
+       - Expression: <PathExpr standard:u'document/@@content.html'>
+       - Names:
+          {'container': <CodeSource at /test/cs_portlet_element used for /test/index/1>,
+           'context': <CodeSource at /test/cs_portlet_element used for /test/index/1>,
+           'default': <object object at 0x7fa04b8d1210>,
+           'here': <CodeSource at /test/cs_portlet_element used for /test/index/1>,
+           'loop': {},
+           'nothing': None,
+           'options': {'args': (),
+                       'capsule_class': '',
+                       'capsule_id': '',
+                       'capsule_style': '',
+                       'capsule_title': '',
+                       'document': '',
+                       'model': <Document at /test/index>,
+                       'show_title': '',
+                       'version': <DocumentVersion at /test/index/1>},
+           'repeat': <Products.PageTemplates.Expressions.SafeMapping object at 0x7fa0040d8a48>,
+           'request': <WSGIRequest, URL=http://localhost:8080/test/index/++rest++Products.SilvaExternalSources.source.preview/POST>,
+           'root': <Application at >,
+           'template': <ZopePageTemplate at /test/cs_portlet_element/portlet_element>,
+           'traverse_subpath': [],
+           'user': <PropertiedUser 'admin'>}
+      Module zope.tales.expressions, line 217, in __call__
+      Module Products.PageTemplates.Expressions, line 147, in _eval
+      Module zope.tales.expressions, line 124, in _eval
+      Module Products.PageTemplates.Expressions, line 77, in boboAwareZopeTraverse
+      Module zope.traversing.adapters, line 126, in traversePathElement
+       - __traceback_info__: ('', '@@content.html')
+      Module zope.traversing.namespace, line 112, in namespaceLookup
+      Module zope.traversing.namespace, line 329, in traverse
+    LocationError: ('', 'content.html')
+
+    An error happened 2 times, first seen the 2013-08-05 16:08:12.764580:
+
+    Traceback (innermost last):
+      Module Products.SilvaExternalSources.ExternalSource, line 445, in render
+      Module Products.SilvaExternalSources.CodeSource, line 183, in to_html
+       - Source path: /test/cs_encaptionate
+       - Document type: Silva Document
+       - Document path: /test/index
+       - Document version: 1
+       - Parameter REQUEST: <WSGIRequest, URL=http://localhost:8080/test/index/++rest++Products.SilvaExternalSources.source.preview/POST>
+       - Parameter image_path: ''
+       - Parameter alt_text: ''
+       - Parameter credit_link: ''
+       - Parameter link_url: ''
+       - Parameter caption_text: ''
+       - Parameter capsule_title: ''
+       - Parameter image_link: ''
+       - Parameter creditlink_tooltip: ''
+       - Parameter link_tooltip: ''
+       - Parameter credit_text: ''
+       - Parameter credit_prefix: ''
+       - Parameter capsule_style: ''
+      Module Shared.DC.Scripts.Bindings, line 322, in __call__
+      Module Shared.DC.Scripts.Bindings, line 359, in _bindAndExec
+      Module Products.SilvaExternalSources.patches, line 43, in _exec
+      Module Products.PageTemplates.ZopePageTemplate, line 435, in pt_render
+      Module Products.PageTemplates.PageTemplate, line 79, in pt_render
+      Module zope.pagetemplate.pagetemplate, line 113, in pt_render
+      Module zope.tal.talinterpreter, line 271, in __call__
+      Module zope.tal.talinterpreter, line 343, in interpret
+      Module zope.tal.talinterpreter, line 583, in do_setLocal_tal
+      Module zope.tales.tales, line 696, in evaluate
+       - URL: /test/cs_encaptionate/capsule
+       - Line 1, Column 0
+       - Expression: <PythonExpr image.get_canonical_web_scale()>
+       - Names:
+          {'container': <CodeSource at /test/cs_encaptionate used for /test/index/1>,
+           'context': <CodeSource at /test/cs_encaptionate used for /test/index/1>,
+           'default': <object object at 0x7fa04b8d1210>,
+           'here': <CodeSource at /test/cs_encaptionate used for /test/index/1>,
+           'loop': {},
+           'nothing': None,
+           'options': {'alt_text': '',
+                       'args': (),
+                       'capsule_style': '',
+                       'capsule_title': '',
+                       'caption_text': '',
+                       'credit_link': '',
+                       'credit_prefix': '',
+                       'credit_text': '',
+                       'creditlink_tooltip': '',
+                       'image_link': '',
+                       'image_path': '',
+                       'link_tooltip': '',
+                       'link_url': '',
+                       'model': <Document at /test/index>,
+                       'version': <DocumentVersion at /test/index/1>},
+           'repeat': <Products.PageTemplates.Expressions.SafeMapping object at 0x7fa0040d9260>,
+           'request': <WSGIRequest, URL=http://localhost:8080/test/index/++rest++Products.SilvaExternalSources.source.preview/POST>,
+           'root': <Application at >,
+           'template': <ZopePageTemplate at /test/cs_encaptionate/capsule>,
+           'traverse_subpath': [],
+           'user': <PropertiedUser 'admin'>}
+      Module Products.PageTemplates.ZRPythonExpr, line 48, in __call__
+       - __traceback_info__: image.get_canonical_web_scale()
+      Module PythonExpr, line 1, in <expression>
+    AttributeError: 'str' object has no attribute 'get_canonical_web_scale'
+
+SMI General
+===========
+
+UI in IE10
+----------
+
+The tooltips are extremely irritating as they hide all user input fields (drop-downs, input fields, ..., etc.)
+
+Spinning loading action
+-----------------------
+
+When you fail to add content, due to erroring fields and click cancel, you can get a url that makes the "Loading..." hang. The only way to get the SMI back working is to do a reload. Most of the times it our the green squares loading that hangs, but now and then it is also the "Loading..." that hangs.
+
+Tabs
+----
+
+Happens occasionaly when viewing an item and clicking on the Publish tab (/edit#publish!ie10codesourcestest) or if your in the publish tab and click the go up arrow
+
+    2013-08-07 09:45:59,071 ERROR [infrae.wsgi]
+Object class: silva.ui.rest.base.Screen
+Object path: n/a
+Request URL: http://192.168.2.8:8080/test/++rest++silva.ui/publish
+Request method: GET
+Query string: _=1375861558787
+User: n/a
+User-agent: Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; Trident/6.0)
+Refer: http://192.168.2.8:8080/test/edit#publish!.
+Traceback (innermost last):
+  Module infrae.wsgi.publisher, line 356, in publish_and_render_errors
+  Module infrae.wsgi.publisher, line 310, in publish
+  Module infrae.wsgi.traverser, line 108, in __call__
+  Module ZPublisher.BaseRequest, line 338, in traverseName
+  Module infrae.rest.components, line 93, in publishTraverse
+NotFound: publish
+
+Debug at: http://192.168.2.8:8080/_debug/view/1375856630
+
+Going from the Edit tab to the properies tab raised sometimes this error:
+
+User-agent: Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; Trident/6.0)
+Refer: http://192.168.2.8:8080/test/edit#properties!docs/whats_new/index
+Traceback (innermost last):
+  Module infrae.wsgi.publisher, line 356, in publish_and_render_errors
+  Module infrae.wsgi.publisher, line 335, in publish
+   - Published class: __builtin__.instancemethod
+   - Object path: n/a
+   - Object type: n/a
+  Module ZPublisher.mapply, line 77, in mapply
+  Module infrae.wsgi.publisher, line 40, in call_object
+  Module silva.ui.rest.base, line 90, in GET
+  Module silva.ui.rest.base, line 136, in get_payload
+  Module zeam.form.silva.form.smi, line 157, in payload
+  Module zeam.form.base.form, line 114, in render
+  Module megrok.pagetemplate.components, line 16, in __call__
+  Module grokcore.chameleon.components, line 126, in render
+  Module chameleon.template, line 125, in __call__
+  Module grokcore.chameleon.components, line 66, in render
+  Module chameleon.zpt.template, line 257, in render
+  Module chameleon.template, line 172, in render
+  Module smicomposedformtemplate_99ccb64dde353ab18c4ce0dd7483274d276ef46b.py, line 215, in render
+  Module zeam.form.base.form, line 114, in render
+  Module megrok.pagetemplate.components, line 16, in __call__
+  Module grokcore.chameleon.components, line 126, in render
+  Module chameleon.template, line 125, in __call__
+  Module grokcore.chameleon.components, line 66, in render
+  Module chameleon.zpt.template, line 257, in render
+  Module chameleon.template, line 172, in render
+  Module smisubformgrouptemplate_ccc919e7b9a95156108983aa0380d3689fb002c1.py, line 212, in render
+  Module zeam.form.base.form, line 110, in render
+  Module grokcore.chameleon.components, line 126, in render
+  Module chameleon.template, line 125, in __call__
+  Module grokcore.chameleon.components, line 66, in render
+  Module chameleon.zpt.template, line 257, in render
+  Module chameleon.template, line 190, in render
+  Module chameleon.template, line 172, in render
+  Module metadataform_0d9ac54aa8396444d34ceda52579a92a7c045949.py, line 642, in render
+  Module silva.core.smi.content.metadata, line 153, in render_element_view
+  Module Products.SilvaMetadata.Binding, line 121, in renderElementView
+  Module Products.SilvaMetadata.Element, line 205, in renderView
+  Module Products.Formulator.Field, line 343, in render_view
+  Module Products.Formulator.Widget, line 167, in render_view
+UnicodeEncodeError: 'ascii' codec can't encode character u'\u2019' in position 4: ordinal not in range(128)
+
+ - Expression: "form.render()"
+ - Filename:   ... orm/silva/form/smi_templates/smicomposedformtemplate.cpt
+ - Location:   (14:35)
+ - Source:     tal:replace="structure form.render()" />
+                                      ^^^^^^^^^^^^^
+ - Expression: "view.render_element_view(*identifier)"
+ - Filename:   ... lva/core/smi/content/metadata_templates/metadataform.cpt
+ - Location:   (59:44)
+ - Source:     ... ="element_view view.render_element_view(*identifier);
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ - Arguments:  repeat: {...} (0)
+               is_editable: False
+               static: <ZopeFanstaticResource - at 0x7ff1e43d8b10>
+               is_hidden: False
+               is_acquired: False
+               element_name: maintitle
+               set_name: silva-content
+               translate: <function translate at 0x7ff1b81a8668>
+               request: <instance - at 0x6d88638>
+               context: <ImplicitAcquisitionWrapper index at 0x7ff1e43ea2d0>
+               error: <NoneType - at 0x84b1e0>
+               identifier: <tuple - at 0x7ff1b8212ef0>
+               view: <LastClosedMetadataForm - at 0x7ff1e43d8d90>
+
+Debug at: http://192.168.2.8:8080/_debug/view/1375856633
+
+Go up arrow
+-----------
+
+2013-08-08 11:29:53,000 ERROR [infrae.wsgi]
+Object class: silva.ui.rest.base.Screen
+Object path: n/a
+Request URL: http://192.168.2.8:8080/test/++rest++silva.ui/publish
+Request method: GET
+Query string: _=1375954192812
+User: n/a
+User-agent: Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; Trident/6.0)
+Refer: http://192.168.2.8:8080/test/edit#publish!.
+Traceback (innermost last):
+  Module infrae.wsgi.publisher, line 356, in publish_and_render_errors
+  Module infrae.wsgi.publisher, line 310, in publish
+  Module infrae.wsgi.traverser, line 108, in __call__
+  Module ZPublisher.BaseRequest, line 338, in traverseName
+  Module infrae.rest.components, line 93, in publishTraverse
+NotFound: publish
+
+Debug at: http://192.168.2.8:8080/_debug/view/1375950937
+
+
+Silva News
+==========
+
+Adding Silva News content
+-------------------------
+
+The target en subject are not checkboxes anymore therefor you cannot add
+content relying on them as you can not set them and the required input
+is missing.
+
+Tooltip
+-------
+
+The tooltop if the inline news viewer for 'div id' contains ";
+default=_blank_(ANR)"
+
+Firefox 23
+==========
+
+Clicking on a CS that has float left with an image (encapsulated image),
+brings you to that image and removes everything else.
+
+IE 8
+====
+
+You can't drag and drop images
+
+You can't drag and drop CS
+
+Clicking on an image that has float left in a CS (encaptionated), brings
+you to that image and removes everything else.
+
+The dialogues take ages to pop up if you double click on an element.
+
+If you mess around with images you get a "this property or method is not
+supported for this object" at line 43, character 17 in plugin.js and the
+whole browser becomes unresponsive for a while.
+
+IE 10
+=====
+
+You can't drag and drop images
+
+You can't drag and drop CS
+
+Clicking on an image that has float left in a CS (encaptionated), brings
+you to that image and removes everything else.
+
+Chrome/Chromium
+===============
+
+You can't drag and drop images.
+
+You can't drag and drop CS.
+
+Clicking on an image that has float left in a CS (encapsulated), brings
+you to that image and removes everything else.
+
+Safari
+======
+
+You can't drag and drop images.
+
+You can't drag and drop CS.
+
+Clicking on an image that has float left in a CS (encapsulated), brings
+you to that image and removes everything else.
