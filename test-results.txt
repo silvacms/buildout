@@ -775,3 +775,16 @@ Table caption
 The table caption is below the table head, it makes more sense that it
 would be at the top in the table. This is probably caused by the option
 to have table headers in the first row.
+
+Bullet lists in tables
+----------------------
+
+When you create an empty bullet list by clicking the bullet icon, you
+can't navigate to the bullets using the arrow keys to fill in the list
+item text. You can also not undo a bullet list anymore by clicking the
+bullet button again.
+
+For ordered lists the same problems occurs. For unordered and ordered
+lists outside of tables it works correctly.
+
+
