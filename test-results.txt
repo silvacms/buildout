@@ -4,13 +4,18 @@ Translations
 Language settings
 -----------------
 
-When in English mode there is a language preference option: "Occitan (post 1500); Provençal" in other language there is just "Occtitan (post 1500)"
-Appearantly this name is correct, but it might nice to have a service where you can set which languages or shown or add fovorite languages on top as the languege list is getting really big and is full of languages that most people don't care about. Or at least we should order them alphabetically.
+When in English mode there is a language preference option: "Occitan
+(post 1500); Provençal" in other language there is just "Occtitan (post
+1500)" Appearantly this name is correct, but it might nice to have a
+service where you can set which languages or shown or add favorite
+languages on top as the languege list is getting really big and is full
+of languages that most people don't care about. Or at least we should
+order them alphabetically.
 
 Dutch
 -----
 
-Has some weird spanish or portugese translations.
+Has some weird spanish or Portuguese translations.
 
 Code sources
 ============
@@ -637,42 +642,14 @@ you to that image and removes everything else.
 Tables
 ======
 
-Firefox 23
-----------
+General
+-------
 
-Merging cells
-~~~~~~~~~~~~~
-
-Starting point 3 x 5 table
-
-+---+---+---+
-|1.1|1.2|1.3|
-+---+---+---+
-|2.1|2.2|2.3|
-+---+---+---+
-|3.1|3.2|3.3|
-+---+---+---+
-|4.1|4.2|4.3|
-+---+---+---+
-|5.1|5.2|5.3|
-+---+---+---+
-
-Merging down cell makes two extra columns. If we merge down cell 2.2 it
-should get merged with 3.2, which it does but instead you get this table
-layout:
-
-+---+---+---+
-|1.1|1.2|1.3|
-+--+----+---+---+---+
-|2.1|2.2|2.3|3.1|3.3|
-+---+   +---+---+---+
-|4.1|3.2|4.2|4.3|
-+---+---+---+---+
-|5.1|5.2|5.3|
-+---+---+---+
+Most table options are lost, except the number of rows, number of
+columns and the caption.
 
 Splitting cells
-~~~~~~~~~~~~~~~
+---------------
 
 Splitting vertically a cell merges merges vertically the two cells right
 next to it. If we merge down cell 2.2 you get this table layout:
@@ -683,10 +660,118 @@ next to it. If we merge down cell 2.2 you get this table layout:
 |2.1|2.2|2.3|
 +   +---+   +
 |   |   |   |
-+---+---+   +
++---+---+---+
 |3.1|3.2|3.3|
 +---+---+---+
 |4.1|4.2|4.3|
 +---+---+---+
 |5.1|5.2|5.3|
 +---+---+---+
+
+Splitting the cells itself works correct, you get a rowspan of 2 on the
+td aside of the cell 2.2 that gets split.
+
+The problem that does occur:
+
+You split cell 2.2 vertically: ok (rowspan gets removed, new td created)
+You split cell 2.1 vertically: ok (rowspan gets removed, new td created)
+You split cell 2.3 vertically: ok: rowspan gets removed, new td
+created; not ok: the content of the newly created cell of 2.2 becomes the
+content of the newly created 2.3. The effect you get is that the newly
+created cells in 2.1 and 2.3 get switched
+
+Merging cells
+-------------
+
+Starting point a 3 x 5 table:
+
++---+---+---+
+|1.1|1.2|1.3|
++---+---+---+
+|2.1|2.2|2.3|
++---+---+---+
+|3.1|3.2|3.3|
++---+---+---+
+|4.1|4.2|4.3|
++---+---+---+
+|5.1|5.2|5.3|
++---+---+---+
+
+Merging down cells
+~~~~~~~~~~~~~~~~~~
+
+Merging down cell 2.1 makes it look like you have merged three cells and not two.
+If you then do a merge down you get the wrong visual result:
+
++---+---+---+
+|1.1|1.2|1.3|
++   +   +   +
+|   |2.2|   |
++---+   +---+
+|2.1|2.3|   |
++---+---+---+
+|3.1|3.2|3.3|
++---+---+---+
+|4.1|4.2|4.3|
++---+---+---+
+|5.1|5.2|5.3|
++---+---+---+
+
+The expected visual result would be:
+
++---+---+---+
+|1.1|1.2|1.3|
++   +   +   +
+|   |2.2|   |
++---+   +---+
+|2.1|   |2.3|
++---+---+---+
+|3.1|3.2|3.3|
++---+---+---+
+|4.1|4.2|4.3|
++---+---+---+
+|5.1|5.2|5.3|
++---+---+---+
+
+Merging down split cells
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Merging down split cells makes it look like you have extra columns.
+If you then do a merge down on the newly split cell you get a wrong visual result:
+
++---+---+---+
+|1.1|1.2|1.3|
++--+----+---+---+---+---+
+|2.1|2.2|2.3|3.1|3.2|3.3|
++---+---+---+---+---+---+
+|4.1|4.2|4.3|
++---+---+---+
+|5.1|5.2|5.3|
++---+---+---+
+
+I would expect, that content of the new split cell in 2.2 would get
+merged with cell 3.2 and the row spans would get removed. What happens
+is that some unexpected row and column spans get added:
+
+<td rowspan="2">
+  <p>2.1</p>
+</td>
+<td colspan="1" rowspan="2">
+  <p>2.2</p>
+</td>
+<td rowspan="2">
+  <p>2.3</p>
+</td>
+
+Selecting text
+--------------
+
+Selecting all text in a table cell with the cursor doesn't work. You can
+never select the first line or last line.
+
+Table caption
+-------------
+
+The table caption is below the table head, it makes more sense that it
+would be at the top in the table. This is probably caused by the option
+to have table headers in the first row.
