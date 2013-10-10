@@ -17,7 +17,7 @@ Use
 Check out the buildout of the Silva trunk
 -----------------------------------------
 
-  $ svn co https://svn.infrae.com/buildout/silva/tag/Silva-3.0.2 Silva
+  $ svn co https://svn.infrae.com/buildout/silva/tag/Silva-3.0.3 Silva
 
 Go into your "checkout"
 -----------------------
@@ -79,7 +79,7 @@ and zlib.
 A detailed list of those requirements can be found in the Silva
 technical documentation:
 
-http://docs.silvacms.org/trunk/buildout/requirements.html
+http://docs.silvacms.org/3.0/buildout/requirements.html
 
 Run the buildout script
 -----------------------
