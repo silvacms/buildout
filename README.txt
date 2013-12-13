@@ -24,7 +24,7 @@ Check out the buildout of Silva CMS
 You need to have git installed in order to get the buildout. After you
 can just clone it:
 
-  $ git clone https://github.com/silvacms/buildout
+  $ git clone https://github.com/silvacms/buildout Silva
 
 Go into your "checkout"
 -----------------------
