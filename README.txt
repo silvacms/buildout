@@ -5,19 +5,26 @@ Silva Buildout
 Abstract
 ========
 
-The Silva Buildout allows you to conveniently set up Zope servers both
-for development and production environments.
+The Silva buildout allows you to conveniently set up Silva both for
+development and production environments. More information about the
+usage of this buildout can be found in the developer documentation:
+
+http://docs.silvacms.org/latest
 
 General documentation for Buildout can be found here:
-http://pypi.python.org/pypi/zc.buildout
+
+http://www.buildout.org
 
 Use
 ===
 
-Check out the buildout of the Silva trunk
------------------------------------------
+Check out the buildout of Silva CMS
+-----------------------------------
 
-  $ svn co https://svn.infrae.com/buildout/silva/tag/Silva-3.0.3 Silva
+You need to have git installed in order to get the buildout. After you
+can just clone it:
+
+  $ git clone https://github.com/silvacms/buildout
 
 Go into your "checkout"
 -----------------------
@@ -79,7 +86,7 @@ and zlib.
 A detailed list of those requirements can be found in the Silva
 technical documentation:
 
-http://docs.silvacms.org/3.0/buildout/requirements.html
+http://docs.silvacms.org/latest/buildout/requirements.html
 
 Run the buildout script
 -----------------------
@@ -118,7 +125,7 @@ Upgrading a previous installation
 In order to upgrade an existing installation, you can consult the
 guidelines online in the Silva technical documentation:
 
-http://docs.silvacms.org/trunk/buildout.html#upgrading-your-installation
+http://docs.silvacms.org/latest/buildout.html#upgrading-your-installation
 
 Directory structure
 ===================
@@ -134,6 +141,12 @@ and backing up the ZODB respectively.
 
 Another directory of interest is ``var/filestorage``, which holds the
 ZODB file(s).  ``var/log`` contains the Zope log files.
+
+Original Code
+=============
+
+This buildout was originally obtained from Git:
+https://github.com/silvacms/buildout
 
 
 
