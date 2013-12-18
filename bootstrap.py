@@ -1,5 +1,5 @@
-"""Bootstrap a buildout-based project.
-$Id$
+"""Bootstrap a buildout-based project, including downloading and
+installing setuptools.
 """
 
 from distutils import log
@@ -12,6 +12,16 @@ import sys
 import tarfile
 import tempfile
 import urllib2
+
+if sys.version_info[1] < 5:
+    # No HTTPS for Python 2.4 this isn't supported.
+    VIRTUALENV_REQ = "virtualenv<1.7"
+    SETUPTOOLS_VERSION = "1.4.2"
+    SETUPTOOLS_URL = "http://dist.infrae.com/thirdparty/"
+else:
+    VIRTUALENV_REQ= "virtualenv>=1.5"
+    SETUPTOOLS_VERSION = "2.0.1"
+    SETUPTOOLS_URL = "https://pypi.python.org/packages/source/s/setuptools/"
 
 parser = OptionParser(usage="python bootstrap.py\n\n"
                       "Bootstrap the installation process.",
@@ -40,18 +50,12 @@ parser.add_option(
 options, args = parser.parse_args()
 
 bin_dir = 'bin'
+quote = str
 if sys.platform.startswith('win'):
     bin_dir = 'Scripts'
+    quote = lambda arg: '"%s"' % arg
 tmp_eggs = tempfile.mkdtemp()
 atexit.register(shutil.rmtree, tmp_eggs)
-
-if sys.version_info[1] < 5:
-    # No HTTPS for Python 2.4 this isn't supported.
-    DEFAULT_SETUPTOOLS_VERSION = "0.6c11"
-    DEFAULT_SETUPTOOLS_URL = "http://dist.infrae.com/thirdparty/"
-else:
-    DEFAULT_SETUPTOOLS_VERSION = "1.1.6"
-    DEFAULT_SETUPTOOLS_URL = "https://pypi.python.org/packages/source/s/setuptools/"
 
 
 def execute(cmd, env=None, stdout=None):
@@ -183,9 +187,9 @@ def _do_download(version, download_base, to_dir):
     setuptools.bootstrap_install_from = egg
 
 
-def use_setuptools(version=DEFAULT_SETUPTOOLS_VERSION,
-                   download_base=DEFAULT_SETUPTOOLS_URL,
-                   to_dir=tmp_eggs):
+def install_setuptools(version=SETUPTOOLS_VERSION,
+                       download_base=SETUPTOOLS_URL,
+                       to_dir=tmp_eggs):
     # making sure we use the absolute path
     to_dir = os.path.abspath(to_dir)
     was_imported = 'pkg_resources' in sys.modules or \
@@ -214,16 +218,8 @@ def use_setuptools(version=DEFAULT_SETUPTOOLS_VERSION,
         return _do_download(version, download_base, to_dir)
 
 
-try:
-    import pkg_resources
-except ImportError:
-    use_setuptools()
-    import pkg_resources
-
-if sys.platform == 'win32':
-    quote = lambda arg: '"%s"' % arg
-else:
-    quote = str
+install_setuptools()
+import pkg_resources
 
 
 def install(requirement):
@@ -247,12 +243,12 @@ def install(requirement):
 if options.virtualenv:
     python_path = os.path.join(bin_dir, os.path.basename(sys.executable))
     if not os.path.isfile(python_path):
-        install('virtualenv>=1.5')
+        install(VIRTUALENV_REQ)
         import virtualenv
         print "Running virtualenv"
         args = sys.argv[:]
         sys.argv = ['bootstrap', os.getcwd(),
-                    '--clear', '--no-site-package', '--setuptools']
+                    '--clear', '--no-site-package']
         virtualenv.main()
         execute([python_path] + args)
         sys.exit(0)
