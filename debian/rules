@@ -3,7 +3,7 @@
 
 define BUILDOUT_CFG
 [buildout]
-extends = profiles/simple-instance.cfg
+extends = profiles/silva-development.cfg
 endef
 
 export BUILDOUT_CFG
@@ -15,21 +15,21 @@ export DH_VERBOSE=1
 clean-buildout:
 	dh_testdir
 	[ ! -f $(CURDIR)/buildout.cfg ] || rm $(CURDIR)/buildout.cfg
+	[ ! -f $(CURDIR)/deploy.ini ] || rm $(CURDIR)/deploy.ini
+	[ ! -f $(CURDIR)/debug.ini ] || rm $(CURDIR)/debug.ini
 	[ ! -f $(CURDIR)/.installed.cfg ] || rm $(CURDIR)/.installed.cfg
 	[ ! -f $(CURDIR)/.mr.developer.cfg ] || rm $(CURDIR)/.mr.developer.cfg
-#	[ ! -d $(CURDIR)/downloads ] || rm -rf $(CURDIR)/downloads
 	[ ! -d $(CURDIR)/parts ] || rm -rf $(CURDIR)/parts
 	[ ! -d $(CURDIR)/bin ] || rm -rf $(CURDIR)/bin
 	[ ! -d $(CURDIR)/var ] || rm -rf $(CURDIR)/var
-#	[ ! -d $(CURDIR)/src ] || rm -rf $(CURDIR)/src
+	[ ! -d $(CURDIR)/src ] || rm -rf $(CURDIR)/src
 	[ ! -d $(CURDIR)/develop-eggs ] || rm -rf $(CURDIR)/develop-eggs
-	[ ! -d $(CURDIR)/fake-eggs ] || rm -rf $(CURDIR)/fake-eggs
-#	[ ! -d $(CURDIR)/eggs ] || rm -rf $(CURDIR)/eggs
+	[ ! -d $(CURDIR)/eggs ] || rm -rf $(CURDIR)/eggs
 
 config-buildout-stamp: clean-buildout
 	dh_testdir
 	echo "$$BUILDOUT_CFG" >$(CURDIR)/buildout.cfg
-	/opt/zope/bin/python2.4 bootstrap.py
+	/usr/bin/python2.7 -S bootstrap.py
 	touch config-buildout-stamp
 
 build-buildout-stamp: config-buildout-stamp
