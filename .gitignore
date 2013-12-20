@@ -4,6 +4,7 @@ deploy.ini
 .installed.cfg
 .mr.developer.cfg
 .DS_Store
+*-stamp
 bin
 develop-eggs
 eggs

@@ -155,7 +155,7 @@ class SourcePackage(PythonPackage):
                 target = os.path.join(options['lib_prefix'], candidate_name)
                 break
         else:
-            raise ValueError('Cannot find built package.')
+            raise ValueError('Cannot find built package for %s' % origin)
         super(PythonPackage, self).__init__(origin, target, options, keeppyc)
 
     def get_path_to_install(self):

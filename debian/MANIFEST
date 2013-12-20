@@ -2,6 +2,8 @@
 bin/paster = {bin_prefix}/silva-paster
 bin/silva = {bin_prefix}/silva
 
+[shell scripts]
+
 [configurations]
 parts/instance/etc/zope.conf = {etc_prefix}/zope.conf
 debug.in = {etc_prefix}/debug.ini
@@ -13,6 +15,8 @@ eggs =
 
 [source-eggs]
 src =
+
+[ignores]
 
 [replacements]
 bin = {bin_prefix}

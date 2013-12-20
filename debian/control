@@ -3,7 +3,7 @@ Standards-Version: 3.0.4
 Section: web
 Priority: standard
 Maintainer: SilvaCMS community <info@silvacms.org>
-Build-Depends: debhelper (>= 7), python2.7-dev, libjpeg8-dev, zlib1g-dev, libxml2-dev, libxslt1-dev
+Build-Depends: debhelper (>= 7), python2.7-dev, libjpeg8-dev, zlib1g-dev, libxml2-dev, libxslt1-dev, git
 Homepage: http://silvacms.org
 
 Package: silva
