@@ -6,7 +6,7 @@ bin/silva = {bin_prefix}/silva
 
 [configurations]
 parts/instance/etc/zope.conf = {etc_prefix}/zope.conf
-debug.in = {etc_prefix}/debug.ini
+debug.ini = {etc_prefix}/debug.ini
 deploy.ini = {etc_prefix}/deploy.ini
 mime.types = {etc_prefix}/mime.types
 
