@@ -1,0 +1,75 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+define BUILDOUT_CFG
+[buildout]
+extends = profiles/simple-instance.cfg
+endef
+
+export BUILDOUT_CFG
+export DH_VERBOSE=1
+
+
+# Buildout sections
+
+clean-buildout:
+	dh_testdir
+	[ ! -f $(CURDIR)/buildout.cfg ] || rm $(CURDIR)/buildout.cfg
+	[ ! -f $(CURDIR)/.installed.cfg ] || rm $(CURDIR)/.installed.cfg
+	[ ! -f $(CURDIR)/.mr.developer.cfg ] || rm $(CURDIR)/.mr.developer.cfg
+#	[ ! -d $(CURDIR)/downloads ] || rm -rf $(CURDIR)/downloads
+	[ ! -d $(CURDIR)/parts ] || rm -rf $(CURDIR)/parts
+	[ ! -d $(CURDIR)/bin ] || rm -rf $(CURDIR)/bin
+	[ ! -d $(CURDIR)/var ] || rm -rf $(CURDIR)/var
+#	[ ! -d $(CURDIR)/src ] || rm -rf $(CURDIR)/src
+	[ ! -d $(CURDIR)/develop-eggs ] || rm -rf $(CURDIR)/develop-eggs
+	[ ! -d $(CURDIR)/fake-eggs ] || rm -rf $(CURDIR)/fake-eggs
+#	[ ! -d $(CURDIR)/eggs ] || rm -rf $(CURDIR)/eggs
+
+config-buildout-stamp: clean-buildout
+	dh_testdir
+	echo "$$BUILDOUT_CFG" >$(CURDIR)/buildout.cfg
+	/opt/zope/bin/python2.4 bootstrap.py
+	touch config-buildout-stamp
+
+build-buildout-stamp: config-buildout-stamp
+	dh_testdir
+	bin/buildout -v
+	touch build-buildout-stamp
+
+# Debian sections
+
+build-arch: build-buildout-stamp
+
+install: build-buildout-stamp
+	dh_testdir
+	dh_testroot
+	$(CURDIR)/debian/unbuildout.py $(CURDIR) --staging $(CURDIR)/debian/silva --etc-prefix /opt/local/etc --package-prefix /opt/local/lib/silva --var-prefix /var --prefix /opt/local --python /usr/bin/python2.7
+
+binary-arch: install
+	dh_testdir
+	dh_testroot
+	dh_strip
+	dh_compress
+	dh_installinit --no-start
+	dh_link
+	dh_fixperms
+	dh_installdeb
+	dh_shlibdeps
+	dh_gencontrol
+	dh_md5sums
+	dh_builddeb
+
+build-indep:
+
+binary-indep:
+
+binary: binary-indep binary-arch
+
+clean: clean-buildout
+	dh_testdir
+	dh_clean
+
+
+.PHONY: build clean binary-indep binary-arch binary install
+
