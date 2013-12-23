@@ -6,6 +6,7 @@ bin/silva = {bin_prefix}/silva
 
 [configurations]
 parts/instance/etc/zope.conf = {etc_prefix}/zope.conf
+parts/uwsgi/uwsgi.xml = {etc_prefix}/uwsgi.xml
 debug.ini = {etc_prefix}/debug.ini
 deploy.ini = {etc_prefix}/deploy.ini
 mime.types = {etc_prefix}/mime.types
@@ -29,8 +30,7 @@ var/instance.pid = {var_prefix}/run/silva/unused.pid
 var/instance.lock = {var_prefix}/lock/silva.lock
 
 [others]
-bin/uwsgi = {bin_prefix}/silva-wsgi
+bin/uwsgi = {bin_prefix}/silva-uwsgi
 parts/instance/etc/package-includes = {etc_prefix}/package-includes
 parts/instance/etc/site.zcml = {etc_prefix}/site.zcml
-parts/uwsgi/uwsgi.xml = {etc_prefix}/uwsgi.xml
 var/log = {var_prefix}/log/silva

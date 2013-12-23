@@ -1,0 +1,4 @@
+/opt/local/etc/silva/zope.conf
+/opt/local/etc/silva/uwsgi.xml
+/opt/local/etc/silva/debug.ini
+/opt/local/etc/silva/deploy.ini

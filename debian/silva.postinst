@@ -5,11 +5,16 @@ case "$1" in
         if ! getent group silva >/dev/null; then
             addgroup --system silva
         fi
-        if test -d /var/lib/silva; then
+        if test ! -d /var/lib/silva; then
             mkdir /var/lib/silva
+            echo "admin:admin" > /var/lib/silva/inituser
+            chmod 400 /var/lib/silva/inituser
+        fi
+        if test ! -d /var/lib/silva/filestorage; then
+            mkdir /var/lib/silva/filestorage
         fi
         if ! getent passwd silva >/dev/null; then
-            adduser --system --no-create-home --home /var/lib/silva silva
+            adduser --system --no-create-home --home /var/lib/silva --ingroup silva silva
         fi
         chown -R silva:silva /var/lib/silva
         if test ! -L /var/lib/silva/etc; then

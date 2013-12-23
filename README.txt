@@ -118,7 +118,6 @@ You can log in to your zope with the default Zope user
 earlier, rather than later, and definitely before you allow access to
 your site from anywhere but your own machine.
 
-
 Upgrading a previous installation
 =================================
 
@@ -141,6 +140,23 @@ and backing up the ZODB respectively.
 
 Another directory of interest is ``var/filestorage``, which holds the
 ZODB file(s).  ``var/log`` contains the Zope log files.
+
+Creating a debian package
+=========================
+
+You can create a Debian/Ubuntu package out of this buildout in order
+to make the deployement in production of your site more easy and
+reliable.
+
+In order to do this, just run this command in the buildout directory::
+
+  $ debuild -uc -us
+
+It will create a package that will install Silva in /opt/local. Data
+will be stored in /var/lib/silva.
+
+For more information about how to create a package, please refer to
+the corresponding documentation for Debian or Ubuntu.
 
 Original Code
 =============

@@ -1,0 +1,100 @@
+#! /bin/sh
+
+### BEGIN INIT INFO
+# Provides:          silva
+# Required-Start:    networking
+# Required-Stop:
+# Should-Start:      $all
+# Should-Stop:       $all
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Silva instance
+# Description:       Silva instance
+### END INIT INFO
+
+NAME=silva
+USER=silva
+PID_DIRECTORY=/var/run/silva
+CONFIG=/opt/local/etc/silva/uwsgi.xml
+SERVER=/opt/local/bin/silva-uwsgi
+SERVER_PID=$PID_DIRECTORY/wsgi.pid
+
+# Create directory to store PID file if it doesn't exists.
+if ! test -d $PID_DIRECTORY; then
+    mkdir $PID_DIRECTORY
+    chown $USER: $PID_DIRECTORY
+fi
+
+start() {
+    # Investigate status of the server and start it.
+    if test ! -f $SERVER_PID ; then
+        echo -n "Starting $NAME"
+        sudo -u $USER $SERVER $CONFIG  2>&1 >/dev/null
+        echo "."
+    else
+        PID=`cat $SERVER_PID`
+        if [ -z "`ps axf | grep ${PID} | grep -v grep`" ]; then
+            rm -f $SERVER_PID
+            echo -n "Delete PID file and start $NAME"
+            sudo -u $USER $SERVER $CONFIG  2>&1 >/dev/null
+            echo "."
+        fi
+    fi
+    return 0
+}
+
+stop() {
+    if test -f $SERVER_PID ; then
+        echo -n "Stopping $NAME"
+        sudo -u $USER $SERVER --stop $SERVER_PID  2>&1 >/dev/null
+        echo "."
+        rm -f $SERVER_PID
+    fi
+    return 0
+}
+
+status() {
+    if test -f $SERVER_PID ; then
+        PID=`cat $SERVER_PID`
+        if [ -z "`ps axf | grep ${PID} | grep -v grep`" ]; then
+            echo "Server process dead but PID file exists."
+        else
+            echo "Server running."
+        fi
+    else
+        echo "No PID file found for the server, not running."
+    fi
+}
+
+restart() {
+    stop
+    echo "Cooldown ..."
+    sleep 5
+    start
+}
+
+case "$1" in
+    start)
+        start
+        ;;
+    stop)
+        stop
+        ;;
+    status)
+        status
+        ;;
+    restart)
+        restart
+        ;;
+    reload)
+        restart
+        ;;
+    force-reload)
+        restart
+        ;;
+    *)
+        echo $"Usage: $0 {start|stop|restart|reload|force-reload}"
+        exit 1
+esac
+
+exit $?

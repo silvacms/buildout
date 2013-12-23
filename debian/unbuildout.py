@@ -288,7 +288,8 @@ class PackageFilter(object):
         self._add = status.add_python_package
 
     def available(self, installable):
-        return isinstance(installable, PythonScriptFile)
+        return (isinstance(installable, PythonScriptFile) or
+                isinstance(installable, ConfigurationFile))
 
     def __call__(self, line):
         for path, package in self._packages.items():

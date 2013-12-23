@@ -5,6 +5,13 @@ define BUILDOUT_CFG
 [buildout]
 extends = profiles/silva-development.cfg
 parts += uwsgi
+[deploy.ini]
+error-log = /var/log/silva/error.log
+[uwsgi]
+daemonize = /var/log/silva/access.log
+pidfile = /var/run/silva/wsgi.pid
+max-requests = 100000
+uwsgi-socket = 0.0.0.0:8081
 endef
 
 export BUILDOUT_CFG
