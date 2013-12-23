@@ -4,6 +4,7 @@
 define BUILDOUT_CFG
 [buildout]
 extends = profiles/silva-development.cfg
+parts += uwsgi
 endef
 
 export BUILDOUT_CFG
@@ -44,7 +45,7 @@ build-arch: build-buildout-stamp
 install: build-buildout-stamp
 	dh_testdir
 	dh_testroot
-	$(CURDIR)/debian/unbuildout.py $(CURDIR) --staging $(CURDIR)/debian/silva --etc-prefix /opt/local/etc --package-prefix /opt/local/lib/silva --var-prefix /var --prefix /opt/local --python /usr/bin/python2.7
+	$(CURDIR)/debian/unbuildout.py $(CURDIR) --staging $(CURDIR)/debian/silva --etc-prefix /opt/local/etc/silva --package-prefix /opt/local/lib/silva --var-prefix /var --prefix /opt/local --python /usr/bin/python2.7
 
 binary-arch: install
 	dh_testdir

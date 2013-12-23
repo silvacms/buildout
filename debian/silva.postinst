@@ -1,0 +1,28 @@
+#!/bin/sh
+
+case "$1" in
+    configure)
+        if ! getent group silva >/dev/null; then
+            addgroup --system silva
+        fi
+        if ! getent passwd silva >/dev/null; then
+            adduser --system --no-create-home --home /var/lib/silva silva
+        fi
+        chown -R silva:silva /var/lib/silva
+        if test ! -L /var/lib/silva/etc; then
+            ln -s /opt/local/etc/silva /var/lib/silva/etc
+        fi
+        if test ! -d /var/log/silva; then
+            mkdir /var/log/silva
+        fi
+        chown -R silva:silva /var/log/silva
+        if test -d /var/run/silva; then
+            chown -R silva:silva /var/run/silva
+        fi
+        ;;
+esac
+
+#DEBHELPER#
+
+exit 0
+
