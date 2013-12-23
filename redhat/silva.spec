@@ -28,7 +28,7 @@ umask 022
 cd silva
 cat >buildout.cfg <<EOF
 [buildout]
-extends = profiles/silva-development.cfg
+extends = profiles/simple-instance.cfg
 parts += uwsgi
 [deploy.ini]
 error-log = /var/log/silva/error.log
