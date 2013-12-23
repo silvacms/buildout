@@ -141,7 +141,7 @@ and backing up the ZODB respectively.
 Another directory of interest is ``var/filestorage``, which holds the
 ZODB file(s).  ``var/log`` contains the Zope log files.
 
-Creating a debian package
+Creating a Debian package
 =========================
 
 You can create a Debian/Ubuntu package out of this buildout in order
@@ -153,10 +153,59 @@ In order to do this, just run this command in the buildout directory::
   $ debuild -uc -us
 
 It will create a package that will install Silva in /opt/local. Data
-will be stored in /var/lib/silva.
+will be stored in /var/lib/silva. A script ``silva`` in /etc/init.d
+will be added in order to start and stop Silva with the help of
+uwsgi. For security reason, this instance will run with a specific
+``silva`` user.
+
+To start your instance:
+
+  # service silva start
+
+To stop it:
+
+  # service silva stop
 
 For more information about how to create a package, please refer to
 the corresponding documentation for Debian or Ubuntu.
+
+Creating a RedHat package
+=========================
+
+You can create a RedHat package for RedHat, Centos or Fedora. Since
+Python 2.7 isn't available on some of those systems, you can create a
+package as well for it.
+
+From the buildout directory, start by creating the Python package::
+
+   # cd redhat
+   # rpmbuild -bb python27.spec
+
+Install the two created packages, python27 and python27-devel. People
+installing your package will only need to install python27,
+python27-devel is only required to create the silva package. When this
+is done, you can create the silva package again from your buildout
+directory::
+
+   # cd redhat
+   # rpmbuild -bb silva.spec
+
+It will create a package that will install Silva in /opt/local. Data
+will be stored in /var/lib/silva. A script ``silva`` in /etc/init.d
+will be added in order to start and stop Silva with the help of
+uwsgi. For security reason, this instance will run with a specific
+``silva`` user.
+
+To start your instance:
+
+  # service silva start
+
+To stop it:
+
+  # service silva stop
+
+For more information about how to create a package, please refer to
+the corresponding documentation for RedHat.
 
 Original Code
 =============
