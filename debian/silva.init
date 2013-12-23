@@ -28,16 +28,14 @@ fi
 start() {
     # Investigate status of the server and start it.
     if test ! -f $SERVER_PID ; then
-        echo -n "Starting $NAME"
-        sudo -u $USER $SERVER $CONFIG  2>&1 >/dev/null
-        echo "."
+        echo "Starting $NAME ..."
+        sudo -u $USER $SERVER $CONFIG
     else
         PID=`cat $SERVER_PID`
         if [ -z "`ps axf | grep ${PID} | grep -v grep`" ]; then
+            echo "Delete PID file and start $NAME ..."
             rm -f $SERVER_PID
-            echo -n "Delete PID file and start $NAME"
-            sudo -u $USER $SERVER $CONFIG  2>&1 >/dev/null
-            echo "."
+            sudo -u $USER $SERVER $CONFIG
         fi
     fi
     return 0
